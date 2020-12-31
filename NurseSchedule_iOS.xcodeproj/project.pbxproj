@@ -13,6 +13,7 @@
 		990AC3F9259DB3C400281E8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990AC3F7259DB3C400281E8B /* Main.storyboard */; };
 		990AC3FB259DB3CB00281E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 990AC3FA259DB3CB00281E8B /* Assets.xcassets */; };
 		990AC3FE259DB3CB00281E8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990AC3FC259DB3CB00281E8B /* LaunchScreen.storyboard */; };
+		990AC408259DB50B00281E8B /* private_calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990AC407259DB50B00281E8B /* private_calendar.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		990AC3FA259DB3CB00281E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		990AC3FD259DB3CB00281E8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		990AC3FF259DB3CB00281E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		990AC407259DB50B00281E8B /* private_calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = private_calendar.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				990AC3FA259DB3CB00281E8B /* Assets.xcassets */,
 				990AC3FC259DB3CB00281E8B /* LaunchScreen.storyboard */,
 				990AC3FF259DB3CB00281E8B /* Info.plist */,
+				990AC407259DB50B00281E8B /* private_calendar.storyboard */,
 			);
 			path = NurseSchedule_iOS;
 			sourceTree = "<group>";
@@ -126,6 +129,7 @@
 			files = (
 				990AC3FE259DB3CB00281E8B /* LaunchScreen.storyboard in Resources */,
 				990AC3FB259DB3CB00281E8B /* Assets.xcassets in Resources */,
+				990AC408259DB50B00281E8B /* private_calendar.storyboard in Resources */,
 				990AC3F9259DB3C400281E8B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
