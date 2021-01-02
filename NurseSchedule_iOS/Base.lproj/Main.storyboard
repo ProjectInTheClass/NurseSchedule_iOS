@@ -11,38 +11,73 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wYI-VZ-hSl" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f4K-aa-QuB">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="83"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="aja-1f-5zg" kind="relationship" relationship="viewControllers" id="rkC-MI-JOa"/>
-                        <segue destination="Qx4-Iz-oMz" kind="relationship" relationship="viewControllers" id="1Nx-xU-fNz"/>
+                        <segue destination="zxx-c6-m1L" kind="relationship" relationship="viewControllers" id="1FH-A8-jk4"/>
+                        <segue destination="2jv-7H-7KF" kind="relationship" relationship="viewControllers" id="Wyw-cL-bbH"/>
+                        <segue destination="79k-Fm-cyq" kind="relationship" relationship="viewControllers" id="A32-Le-k6q"/>
+                        <segue destination="Xzy-B5-5K6" kind="relationship" relationship="viewControllers" id="qQl-tt-FDs"/>
+                        <segue destination="jIv-ZI-gW5" kind="relationship" relationship="viewControllers" id="RjM-JM-hp5"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQq-er-dpp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-32" y="95"/>
+            <point key="canvasLocation" x="16" y="52"/>
         </scene>
-        <!--share_calendar-->
-        <scene sceneID="KNd-4f-C2n">
+        <!--Setting-->
+        <scene sceneID="qZ7-oM-Vwq">
             <objects>
-                <viewControllerPlaceholder storyboardName="private_calendar" referencedIdentifier="share_calendar" id="Qx4-Iz-oMz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Q6p-WF-gRI"/>
+                <viewControllerPlaceholder storyboardName="Setting" id="Xzy-B5-5K6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="j1u-gU-Ce4"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2sr-ZA-dm8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4dE-OM-vZK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="698" y="89"/>
+            <point key="canvasLocation" x="619" y="17"/>
         </scene>
-        <!--private_calendar-->
-        <scene sceneID="iLw-uf-6sh">
+        <!--Diary-->
+        <scene sceneID="AiN-Sa-8PG">
             <objects>
-                <viewControllerPlaceholder storyboardName="private_calendar" referencedIdentifier="private_calendar" id="aja-1f-5zg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="dHn-Mh-0mw"/>
+                <viewControllerPlaceholder storyboardName="Diary" id="jIv-ZI-gW5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Zic-HY-IQq"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4wc-FR-Y3T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ptI-46-Y9P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-33" y="518"/>
+            <point key="canvasLocation" x="612" y="85"/>
+        </scene>
+        <!--MedicalBook-->
+        <scene sceneID="6eL-dU-Dxt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MedicalBook" id="2jv-7H-7KF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="dUq-Ry-NuV"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ybe-pb-n88" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35" y="479"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="GLd-Or-dje">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Schedule" id="79k-Fm-cyq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="o67-Gp-XIF"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W3A-da-U9k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="255" y="471"/>
+        </scene>
+        <!--Community-->
+        <scene sceneID="Jzy-DZ-Dsy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Community" id="zxx-c6-m1L" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="amP-c9-z7e"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GDa-no-xCX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-171" y="479"/>
         </scene>
     </scenes>
 </document>

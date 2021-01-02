@@ -13,7 +13,11 @@
 		990AC3F9259DB3C400281E8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990AC3F7259DB3C400281E8B /* Main.storyboard */; };
 		990AC3FB259DB3CB00281E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 990AC3FA259DB3CB00281E8B /* Assets.xcassets */; };
 		990AC3FE259DB3CB00281E8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990AC3FC259DB3CB00281E8B /* LaunchScreen.storyboard */; };
-		990AC408259DB50B00281E8B /* private_calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990AC407259DB50B00281E8B /* private_calendar.storyboard */; };
+		99FB53A925A0BE7400FBF750 /* Community.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53A825A0BE7400FBF750 /* Community.storyboard */; };
+		99FB53AD25A0BFB100FBF750 /* MedicalBook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53AC25A0BFB100FBF750 /* MedicalBook.storyboard */; };
+		99FB53B025A0C0EA00FBF750 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53AF25A0C0EA00FBF750 /* Schedule.storyboard */; };
+		99FB53B325A0C17200FBF750 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53B225A0C17200FBF750 /* Diary.storyboard */; };
+		99FB53B625A0C1EB00FBF750 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53B525A0C1EB00FBF750 /* Setting.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +29,11 @@
 		990AC3FA259DB3CB00281E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		990AC3FD259DB3CB00281E8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		990AC3FF259DB3CB00281E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		990AC407259DB50B00281E8B /* private_calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = private_calendar.storyboard; sourceTree = "<group>"; };
+		99FB53A825A0BE7400FBF750 /* Community.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Community.storyboard; sourceTree = "<group>"; };
+		99FB53AC25A0BFB100FBF750 /* MedicalBook.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MedicalBook.storyboard; sourceTree = "<group>"; };
+		99FB53AF25A0C0EA00FBF750 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
+		99FB53B225A0C17200FBF750 /* Diary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
+		99FB53B525A0C1EB00FBF750 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +73,11 @@
 				990AC3FA259DB3CB00281E8B /* Assets.xcassets */,
 				990AC3FC259DB3CB00281E8B /* LaunchScreen.storyboard */,
 				990AC3FF259DB3CB00281E8B /* Info.plist */,
-				990AC407259DB50B00281E8B /* private_calendar.storyboard */,
+				99FB53A825A0BE7400FBF750 /* Community.storyboard */,
+				99FB53AC25A0BFB100FBF750 /* MedicalBook.storyboard */,
+				99FB53AF25A0C0EA00FBF750 /* Schedule.storyboard */,
+				99FB53B225A0C17200FBF750 /* Diary.storyboard */,
+				99FB53B525A0C1EB00FBF750 /* Setting.storyboard */,
 			);
 			path = NurseSchedule_iOS;
 			sourceTree = "<group>";
@@ -127,10 +139,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99FB53B325A0C17200FBF750 /* Diary.storyboard in Resources */,
+				99FB53A925A0BE7400FBF750 /* Community.storyboard in Resources */,
 				990AC3FE259DB3CB00281E8B /* LaunchScreen.storyboard in Resources */,
 				990AC3FB259DB3CB00281E8B /* Assets.xcassets in Resources */,
-				990AC408259DB50B00281E8B /* private_calendar.storyboard in Resources */,
+				99FB53AD25A0BFB100FBF750 /* MedicalBook.storyboard in Resources */,
 				990AC3F9259DB3C400281E8B /* Main.storyboard in Resources */,
+				99FB53B025A0C0EA00FBF750 /* Schedule.storyboard in Resources */,
+				99FB53B625A0C1EB00FBF750 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
