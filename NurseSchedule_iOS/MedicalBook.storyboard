@@ -27,7 +27,7 @@
                         <viewLayoutGuide key="safeArea" id="kfx-6Z-Ea2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="의학백과" image="text.book.closed.fill" catalog="system" id="XxZ-Yd-Lpd"/>
+                    <tabBarItem key="tabBarItem" title="의학백과" image="text.book.closed" catalog="system" selectedImage="text.book.closed.fill" id="XxZ-Yd-Lpd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PFM-DT-Zbc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -36,6 +36,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="text.book.closed" catalog="system" width="115" height="128"/>
         <image name="text.book.closed.fill" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

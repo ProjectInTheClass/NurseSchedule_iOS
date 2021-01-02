@@ -27,7 +27,7 @@
                         <viewLayoutGuide key="safeArea" id="yr1-88-tlW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="커뮤니티" image="person.2.fill" catalog="system" id="YbE-gB-1ve"/>
+                    <tabBarItem key="tabBarItem" title="커뮤니티" image="person.2" catalog="system" selectedImage="person.2.fill" id="YbE-gB-1ve"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXJ-tA-3Hb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -36,6 +36,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="person.2" catalog="system" width="128" height="81"/>
         <image name="person.2.fill" catalog="system" width="128" height="80"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

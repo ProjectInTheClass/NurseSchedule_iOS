@@ -27,7 +27,7 @@
                         <viewLayoutGuide key="safeArea" id="oh1-SH-ptz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="일기장" image="face.smiling.fill" catalog="system" id="F9D-8v-rZI"/>
+                    <tabBarItem key="tabBarItem" title="일기장" image="face.smiling" catalog="system" selectedImage="face.smiling.fill" id="F9D-8v-rZI"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6Q-eG-hkF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -36,6 +36,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="face.smiling" catalog="system" width="128" height="121"/>
         <image name="face.smiling.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

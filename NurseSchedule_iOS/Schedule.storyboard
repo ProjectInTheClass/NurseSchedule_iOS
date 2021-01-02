@@ -27,7 +27,7 @@
                         <viewLayoutGuide key="safeArea" id="5DT-sV-6cA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="캘린더" image="calendar.circle.fill" catalog="system" id="YwS-eb-dQz"/>
+                    <tabBarItem key="tabBarItem" title="캘린더" image="calendar.circle" catalog="system" selectedImage="calendar.circle.fill" id="YwS-eb-dQz"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCl-I4-clx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -36,6 +36,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="calendar.circle" catalog="system" width="128" height="121"/>
         <image name="calendar.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
