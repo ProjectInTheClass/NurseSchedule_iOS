@@ -66,20 +66,28 @@
 		990AC3F0259DB3C400281E8B /* NurseSchedule_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				99A731CD25A1830D00F3E867 /* Views */,
 				990AC3F1259DB3C400281E8B /* AppDelegate.swift */,
 				990AC3F3259DB3C400281E8B /* SceneDelegate.swift */,
 				990AC3F5259DB3C400281E8B /* ViewController.swift */,
-				990AC3F7259DB3C400281E8B /* Main.storyboard */,
 				990AC3FA259DB3CB00281E8B /* Assets.xcassets */,
-				990AC3FC259DB3CB00281E8B /* LaunchScreen.storyboard */,
 				990AC3FF259DB3CB00281E8B /* Info.plist */,
+			);
+			path = NurseSchedule_iOS;
+			sourceTree = "<group>";
+		};
+		99A731CD25A1830D00F3E867 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				990AC3FC259DB3CB00281E8B /* LaunchScreen.storyboard */,
+				990AC3F7259DB3C400281E8B /* Main.storyboard */,
 				99FB53A825A0BE7400FBF750 /* Community.storyboard */,
 				99FB53AC25A0BFB100FBF750 /* MedicalBook.storyboard */,
 				99FB53AF25A0C0EA00FBF750 /* Schedule.storyboard */,
 				99FB53B225A0C17200FBF750 /* Diary.storyboard */,
 				99FB53B525A0C1EB00FBF750 /* Setting.storyboard */,
 			);
-			path = NurseSchedule_iOS;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
