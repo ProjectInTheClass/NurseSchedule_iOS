@@ -16,6 +16,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         ref = Database.database().reference()
+        _ = ref.child("Users").observe(.value, with :{ snapshot in
+            print(snapshot)
+        })
+
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
