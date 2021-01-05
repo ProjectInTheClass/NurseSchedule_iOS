@@ -6,10 +6,16 @@
 //
 
 import UIKit
+import Firebase
+
 
 class ViewController: UIViewController {
+    
+    var ref : DatabaseReference!
 
     override func viewDidLoad() {
+        
+        ref = Database.database().reference()
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
