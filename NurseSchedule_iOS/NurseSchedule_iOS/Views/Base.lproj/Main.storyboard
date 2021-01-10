@@ -9,8 +9,9 @@
         <!--Tab Bar Controller-->
         <scene sceneID="jm5-2O-bF8">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wYI-VZ-hSl" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wYI-VZ-hSl" customClass="TabBarController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="HrU-cy-vtq"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f4K-aa-QuB">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="83"/>
@@ -21,13 +22,13 @@
                         <segue destination="zxx-c6-m1L" kind="relationship" relationship="viewControllers" id="1FH-A8-jk4"/>
                         <segue destination="2jv-7H-7KF" kind="relationship" relationship="viewControllers" id="Wyw-cL-bbH"/>
                         <segue destination="79k-Fm-cyq" kind="relationship" relationship="viewControllers" id="A32-Le-k6q"/>
-                        <segue destination="Xzy-B5-5K6" kind="relationship" relationship="viewControllers" id="qQl-tt-FDs"/>
-                        <segue destination="jIv-ZI-gW5" kind="relationship" relationship="viewControllers" id="RjM-JM-hp5"/>
+                        <segue destination="jIv-ZI-gW5" kind="relationship" relationship="viewControllers" id="loR-Uz-rr6"/>
+                        <segue destination="Xzy-B5-5K6" kind="relationship" relationship="viewControllers" id="Hrb-Ai-mXG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQq-er-dpp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="230" y="35"/>
+            <point key="canvasLocation" x="295" y="35"/>
         </scene>
         <!--Setting-->
         <scene sceneID="qZ7-oM-Vwq">
@@ -37,7 +38,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4dE-OM-vZK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="586" y="471"/>
+            <point key="canvasLocation" x="640" y="471"/>
         </scene>
         <!--Diary-->
         <scene sceneID="AiN-Sa-8PG">
@@ -47,7 +48,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ptI-46-Y9P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="422" y="471"/>
+            <point key="canvasLocation" x="451" y="471"/>
         </scene>
         <!--MedicalBook-->
         <scene sceneID="6eL-dU-Dxt">

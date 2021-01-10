@@ -17,14 +17,15 @@ struct Users {
 
 
 class DBUser {
-    var ref : DatabaseReference! = Database.database().reference()
+    let ref : DatabaseReference! = Database.database().reference()
     
     static let users = DBUser()
+    
     
     func setUser(userName : String, userEmail : String) -> String {
         let userInfo = ["name" : userName, "email" : userEmail]
 
-        var reference  = ref.child("Users").childByAutoId()
+        let reference  = ref.child("Users").childByAutoId()
 
         reference.setValue(userInfo)
         

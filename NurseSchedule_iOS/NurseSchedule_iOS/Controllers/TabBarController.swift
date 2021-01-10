@@ -1,31 +1,25 @@
 //
-//  SettingController.swift
+//  TabBarController.swift
 //  NurseSchedule_iOS
 //
-//  Created by 이주원 on 2021/01/05.
+//  Created by 이주원 on 2021/01/07.
 //
 
 import UIKit
 
-class SettingController: UIViewController {
+class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
+        self.selectedIndex = 2
         // Do any additional setup after loading the view.
+        
+     
     }
     
-    //구글 연동 로그아웃
-//    let firebaseAuth = Auth.auth()
-//  do {
-//    try firebaseAuth.signOut()
-//  } catch let signOutError as NSError {
-//    print ("Error signing out: %@", signOutError)
-//  }
 
-    
-    
-    
     /*
     // MARK: - Navigation
 

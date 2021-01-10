@@ -549,7 +549,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8p-bO-TKY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3267" y="749"/>
+            <point key="canvasLocation" x="3361" y="652"/>
         </scene>
         <!--암호 변경-->
         <scene sceneID="9TV-Dc-DrT">
@@ -565,7 +565,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tY9-FZ-B3E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3984" y="749"/>
+            <point key="canvasLocation" x="4133" y="652"/>
         </scene>
     </scenes>
     <resources>

@@ -13,7 +13,7 @@ import Firebase
 class DBBoard  {
     
     static let board = DBBoard()
-    var ref : DatabaseReference! = Database.database().reference()
+    let ref : DatabaseReference! = Database.database().reference()
     
     var boardNum_String : String = ""
     var boardNum_Int : Int = 0
@@ -23,7 +23,6 @@ class DBBoard  {
     func IntToString(boardNum_Int : Int) -> String {
         return String(boardNum_Int)
     }
-    
     
     func addBoard(B_maker : String, B_description : String) {
         let reference2 = ref.child("ForNumbering/Board")
@@ -44,7 +43,7 @@ class DBBoard  {
         
             let boardInfo = ["B_num" : self.newBoardNum,"B_maker" : B_maker, "B_description" : B_description]
             let reference = self.ref.child("Board/"+self.newBoardNum)
-        reference.setValue(boardInfo)
+            reference.setValue(boardInfo)
         })
     }
 }
