@@ -12,19 +12,6 @@ import GoogleSignIn
 
 class ViewController: UIViewController {
 
-    
- 
-    
-//    @IBAction func Logout(_ sender: Any) {
-//        //구글 연동 로그아웃
-//        let firebaseAuth = Auth.auth()
-//      do {
-//        try firebaseAuth.signOut()
-//      } catch let signOutError as NSError {
-//        print ("Error signing out: %@", signOutError)
-//      }
-//    }
-//
     //    var ref : DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
