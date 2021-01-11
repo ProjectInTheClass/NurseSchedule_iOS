@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E3EB51225AC7004001A955C /* ViewLinc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3EB51125AC7004001A955C /* ViewLinc.swift */; };
 		90D78DF040561CC828B4AFD7 /* Pods_NurseSchedule_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D2747B0FF5221C87E75B63 /* Pods_NurseSchedule_iOS.framework */; };
 		990AC3F2259DB3C400281E8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990AC3F1259DB3C400281E8B /* AppDelegate.swift */; };
 		990AC3F4259DB3C400281E8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990AC3F3259DB3C400281E8B /* SceneDelegate.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		56ED2510F218804FA064BA30 /* Pods-NurseSchedule_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NurseSchedule_iOS.release.xcconfig"; path = "Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		7E3EB51125AC7004001A955C /* ViewLinc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLinc.swift; sourceTree = "<group>"; };
 		87D2747B0FF5221C87E75B63 /* Pods_NurseSchedule_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NurseSchedule_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		990AC3EE259DB3C400281E8B /* NurseSchedule_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NurseSchedule_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		990AC3F1259DB3C400281E8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				9926524025A4ADFD0043A16E /* SettingController.swift */,
 				997059AA25A72D8A0037A342 /* TabBarController.swift */,
 				99D874B425AB452D0012D403 /* LoginController.swift */,
+				7E3EB51125AC7004001A955C /* ViewLinc.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				997059AB25A72D8A0037A342 /* TabBarController.swift in Sources */,
 				990AC3F6259DB3C400281E8B /* ViewController.swift in Sources */,
 				992651E725A470A90043A16E /* DBUser.swift in Sources */,
+				7E3EB51225AC7004001A955C /* ViewLinc.swift in Sources */,
 				9926523825A4ADCC0043A16E /* ScheduleController.swift in Sources */,
 				990AC3F2259DB3C400281E8B /* AppDelegate.swift in Sources */,
 				9926527E25A4CCE80043A16E /* DBBoard.swift in Sources */,

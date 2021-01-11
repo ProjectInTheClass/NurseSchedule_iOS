@@ -44,17 +44,17 @@
                                                         <rect key="frame" x="0.0" y="171.33333333333334" width="390" height="30"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6d-o1-5IR">
-                                                                <rect key="frame" x="0.0" y="0.0" width="34" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="28" height="30"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
                                                                     <segue destination="nH4-89-FIb" kind="modal" id="zM5-Lw-jDM"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxx-Ks-eYG">
-                                                                <rect key="frame" x="77" y="0.0" width="46" height="30"/>
-                                                                <state key="normal" title="Button"/>
+                                                                <rect key="frame" x="71" y="0.0" width="52" height="30"/>
+                                                                <state key="normal" title="구글링크"/>
                                                                 <connections>
-                                                                    <segue destination="ufP-JE-I9o" kind="push" id="yvz-F6-dmn"/>
+                                                                    <segue destination="ZIA-cT-UXR" kind="show" id="8zr-fc-44M"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPl-3n-wAh">
@@ -403,16 +403,36 @@
             </objects>
             <point key="canvasLocation" x="726" y="-350"/>
         </scene>
-        <!--View Controller-->
+        <!--View Linc-->
         <scene sceneID="Dv6-9o-1B0">
             <objects>
-                <viewController id="ZIA-cT-UXR" sceneMemberID="viewController">
+                <viewController id="ZIA-cT-UXR" customClass="ViewLinc" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TVk-Po-Hzh">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1o-lW-t4T">
+                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WUj-kD-bcc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WUj-kD-bcc" firstAttribute="trailing" secondItem="e1o-lW-t4T" secondAttribute="trailing" id="Ahe-e1-ChL"/>
+                            <constraint firstItem="WUj-kD-bcc" firstAttribute="bottom" secondItem="e1o-lW-t4T" secondAttribute="bottom" id="Erc-xk-tdp"/>
+                            <constraint firstItem="e1o-lW-t4T" firstAttribute="leading" secondItem="WUj-kD-bcc" secondAttribute="leading" id="XCn-oq-Get"/>
+                            <constraint firstItem="e1o-lW-t4T" firstAttribute="top" secondItem="WUj-kD-bcc" secondAttribute="top" id="aes-hl-E3i"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="4uC-rY-K8h"/>
+                    <connections>
+                        <outlet property="WebViewLink" destination="e1o-lW-t4T" id="kB6-CS-0k9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nAN-T5-x71" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -437,7 +457,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BbI-6z-Dzx">
-                                                    <rect key="frame" x="0.0" y="-1" width="389" height="44"/>
+                                                    <rect key="frame" x="-1" y="-1" width="389" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </searchBar>
@@ -803,9 +823,6 @@
             <point key="canvasLocation" x="-1457" y="87"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="yvz-F6-dmn"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
