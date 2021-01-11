@@ -403,6 +403,21 @@
             </objects>
             <point key="canvasLocation" x="726" y="-350"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Dv6-9o-1B0">
+            <objects>
+                <viewController id="ZIA-cT-UXR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TVk-Po-Hzh">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="WUj-kD-bcc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nAN-T5-x71" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1694" y="861"/>
+        </scene>
         <!--공지사항-->
         <scene sceneID="CUK-t6-afT">
             <objects>
