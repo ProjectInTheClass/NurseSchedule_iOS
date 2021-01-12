@@ -387,7 +387,11 @@
                                     <segue destination="E1u-5G-Nap" kind="show" id="X0w-ff-3ti"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="camera.viewfinder" catalog="system" id="eYC-1j-9y5"/>
+                            <barButtonItem title="Item" image="camera.viewfinder" catalog="system" id="eYC-1j-9y5">
+                                <connections>
+                                    <action selector="capture:" destination="KNe-Tg-fe9" id="5o2-pv-J10"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

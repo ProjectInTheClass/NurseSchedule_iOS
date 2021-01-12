@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1478E926896CF22849C40815 /* Pods_NurseSchedule_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C609AA6B1165C8D41BB8A1B8 /* Pods_NurseSchedule_iOS.framework */; };
+		1B734DB8FFAE10C573DCEC89 /* Pods_NurseSchedule_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1023850E893169F71BF98CFC /* Pods_NurseSchedule_iOS.framework */; };
 		7E3EB51225AC7004001A955C /* ViewLinc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3EB51125AC7004001A955C /* ViewLinc.swift */; };
 		990AC3F2259DB3C400281E8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990AC3F1259DB3C400281E8B /* AppDelegate.swift */; };
 		990AC3F4259DB3C400281E8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990AC3F3259DB3C400281E8B /* SceneDelegate.swift */; };
@@ -33,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0FEE6DAAE26AF8BF3DB5BC96 /* Pods-NurseSchedule_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NurseSchedule_iOS.debug.xcconfig"; path = "Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		1023850E893169F71BF98CFC /* Pods_NurseSchedule_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NurseSchedule_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		714F117F287D49765BF1C3EF /* Pods-NurseSchedule_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NurseSchedule_iOS.release.xcconfig"; path = "Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		7E3EB51125AC7004001A955C /* ViewLinc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLinc.swift; sourceTree = "<group>"; };
 		990AC3EE259DB3C400281E8B /* NurseSchedule_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NurseSchedule_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		990AC3F1259DB3C400281E8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,9 +60,6 @@
 		99FB53AF25A0C0EA00FBF750 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		99FB53B225A0C17200FBF750 /* Diary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
 		99FB53B525A0C1EB00FBF750 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
-		C609AA6B1165C8D41BB8A1B8 /* Pods_NurseSchedule_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NurseSchedule_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF09CD5C56190507F5CA9A47 /* Pods-NurseSchedule_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NurseSchedule_iOS.release.xcconfig"; path = "Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS.release.xcconfig"; sourceTree = "<group>"; };
-		FF2A4844FE10243A7918EF89 /* Pods-NurseSchedule_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NurseSchedule_iOS.debug.xcconfig"; path = "Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1478E926896CF22849C40815 /* Pods_NurseSchedule_iOS.framework in Frameworks */,
+				1B734DB8FFAE10C573DCEC89 /* Pods_NurseSchedule_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,16 +77,16 @@
 		05E05B97F1F45BF2B6F9BA66 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FF2A4844FE10243A7918EF89 /* Pods-NurseSchedule_iOS.debug.xcconfig */,
-				DF09CD5C56190507F5CA9A47 /* Pods-NurseSchedule_iOS.release.xcconfig */,
+				0FEE6DAAE26AF8BF3DB5BC96 /* Pods-NurseSchedule_iOS.debug.xcconfig */,
+				714F117F287D49765BF1C3EF /* Pods-NurseSchedule_iOS.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		35AA55FDA81EC74881FAB962 /* Frameworks */ = {
+		924999C26713EF930A4374B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C609AA6B1165C8D41BB8A1B8 /* Pods_NurseSchedule_iOS.framework */,
+				1023850E893169F71BF98CFC /* Pods_NurseSchedule_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -97,7 +97,7 @@
 				990AC3F0259DB3C400281E8B /* NurseSchedule_iOS */,
 				990AC3EF259DB3C400281E8B /* Products */,
 				05E05B97F1F45BF2B6F9BA66 /* Pods */,
-				35AA55FDA81EC74881FAB962 /* Frameworks */,
+				924999C26713EF930A4374B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,12 +170,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 990AC402259DB3CB00281E8B /* Build configuration list for PBXNativeTarget "NurseSchedule_iOS" */;
 			buildPhases = (
-				304BDEB4626CBECD8D37D0C7 /* [CP] Check Pods Manifest.lock */,
+				1F1105D5A4DC3D9922282F32 /* [CP] Check Pods Manifest.lock */,
 				990AC3EA259DB3C400281E8B /* Sources */,
 				990AC3EB259DB3C400281E8B /* Frameworks */,
 				990AC3EC259DB3C400281E8B /* Resources */,
-				E63E0920DBDDF0103E553050 /* [CP] Embed Pods Frameworks */,
-				C07822A649A0C75218076463 /* [CP] Copy Pods Resources */,
+				73CE7B0E7C11368E44A589C8 /* [CP] Embed Pods Frameworks */,
+				B326B6E83CC7F4DD92E8953D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,7 +238,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		304BDEB4626CBECD8D37D0C7 /* [CP] Check Pods Manifest.lock */ = {
+		1F1105D5A4DC3D9922282F32 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -260,24 +260,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C07822A649A0C75218076463 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E63E0920DBDDF0103E553050 /* [CP] Embed Pods Frameworks */ = {
+		73CE7B0E7C11368E44A589C8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -292,6 +275,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B326B6E83CC7F4DD92E8953D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -457,7 +457,7 @@
 		};
 		990AC403259DB3CB00281E8B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF2A4844FE10243A7918EF89 /* Pods-NurseSchedule_iOS.debug.xcconfig */;
+			baseConfigurationReference = 0FEE6DAAE26AF8BF3DB5BC96 /* Pods-NurseSchedule_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -477,7 +477,7 @@
 		};
 		990AC404259DB3CB00281E8B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF09CD5C56190507F5CA9A47 /* Pods-NurseSchedule_iOS.release.xcconfig */;
+			baseConfigurationReference = 714F117F287D49765BF1C3EF /* Pods-NurseSchedule_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

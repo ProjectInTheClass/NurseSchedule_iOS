@@ -74,5 +74,25 @@ class ScheduleController: UIViewController, FSCalendarDataSource, FSCalendarDele
         // Pass the selected object to the new view controller.
     }
     */
-
-}
+    //스크린샷
+    
+   
+    @IBAction func capture(_ sender: Any) {
+        
+        
+            func captureScreenshot(){
+                let layer = self.calendar.layer
+                let scale = UIScreen.main.scale
+                // Creates UIImage of same size as view
+                UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
+                layer.render(in: UIGraphicsGetCurrentContext()!)
+                let screenshot = UIGraphicsGetImageFromCurrentImageContext()
+                UIGraphicsEndImageContext()
+                // THIS IS TO SAVE SCREENSHOT TO PHOTOS
+                UIImageWriteToSavedPhotosAlbum(screenshot!, nil, nil, nil)
+            }
+            captureScreenshot()
+            
+    }
+    
+    }
