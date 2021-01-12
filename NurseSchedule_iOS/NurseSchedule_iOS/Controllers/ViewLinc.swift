@@ -11,11 +11,13 @@ class ViewLinc: UIViewController {
 
     @IBOutlet weak var WebViewLink: WKWebView!
     
+    var urlString: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let urlString = "https://www.google.com/"
+//        let urlString = "https://www.google.com/"
         if let url = URL(string: urlString){
             let urlReq = URLRequest(url: url)
             WebViewLink.load(urlReq)

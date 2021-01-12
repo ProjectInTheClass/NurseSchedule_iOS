@@ -36,6 +36,22 @@ class ViewController: UIViewController {
 
     }
 
-
+// 링크 넘어가기
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "koreanurseWeb" {
+//            if let vc = segue.destination as? ViewLinc {
+//                vc.urlString = "https://www.koreanurse.or.kr/"
+//                
+//}
+//            
+//}
+//                else if segue.identifier == "nursejobWeb" {
+//                    if let vc = segue.destination as? ViewLinc {
+//                        vc.urlString = "https://www.google.com/"
+//}
+//}
+//                else if segue.identifier == "nurscapeWeb" {
+//                    if let vc = segue.destination as? ViewLinc {
+//                        vc.urlString = "https://www.google.com/"
 }
-
+        
