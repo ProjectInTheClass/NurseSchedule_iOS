@@ -12,6 +12,8 @@ import GoogleSignIn
 
 struct Login {
    
+    let noUser = "no"
+    
     func googleLogin() -> String {
         //Google user manage
         //https://firebase.google.com/docs/auth/ios/manage-users
@@ -33,7 +35,7 @@ struct Login {
 //          }
           // ...
         } else {
-            uid = "no"
+            uid = noUser
         }
         
         return uid

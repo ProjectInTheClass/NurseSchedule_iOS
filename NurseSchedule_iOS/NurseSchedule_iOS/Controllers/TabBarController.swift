@@ -6,14 +6,37 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 class TabBarController: UITabBarController {
+    
+    let noUser = "no"
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
         self.selectedIndex = 2
+
+        Auth.auth().addIDTokenDidChangeListener { (auth, user) in
+            let currentUser = Login.init().googleLogin()
+            
+            print("CurrentUser uid is "+currentUser)
+            if currentUser == self.noUser {
+                //self.performSegue(withIdentifier: "GLogin", sender: nil)
+                //구글 로그인
+                GIDSignIn.sharedInstance()?.presentingViewController = self
+                GIDSignIn.sharedInstance().signIn()
+                
+            } else {
+                //signInButton.isHidden = true
+                
+                self.selectedIndex = 2
+            }
+            
+        }
+        
+        
         // Do any additional setup after loading the view.
         
      

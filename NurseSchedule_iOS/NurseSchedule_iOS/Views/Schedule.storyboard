@@ -357,11 +357,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gXr-bM-Huc" customClass="GIDSignInButton">
-                                <rect key="frame" x="87" y="422" width="240" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEF-rT-gnj">
                                 <rect key="frame" x="176" y="516" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -399,12 +394,11 @@
                     <connections>
                         <outlet property="calendar" destination="RfH-1E-lWU" id="U29-KZ-ChO"/>
                         <outlet property="logoutButton" destination="CEF-rT-gnj" id="Zfy-rj-Jlx"/>
-                        <outlet property="signInButton" destination="gXr-bM-Huc" id="ial-QG-weh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UA3-ls-qgY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1963.7681159420292" y="3016.7410714285711"/>
+            <point key="canvasLocation" x="1858" y="3017"/>
         </scene>
         <!--입력-->
         <scene sceneID="vyS-x1-rHu">
