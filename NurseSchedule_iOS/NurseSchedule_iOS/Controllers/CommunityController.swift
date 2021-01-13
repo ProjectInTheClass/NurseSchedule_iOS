@@ -32,23 +32,19 @@ class CommunityController: UIViewController {
         if segue.identifier == "koreanurseWeb" {
             if let vc = segue.destination as? ViewLinc {
                 vc.urlString = "https://www.koreanurse.or.kr/"
-                
-}
-            
-}
-                else if segue.identifier == "nursejobWeb" {
-                    if let vc = segue.destination as? ViewLinc {
-                        vc.urlString = "https://www.nursejob.co.kr/"
-}
-}
-                else if segue.identifier == "nurscapeWeb" {
-                    if let vc = segue.destination as? ViewLinc {
-                        vc.urlString = "https://recruit.nurscape.net/"
-                    }
-                }   else if segue.identifier == "NursestoryWeb" {
-                    if let vc = segue.destination as? ViewLinc {
-                        vc.urlString = "https://www.nursestory.co.kr/"
-}
-}
+            }
+        } else if segue.identifier == "nursejobWeb" {
+            if let vc = segue.destination as? ViewLinc {
+                vc.urlString = "https://www.nursejob.co.kr/"
+            }
+        } else if segue.identifier == "nurscapeWeb" {
+            if let vc = segue.destination as? ViewLinc {
+                vc.urlString = "https://recruit.nurscape.net/"
+            }
+        } else if segue.identifier == "NursestoryWeb" {
+            if let vc = segue.destination as? ViewLinc {
+                vc.urlString = "https://www.nursestory.co.kr/"
+            }
+        }
     }
 }

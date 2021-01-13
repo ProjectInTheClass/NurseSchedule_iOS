@@ -357,22 +357,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEF-rT-gnj">
-                                <rect key="frame" x="176" y="516" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="LOGOUT"/>
-                                <connections>
-                                    <action selector="Logout:" destination="KNe-Tg-fe9" eventType="touchUpInside" id="V9q-cd-9xr"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RfH-1E-lWU" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="88" width="414" height="296"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RfH-1E-lWU" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DrZ-Zr-3ie"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DrZ-Zr-3ie" firstAttribute="bottom" secondItem="RfH-1E-lWU" secondAttribute="bottom" id="Cx9-md-JtW"/>
+                            <constraint firstItem="RfH-1E-lWU" firstAttribute="trailing" secondItem="DrZ-Zr-3ie" secondAttribute="trailing" id="UjX-Vo-Cxg"/>
+                            <constraint firstItem="RfH-1E-lWU" firstAttribute="top" secondItem="DrZ-Zr-3ie" secondAttribute="top" id="d1c-0k-9Ws"/>
+                            <constraint firstItem="RfH-1E-lWU" firstAttribute="leading" secondItem="DrZ-Zr-3ie" secondAttribute="leading" id="ifU-SF-BgG"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="calendar" image="calendar.circle" catalog="system" selectedImage="calendar.circle.fill" id="BgW-88-YqU"/>
                     <navigationItem key="navigationItem" title="캘린더" id="nSH-Yv-sk2">
@@ -397,7 +394,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="calendar" destination="RfH-1E-lWU" id="U29-KZ-ChO"/>
-                        <outlet property="logoutButton" destination="CEF-rT-gnj" id="Zfy-rj-Jlx"/>
+                        <outlet property="calendarBottom" destination="Cx9-md-JtW" id="YRX-xc-bRU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UA3-ls-qgY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -45,7 +45,7 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPZ-XV-uIr">
                                                                 <rect key="frame" x="0.0" y="0.0" width="75.666666666666671" height="30"/>
-                                                                <state key="normal" title="대한간호협"/>
+                                                                <state key="normal" title="대한간호협회"/>
                                                                 <connections>
                                                                     <segue destination="ZIA-cT-UXR" kind="presentation" identifier="koreanurseWeb" id="qmM-8F-6Xh"/>
                                                                 </connections>
@@ -456,7 +456,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BbI-6z-Dzx">
-                                                    <rect key="frame" x="-2" y="-1" width="390" height="44"/>
+                                                    <rect key="frame" x="-3" y="-1" width="390" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </searchBar>

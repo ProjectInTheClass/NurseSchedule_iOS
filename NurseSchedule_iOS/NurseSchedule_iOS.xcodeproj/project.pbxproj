@@ -21,8 +21,8 @@
 		9926523825A4ADCC0043A16E /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926523725A4ADCC0043A16E /* ScheduleController.swift */; };
 		9926523B25A4ADDE0043A16E /* MedicalBookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926523A25A4ADDE0043A16E /* MedicalBookController.swift */; };
 		9926523E25A4ADEE0043A16E /* DiaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926523D25A4ADEE0043A16E /* DiaryController.swift */; };
-		9926524125A4ADFD0043A16E /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926524025A4ADFD0043A16E /* SettingController.swift */; };
 		9926527E25A4CCE80043A16E /* DBBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926527D25A4CCE80043A16E /* DBBoard.swift */; };
+		992F41C925AEB82D00E25199 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F41C825AEB82D00E25199 /* SettingTableViewController.swift */; };
 		997059AB25A72D8A0037A342 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997059AA25A72D8A0037A342 /* TabBarController.swift */; };
 		99D874B525AB452D0012D403 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D874B425AB452D0012D403 /* LoginController.swift */; };
 		99FB53A925A0BE7400FBF750 /* Community.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53A825A0BE7400FBF750 /* Community.storyboard */; };
@@ -51,8 +51,8 @@
 		9926523725A4ADCC0043A16E /* ScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
 		9926523A25A4ADDE0043A16E /* MedicalBookController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalBookController.swift; sourceTree = "<group>"; };
 		9926523D25A4ADEE0043A16E /* DiaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryController.swift; sourceTree = "<group>"; };
-		9926524025A4ADFD0043A16E /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		9926527D25A4CCE80043A16E /* DBBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBBoard.swift; sourceTree = "<group>"; };
+		992F41C825AEB82D00E25199 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		997059AA25A72D8A0037A342 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		99D874B425AB452D0012D403 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		99FB53A825A0BE7400FBF750 /* Community.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Community.storyboard; sourceTree = "<group>"; };
@@ -132,10 +132,10 @@
 				9926523725A4ADCC0043A16E /* ScheduleController.swift */,
 				9926523A25A4ADDE0043A16E /* MedicalBookController.swift */,
 				9926523D25A4ADEE0043A16E /* DiaryController.swift */,
-				9926524025A4ADFD0043A16E /* SettingController.swift */,
 				997059AA25A72D8A0037A342 /* TabBarController.swift */,
 				99D874B425AB452D0012D403 /* LoginController.swift */,
 				7E3EB51125AC7004001A955C /* ViewLinc.swift */,
+				992F41C825AEB82D00E25199 /* SettingTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -301,7 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9926524125A4ADFD0043A16E /* SettingController.swift in Sources */,
+				992F41C925AEB82D00E25199 /* SettingTableViewController.swift in Sources */,
 				99D874B525AB452D0012D403 /* LoginController.swift in Sources */,
 				9926523B25A4ADDE0043A16E /* MedicalBookController.swift in Sources */,
 				997059AB25A72D8A0037A342 /* TabBarController.swift in Sources */,
