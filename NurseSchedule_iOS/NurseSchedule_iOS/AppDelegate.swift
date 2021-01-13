@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
+var termsList = [Term]()
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
@@ -17,6 +18,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        
+        
+        
+        let ref = Database.database().reference().child("Medical/")
+        
+        for i in 1...5 {
+        _ = ref.child("\(i)").observe(.value, with: { snapshot in
+            
+            var newTerm = Term(definition: "retrive", englishTerm: "retriveE", koreanTerm: "retriveK")
+            
+            //print(snapshot)
+            if let value = snapshot.value as? NSDictionary {
+                
+                newTerm.definition = value["definition"] as? String ?? " "//정의 받아오는 부분, 정의에 대한 변수
+                //print(value?["N_definition"])
+                
+                newTerm.englishTerm = value["englishTerm"] as? String ?? " " //영어 이름 받아오는 부분, 영어 이름에 대한 변수
+                newTerm.koreanTerm = value["koreanTerm"] as? String ?? " " //한글 이름 받아오는 부분, 한글 이름에 대한 변수
+                termsList.append(newTerm)
+            }
+            
+            //self.tableView.reloadData()
+            
+        })
+        }
+        print(">>>>>appdelegate \(termsList)")
         
         return true
     }
