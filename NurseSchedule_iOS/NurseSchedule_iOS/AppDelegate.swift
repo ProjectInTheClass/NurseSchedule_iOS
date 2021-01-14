@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         for i in 1...5 {
         _ = ref.child("\(i)").observe(.value, with: { snapshot in
             
-            var newTerm = Term(definition: "retrive", englishTerm: "retriveE", koreanTerm: "retriveK")
+            var newTerm = Term(definition: "There's no Description", englishTerm: "retriveE", koreanTerm: "retriveK")
             
             //print(snapshot)
             if let value = snapshot.value as? NSDictionary {

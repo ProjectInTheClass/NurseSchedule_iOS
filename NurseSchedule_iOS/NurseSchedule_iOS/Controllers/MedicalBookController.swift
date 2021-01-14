@@ -14,7 +14,7 @@ struct Term {
     var koreanTerm : String
 }
 
-class MedicalBookController: UIViewController, UITableViewDataSource{
+class MedicalBookController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -31,26 +31,7 @@ class MedicalBookController: UIViewController, UITableViewDataSource{
         // Do any additional setup after loading the view.
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return termsList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MedicalCell", for: indexPath) as! MedicalCell
-        
-        let term = termsList[indexPath.row]
-        
-       // print("tableView>>>>> \(term)")
-        
-        cell.englishTerm.text = term.englishTerm
-        cell.koreanTerm.text = term.koreanTerm
-        
-        return cell
-    }
+   
     
     override func viewDidAppear(_ animated: Bool) {
         self.tableView.reloadData()
@@ -63,6 +44,11 @@ class MedicalBookController: UIViewController, UITableViewDataSource{
         }
     }
     
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        //dispose of any resources that can be recreated
+    }
     
 //    func retrieveTerms(){
 //
@@ -94,17 +80,33 @@ class MedicalBookController: UIViewController, UITableViewDataSource{
 //        print(">>>>>termslist3 \(self.termsList)")
 //    }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
+
+extension MedicalBookController : UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return termsList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MedicalCell", for: indexPath) as! MedicalCell
+        
+        let term = termsList[indexPath.row]
+        
+       // print("tableView>>>>> \(term)")
+        
+        cell.englishTerm.text = term.englishTerm
+        cell.koreanTerm.text = term.koreanTerm
+        
+        return cell
+    }
+}
+
+
 
 
 extension MedicalBookController : UITableViewDelegate {
