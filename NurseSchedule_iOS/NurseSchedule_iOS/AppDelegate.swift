@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         let ref = Database.database().reference().child("Medical/")
         
-        for i in 1...5 {
+        for i in 1...11052 {
         _ = ref.child("\(i)").observe(.value, with: { snapshot in
             
             var newTerm = Term(definition: "There's no Description", englishTerm: "retriveE", koreanTerm: "retriveK")
@@ -31,11 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             //print(snapshot)
             if let value = snapshot.value as? NSDictionary {
                 
-                newTerm.definition = value["definition"] as? String ?? " "//정의 받아오는 부분, 정의에 대한 변수
+                newTerm.definition = value["N_definition"] as? String ?? " "//정의 받아오는 부분, 정의에 대한 변수
                 //print(value?["N_definition"])
                 
-                newTerm.englishTerm = value["englishTerm"] as? String ?? " " //영어 이름 받아오는 부분, 영어 이름에 대한 변수
-                newTerm.koreanTerm = value["koreanTerm"] as? String ?? " " //한글 이름 받아오는 부분, 한글 이름에 대한 변수
+                newTerm.englishTerm = value["N_englishName"] as? String ?? " " //영어 이름 받아오는 부분, 영어 이름에 대한 변수
+                newTerm.koreanTerm = value["N_koreanName"] as? String ?? " " //한글 이름 받아오는 부분, 한글 이름에 대한 변수
                 termsList.append(newTerm)
             }
             

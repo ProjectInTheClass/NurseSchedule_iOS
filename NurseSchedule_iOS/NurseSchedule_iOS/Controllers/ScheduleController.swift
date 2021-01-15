@@ -12,9 +12,12 @@ import FSCalendar
 class ScheduleController: UIViewController{
     
     @IBOutlet weak var calendar: FSCalendar!
-    @IBOutlet weak var calendarBottom: NSLayoutConstraint!
+    //    @IBOutlet weak var calendarBottom: NSLayoutConstraint!
+    
+    @IBOutlet weak var memoView: UITableView!
     
     let dateFormatter = DateFormatter()
+    var selectedDate : Date = .init()
     
     
     //FSCalendar
@@ -24,19 +27,12 @@ class ScheduleController: UIViewController{
         dateFormatter.dateFormat = "yyyy-MM-dd"
         calendar.delegate = self
         calendar.dataSource = self
+        memoView.delegate = self
+        memoView.dataSource = self
         super.viewDidLoad()
-        
-        //캘린더 위로 올라가게
-        //calendarBottom.constant = 300
-        
-        //let test = DBUser.users.setUser(userName : "lee" ,userEmail : "lee@dgu.ac.kr")
-        //DBUser.users.getUser(test)
+
         updateUI()
-        
-        //uid confirm
-        //Auth.auth().addIDTokenDidChangeListener { (auth, user) in
-        //self.updateUI()
-        //}
+
         // Do any additional setup after loading the view.
     }
     
@@ -47,6 +43,11 @@ class ScheduleController: UIViewController{
     
     func updateUI() {
         //calendar
+        
+        //memoview와 view 구분 임시..
+        let colorLiteral = #colorLiteral(red: 0.9211722016, green: 0.967481792, blue: 0.8859727979, alpha: 1)
+        calendar.backgroundColor = colorLiteral
+        
         
         // 날짜 여러개 선택 가능하게
         calendar.allowsMultipleSelection = false
@@ -75,20 +76,20 @@ class ScheduleController: UIViewController{
         
         // 달력의 평일 날짜 색깔
         calendar.appearance.titleDefaultColor = .black
-
+        
         // 달력의 토,일 날짜 색깔
         calendar.appearance.titleWeekendColor = .red
-
+        
         // 달력의 맨 위의 년도, 월의 색깔
         calendar.appearance.headerTitleColor = .systemPink
-
+        
         // 달력의 요일 글자 색깔
         calendar.appearance.weekdayTextColor = .brown
         
         
         // 달력의 년월 글자 바꾸기
         calendar.appearance.headerDateFormat = "YYYY년 M월"
-
+        
         // 달력의 요일 글자 바꾸는 방법 1
         calendar.locale = Locale(identifier: "ko_KR")
         
@@ -115,7 +116,7 @@ class ScheduleController: UIViewController{
      // Pass the selected object to the new view controller.
      }
      */
-    
+
     
     
     @IBAction func capture(_ sender: Any) {
@@ -151,6 +152,39 @@ class ScheduleController: UIViewController{
         }
     }
     
+    // 메모 추가 버튼 눌렀을 때 발생되는 액션
+    @IBAction func addMemoButtonTapped(_ sender: Any) {
+        addNewEvent(selectedDate: selectedDate)
+    }
+    
+    func addNewEvent(selectedDate date:Date){
+        // 선택한 날짜에 메모 추가하기
+        guard let modalPresentView = self.storyboard?.instantiateViewController(identifier: "ScheduleAddViewController") as? ScheduleAddViewController else { return }
+        let dateFormatter = DateFormatter() // 날짜를 원하는 형식으로 저장하기 위한 방법
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        self.present(modalPresentView, animated: true) {
+            modalPresentView.date?.text = dateFormatter.string(from: date)
+        }
+    }
+}
+
+extension ScheduleController : UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // 메모 계층 아래에
+        // 선택(selectedDate)날짜 계층 아래에
+        // 메모 정리되도록 디비 넣어서
+        // 메모/selectedDate해서 디비 읽어와서 배열에 저장해서 생성한다.
+        // 그 배열.count를 return 시키면 될거같아
+        return 1
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.memoView.dequeueReusableCell(withIdentifier: "MemoCell", for: indexPath)
+       // print("tableView>>>>> \(term)")
+        
+        cell.textLabel?.text = "메모 내용 어쩌고저쩌고"
+        
+        return cell
+    }
 }
 
 extension ScheduleController : FSCalendarDelegateAppearance {
@@ -178,9 +212,11 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
     //모달 창으로 이벤트 추가
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print(dateFormatter.string(from: date) + " 선택됨")
+        selectedDate = date
     }
+    
     // 날짜 선택 해제 시 콜백 메소드
-    public func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
+    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print(dateFormatter.string(from: date) + " 해제됨")
     }
     
@@ -211,11 +247,11 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
         }
     }
     
- 
+    
     //날짜 최대 선택 가능 개수
     func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
         // 날짜 3개까지만 선택되도록
-        if calendar.selectedDates.count > 0 {
+        if calendar.selectedDates.count > 1 {
             return false
         } else {
             return true
@@ -230,9 +266,4 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
         // 선택해제 가능
         return true
     }
-    
-
-
-    
-    
 }

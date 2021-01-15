@@ -18,6 +18,7 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         self.selectedIndex = 2
 
+        //로그인 여부 확인 
         Auth.auth().addIDTokenDidChangeListener { (auth, user) in
             let currentUser = Login.init().googleLogin()
             
@@ -35,6 +36,10 @@ class TabBarController: UITabBarController {
             }
             
         }
+        
+        //let test = DBUser.users.setUser(userName : "lee" ,userEmail : "lee@dgu.ac.kr")
+        //DBUser.users.getUser(test)
+        
         // Do any additional setup after loading the view.
         
      
