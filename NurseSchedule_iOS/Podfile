@@ -11,5 +11,5 @@ pod 'Firebase/Auth'
 pod 'GoogleSignIn'
 pod 'FSCalendar'
   # Pods for NurseSchedule_iOS
-
+pod 'FSPagerView'
 end
