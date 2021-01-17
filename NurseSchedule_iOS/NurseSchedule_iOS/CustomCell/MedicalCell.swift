@@ -19,8 +19,12 @@ class MedicalCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
+    }
+    
+    func update(with term : Term) {
+        englishTerm.text = term.englishTerm
+        koreanTerm.text = term.koreanTerm
     }
 
 }

@@ -98,10 +98,9 @@ extension MedicalBookController : UITableViewDataSource {
         let term = termsList[indexPath.row]
         
        // print("tableView>>>>> \(term)")
+        cell.update(with: term)
         
-        cell.englishTerm.text = term.englishTerm
-        cell.koreanTerm.text = term.koreanTerm
-        
+        cell.showsReorderControl = true
         return cell
     }
 }

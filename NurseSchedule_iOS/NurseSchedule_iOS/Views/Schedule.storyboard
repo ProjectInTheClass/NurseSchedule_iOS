@@ -480,6 +480,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="추가"/>
+                                <connections>
+                                    <segue destination="beA-Sq-9na" kind="unwind" identifier="" unwindAction="unwindToSchedule:" id="3nJ-LW-ul2"/>
+                                </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jtm-Y8-MHm">
                                 <rect key="frame" x="124" y="146" width="265" height="32"/>
@@ -501,8 +504,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIA-ui-I9d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="beA-Sq-9na" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2766.666666666667" y="3028.7946428571427"/>
+            <point key="canvasLocation" x="2533" y="2572"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="16h-Es-mDF">
