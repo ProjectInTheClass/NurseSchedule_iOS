@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		1B734DB8FFAE10C573DCEC89 /* Pods_NurseSchedule_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1023850E893169F71BF98CFC /* Pods_NurseSchedule_iOS.framework */; };
 		7E3EB51225AC7004001A955C /* ViewLinc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3EB51125AC7004001A955C /* ViewLinc.swift */; };
+		7EFD380225B4A72300FD3435 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFD380125B4A72300FD3435 /* SlideViewController.swift */; };
+		7EFD380925B4A7AE00FD3435 /* imageSlide2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EFD380525B4A7AD00FD3435 /* imageSlide2.png */; };
+		7EFD380A25B4A7AE00FD3435 /* imageSlide3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EFD380625B4A7AD00FD3435 /* imageSlide3.png */; };
+		7EFD380B25B4A7AE00FD3435 /* imageSlide1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EFD380725B4A7AD00FD3435 /* imageSlide1.png */; };
+		7EFD380C25B4A7AE00FD3435 /* imageSlide4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EFD380825B4A7AE00FD3435 /* imageSlide4.png */; };
 		990AC3F2259DB3C400281E8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990AC3F1259DB3C400281E8B /* AppDelegate.swift */; };
 		990AC3F4259DB3C400281E8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990AC3F3259DB3C400281E8B /* SceneDelegate.swift */; };
 		990AC3F6259DB3C400281E8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990AC3F5259DB3C400281E8B /* ViewController.swift */; };
@@ -42,6 +47,11 @@
 		1023850E893169F71BF98CFC /* Pods_NurseSchedule_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NurseSchedule_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		714F117F287D49765BF1C3EF /* Pods-NurseSchedule_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NurseSchedule_iOS.release.xcconfig"; path = "Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		7E3EB51125AC7004001A955C /* ViewLinc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLinc.swift; sourceTree = "<group>"; };
+		7EFD380125B4A72300FD3435 /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
+		7EFD380525B4A7AD00FD3435 /* imageSlide2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageSlide2.png; sourceTree = "<group>"; };
+		7EFD380625B4A7AD00FD3435 /* imageSlide3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageSlide3.png; sourceTree = "<group>"; };
+		7EFD380725B4A7AD00FD3435 /* imageSlide1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageSlide1.png; sourceTree = "<group>"; };
+		7EFD380825B4A7AE00FD3435 /* imageSlide4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageSlide4.png; sourceTree = "<group>"; };
 		990AC3EE259DB3C400281E8B /* NurseSchedule_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NurseSchedule_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		990AC3F1259DB3C400281E8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		990AC3F3259DB3C400281E8B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +103,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7EFD380425B4A78F00FD3435 /* SlideImage */ = {
+			isa = PBXGroup;
+			children = (
+				7EFD380725B4A7AD00FD3435 /* imageSlide1.png */,
+				7EFD380525B4A7AD00FD3435 /* imageSlide2.png */,
+				7EFD380625B4A7AD00FD3435 /* imageSlide3.png */,
+				7EFD380825B4A7AE00FD3435 /* imageSlide4.png */,
+			);
+			path = SlideImage;
+			sourceTree = "<group>";
+		};
 		924999C26713EF930A4374B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +143,7 @@
 		990AC3F0259DB3C400281E8B /* NurseSchedule_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				7EFD380425B4A78F00FD3435 /* SlideImage */,
 				992F41ED25AF2C5300E25199 /* CustomCell */,
 				9926523225A4AD7B0043A16E /* Models */,
 				9926523125A4AC5F0043A16E /* Controllers */,
@@ -150,6 +172,7 @@
 				992F420725AF454300E25199 /* MedicalDetailViewController.swift */,
 				992F420A25AFDD2B00E25199 /* ScheduleAddViewController.swift */,
 				ECF2B55525B441BA0080F9E0 /* DiaryCalendar.swift */,
+				7EFD380125B4A72300FD3435 /* SlideViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -249,7 +272,11 @@
 				99FB53B325A0C17200FBF750 /* Diary.storyboard in Resources */,
 				99FB53A925A0BE7400FBF750 /* Community.storyboard in Resources */,
 				992651A525A404520043A16E /* GoogleService-Info.plist in Resources */,
+				7EFD380B25B4A7AE00FD3435 /* imageSlide1.png in Resources */,
+				7EFD380C25B4A7AE00FD3435 /* imageSlide4.png in Resources */,
 				990AC3FE259DB3CB00281E8B /* LaunchScreen.storyboard in Resources */,
+				7EFD380925B4A7AE00FD3435 /* imageSlide2.png in Resources */,
+				7EFD380A25B4A7AE00FD3435 /* imageSlide3.png in Resources */,
 				990AC3FB259DB3CB00281E8B /* Assets.xcassets in Resources */,
 				99FB53AD25A0BFB100FBF750 /* MedicalBook.storyboard in Resources */,
 				990AC3F9259DB3C400281E8B /* Main.storyboard in Resources */,
@@ -336,6 +363,7 @@
 				9926523825A4ADCC0043A16E /* ScheduleController.swift in Sources */,
 				992F420825AF454300E25199 /* MedicalDetailViewController.swift in Sources */,
 				990AC3F2259DB3C400281E8B /* AppDelegate.swift in Sources */,
+				7EFD380225B4A72300FD3435 /* SlideViewController.swift in Sources */,
 				9926527E25A4CCE80043A16E /* DBBoard.swift in Sources */,
 				9926523E25A4ADEE0043A16E /* DiaryController.swift in Sources */,
 				ECF2B54F25B420C60080F9E0 /* DiaryCell.swift in Sources */,
