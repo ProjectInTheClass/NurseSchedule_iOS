@@ -47,20 +47,20 @@
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MedicalCell" id="Wbo-9U-6VI" customClass="MedicalCell" customModule="NurseSchedule_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="414" height="47"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="47.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wbo-9U-6VI" id="xF8-p5-ZaS">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="47"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="47.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHU-bq-ZBd">
-                                                    <rect key="frame" x="25" y="13" width="42" height="21"/>
+                                                    <rect key="frame" x="25" y="13" width="42" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xlu-C3-mmr">
-                                                    <rect key="frame" x="97" y="13" width="38" height="21"/>
+                                                    <rect key="frame" x="97" y="13" width="38" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -78,7 +78,6 @@
                                         <connections>
                                             <outlet property="englishTerm" destination="cHU-bq-ZBd" id="kwr-Hj-kXb"/>
                                             <outlet property="koreanTerm" destination="Xlu-C3-mmr" id="pFW-LF-UG4"/>
-                                            <segue destination="Rdb-Cm-4h3" kind="show" identifier="termDetail" id="6Vm-tZ-he9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -97,6 +96,7 @@
                     <connections>
                         <outlet property="searchbar" destination="ya9-t1-zWA" id="lSB-yw-Spx"/>
                         <outlet property="tableView" destination="oSQ-0d-hLd" id="H6K-ZE-EmG"/>
+                        <segue destination="Rdb-Cm-4h3" kind="show" identifier="termDetail" id="lEg-1w-jJj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLi-N9-UHc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

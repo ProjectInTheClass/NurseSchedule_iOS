@@ -19,11 +19,25 @@ class MedicalBookController: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchbar: UISearchBar!
     
+    let firstLetters:[String] = [
+        "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"
+    ]
+    
     //searchbar에 의해 검색결과가 저장될 array
     var filteredTermsBySearchbar : [Term]!
     
     // tableview에 뿌려질 데이터를 지니는 array
-    var outputDataForTableView = [Term]()
+    var outputDataForTableView = [Term]() {
+        didSet {
+            sortedDataForTableView = outputDataForTableView.sorted{ $0.englishTerm < $1.englishTerm }
+            self.tableView.reloadData()
+        }
+    }
+    
+    // 정렬된 데이터 배열
+    var sortedDataForTableView = [Term]()
+    
+
     
     let ref = Database.database().reference().child("Medical/")
     
@@ -42,6 +56,7 @@ class MedicalBookController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         outputDataForTableView = termsList
         //filteredTermsBySearchbar = termsList
+        self.tableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -95,25 +110,35 @@ class MedicalBookController: UIViewController{
 }
 
 extension MedicalBookController : UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.firstLetters[section]
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return outputDataForTableView.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MedicalCell", for: indexPath) as! MedicalCell
-        outputDataForTableView = outputDataForTableView.sorted{ $0.englishTerm < $1.englishTerm }
-        let term = outputDataForTableView[indexPath.row]
         
-       // print("tableView>>>>> \(term)")
-        cell.update(with: term)
+        return self.firstLetters.count
+       }
+       
+       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return sortedDataForTableView.filter({ data in
+            return data.englishTerm.starts(with: self.firstLetters[section])
+        }).count
+       }
+       
+       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+           let cell = tableView.dequeueReusableCell(withIdentifier: "MedicalCell", for: indexPath) as! MedicalCell
+            let source = sortedDataForTableView.filter({ data in
+                return data.englishTerm.starts(with: self.firstLetters[indexPath.section])
+            })
+           let term = source[indexPath.row]
         
-        cell.showsReorderControl = true
-        return cell
-    }
+          // print("tableView>>>>> \(term)")
+           cell.update(with: term)
+           
+           cell.showsReorderControl = true
+           return cell
+       }
 }
 
 
@@ -126,6 +151,10 @@ extension MedicalBookController : UITableViewDelegate {
         
         performSegue(withIdentifier: "termDetail", sender: outputDataForTableView[indexPath.row])
     }
+    
+//    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+//
+//    }
 }
 
 
