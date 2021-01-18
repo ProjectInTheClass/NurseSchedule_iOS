@@ -164,20 +164,14 @@
 		9926523125A4AC5F0043A16E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				997DD05625B61912007C5002 /* Tab1_Community */,
+				997DD05725B61923007C5002 /* Tab2_MedicalBook */,
+				997DD05525B618EF007C5002 /* Tab3_Schedule */,
+				997DD05825B61930007C5002 /* Tab4_Diary */,
+				997DD05925B61956007C5002 /* Tab5_Setting */,
 				990AC3F5259DB3C400281E8B /* ViewController.swift */,
-				9926523325A4ADB10043A16E /* CommunityController.swift */,
-				9926523725A4ADCC0043A16E /* ScheduleController.swift */,
-				9926523A25A4ADDE0043A16E /* MedicalBookController.swift */,
-				9926523D25A4ADEE0043A16E /* DiaryController.swift */,
 				997059AA25A72D8A0037A342 /* TabBarController.swift */,
 				99D874B425AB452D0012D403 /* LoginController.swift */,
-				992F41C825AEB82D00E25199 /* SettingTableViewController.swift */,
-				992F420725AF454300E25199 /* MedicalDetailViewController.swift */,
-				992F420A25AFDD2B00E25199 /* ScheduleAddViewController.swift */,
-				ECF2B55525B441BA0080F9E0 /* DiaryCalendar.swift */,
-				7EFD380125B4A72300FD3435 /* SlideViewController.swift */,
-				ECF2B59A25B55E870080F9E0 /* AddDiaryController.swift */,
-				ECF2B59D25B562070080F9E0 /* DiaryDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -198,6 +192,52 @@
 				ECF2B54E25B420C60080F9E0 /* DiaryCell.swift */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		997DD05525B618EF007C5002 /* Tab3_Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				9926523725A4ADCC0043A16E /* ScheduleController.swift */,
+				992F420A25AFDD2B00E25199 /* ScheduleAddViewController.swift */,
+			);
+			path = Tab3_Schedule;
+			sourceTree = "<group>";
+		};
+		997DD05625B61912007C5002 /* Tab1_Community */ = {
+			isa = PBXGroup;
+			children = (
+				9926523325A4ADB10043A16E /* CommunityController.swift */,
+				7EFD380125B4A72300FD3435 /* SlideViewController.swift */,
+			);
+			path = Tab1_Community;
+			sourceTree = "<group>";
+		};
+		997DD05725B61923007C5002 /* Tab2_MedicalBook */ = {
+			isa = PBXGroup;
+			children = (
+				9926523A25A4ADDE0043A16E /* MedicalBookController.swift */,
+				992F420725AF454300E25199 /* MedicalDetailViewController.swift */,
+			);
+			path = Tab2_MedicalBook;
+			sourceTree = "<group>";
+		};
+		997DD05825B61930007C5002 /* Tab4_Diary */ = {
+			isa = PBXGroup;
+			children = (
+				9926523D25A4ADEE0043A16E /* DiaryController.swift */,
+				ECF2B55525B441BA0080F9E0 /* DiaryCalendar.swift */,
+				ECF2B59A25B55E870080F9E0 /* AddDiaryController.swift */,
+				ECF2B59D25B562070080F9E0 /* DiaryDetailViewController.swift */,
+			);
+			path = Tab4_Diary;
+			sourceTree = "<group>";
+		};
+		997DD05925B61956007C5002 /* Tab5_Setting */ = {
+			isa = PBXGroup;
+			children = (
+				992F41C825AEB82D00E25199 /* SettingTableViewController.swift */,
+			);
+			path = Tab5_Setting;
 			sourceTree = "<group>";
 		};
 		99A731CD25A1830D00F3E867 /* Views */ = {
