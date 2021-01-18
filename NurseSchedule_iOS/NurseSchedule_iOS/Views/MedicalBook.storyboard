@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u4N-xg-vgi">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -37,24 +38,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oSQ-0d-hLd">
-                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="ya9-t1-zWA">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MedicalCell" id="Wbo-9U-6VI" customClass="MedicalCell" customModule="NurseSchedule_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wbo-9U-6VI" id="xF8-p5-ZaS">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="47.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHU-bq-ZBd">
-                                                    <rect key="frame" x="25" y="13" width="42" height="21.5"/>
+                                                    <rect key="frame" x="25" y="13" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xlu-C3-mmr">
-                                                    <rect key="frame" x="97" y="13" width="38" height="21.5"/>
+                                                    <rect key="frame" x="97" y="13" width="38" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -77,26 +83,19 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ya9-t1-zWA">
-                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yjb-Jd-LPE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="oSQ-0d-hLd" firstAttribute="bottom" secondItem="Yjb-Jd-LPE" secondAttribute="bottom" id="GqQ-vW-GHd"/>
-                            <constraint firstItem="oSQ-0d-hLd" firstAttribute="top" secondItem="Yjb-Jd-LPE" secondAttribute="top" constant="44" id="Grh-b9-rqi"/>
-                            <constraint firstItem="ya9-t1-zWA" firstAttribute="leading" secondItem="Yjb-Jd-LPE" secondAttribute="leading" id="NIn-vR-Eip"/>
-                            <constraint firstItem="ya9-t1-zWA" firstAttribute="top" secondItem="Yjb-Jd-LPE" secondAttribute="top" id="O6j-AB-tTX"/>
+                            <constraint firstItem="oSQ-0d-hLd" firstAttribute="top" secondItem="Yjb-Jd-LPE" secondAttribute="top" id="Grh-b9-rqi"/>
                             <constraint firstItem="oSQ-0d-hLd" firstAttribute="trailing" secondItem="Yjb-Jd-LPE" secondAttribute="trailing" id="R5U-A2-N6B"/>
-                            <constraint firstItem="ya9-t1-zWA" firstAttribute="trailing" secondItem="Yjb-Jd-LPE" secondAttribute="trailing" id="S7q-lb-I13"/>
                             <constraint firstItem="oSQ-0d-hLd" firstAttribute="leading" secondItem="Yjb-Jd-LPE" secondAttribute="leading" id="cQQ-iw-TeJ"/>
-                            <constraint firstItem="oSQ-0d-hLd" firstAttribute="top" secondItem="ya9-t1-zWA" secondAttribute="bottom" id="swi-L7-agq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="의학백과" id="Wkg-ig-cap"/>
                     <connections>
+                        <outlet property="searchbar" destination="ya9-t1-zWA" id="lSB-yw-Spx"/>
                         <outlet property="tableView" destination="oSQ-0d-hLd" id="H6K-ZE-EmG"/>
                     </connections>
                 </viewController>

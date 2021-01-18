@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,7 @@
 		992F420825AF454300E25199 /* MedicalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F420725AF454300E25199 /* MedicalDetailViewController.swift */; };
 		992F420B25AFDD2B00E25199 /* ScheduleAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F420A25AFDD2B00E25199 /* ScheduleAddViewController.swift */; };
 		997059AB25A72D8A0037A342 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997059AA25A72D8A0037A342 /* TabBarController.swift */; };
+		99C03A0225B48FE400A5CBE4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 99C03A0125B48FE400A5CBE4 /* Alamofire */; };
 		99D874B525AB452D0012D403 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D874B425AB452D0012D403 /* LoginController.swift */; };
 		99FB53A925A0BE7400FBF750 /* Community.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53A825A0BE7400FBF750 /* Community.storyboard */; };
 		99FB53AD25A0BFB100FBF750 /* MedicalBook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53AC25A0BFB100FBF750 /* MedicalBook.storyboard */; };
@@ -88,6 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B734DB8FFAE10C573DCEC89 /* Pods_NurseSchedule_iOS.framework in Frameworks */,
+				99C03A0225B48FE400A5CBE4 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +230,9 @@
 			dependencies = (
 			);
 			name = NurseSchedule_iOS;
+			packageProductDependencies = (
+				99C03A0125B48FE400A5CBE4 /* Alamofire */,
+			);
 			productName = NurseSchedule_iOS;
 			productReference = 990AC3EE259DB3C400281E8B /* NurseSchedule_iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -255,6 +260,9 @@
 				Base,
 			);
 			mainGroup = 990AC3E5259DB3C400281E8B;
+			packageReferences = (
+				99C03A0025B48FE400A5CBE4 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 990AC3EF259DB3C400281E8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -573,6 +581,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		99C03A0025B48FE400A5CBE4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		99C03A0125B48FE400A5CBE4 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99C03A0025B48FE400A5CBE4 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 990AC3E6259DB3C400281E8B /* Project object */;
 }
