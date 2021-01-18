@@ -114,6 +114,10 @@ extension MedicalBookController : UITableViewDataSource {
         return self.firstLetters[section]
     }
     
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return self.firstLetters
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         
         return self.firstLetters.count
