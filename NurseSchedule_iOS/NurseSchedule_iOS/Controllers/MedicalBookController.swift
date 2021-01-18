@@ -18,11 +18,12 @@ class MedicalBookController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchbar: UISearchBar!
+    
     //searchbar에 의해 검색결과가 저장될 array
-    var filteredTerms : [Term]!
+    var filteredTermsBySearchbar : [Term]!
     
     // tableview에 뿌려질 데이터를 지니는 array
-    var outputData = [Term]()
+    var outputDataForTableView = [Term]()
     
     let ref = Database.database().reference().child("Medical/")
     
@@ -34,13 +35,11 @@ class MedicalBookController: UIViewController{
         searchbar.delegate = self
         searchbar.placeholder = "용어를 검색하세요."
         print("viewdidload>>>>>\(termsList)")
-        
-        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        filteredTerms = termsList
+        filteredTermsBySearchbar = termsList
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -99,12 +98,13 @@ extension MedicalBookController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return outputData.count
+        return outputDataForTableView.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MedicalCell", for: indexPath) as! MedicalCell
-        let term = outputData[indexPath.row]
+        outputDataForTableView = outputDataForTableView.sorted{ $0.englishTerm < $1.englishTerm }
+        let term = outputDataForTableView[indexPath.row]
         
        // print("tableView>>>>> \(term)")
         cell.update(with: term)
@@ -120,9 +120,9 @@ extension MedicalBookController : UITableViewDataSource {
 extension MedicalBookController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
-        print(outputData[indexPath.row])
+        print(outputDataForTableView[indexPath.row])
         
-        performSegue(withIdentifier: "termDetail", sender: outputData[indexPath.row])
+        performSegue(withIdentifier: "termDetail", sender: outputDataForTableView[indexPath.row])
     }
 }
 
@@ -130,16 +130,16 @@ extension MedicalBookController : UITableViewDelegate {
 extension MedicalBookController : UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchText == "") {
-            filteredTerms = termsList
+            filteredTermsBySearchbar = termsList
         } else {
-            filteredTerms = []
+            filteredTermsBySearchbar = []
            // termsList = allData
-            filteredTerms = termsList.filter({
+            filteredTermsBySearchbar = termsList.filter({
                 $0.englishTerm.lowercased().contains(searchText.lowercased())
             })
             //termsList = filteredTerms
         }
-        outputData = filteredTerms
+        outputDataForTableView = filteredTermsBySearchbar
         //termsList = filteredTerms
         self.tableView.reloadData()
     }
