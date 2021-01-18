@@ -178,12 +178,9 @@
 				992F420725AF454300E25199 /* MedicalDetailViewController.swift */,
 				992F420A25AFDD2B00E25199 /* ScheduleAddViewController.swift */,
 				ECF2B55525B441BA0080F9E0 /* DiaryCalendar.swift */,
-<<<<<<< Updated upstream
 				7EFD380125B4A72300FD3435 /* SlideViewController.swift */,
-=======
 				ECF2B59A25B55E870080F9E0 /* AddDiaryController.swift */,
 				ECF2B59D25B562070080F9E0 /* DiaryDetailViewController.swift */,
->>>>>>> Stashed changes
 			);
 			path = Controllers;
 			sourceTree = "<group>";
