@@ -39,7 +39,8 @@ class MedicalBookController: UIViewController{
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        filteredTermsBySearchbar = termsList
+        outputDataForTableView = termsList
+        //filteredTermsBySearchbar = termsList
     }
     
     override func viewDidAppear(_ animated: Bool) {
