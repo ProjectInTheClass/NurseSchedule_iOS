@@ -109,6 +109,9 @@ class MedicalBookController: UIViewController{
 }
 
 extension MedicalBookController : UITableViewDataSource {
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return self.firstLetters
+    }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.firstLetters[section]

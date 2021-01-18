@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1B734DB8FFAE10C573DCEC89 /* Pods_NurseSchedule_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1023850E893169F71BF98CFC /* Pods_NurseSchedule_iOS.framework */; };
-		7E3EB51225AC7004001A955C /* ViewLinc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3EB51125AC7004001A955C /* ViewLinc.swift */; };
 		7EFD380225B4A72300FD3435 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFD380125B4A72300FD3435 /* SlideViewController.swift */; };
 		7EFD380925B4A7AE00FD3435 /* imageSlide2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EFD380525B4A7AD00FD3435 /* imageSlide2.png */; };
 		7EFD380A25B4A7AE00FD3435 /* imageSlide3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EFD380625B4A7AD00FD3435 /* imageSlide3.png */; };
@@ -49,7 +48,6 @@
 		0FEE6DAAE26AF8BF3DB5BC96 /* Pods-NurseSchedule_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NurseSchedule_iOS.debug.xcconfig"; path = "Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		1023850E893169F71BF98CFC /* Pods_NurseSchedule_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NurseSchedule_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		714F117F287D49765BF1C3EF /* Pods-NurseSchedule_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NurseSchedule_iOS.release.xcconfig"; path = "Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS.release.xcconfig"; sourceTree = "<group>"; };
-		7E3EB51125AC7004001A955C /* ViewLinc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLinc.swift; sourceTree = "<group>"; };
 		7EFD380125B4A72300FD3435 /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		7EFD380525B4A7AD00FD3435 /* imageSlide2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageSlide2.png; sourceTree = "<group>"; };
 		7EFD380625B4A7AD00FD3435 /* imageSlide3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageSlide3.png; sourceTree = "<group>"; };
@@ -167,14 +165,12 @@
 			isa = PBXGroup;
 			children = (
 				990AC3F5259DB3C400281E8B /* ViewController.swift */,
-				7EFD380125B4A72300FD3435 /* SlideViewController.swift */,
 				9926523325A4ADB10043A16E /* CommunityController.swift */,
 				9926523725A4ADCC0043A16E /* ScheduleController.swift */,
 				9926523A25A4ADDE0043A16E /* MedicalBookController.swift */,
 				9926523D25A4ADEE0043A16E /* DiaryController.swift */,
 				997059AA25A72D8A0037A342 /* TabBarController.swift */,
 				99D874B425AB452D0012D403 /* LoginController.swift */,
-				7E3EB51125AC7004001A955C /* ViewLinc.swift */,
 				992F41C825AEB82D00E25199 /* SettingTableViewController.swift */,
 				992F420725AF454300E25199 /* MedicalDetailViewController.swift */,
 				992F420A25AFDD2B00E25199 /* ScheduleAddViewController.swift */,
@@ -376,7 +372,6 @@
 				997059AB25A72D8A0037A342 /* TabBarController.swift in Sources */,
 				990AC3F6259DB3C400281E8B /* ViewController.swift in Sources */,
 				992651E725A470A90043A16E /* DBUser.swift in Sources */,
-				7E3EB51225AC7004001A955C /* ViewLinc.swift in Sources */,
 				9926523825A4ADCC0043A16E /* ScheduleController.swift in Sources */,
 				992F420825AF454300E25199 /* MedicalDetailViewController.swift in Sources */,
 				990AC3F2259DB3C400281E8B /* AppDelegate.swift in Sources */,

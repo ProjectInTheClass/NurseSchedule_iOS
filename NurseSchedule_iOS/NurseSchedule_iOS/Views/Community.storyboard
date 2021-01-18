@@ -469,41 +469,6 @@
             </objects>
             <point key="canvasLocation" x="726" y="-350"/>
         </scene>
-        <!--View Linc-->
-        <scene sceneID="Dv6-9o-1B0">
-            <objects>
-                <viewController id="ZIA-cT-UXR" customClass="ViewLinc" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TVk-Po-Hzh">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1o-lW-t4T">
-                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="WUj-kD-bcc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="WUj-kD-bcc" firstAttribute="trailing" secondItem="e1o-lW-t4T" secondAttribute="trailing" id="Ahe-e1-ChL"/>
-                            <constraint firstItem="WUj-kD-bcc" firstAttribute="bottom" secondItem="e1o-lW-t4T" secondAttribute="bottom" id="Erc-xk-tdp"/>
-                            <constraint firstItem="e1o-lW-t4T" firstAttribute="leading" secondItem="WUj-kD-bcc" secondAttribute="leading" id="XCn-oq-Get"/>
-                            <constraint firstItem="e1o-lW-t4T" firstAttribute="top" secondItem="WUj-kD-bcc" secondAttribute="top" id="aes-hl-E3i"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="4uC-rY-K8h"/>
-                    <connections>
-                        <outlet property="WebViewLink" destination="e1o-lW-t4T" id="kB6-CS-0k9"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nAN-T5-x71" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1542" y="859"/>
-        </scene>
         <!--공지사항-->
         <scene sceneID="CUK-t6-afT">
             <objects>
@@ -523,7 +488,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BbI-6z-Dzx">
-                                                    <rect key="frame" x="-6" y="-1" width="390" height="44"/>
+                                                    <rect key="frame" x="-7" y="-1" width="389" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </searchBar>
