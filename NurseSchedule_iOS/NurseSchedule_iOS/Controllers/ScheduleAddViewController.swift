@@ -22,7 +22,7 @@ struct NewMemo {
 
 class ScheduleAddViewController: UIViewController{
 
-
+    var selectedDate = Date.init()
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var workTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var memoTextField: UITextField!
@@ -32,8 +32,14 @@ class ScheduleAddViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         //memoTextField.delegate = self
-       
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        // 넘어온 날짜 라벨에 출력
+        date.text = dateFormatter.string(from:selectedDate)
         // Do any additional setup after loading the view.
+        
+        // 디비에 날짜 저장 
         if let date = date.text {
             newMemo.date = date
         }
@@ -45,18 +51,21 @@ class ScheduleAddViewController: UIViewController{
             memoTextField.deleteBackward()
         }
     }
-
     
     // memoTextField에 글자써질때마다 글자수 체크
-    @IBAction func textDidChanged(_ sender: Any) {
+    @IBAction func textDidChanged(_ sender: UITextField) {
         checkMaxLength(textField: memoTextField, maxLength: 30)
-    }
-    
-    // memoTextField의 글자가 모두 쳐졌을 때
-    @IBAction func textDidEnd(_ sender: Any) {
+        print("textDidChanged")
+        
         if let memoContent = memoTextField.text {
             newMemo.memo = memoContent
         }
+        print("textDidEnd")
+    }
+    
+    // memoTextField의 글자가 모두 쳐졌을 때
+    @IBAction func textDidEnd(_ sender: UITextField) {
+        
     }
     
     @IBAction func workTypeSeleted(_ sender: UISegmentedControl) {

@@ -107,23 +107,17 @@ class ScheduleController: UIViewController{
     }
     
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-    @IBAction func unwindToSchedule(_ unwindSegue: UIStoryboardSegue) {
-        let sourceViewController = unwindSegue.source
-        // Use data from the view controller which initiated the unwind segue
+     if segue.identifier == "addNewMemo" {
+        let viewcontollerToAddNewMemo = segue.destination as! ScheduleAddViewController
+        viewcontollerToAddNewMemo.selectedDate = sender as! Date
     }
-
-    
-    
+     }
+  
     @IBAction func capture(_ sender: Any) {
         captureScreenshot()
         
@@ -163,13 +157,7 @@ class ScheduleController: UIViewController{
     }
     
     func addNewEvent(selectedDate date:Date){
-        // 선택한 날짜에 메모 추가하기
-        guard let modalPresentView = self.storyboard?.instantiateViewController(identifier: "ScheduleAddViewController") as? ScheduleAddViewController else { return }
-        let dateFormatter = DateFormatter() // 날짜를 원하는 형식으로 저장하기 위한 방법
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        self.present(modalPresentView, animated: true) {
-            modalPresentView.date?.text = dateFormatter.string(from: date)
-        }
+        performSegue(withIdentifier: "addNewMemo", sender: selectedDate)
     }
 }
 

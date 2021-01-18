@@ -428,6 +428,7 @@
                     <connections>
                         <outlet property="calendar" destination="QbO-j9-JO4" id="3hA-wo-PWp"/>
                         <outlet property="memoView" destination="Oqq-1X-eeA" id="573-WX-nFF"/>
+                        <segue destination="upM-zm-90w" kind="presentation" identifier="addNewMemo" id="9BZ-wi-OPN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UA3-ls-qgY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -439,11 +440,11 @@
             <objects>
                 <viewController storyboardIdentifier="ScheduleAddViewController" id="upM-zm-90w" customClass="ScheduleAddViewController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ddh-qV-e0V">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="123" translatesAutoresizingMaskIntoConstraints="NO" id="ATW-jX-Q3x">
-                                <rect key="frame" x="6.5" y="79.5" width="401" height="437"/>
+                                <rect key="frame" x="6.5" y="52.5" width="401" height="437"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="f8h-W3-28b">
                                         <rect key="frame" x="0.0" y="0.0" width="401" height="284"/>
@@ -537,7 +538,7 @@
                     <navigationItem key="navigationItem" id="yGg-vn-R1y"/>
                     <connections>
                         <outlet property="date" destination="o62-Td-lLb" id="FSz-Q2-6f6"/>
-                        <outlet property="memoTextField" destination="MZq-oR-mJx" id="O4L-YE-SHb"/>
+                        <outlet property="memoTextField" destination="MZq-oR-mJx" id="2IL-Gh-aYG"/>
                         <outlet property="workTypeSegmentedControl" destination="jtm-Y8-MHm" id="Jaw-sW-RId"/>
                     </connections>
                 </viewController>
