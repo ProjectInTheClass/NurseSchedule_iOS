@@ -41,6 +41,8 @@
 		99FB53B625A0C1EB00FBF750 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53B525A0C1EB00FBF750 /* Setting.storyboard */; };
 		ECF2B54F25B420C60080F9E0 /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2B54E25B420C60080F9E0 /* DiaryCell.swift */; };
 		ECF2B55625B441BA0080F9E0 /* DiaryCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2B55525B441BA0080F9E0 /* DiaryCalendar.swift */; };
+		ECF2B59B25B55E870080F9E0 /* AddDiaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2B59A25B55E870080F9E0 /* AddDiaryController.swift */; };
+		ECF2B59E25B562070080F9E0 /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2B59D25B562070080F9E0 /* DiaryDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,8 @@
 		99FB53B525A0C1EB00FBF750 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		ECF2B54E25B420C60080F9E0 /* DiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCell.swift; sourceTree = "<group>"; };
 		ECF2B55525B441BA0080F9E0 /* DiaryCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCalendar.swift; sourceTree = "<group>"; };
+		ECF2B59A25B55E870080F9E0 /* AddDiaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryController.swift; sourceTree = "<group>"; };
+		ECF2B59D25B562070080F9E0 /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +178,12 @@
 				992F420725AF454300E25199 /* MedicalDetailViewController.swift */,
 				992F420A25AFDD2B00E25199 /* ScheduleAddViewController.swift */,
 				ECF2B55525B441BA0080F9E0 /* DiaryCalendar.swift */,
+<<<<<<< Updated upstream
 				7EFD380125B4A72300FD3435 /* SlideViewController.swift */,
+=======
+				ECF2B59A25B55E870080F9E0 /* AddDiaryController.swift */,
+				ECF2B59D25B562070080F9E0 /* DiaryDetailViewController.swift */,
+>>>>>>> Stashed changes
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -360,9 +369,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				992F41C925AEB82D00E25199 /* SettingTableViewController.swift in Sources */,
+				ECF2B59E25B562070080F9E0 /* DiaryDetailViewController.swift in Sources */,
 				992F41F025AF2C9100E25199 /* MedicalCell.swift in Sources */,
 				99D874B525AB452D0012D403 /* LoginController.swift in Sources */,
 				ECF2B55625B441BA0080F9E0 /* DiaryCalendar.swift in Sources */,
+				ECF2B59B25B55E870080F9E0 /* AddDiaryController.swift in Sources */,
 				9926523B25A4ADDE0043A16E /* MedicalBookController.swift in Sources */,
 				997059AB25A72D8A0037A342 /* TabBarController.swift in Sources */,
 				990AC3F6259DB3C400281E8B /* ViewController.swift in Sources */,
