@@ -515,6 +515,7 @@
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="추가"/>
                                         <connections>
+                                            <action selector="addButtonTapped:" destination="upM-zm-90w" eventType="touchUpInside" id="LvD-jc-00K"/>
                                             <segue destination="beA-Sq-9na" kind="unwind" identifier="" unwindAction="unwindToSchedule:" id="3nJ-LW-ul2"/>
                                         </connections>
                                     </button>
@@ -543,7 +544,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIA-ui-I9d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="beA-Sq-9na" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2531.8840579710145" y="2571.4285714285711"/>
+            <point key="canvasLocation" x="2706" y="2617"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="16h-Es-mDF">

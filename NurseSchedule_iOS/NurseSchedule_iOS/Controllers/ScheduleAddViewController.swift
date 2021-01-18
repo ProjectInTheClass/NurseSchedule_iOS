@@ -22,6 +22,7 @@ struct NewMemo {
 
 class ScheduleAddViewController: UIViewController{
 
+
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var workTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var memoTextField: UITextField!
@@ -33,6 +34,9 @@ class ScheduleAddViewController: UIViewController{
         //memoTextField.delegate = self
        
         // Do any additional setup after loading the view.
+        if let date = date.text {
+            newMemo.date = date
+        }
     }  
     
     // 메모에 들어가는 최대 글자수 제한
@@ -76,6 +80,10 @@ class ScheduleAddViewController: UIViewController{
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func addButtonTapped(_ sender: Any) {
+        print(newMemo)
+        
+    }
+    
 }
 
