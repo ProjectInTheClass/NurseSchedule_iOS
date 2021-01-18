@@ -34,6 +34,7 @@ class MedicalBookController: UIViewController{
         tableView.delegate = self
         searchbar.delegate = self
         searchbar.placeholder = "용어를 검색하세요."
+        tableView.keyboardDismissMode = .onDrag
         print("viewdidload>>>>>\(termsList)")
         // Do any additional setup after loading the view.
     }
