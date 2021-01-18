@@ -163,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				990AC3F5259DB3C400281E8B /* ViewController.swift */,
+				7EFD380125B4A72300FD3435 /* SlideViewController.swift */,
 				9926523325A4ADB10043A16E /* CommunityController.swift */,
 				9926523725A4ADCC0043A16E /* ScheduleController.swift */,
 				9926523A25A4ADDE0043A16E /* MedicalBookController.swift */,
@@ -174,7 +175,6 @@
 				992F420725AF454300E25199 /* MedicalDetailViewController.swift */,
 				992F420A25AFDD2B00E25199 /* ScheduleAddViewController.swift */,
 				ECF2B55525B441BA0080F9E0 /* DiaryCalendar.swift */,
-				7EFD380125B4A72300FD3435 /* SlideViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
