@@ -13,30 +13,39 @@ class DBMemo {
     
     static let newMemo = DBMemo()
     
-    
     func setMemo(userID : String, newMemo : NewMemo) {
-        var reference  = ref.child("Schedule/\(userID)/\(newMemo.date)")
-        let addWorkType = ["workType" : newMemo.workType.workAt]
-        reference.setValue(addWorkType)
-        print("setMemo >>>>>\(addWorkType)")
         
-        reference  = ref.child("Schedule/\(userID)/\(newMemo.date)/memo")
-        let addMemo = ["memo" : newMemo.memo]
-        reference.setValue(addMemo)
-        print("setMemo >>>>>\(addMemo)")
-        
+        getMemo(userID: userID, date: newMemo.date) { (currentMemo) in
+//            self.memoList.append(contentsOf: currentMemo)
+            let reference  = self.ref.child("Schedule/\(userID)/\(newMemo.date)")
+            let memoList = currentMemo + [newMemo.memo]
+            let addmemo = ["workType" : newMemo.workType.workAt, "memoList" : memoList] as [String : Any]
+            reference.setValue(addmemo)
+            print("setMemo >>>>>\(addmemo)")
+        }
+
     }
     
     func getMemo(userID : String, date : String, completion: @escaping ([String]) -> Void){
-        _ = ref.child("Schedule/\(userID)/\(date)").observe(.value, with: { snapshot in
-            print(snapshot)
+        ref.child("Schedule/\(userID)/\(date)/").observeSingleEvent(of:.value, with: { snapshot in
             if let value = snapshot.value as? NSDictionary {
-                let el = value["memo"] as? String ?? "No Memo"
-                let result = [el, el, el]//정의 받아오는 부분, 정의에 대한 변수]
-                print("DBMemo read done >>> \(result)")
+                let result = value["memoList"] as? [String] ?? []//정의 받아오는 부분, 정의에 대한 변수]
+                print("DBMemo getMemo >>> \(result)")
                 completion(result)
             } else {
                 completion([])
+            }
+        })
+    }
+    
+    func getWorkType(userID : String, date:String, completion: @escaping (String) -> Void ) {
+        ref.child("Schedule/\(userID)/\(date)/").observeSingleEvent(of:.value, with: { snapshot in
+            if let value = snapshot.value as? NSDictionary {
+                let result = value["workType"] as? String ?? ""//정의 받아오는 부분, 정의에 대한 변수]
+                print("DBMemo getWorkType >>> \(result)")
+                completion(result)
+            } else {
+                completion("")
             }
         })
     }

@@ -228,7 +228,6 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
     
     // 날짜 밑에 문자열을 표시
     func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
-        
         switch dateFormatter.string(from: date) {
         case dateFormatter.string(from: Date()):
             return "오늘"
@@ -246,7 +245,7 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
     //날짜 글씨 자체를 바꿔버릴 수 있고
     func calendar(_ calendar: FSCalendar, titleFor date: Date) -> String? {
         switch dateFormatter.string(from: date) {
-        case "2021-01-28":
+        case "":
             return "D-day"
         default:
             return nil
