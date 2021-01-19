@@ -62,10 +62,10 @@ class ScheduleController: UIViewController{
         calendar.swipeToChooseGesture.isEnabled = true
         
         // 선택한 날짜 표시 색깔
-        calendar.appearance.selectionColor = UIColor.yellow
+        calendar.appearance.selectionColor = UIColor.red
         
         // 오늘 날짜 색깔
-        calendar.appearance.todayColor = UIColor.orange
+        calendar.appearance.todayColor = UIColor.blue
         
         // 선택된 날짜의 모서리 설정 ( 0으로 하면 사각형으로 표시 )
         calendar.appearance.borderRadius = 0
@@ -189,21 +189,22 @@ extension ScheduleController : UITableViewDataSource, UITableViewDelegate {
 extension ScheduleController : FSCalendarDelegateAppearance {
     //날짜별로 선택 컬러 변경
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
-        
-        switch dateFormatter.string(from: date) {
-        case "2021-01-12":
-            return .green
-        case "2021-01-13":
+        switch dateFormatter.string(from:date) {
+        //색깔 넣어보자
+        case "2021-01-01":
             return .yellow
-        case "2021-01-14":
-            return .red
-        default:
-            return appearance.selectionColor
-        }
+        case "2021-01-02":
+            return .orange
+        case "2021-01-03":
+            return .green
+        case "2021-01-04":
+            return .white
+        default :
+            return .white
     }
     
     
-    
+    }
 }
 
 extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {

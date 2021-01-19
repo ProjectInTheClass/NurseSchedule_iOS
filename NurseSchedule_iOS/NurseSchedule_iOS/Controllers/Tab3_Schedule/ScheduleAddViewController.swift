@@ -31,8 +31,12 @@ struct NewMemo {
     var workType : WorkType
     var memo : String
 }
+
+var workTypesList : [ String : WorkType] = ["date" : .DAY]
+
 class ScheduleAddViewController: UIViewController{
 
+    //받아온 선택된 날짜가 저장됨
     var selectedDate = Date.init()
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var workTypeSegmentedControl: UISegmentedControl!
@@ -40,12 +44,15 @@ class ScheduleAddViewController: UIViewController{
     
     var newMemo = NewMemo(date: "default_date", workType: .DAY, memo: "default_memo_content")
     
+    let dateFormatter = DateFormatter()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //memoTextField.delegate = self
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
         
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         // 넘어온 날짜 라벨에 출력
         date.text = dateFormatter.string(from:selectedDate)
         // Do any additional setup after loading the view.
