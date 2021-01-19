@@ -456,7 +456,7 @@
         <scene sceneID="ABD-jS-AQT">
             <objects>
                 <viewController id="zKc-Dc-ZiH" customClass="DiaryDetailViewController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kHP-sH-2oO">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="kHP-sH-2oO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -523,7 +523,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g4w-YK-e1I"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ycn-Nb-sua" firstAttribute="centerX" secondItem="kHP-sH-2oO" secondAttribute="centerX" id="80S-DZ-7qN"/>
                             <constraint firstItem="Ycn-Nb-sua" firstAttribute="centerY" secondItem="kHP-sH-2oO" secondAttribute="centerY" id="obH-Ub-pwJ"/>

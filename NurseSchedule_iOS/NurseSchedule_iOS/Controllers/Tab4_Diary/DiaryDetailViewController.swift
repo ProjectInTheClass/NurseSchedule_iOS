@@ -20,7 +20,11 @@ class DiaryDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    class ModalViewController: UIViewController {
+        override func viewDidLoad() {
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

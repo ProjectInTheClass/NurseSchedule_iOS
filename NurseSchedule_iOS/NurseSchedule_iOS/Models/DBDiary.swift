@@ -8,32 +8,42 @@
 import Foundation
 import Firebase
 
-struct Diary{
-    var date : Date
-    var emoji : String
-    var content : String
-}
 
 class DBDiary {
     let ref : DatabaseReference! = Database.database().reference()
     
-    static let diary = DBDiary()
+    static let newDiary = DBDiary()
     
-    func addDiary(date : Date, emoji : String, content: String) {
-        let diaryInfo = [ "D_date" : date, "D_emoji" : emoji, "D_content" : content] as [String : Any]
-        
-        
-        let refer = ref.child("Diary").childByAutoId() //데이터 목록에 새로 추가
+    func addDiary(userID : String, newDiary : Day ) {
+        let reference = ref.child("Diary/ \(userID) / \(newDiary.date)") //데이터 목록에 새로 추가
         //childByAutoId()를 호출할때마다 고유한 키 값 생성
         
-        refer.setValue(diaryInfo)
+        let new = [ "D_emoji" : newDiary.emoji, "D_content":newDiary.content]
         
+        reference.setValue(new)
+        
+        print("addDiary >>>> \(new)")
         
     }
     
-    func getDiary(date date : String){
-        //
+    func getDiary(userID : String, date :String) -> Void{
+        _ = ref.child("Diary/\(userID)/\(date)").observe(.value, with: { snapshot in
+           
+            var diaryinfo = Day(emoji: "Emoji", date: "Date", content: "content")
+            
+            if let value = snapshot.value as? NSDictionary {
+                diaryinfo.emoji = value["D_emoji"] as? String ?? " "
+                diaryinfo.content =  value["D_content"] as? String ?? " "
+                
+                
+                
+            }
+        })
+        
         
     }
+
+    
+ 
 }
 

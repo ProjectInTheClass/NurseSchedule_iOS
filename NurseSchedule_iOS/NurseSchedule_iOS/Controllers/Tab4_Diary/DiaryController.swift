@@ -13,33 +13,31 @@ struct Day {
     var content : String
 }
 
-private var days : [Day] = [
-    Day(emoji: "😊", date:"1", content: "ㅇㅇ이다"),
-    Day(emoji: "😊", date:"2", content: "ㅇㅇ이다"),
-    Day(emoji: "😊", date:"3", content: "ㅇㅇ이다")
-
-]
+//private var days : [Day] = [
+//    Day(emoji: "😊", date:"1", content: "ㅇㅇ이다"),
+//    Day(emoji: "😊", date:"2", content: "ㅇㅇ이다"),
+//    Day(emoji: "😊", date:"3", content: "ㅇㅇ이다")
+//
+//]
 
 
 class DiaryController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return days.count
+        return 15
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryCell", for: indexPath) as! DiaryCell
         
-        let day = days[indexPath.row]
+//        let day = days[indexPath.row]
+        let day = days
         
-        cell.emojiLabel.text = day.emoji
-        cell.dateLabel.text = day.date
-        cell.contentLabel.text = day.content
+        cell.emojiLabel.text = emoji
+        cell.dateLabel.text = date
+        cell.contentLabel.text = content
         
         return cell
     }
-    
-
-    //var days: [Day] = []
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -48,6 +46,7 @@ class DiaryController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         tableView.dataSource = self
         // Do any additional setup after loading the view.
+     
     }
     
     @IBAction func unwindToDiary(_ unwindSegue: UIStoryboardSegue) {
@@ -55,6 +54,7 @@ class DiaryController: UIViewController, UITableViewDataSource {
         // Use data from the view controller which initiated the unwind segue
     }
 
+   
     
 
     /*
