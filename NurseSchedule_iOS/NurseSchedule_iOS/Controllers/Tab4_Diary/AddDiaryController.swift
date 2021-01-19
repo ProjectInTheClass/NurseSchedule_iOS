@@ -13,9 +13,8 @@ class AddDiaryController: UITableViewController {
     @IBOutlet weak var conditionSegment: UISegmentedControl!
     @IBOutlet weak var diaryContent: UITextField!
     
-    
+    var writtenContent : String? = nil
     var seletedCondition : String = " " // segmentedcontrol로 선택된 condition값
-    var writtenContent : String = " "
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,15 +33,16 @@ class AddDiaryController: UITableViewController {
     //datePicker 선택 시 실행
     @IBAction func SelectDate(_ sender: UIDatePicker){
         let dateFormatter : DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-mm-dd" //DB에 들어갈 날짜용
+        dateFormatter.dateFormat = "yyyy-MM-dd" //DB에 들어갈 날짜용
         
         let dateFormatter2 : DateFormatter = DateFormatter()
-        dateFormatter2.dateFormat = "mm월dd일"
+        dateFormatter2.dateFormat = "M월dd일"
         
         let selectedDate : String = dateFormatter.string(from: sender.date)//DB에 들어갈 날짜용
         let showDate : String = dateFormatter2.string(from: sender.date) //보여주기용
         
         self.selected.text = showDate
+        
         
     }
     
@@ -66,20 +66,41 @@ class AddDiaryController: UITableViewController {
     }
     
     
-   
+    @IBAction func wroteDiary(_ sender: Any) {
+        self.writtenContent = diaryContent.text!
+    }
+    
     
     @IBAction func clickedSaveButton(_ sender: Any) {
-        self.writtenContent = diaryContent.text!
-        self.dismiss(animated: true, completion: nil)
+      
+
+       
+            
+
        
         if let writtenContent = diaryContent.text {
             if writtenContent.isEmpty{
-                let alert = UIAlertController(title: "기록이 비었습니다", message: "그대로 저장하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
+                showAlert(style: .alert)
             }
+            else {  self.dismiss(animated: true, completion: nil)}
         }
       
          
         }
+    
+    func showAlert(style : UIAlertController.Style){
+        let alert = UIAlertController(title: "기록이 비었습니다", message: "그대로 저장하시겠습니까?", preferredStyle: style)
+        let save = UIAlertAction(title: "저장", style: .default){(action) in         self.dismiss(animated: true, completion: nil)
+            
+        }
+        let cancel = UIAlertAction(title: "취소", style: .default){(action) in print("취소")}
+        
+        alert.addAction(save)
+        alert.addAction(cancel)
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
     }
     
     
