@@ -9,6 +9,11 @@ import UIKit
 
 class DiaryDetailViewController: UIViewController {
 
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var emoji: UILabel!
+    @IBOutlet weak var content: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

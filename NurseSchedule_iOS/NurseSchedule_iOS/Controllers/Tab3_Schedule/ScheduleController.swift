@@ -20,6 +20,8 @@ class ScheduleController: UIViewController{
     var selectedDate : Date = .init()
     
     
+    var memoList: [String] = []
+    
     //FSCalendar
     //https://ahyeonlog.tistory.com/7
     
@@ -29,6 +31,9 @@ class ScheduleController: UIViewController{
         calendar.dataSource = self
         memoView.delegate = self
         memoView.dataSource = self
+        memoView.reloadData()
+        // print("tableView>>>>> \(term)")
+
         super.viewDidLoad()
 
         updateUI()
@@ -39,6 +44,7 @@ class ScheduleController: UIViewController{
     //창 가려졌다가 다시 보이거나 암튼 내 화면 다시 보이게 될 때
     override func viewDidAppear(_ animated: Bool) {
         updateUI()
+        memoView.reloadData()
     }
     
     func updateUI() {
@@ -170,14 +176,12 @@ extension ScheduleController : UITableViewDataSource, UITableViewDelegate {
         // 메모 정리되도록 디비 넣어서
         // 메모/selectedDate해서 디비 읽어와서 배열에 저장해서 생성한다.
         // 그 배열.count를 return 시키면 될거같아
-        return 1
+        return self.memoList.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.memoView.dequeueReusableCell(withIdentifier: "MemoCell", for: indexPath)
-       // print("tableView>>>>> \(term)")
-        
-        cell.textLabel?.text = "메모 내용 어쩌고저쩌고"
-        
+        let data = self.memoList[indexPath.row]
+        cell.textLabel?.text = data
         return cell
     }
 }
@@ -208,6 +212,13 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print(dateFormatter.string(from: date) + " 선택됨")
         selectedDate = date
+        
+        let currentUser = Login.init().googleLogin()
+        DBMemo.newMemo.getMemo(userID: currentUser, date: dateFormatter.string(from:selectedDate), completion: { memo in
+            self.memoList = memo
+            self.memoView.reloadData()
+        })
+        memoView.reloadData()
     }
     
     // 날짜 선택 해제 시 콜백 메소드
