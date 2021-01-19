@@ -26,6 +26,25 @@ class DBDiary {
         
     }
     
+//    func getDiaryWithoutDate(userID : String) -> Day{
+//        _ = ref.child("Diary/\(userID)").observe(.value, with: { snapshot in
+//           
+//            var diaryinfo = Day(emoji: "Emoji", date: "Date", content: "content")
+//            
+//            
+//            
+//            if let value = snapshot.value as? String {
+//                diaryinfo.date = value
+//                self.ref.child("Diary/ \(userID) / \(diaryinfo.date)").observe(.value, with: { snapshot in
+//                    diaryinfo.emoji = value["D_emoji"] as? String ?? " "
+//                    diaryinfo.content =  value["D_content"] as? String ?? " "
+//                })
+//            }
+//        })
+//        
+//        return 
+//    }
+    
     func getDiary(userID : String, date :String) -> Void{
         _ = ref.child("Diary/\(userID)/\(date)").observe(.value, with: { snapshot in
            

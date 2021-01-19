@@ -13,28 +13,27 @@ struct Day {
     var content : String
 }
 
-//private var days : [Day] = [
-//    Day(emoji: "😊", date:"1", content: "ㅇㅇ이다"),
-//    Day(emoji: "😊", date:"2", content: "ㅇㅇ이다"),
-//    Day(emoji: "😊", date:"3", content: "ㅇㅇ이다")
-//
-//]
+private var days : [Day] = [
+    Day(emoji: "😊", date:"1", content: "ㅇㅇ이다"),
+    Day(emoji: "😊", date:"2", content: "ㅇㅇ이다"),
+    Day(emoji: "😊", date:"3", content: "ㅇㅇ이다")
+
+]
 
 
 class DiaryController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return days.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryCell", for: indexPath) as! DiaryCell
         
-//        let day = days[indexPath.row]
-        let day = days
+        let day = days[indexPath.row]
         
-        cell.emojiLabel.text = emoji
-        cell.dateLabel.text = date
-        cell.contentLabel.text = content
+        cell.emojiLabel.text = day.emoji
+        cell.dateLabel.text = day.date
+        cell.contentLabel.text = day.content
         
         return cell
     }
