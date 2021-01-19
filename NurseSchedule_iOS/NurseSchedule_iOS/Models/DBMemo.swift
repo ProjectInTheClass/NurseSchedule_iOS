@@ -23,9 +23,17 @@ class DBMemo {
         print("setMemo >>>>>\(addMemo)")
     }
     
-    func getMemo(userID : String, date : String){
+    func getMemo(userID : String, date : String, completion: @escaping ([String]) -> Void){
         _ = ref.child("Schedule/\(userID)/\(date)").observe(.value, with: { snapshot in
             print(snapshot)
+            if let value = snapshot.value as? NSDictionary {
+                let el = value["memo"] as? String ?? "No Memo"
+                let result = [el, el, el]//정의 받아오는 부분, 정의에 대한 변수]
+                print("DBMemo read done >>> \(result)")
+                completion(result)
+            } else {
+                completion([])
+            }
         })
     }
 }

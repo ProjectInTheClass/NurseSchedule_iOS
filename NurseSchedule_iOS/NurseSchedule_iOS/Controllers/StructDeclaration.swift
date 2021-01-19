@@ -20,3 +20,4 @@ struct Term {
     var englishTerm : String
     var koreanTerm : String
 }
+
