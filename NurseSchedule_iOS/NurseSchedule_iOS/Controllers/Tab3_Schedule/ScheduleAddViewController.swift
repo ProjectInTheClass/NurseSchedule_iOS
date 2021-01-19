@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 enum WorkType {
     case DAY
     case EVENING
@@ -32,7 +31,6 @@ struct NewMemo {
     var workType : WorkType
     var memo : String
 }
-
 class ScheduleAddViewController: UIViewController{
 
     var selectedDate = Date.init()
