@@ -125,10 +125,10 @@
             </objects>
             <point key="canvasLocation" x="1311.5942028985507" y="3670.9821428571427"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Add Diary Controller-->
         <scene sceneID="qLa-3B-6D6">
             <objects>
-                <tableViewController id="24Z-UK-ocX" sceneMemberID="viewController">
+                <tableViewController id="24Z-UK-ocX" customClass="AddDiaryController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="V3k-Ea-8mj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,23 +143,48 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXi-4i-knU">
-                                                    <rect key="frame" x="364" y="7" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="저장"/>
-                                                    <connections>
-                                                        <action selector="save:" destination="24Z-UK-ocX" eventType="touchUpInside" id="hLS-eY-IYG"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbl-I7-FRA">
-                                                    <rect key="frame" x="20" y="7" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="취소"/>
-                                                    <connections>
-                                                        <action selector="dismiss:" destination="24Z-UK-ocX" eventType="touchUpInside" id="tsY-ni-Qf4"/>
-                                                    </connections>
-                                                </button>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="pfF-qy-HoN">
+                                                    <rect key="frame" x="20" y="11" width="374" height="21.5"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWe-cb-rMH">
+                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="21.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="80" id="vl3-4W-K9h"/>
+                                                            </constraints>
+                                                            <state key="normal" title="취소"/>
+                                                            <connections>
+                                                                <segue destination="UCL-aq-S0e" kind="unwind" unwindAction="unwindToDiary:" id="GzP-9D-rgB"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R93-G2-9DZ">
+                                                            <rect key="frame" x="107" y="0.0" width="160" height="21.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljn-AW-ag8">
+                                                            <rect key="frame" x="294" y="0.0" width="80" height="21.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="80" id="PQ9-0t-D0c"/>
+                                                            </constraints>
+                                                            <state key="normal" title="저장"/>
+                                                            <connections>
+                                                                <action selector="clickedSaveButton:" destination="24Z-UK-ocX" eventType="touchUpInside" id="P2s-2v-7YD"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="ljn-AW-ag8" secondAttribute="trailing" id="JNz-71-vyZ"/>
+                                                        <constraint firstItem="sWe-cb-rMH" firstAttribute="leading" secondItem="pfF-qy-HoN" secondAttribute="leading" id="gRf-Ni-2d5"/>
+                                                    </constraints>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="pfF-qy-HoN" secondAttribute="bottom" id="44E-TP-bI6"/>
+                                                <constraint firstItem="pfF-qy-HoN" firstAttribute="leading" secondItem="Un8-QS-9rf" secondAttribute="leadingMargin" id="QA8-4y-gxr"/>
+                                                <constraint firstItem="pfF-qy-HoN" firstAttribute="trailing" secondItem="Un8-QS-9rf" secondAttribute="trailingMargin" id="VLH-wG-bo0"/>
+                                                <constraint firstItem="pfF-qy-HoN" firstAttribute="top" secondItem="Un8-QS-9rf" secondAttribute="topMargin" id="bHx-cC-ROT"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="81" id="grF-Iz-5iu">
@@ -183,6 +208,9 @@
                                                             <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                                             <color key="tintColor" systemColor="labelColor"/>
                                                             <locale key="locale" localeIdentifier="ko"/>
+                                                            <connections>
+                                                                <action selector="SelectDate:" destination="24Z-UK-ocX" eventType="valueChanged" id="xw7-XJ-yT9"/>
+                                                            </connections>
                                                         </datePicker>
                                                     </subviews>
                                                 </stackView>
@@ -220,6 +248,9 @@
                                                                 <segment title="🤒"/>
                                                                 <segment title="😡"/>
                                                             </segments>
+                                                            <connections>
+                                                                <action selector="SelectCondition:" destination="24Z-UK-ocX" eventType="valueChanged" id="mSI-qP-4Nt"/>
+                                                            </connections>
                                                         </segmentedControl>
                                                     </subviews>
                                                 </stackView>
@@ -276,10 +307,16 @@
                     <navigationItem key="navigationItem" id="RBn-UA-JoO"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="conditionSegment" destination="YMM-mg-fka" id="lqP-Zo-Ba7"/>
+                        <outlet property="diaryContent" destination="b79-wj-njv" id="HDY-2a-aNn"/>
+                        <outlet property="selected" destination="R93-G2-9DZ" id="bqs-QP-KGW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y2J-o3-4Hd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="UCL-aq-S0e" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2426" y="3671"/>
+            <point key="canvasLocation" x="2424.6376811594205" y="3670.9821428571427"/>
         </scene>
         <!--일기장-->
         <scene sceneID="ROp-VM-Ax0">
@@ -530,7 +567,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KBb-6W-ZgX"/>
+        <segue reference="XPa-k4-My4"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>

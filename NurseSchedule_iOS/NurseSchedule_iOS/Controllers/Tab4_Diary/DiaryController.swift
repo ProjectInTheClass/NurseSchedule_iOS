@@ -9,14 +9,14 @@ import UIKit
 
 struct Day {
     var emoji : String
-    var date : Int
+    var date : String
     var content : String
 }
 
 private var days : [Day] = [
-    Day(emoji: "😊", date:1, content: "ㅇㅇ이다"),
-    Day(emoji: "😊", date:2, content: "ㅇㅇ이다"),
-    Day(emoji: "😊", date:3, content: "ㅇㅇ이다")
+    Day(emoji: "😊", date:"1", content: "ㅇㅇ이다"),
+    Day(emoji: "😊", date:"2", content: "ㅇㅇ이다"),
+    Day(emoji: "😊", date:"3", content: "ㅇㅇ이다")
 
 ]
 
@@ -32,7 +32,7 @@ class DiaryController: UIViewController, UITableViewDataSource {
         let day = days[indexPath.row]
         
         cell.emojiLabel.text = day.emoji
-        cell.dateLabel.text = "\(day.date)"
+        cell.dateLabel.text = day.date
         cell.contentLabel.text = day.content
         
         return cell
@@ -49,6 +49,12 @@ class DiaryController: UIViewController, UITableViewDataSource {
         tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func unwindToDiary(_ unwindSegue: UIStoryboardSegue) {
+        let sourceViewController = unwindSegue.source
+        // Use data from the view controller which initiated the unwind segue
+    }
+
     
 
     /*
