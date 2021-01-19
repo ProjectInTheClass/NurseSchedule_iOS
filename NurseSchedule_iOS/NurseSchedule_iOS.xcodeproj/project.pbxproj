@@ -31,6 +31,8 @@
 		992F420825AF454300E25199 /* MedicalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F420725AF454300E25199 /* MedicalDetailViewController.swift */; };
 		992F420B25AFDD2B00E25199 /* ScheduleAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F420A25AFDD2B00E25199 /* ScheduleAddViewController.swift */; };
 		997059AB25A72D8A0037A342 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997059AA25A72D8A0037A342 /* TabBarController.swift */; };
+		997DD05C25B69E10007C5002 /* StructDeclaration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DD05B25B69E10007C5002 /* StructDeclaration.swift */; };
+		997DD05F25B69E8D007C5002 /* DBMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DD05E25B69E8D007C5002 /* DBMemo.swift */; };
 		99C03A0225B48FE400A5CBE4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 99C03A0125B48FE400A5CBE4 /* Alamofire */; };
 		99D874B525AB452D0012D403 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D874B425AB452D0012D403 /* LoginController.swift */; };
 		99FB53A925A0BE7400FBF750 /* Community.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53A825A0BE7400FBF750 /* Community.storyboard */; };
@@ -73,6 +75,8 @@
 		992F420725AF454300E25199 /* MedicalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalDetailViewController.swift; sourceTree = "<group>"; };
 		992F420A25AFDD2B00E25199 /* ScheduleAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddViewController.swift; sourceTree = "<group>"; };
 		997059AA25A72D8A0037A342 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		997DD05B25B69E10007C5002 /* StructDeclaration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructDeclaration.swift; sourceTree = "<group>"; };
+		997DD05E25B69E8D007C5002 /* DBMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMemo.swift; sourceTree = "<group>"; };
 		99D874B425AB452D0012D403 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		99FB53A825A0BE7400FBF750 /* Community.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Community.storyboard; sourceTree = "<group>"; };
 		99FB53AC25A0BFB100FBF750 /* MedicalBook.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MedicalBook.storyboard; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 				990AC3F5259DB3C400281E8B /* ViewController.swift */,
 				997059AA25A72D8A0037A342 /* TabBarController.swift */,
 				99D874B425AB452D0012D403 /* LoginController.swift */,
+				997DD05B25B69E10007C5002 /* StructDeclaration.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			children = (
 				992651E625A470A80043A16E /* DBUser.swift */,
 				9926527D25A4CCE80043A16E /* DBBoard.swift */,
+				997DD05E25B69E8D007C5002 /* DBMemo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -410,8 +416,10 @@
 				ECF2B59B25B55E870080F9E0 /* AddDiaryController.swift in Sources */,
 				9926523B25A4ADDE0043A16E /* MedicalBookController.swift in Sources */,
 				997059AB25A72D8A0037A342 /* TabBarController.swift in Sources */,
+				997DD05C25B69E10007C5002 /* StructDeclaration.swift in Sources */,
 				990AC3F6259DB3C400281E8B /* ViewController.swift in Sources */,
 				992651E725A470A90043A16E /* DBUser.swift in Sources */,
+				997DD05F25B69E8D007C5002 /* DBMemo.swift in Sources */,
 				9926523825A4ADCC0043A16E /* ScheduleController.swift in Sources */,
 				992F420825AF454300E25199 /* MedicalDetailViewController.swift in Sources */,
 				990AC3F2259DB3C400281E8B /* AppDelegate.swift in Sources */,

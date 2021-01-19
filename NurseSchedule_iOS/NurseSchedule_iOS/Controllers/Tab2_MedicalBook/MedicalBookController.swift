@@ -8,11 +8,6 @@
 import UIKit
 import Firebase
 
-struct Term {
-    var definition : String
-    var englishTerm : String
-    var koreanTerm : String
-}
 
 class MedicalBookController: UIViewController{
     

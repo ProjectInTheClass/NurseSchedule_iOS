@@ -106,7 +106,9 @@ class ScheduleController: UIViewController{
         //dispose of any resources that can be recreated
     }
     
-    
+    @IBAction func unwindFromAddMemo(segue : UIStoryboardSegue) {
+        
+    }
     
      // MARK: - Navigation
      

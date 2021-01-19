@@ -8,14 +8,6 @@
 import Foundation
 import Firebase
 
-struct Users {
-    //childByAutoId()
-    //let serialNum : String
-    let name : String
-    let email : String
-}
-
-
 class DBUser {
     let ref : DatabaseReference! = Database.database().reference()
     
