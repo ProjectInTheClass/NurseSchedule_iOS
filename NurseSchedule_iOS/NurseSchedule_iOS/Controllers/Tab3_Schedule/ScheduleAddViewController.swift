@@ -12,6 +12,19 @@ enum WorkType {
     case EVENING
     case NIGHT
     case OFF
+    
+    var workAt : String {
+        switch self {
+        case .DAY:
+            return "DAY"
+        case .EVENING:
+            return "EVENING"
+        case .NIGHT:
+            return "NIGHT"
+        case .OFF:
+            return "OFF"
+        }
+    }
 }
 
 struct NewMemo {
@@ -91,7 +104,8 @@ class ScheduleAddViewController: UIViewController{
     */
     @IBAction func addButtonTapped(_ sender: Any) {
         print(newMemo)
-        
+        let currentUser = Login.init().googleLogin()
+        DBMemo.newMemo.setMemo(userID: currentUser, newMemo: newMemo)
     }
     
 }

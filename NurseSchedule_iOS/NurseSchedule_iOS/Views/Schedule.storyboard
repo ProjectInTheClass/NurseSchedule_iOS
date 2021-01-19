@@ -517,7 +517,7 @@
                                         <state key="normal" title="추가"/>
                                         <connections>
                                             <action selector="addButtonTapped:" destination="upM-zm-90w" eventType="touchUpInside" id="LvD-jc-00K"/>
-                                            <segue destination="beA-Sq-9na" kind="unwind" identifier="" unwindAction="unwindToSchedule:" id="3nJ-LW-ul2"/>
+                                            <segue destination="beA-Sq-9na" kind="unwind" unwindAction="unwindFromAddMemoWithSegue:" id="nz6-gI-LA0"/>
                                         </connections>
                                     </button>
                                 </subviews>
