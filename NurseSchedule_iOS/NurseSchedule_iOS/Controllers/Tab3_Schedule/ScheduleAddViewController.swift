@@ -32,7 +32,7 @@ struct NewMemo {
     var memo : String
 }
 
-var workTypesList : [ String : WorkType] = ["date" : .DAY]
+
 
 class ScheduleAddViewController: UIViewController{
 
