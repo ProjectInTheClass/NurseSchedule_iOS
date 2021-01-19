@@ -15,12 +15,16 @@ class DBMemo {
     
     
     func setMemo(userID : String, newMemo : NewMemo) {
-        let reference  = ref.child("Schedule/\(userID)/\(newMemo.date)")
-
-        let addMemo = ["workType" : newMemo.workType.workAt, "memo" : newMemo.memo]
-        reference.setValue(addMemo)
+        var reference  = ref.child("Schedule/\(userID)/\(newMemo.date)")
+        let addWorkType = ["workType" : newMemo.workType.workAt]
+        reference.setValue(addWorkType)
+        print("setMemo >>>>>\(addWorkType)")
         
+        reference  = ref.child("Schedule/\(userID)/\(newMemo.date)/memo")
+        let addMemo = ["memo" : newMemo.memo]
+        reference.setValue(addMemo)
         print("setMemo >>>>>\(addMemo)")
+        
     }
     
     func getMemo(userID : String, date : String, completion: @escaping ([String]) -> Void){
