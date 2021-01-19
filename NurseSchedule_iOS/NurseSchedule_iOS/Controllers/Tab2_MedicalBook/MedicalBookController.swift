@@ -37,13 +37,10 @@ class MedicalBookController: UIViewController{
     // 정렬된 데이터 배열
     var sortedDataForTableView = [Term]()
     
-
-    
-    let ref = Database.database().reference().child("Medical/")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // retrieveTerms()
+        // retrieveTerms()
         tableView.dataSource = self
         tableView.delegate = self
         searchbar.delegate = self
@@ -64,8 +61,8 @@ class MedicalBookController: UIViewController{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "termDetail" {
-            let vc = segue.destination as! MedicalDetailViewController
-            vc.term = sender as? Term
+            let viewcontollerToMedicalDetail = segue.destination as! MedicalDetailViewController
+            viewcontollerToMedicalDetail.term = sender as? Term
         }
     }
     
@@ -75,40 +72,43 @@ class MedicalBookController: UIViewController{
         //dispose of any resources that can be recreated
     }
     
-//    func retrieveTerms(){
-//
-//        print(">>>>>termslist \(self.termsList)")
-//
-//
-//        //DispatchQueue.main.async {
-//            _ = self.ref.child("1").observe(.value, with: { snapshot in
-//
-//                var newTerm = Term(definition: "retrive", englishTerm: "retriveE", koreanTerm: "retriveK")
-//
-//                //print(snapshot)
-//                if let value = snapshot.value as? NSDictionary {
-//
-//                    newTerm.definition = value["definition"] as? String ?? " "//정의 받아오는 부분, 정의에 대한 변수
-//                    //print(value?["N_definition"])
-//
-//                    newTerm.englishTerm = value["englishTerm"] as? String ?? " " //영어 이름 받아오는 부분, 영어 이름에 대한 변수
-//                    newTerm.koreanTerm = value["koreanTerm"] as? String ?? " " //한글 이름 받아오는 부분, 한글 이름에 대한 변수
-//                    self.termsList.append(newTerm)
-//                }
-//                print(">>>>>termslist2 \(self.termsList)")
-//                self.tableView.reloadData()
-//
-//
-//            })
-//
-//       // }
-//        print(">>>>>termslist3 \(self.termsList)")
-//    }
+    //    func retrieveTerms(){
+    //
+    //        print(">>>>>termslist \(self.termsList)")
+    //
+    //
+    //        //DispatchQueue.main.async {
+    //            _ = self.ref.child("1").observe(.value, with: { snapshot in
+    //
+    //                var newTerm = Term(definition: "retrive", englishTerm: "retriveE", koreanTerm: "retriveK")
+    //
+    //                //print(snapshot)
+    //                if let value = snapshot.value as? NSDictionary {
+    //
+    //                    newTerm.definition = value["definition"] as? String ?? " "//정의 받아오는 부분, 정의에 대한 변수
+    //                    //print(value?["N_definition"])
+    //
+    //                    newTerm.englishTerm = value["englishTerm"] as? String ?? " " //영어 이름 받아오는 부분, 영어 이름에 대한 변수
+    //                    newTerm.koreanTerm = value["koreanTerm"] as? String ?? " " //한글 이름 받아오는 부분, 한글 이름에 대한 변수
+    //                    self.termsList.append(newTerm)
+    //                }
+    //                print(">>>>>termslist2 \(self.termsList)")
+    //                self.tableView.reloadData()
+    //
+    //
+    //            })
+    //
+    //       // }
+    //        print(">>>>>termslist3 \(self.termsList)")
+    //    }
     
     
 }
 
 extension MedicalBookController : UITableViewDataSource {
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return self.firstLetters
+    }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.firstLetters[section]
@@ -117,27 +117,27 @@ extension MedicalBookController : UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         
         return self.firstLetters.count
-       }
-       
-       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sortedDataForTableView.filter({ data in
             return data.englishTerm.starts(with: self.firstLetters[section])
         }).count
-       }
-       
-       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-           let cell = tableView.dequeueReusableCell(withIdentifier: "MedicalCell", for: indexPath) as! MedicalCell
-            let source = sortedDataForTableView.filter({ data in
-                return data.englishTerm.starts(with: self.firstLetters[indexPath.section])
-            })
-           let term = source[indexPath.row]
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MedicalCell", for: indexPath) as! MedicalCell
+        let source = sortedDataForTableView.filter({ data in
+            return data.englishTerm.starts(with: self.firstLetters[indexPath.section])
+        })
+        let term = source[indexPath.row]
         
-          // print("tableView>>>>> \(term)")
-           cell.update(with: term)
-           
-           cell.showsReorderControl = true
-           return cell
-       }
+        // print("tableView>>>>> \(term)")
+        cell.update(with: term)
+        
+        cell.showsReorderControl = true
+        return cell
+    }
 }
 
 
@@ -146,14 +146,12 @@ extension MedicalBookController : UITableViewDataSource {
 extension MedicalBookController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
-        print(outputDataForTableView[indexPath.row])
-        
-        performSegue(withIdentifier: "termDetail", sender: outputDataForTableView[indexPath.row])
+        //print(sortedDataForTableView[indexPath.row])
+        let source = sortedDataForTableView.filter({ data in
+            return data.englishTerm.starts(with: self.firstLetters[indexPath.section])
+        })
+        performSegue(withIdentifier: "termDetail", sender: source[indexPath.row])
     }
-    
-//    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-//
-//    }
 }
 
 
@@ -163,7 +161,7 @@ extension MedicalBookController : UISearchBarDelegate {
             filteredTermsBySearchbar = termsList
         } else {
             filteredTermsBySearchbar = []
-           // termsList = allData
+            // termsList = allData
             filteredTermsBySearchbar = termsList.filter({
                 $0.englishTerm.lowercased().contains(searchText.lowercased())
             })
@@ -173,5 +171,5 @@ extension MedicalBookController : UISearchBarDelegate {
         //termsList = filteredTerms
         self.tableView.reloadData()
     }
-
+    
 }
