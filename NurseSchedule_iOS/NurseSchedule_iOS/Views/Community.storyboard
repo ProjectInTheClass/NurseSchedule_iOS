@@ -18,161 +18,138 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="4XL-o0-Yhn" userLabel="pagerContainer">
-                                <rect key="frame" x="0.0" y="88" width="390" height="458"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vva-LC-AJU">
+                                <rect key="frame" x="0.0" y="87.999999999999972" width="390" height="357.33333333333326"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Vva-LC-AJU">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="427.66666666666669"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LMo-4j-srw" userLabel="pagerView" customClass="FSPagerView" customModule="FSPagerView">
-                                                <rect key="frame" x="0.0" y="0.0" width="390" height="300"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="tintColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="300" id="jyT-R3-YKf"/>
-                                                </constraints>
-                                            </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="AXx-bq-ILu">
-                                                <rect key="frame" x="0.0" y="315" width="390" height="112.66666666666669"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="29" id="A9a-3t-fBU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb3-rh-V9E">
-                                                                <rect key="frame" x="0.0" y="0.0" width="75.666666666666671" height="30"/>
-                                                                <state key="normal" title="대한간호협회"/>
-                                                                <connections>
-                                                                    <action selector="firstLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="A4L-6K-f6j"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLc-MR-zge">
-                                                                <rect key="frame" x="104.66666666666669" y="0.0" width="76" height="30"/>
-                                                                <state key="normal" title="너스케입"/>
-                                                                <connections>
-                                                                    <action selector="secondLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="VN0-Vo-5ZD"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7l-xE-as1">
-                                                                <rect key="frame" x="209.66666666666666" y="0.0" width="75.666666666666657" height="30"/>
-                                                                <state key="normal" title="널스스토리"/>
-                                                                <connections>
-                                                                    <action selector="thirdLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="wqp-al-GVc"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvJ-fl-Vsk">
-                                                                <rect key="frame" x="314.33333333333331" y="0.0" width="75.666666666666686" height="30"/>
-                                                                <state key="normal" title="널스잡"/>
-                                                                <connections>
-                                                                    <action selector="fourthLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="vA9-Kk-4nf"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-------------------- 공지사항-------------------- " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDm-SV-sTo">
-                                                        <rect key="frame" x="9.6666666666666572" y="37.000000000000007" width="371" height="75.666666666666686"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LMo-4j-srw" userLabel="pagerView" customClass="FSPagerView" customModule="FSPagerView">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="300"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="LMo-4j-srw" firstAttribute="leading" secondItem="Vva-LC-AJU" secondAttribute="leading" id="VMF-55-KHH"/>
-                                            <constraint firstAttribute="trailing" secondItem="LMo-4j-srw" secondAttribute="trailing" id="ZnQ-FW-kHL"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="270" translatesAutoresizingMaskIntoConstraints="NO" id="63K-qP-PtD">
-                                        <rect key="frame" x="30" y="135" width="330" height="30"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9D-cy-r0K">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="8vl-ag-fWF"/>
-                                                    <constraint firstAttribute="width" constant="30" id="Yxb-5o-vav"/>
-                                                </constraints>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="chevron.left" catalog="system"/>
-                                                <connections>
-                                                    <action selector="onLeftBtnClicked:" destination="kCU-F0-WFR" eventType="touchUpInside" id="Zn2-2n-eUL"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVS-yr-GnB">
-                                                <rect key="frame" x="300" y="0.0" width="30" height="30"/>
-                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="Qfm-iw-9LT"/>
-                                                    <constraint firstAttribute="width" constant="30" id="vmG-wT-tzi"/>
-                                                </constraints>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="chevron.right" catalog="system"/>
-                                                <connections>
-                                                    <action selector="onRightBtnClicked:" destination="kCU-F0-WFR" eventType="touchUpInside" id="bpn-qD-oVI"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WfY-5U-Plk" userLabel="pageControl" customClass="FSPageControl" customModule="FSPagerView">
-                                        <rect key="frame" x="0.0" y="235" width="390" height="20"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="46N-LG-5ja"/>
+                                            <constraint firstAttribute="height" constant="300" id="jyT-R3-YKf"/>
                                         </constraints>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="AXx-bq-ILu">
+                                        <rect key="frame" x="0.0" y="300" width="390" height="57.333333333333314"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="29" id="A9a-3t-fBU">
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb3-rh-V9E">
+                                                        <rect key="frame" x="0.0" y="0.0" width="75.666666666666671" height="30"/>
+                                                        <state key="normal" title="대한간호협회"/>
+                                                        <connections>
+                                                            <action selector="firstLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="A4L-6K-f6j"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLc-MR-zge">
+                                                        <rect key="frame" x="104.66666666666669" y="0.0" width="76" height="30"/>
+                                                        <state key="normal" title="너스케입"/>
+                                                        <connections>
+                                                            <action selector="secondLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="VN0-Vo-5ZD"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7l-xE-as1">
+                                                        <rect key="frame" x="209.66666666666666" y="0.0" width="75.666666666666657" height="30"/>
+                                                        <state key="normal" title="널스스토리"/>
+                                                        <connections>
+                                                            <action selector="thirdLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="wqp-al-GVc"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvJ-fl-Vsk">
+                                                        <rect key="frame" x="314.33333333333331" y="0.0" width="75.666666666666686" height="30"/>
+                                                        <state key="normal" title="널스잡"/>
+                                                        <connections>
+                                                            <action selector="fourthLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="vA9-Kk-4nf"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-------------------- 공지사항-------------------- " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDm-SV-sTo">
+                                                <rect key="frame" x="9.6666666666666572" y="37" width="371" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="A9a-3t-fBU" firstAttribute="width" secondItem="LMo-4j-srw" secondAttribute="width" id="UAc-RL-ZCj"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WfY-5U-Plk" userLabel="pageControl" customClass="FSPageControl" customModule="FSPagerView">
+                                <rect key="frame" x="0.0" y="316" width="390" height="20"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="63K-qP-PtD" secondAttribute="trailing" constant="30" id="9NJ-1E-nFy"/>
-                                    <constraint firstAttribute="trailing" secondItem="Vva-LC-AJU" secondAttribute="trailing" id="AGv-oG-TDC"/>
-                                    <constraint firstItem="Vva-LC-AJU" firstAttribute="leading" secondItem="4XL-o0-Yhn" secondAttribute="leading" id="BWL-SN-mqP"/>
-                                    <constraint firstItem="WfY-5U-Plk" firstAttribute="leading" secondItem="4XL-o0-Yhn" secondAttribute="leading" id="Jt9-xw-w5W"/>
-                                    <constraint firstItem="Vva-LC-AJU" firstAttribute="top" secondItem="4XL-o0-Yhn" secondAttribute="top" id="N4r-14-5us"/>
-                                    <constraint firstItem="Vva-LC-AJU" firstAttribute="leading" secondItem="4XL-o0-Yhn" secondAttribute="leading" id="OVe-69-y39"/>
-                                    <constraint firstItem="WfY-5U-Plk" firstAttribute="top" secondItem="63K-qP-PtD" secondAttribute="bottom" constant="70" id="Rq1-Jg-61G"/>
-                                    <constraint firstItem="63K-qP-PtD" firstAttribute="centerY" secondItem="LMo-4j-srw" secondAttribute="centerY" id="c8j-X5-ifb"/>
-                                    <constraint firstAttribute="trailing" secondItem="WfY-5U-Plk" secondAttribute="trailing" id="fJo-R1-4zJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="Vva-LC-AJU" secondAttribute="bottom" constant="30.5" id="gkn-ST-khW"/>
-                                    <constraint firstItem="63K-qP-PtD" firstAttribute="leading" secondItem="4XL-o0-Yhn" secondAttribute="leading" constant="30" id="i0G-J3-Y6h"/>
-                                    <constraint firstItem="Vva-LC-AJU" firstAttribute="top" secondItem="4XL-o0-Yhn" secondAttribute="top" id="jgN-Dk-VXq"/>
-                                    <constraint firstAttribute="trailing" secondItem="Vva-LC-AJU" secondAttribute="trailing" id="sU5-gS-8Jf"/>
+                                    <constraint firstAttribute="height" constant="20" id="46N-LG-5ja"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="270" translatesAutoresizingMaskIntoConstraints="NO" id="63K-qP-PtD">
+                                <rect key="frame" x="30" y="223" width="330" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9D-cy-r0K">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="8vl-ag-fWF"/>
+                                            <constraint firstAttribute="width" constant="30" id="Yxb-5o-vav"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="chevron.left" catalog="system"/>
+                                        <connections>
+                                            <action selector="onLeftBtnClicked:" destination="kCU-F0-WFR" eventType="touchUpInside" id="Zn2-2n-eUL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVS-yr-GnB">
+                                        <rect key="frame" x="300" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Qfm-iw-9LT"/>
+                                            <constraint firstAttribute="width" constant="30" id="vmG-wT-tzi"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="chevron.right" catalog="system"/>
+                                        <connections>
+                                            <action selector="onRightBtnClicked:" destination="kCU-F0-WFR" eventType="touchUpInside" id="bpn-qD-oVI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Lhf-4y-YY7">
-                                <rect key="frame" x="0.0" y="546" width="390" height="215"/>
+                                <rect key="frame" x="0.0" y="445.33333333333326" width="390" height="315.66666666666674"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9rm-6Q-LEa">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="107.66666666666667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="158"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNg-nP-zIi">
-                                                <rect key="frame" x="0.0" y="0.0" width="130" height="107.66666666666667"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="158"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofb-vN-v7o">
-                                                <rect key="frame" x="130" y="0.0" width="130" height="107.66666666666667"/>
+                                                <rect key="frame" x="130" y="0.0" width="130" height="158"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhs-ch-kBn">
-                                                <rect key="frame" x="260" y="0.0" width="130" height="107.66666666666667"/>
+                                                <rect key="frame" x="260" y="0.0" width="130" height="158"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PxY-B3-xNJ">
-                                        <rect key="frame" x="0.0" y="107.66666666666663" width="390" height="107.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="158.00000000000006" width="390" height="157.66666666666669"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZR9-BV-Z5Z">
-                                                <rect key="frame" x="0.0" y="0.0" width="130" height="107.33333333333333"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="157.66666666666666"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGm-C0-vpI">
-                                                <rect key="frame" x="130" y="0.0" width="130" height="107.33333333333333"/>
+                                                <rect key="frame" x="130" y="0.0" width="130" height="157.66666666666666"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvT-T5-VOS">
-                                                <rect key="frame" x="260" y="0.0" width="130" height="107.33333333333333"/>
+                                                <rect key="frame" x="260" y="0.0" width="130" height="157.66666666666666"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                         </subviews>
@@ -183,10 +160,21 @@
                         <viewLayoutGuide key="safeArea" id="yr1-88-tlW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Lhf-4y-YY7" firstAttribute="top" secondItem="4XL-o0-Yhn" secondAttribute="bottom" id="Kmq-Dc-4Xg"/>
+                            <constraint firstItem="WfY-5U-Plk" firstAttribute="leading" secondItem="yr1-88-tlW" secondAttribute="leading" id="571-1M-imh"/>
+                            <constraint firstItem="Vva-LC-AJU" firstAttribute="trailing" secondItem="yr1-88-tlW" secondAttribute="trailing" id="CnF-ys-KMD"/>
+                            <constraint firstItem="63K-qP-PtD" firstAttribute="centerX" secondItem="LMo-4j-srw" secondAttribute="centerX" id="L3J-Rw-bxm"/>
+                            <constraint firstItem="Vva-LC-AJU" firstAttribute="top" secondItem="yr1-88-tlW" secondAttribute="top" id="ND8-pD-dsl"/>
+                            <constraint firstItem="LMo-4j-srw" firstAttribute="leading" secondItem="yr1-88-tlW" secondAttribute="leading" id="NMf-84-zSe"/>
                             <constraint firstItem="Lhf-4y-YY7" firstAttribute="leading" secondItem="yr1-88-tlW" secondAttribute="leading" id="O3b-Ye-FTu"/>
                             <constraint firstItem="yr1-88-tlW" firstAttribute="bottom" secondItem="Lhf-4y-YY7" secondAttribute="bottom" id="USo-fr-X2d"/>
+                            <constraint firstItem="yr1-88-tlW" firstAttribute="trailing" secondItem="LMo-4j-srw" secondAttribute="trailing" id="Yc6-Gi-eCS"/>
+                            <constraint firstItem="Vva-LC-AJU" firstAttribute="leading" secondItem="yr1-88-tlW" secondAttribute="leading" id="aQ9-Nb-FOm"/>
+                            <constraint firstItem="63K-qP-PtD" firstAttribute="centerY" secondItem="LMo-4j-srw" secondAttribute="centerY" id="fHY-Rv-98A"/>
+                            <constraint firstItem="Lhf-4y-YY7" firstAttribute="top" secondItem="Vva-LC-AJU" secondAttribute="bottom" id="jw2-Jg-h6a"/>
+                            <constraint firstItem="yr1-88-tlW" firstAttribute="trailing" secondItem="WfY-5U-Plk" secondAttribute="trailing" id="op5-e5-1ch"/>
                             <constraint firstItem="yr1-88-tlW" firstAttribute="trailing" secondItem="Lhf-4y-YY7" secondAttribute="trailing" id="s9L-rp-DIy"/>
+                            <constraint firstItem="LMo-4j-srw" firstAttribute="top" secondItem="yr1-88-tlW" secondAttribute="top" id="stD-hW-atQ"/>
+                            <constraint firstItem="WfY-5U-Plk" firstAttribute="top" secondItem="63K-qP-PtD" secondAttribute="bottom" constant="63" id="xGY-rQ-bOD"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="커뮤니티" image="person.2" catalog="system" selectedImage="person.2.fill" id="5Zr-oc-Xdc"/>
