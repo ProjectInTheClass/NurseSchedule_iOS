@@ -37,7 +37,7 @@ class ScheduleController: UIViewController{
         
          DBMemo.newMemo.getWorkType(userID: currentUser, completion: { (typesFromDB) in
             self.workTypesList[typesFromDB.date] = typesFromDB.workType
-            print("worktypes!!!!!>>>\(self.workTypesList)")
+            print("ScheduleController.worktypes!!!!!>>>\(self.workTypesList)")
             //self.calendar.reloadData()
         })
         
@@ -257,17 +257,6 @@ extension ScheduleController : FSCalendarDelegateAppearance {
     
     
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
-        //        let currentUser = Login.init().googleLogin()
-        //       let key = self.dateFormatter.string(from: date)
-        //            if let color = workTypesList[key]?.color {
-        //                return color
-        //            }
-        //            return nil
-        //        }
-//        let currentUser = Login.init().googleLogin()
-//        DBMemo.newMemo.getWorkType(userID: currentUser,completion: { (worktype) in
-//            workTypesList[self.dateFormatter.string(from: date)] = worktype
-//        })
         let key = self.dateFormatter.string(from: date)
         if let type = workTypesList[key] {
             switch type {
@@ -280,7 +269,6 @@ extension ScheduleController : FSCalendarDelegateAppearance {
             case .OFF:
                 return .gray
             }
-            //return color
         }
         return nil
     }
