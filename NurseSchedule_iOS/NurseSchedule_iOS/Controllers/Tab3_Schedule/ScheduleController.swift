@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FSCalendar
 
+var workTypesList : [ String : WorkType] = [ "2021-01-18" : .DAY]
 class ScheduleController: UIViewController{
     
     @IBOutlet weak var calendar: FSCalendar!
@@ -18,8 +19,10 @@ class ScheduleController: UIViewController{
     var selectedDate : Date = .init()
     
     var memoList: [String] = []
-    var workTypesList : [ String : UIColor] = [ "default" : UIColor.black]
-    var events : [ Date : WorkType ] = [Date.init():.DAY]
+    
+    //var events : [ Date : WorkType ] = [ Date.init() : .DAY ]
+    //var events : WorkType = .DAY
+    
     //FSCalendar
     //https://ahyeonlog.tistory.com/7
     
@@ -27,6 +30,8 @@ class ScheduleController: UIViewController{
         dateFormatter.dateFormat = "yyyy-MM-dd"
         calendar.delegate = self
         calendar.dataSource = self
+        
+        calendar.reloadData()
         
         memoView.delegate = self
         memoView.dataSource = self
@@ -44,6 +49,7 @@ class ScheduleController: UIViewController{
     override func viewDidAppear(_ animated: Bool) {
         updateUI()
         memoView.reloadData()
+        calendar.reloadData()
     }
     
     func updateUI() {
@@ -182,47 +188,80 @@ extension ScheduleController : UITableViewDataSource, UITableViewDelegate {
 extension ScheduleController : FSCalendarDelegateAppearance {
     
     //선택한 날짜 색깔 변경
-//    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
-//        switch dateFormatter.string(from:date) {
-//        //색깔 넣어보자
-//        case "2021-01-01":
-//            return .yellow
-//        case "2021-01-02":
-//            return .orange
-//        case "2021-01-03":
-//            return .green
-//        case "2021-01-04":
-//            return .white
-//        default :
-//            return .systemPink
-//        }
-//    }
-    
-    //색깔이 나타나긴 하는데 무한 부팅되면서 날짜를 선택할 수도 없음. 캘린더 얼어버림.
-    //모든 날짜들에 대한 색을 표현하려고 하다보니 그러는듯.
+    //    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
+    //        switch dateFormatter.string(from:date) {
+    //        //색깔 넣어보자
+    //        case "2021-01-01":
+    //            return .yellow
+    //        case "2021-01-02":
+    //            return .orange
+    //        case "2021-01-03":
+    //            return .green
+    //        case "2021-01-04":
+    //            return .white
+    //        default :
+    //            return .systemPink
+    //        }
+    //    }
     /*
+     //색깔이 나타나긴 하는데 무한 부팅되면서 날짜를 선택할 수도 없음. 캘린더 얼어버림.
+     //모든 날짜들에 대한 색을 표현하려고 하다보니 그러는듯.
+     
+     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
+     let currentUser = Login.init().googleLogin()
+     DBMemo.newMemo.getWorkType(userID: currentUser, date: dateFormatter.string(from:date), completion: { worktype in
+     switch worktype {
+     case "DAY" :
+     self.workTypesList[self.dateFormatter.string(from:date)] = UIColor.yellow
+     case "EVENING" :
+     self.workTypesList[self.dateFormatter.string(from:date)] = UIColor.orange
+     case "NIGHT" :
+     self.workTypesList[self.dateFormatter.string(from:date)] = UIColor.green
+     case "OFF" :
+     self.workTypesList[self.dateFormatter.string(from:date)] = UIColor.gray
+     default :
+     self.workTypesList[self.dateFormatter.string(from:date)] = UIColor.gray
+     }
+     self.calendar.reloadData()
+     })
+     //calendar.reloadData()
+     return self.workTypesList[self.dateFormatter.string(from:date)]
+     }
+     */
+    /*
+     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
+     switch events[date] {
+     case .DAY:
+     return .yellow
+     case .EVENING:
+     return .orange
+     case .NIGHT:
+     return .green
+     case .OFF:
+     return .gray
+     default :
+     return .gray
+     }
+     }
+     */
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
+        //        let currentUser = Login.init().googleLogin()
+        //       let key = self.dateFormatter.string(from: date)
+        //            if let color = workTypesList[key]?.color {
+        //                return color
+        //            }
+        //            return nil
+        //        }
         let currentUser = Login.init().googleLogin()
-        DBMemo.newMemo.getWorkType(userID: currentUser, date: dateFormatter.string(from:date), completion: { worktype in
-            switch worktype {
-            case "DAY" :
-                self.workTypesList[self.dateFormatter.string(from:date)] = UIColor.yellow
-            case "EVENING" :
-                self.workTypesList[self.dateFormatter.string(from:date)] = UIColor.orange
-            case "NIGHT" :
-                self.workTypesList[self.dateFormatter.string(from:date)] = UIColor.green
-            case "OFF" :
-                self.workTypesList[self.dateFormatter.string(from:date)] = UIColor.gray
-            default :
-                self.workTypesList[self.dateFormatter.string(from:date)] = UIColor.gray
-            }
-            self.calendar.reloadData()
+        DBMemo.newMemo.getWorkType(userID: currentUser,completion: { (worktype) in
+            workTypesList[self.dateFormatter.string(from: date)] = worktype
         })
-        //calendar.reloadData()
-        return self.workTypesList[self.dateFormatter.string(from:date)]
+        let key = self.dateFormatter.string(from: date)
+        if let color = workTypesList[key]?.color {
+            return color
+        }
+        return nil
     }
- */
- 
 }
 
 extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {

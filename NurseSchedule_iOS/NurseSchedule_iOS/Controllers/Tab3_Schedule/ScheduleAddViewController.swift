@@ -24,6 +24,19 @@ enum WorkType {
             return "OFF"
         }
     }
+    
+    var color : UIColor {
+        switch self {
+        case .DAY:
+            return .yellow
+        case .EVENING:
+            return .orange
+        case .NIGHT:
+            return .green
+        case .OFF:
+            return .gray
+        }
+    }
 }
 
 struct NewMemo {
@@ -103,14 +116,20 @@ class ScheduleAddViewController: UIViewController{
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showWorkType" {
+            let viewcontrollerToShowWorkType = segue.destination as! ScheduleController
+            viewcontrollerToShowWorkType.events = sender as! WorkType
+        }
+        
     }
     */
+   
     @IBAction func addButtonTapped(_ sender: Any) {
         print(newMemo)
         let currentUser = Login.init().googleLogin()
         DBMemo.newMemo.setMemo(userID: currentUser, newMemo: newMemo)
+        //performSegue(withIdentifier: "showWorkType", sender: newMemo.workType)
+        workTypesList[newMemo.date] = newMemo.workType
     }
     
 }
