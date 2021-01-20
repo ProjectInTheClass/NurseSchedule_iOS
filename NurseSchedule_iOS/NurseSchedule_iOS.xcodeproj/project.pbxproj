@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1B734DB8FFAE10C573DCEC89 /* Pods_NurseSchedule_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1023850E893169F71BF98CFC /* Pods_NurseSchedule_iOS.framework */; };
+		7E9F58E025B833910028D9A8 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F58DF25B833910028D9A8 /* ListTableViewController.swift */; };
+		7E9F58E325B833CD0028D9A8 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F58E225B833CD0028D9A8 /* DetailTableViewController.swift */; };
 		7EFD380225B4A72300FD3435 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFD380125B4A72300FD3435 /* SlideViewController.swift */; };
 		7EFD380925B4A7AE00FD3435 /* imageSlide2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EFD380525B4A7AD00FD3435 /* imageSlide2.png */; };
 		7EFD380A25B4A7AE00FD3435 /* imageSlide3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EFD380625B4A7AD00FD3435 /* imageSlide3.png */; };
@@ -51,6 +53,8 @@
 		0FEE6DAAE26AF8BF3DB5BC96 /* Pods-NurseSchedule_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NurseSchedule_iOS.debug.xcconfig"; path = "Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		1023850E893169F71BF98CFC /* Pods_NurseSchedule_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NurseSchedule_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		714F117F287D49765BF1C3EF /* Pods-NurseSchedule_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NurseSchedule_iOS.release.xcconfig"; path = "Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		7E9F58DF25B833910028D9A8 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		7E9F58E225B833CD0028D9A8 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		7EFD380125B4A72300FD3435 /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		7EFD380525B4A7AD00FD3435 /* imageSlide2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageSlide2.png; sourceTree = "<group>"; };
 		7EFD380625B4A7AD00FD3435 /* imageSlide3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageSlide3.png; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 			children = (
 				9926523325A4ADB10043A16E /* CommunityController.swift */,
 				7EFD380125B4A72300FD3435 /* SlideViewController.swift */,
+				7E9F58DF25B833910028D9A8 /* ListTableViewController.swift */,
+				7E9F58E225B833CD0028D9A8 /* DetailTableViewController.swift */,
 			);
 			path = Tab1_Community;
 			sourceTree = "<group>";
@@ -414,12 +420,14 @@
 				992F41C925AEB82D00E25199 /* SettingTableViewController.swift in Sources */,
 				ECF2B59E25B562070080F9E0 /* DiaryDetailViewController.swift in Sources */,
 				992F41F025AF2C9100E25199 /* MedicalCell.swift in Sources */,
+				7E9F58E025B833910028D9A8 /* ListTableViewController.swift in Sources */,
 				99D874B525AB452D0012D403 /* LoginController.swift in Sources */,
 				ECF2B55625B441BA0080F9E0 /* DiaryCalendar.swift in Sources */,
 				9926523B25A4ADDE0043A16E /* MedicalBookController.swift in Sources */,
 				997059AB25A72D8A0037A342 /* TabBarController.swift in Sources */,
 				997DD05C25B69E10007C5002 /* StructDeclaration.swift in Sources */,
 				990AC3F6259DB3C400281E8B /* ViewController.swift in Sources */,
+				7E9F58E325B833CD0028D9A8 /* DetailTableViewController.swift in Sources */,
 				992651E725A470A90043A16E /* DBUser.swift in Sources */,
 				997DD05F25B69E8D007C5002 /* DBMemo.swift in Sources */,
 				9926523825A4ADCC0043A16E /* ScheduleController.swift in Sources */,

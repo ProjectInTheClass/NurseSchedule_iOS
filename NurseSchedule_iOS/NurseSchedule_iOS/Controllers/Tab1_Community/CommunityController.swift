@@ -9,6 +9,8 @@ import UIKit
 import SafariServices
 import FSPagerView
 
+
+// 마일스톤
 class CommunityController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate {
     
     fileprivate let imageNames = ["imageSlide1.png", "imageSlide2.png", "imageSlide3.png", "imageSlide4.png"]
