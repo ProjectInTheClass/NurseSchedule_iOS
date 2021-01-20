@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import FSCalendar
 
-var workTypesList : [ String : WorkType] = [ : ]
+
 class ScheduleController: UIViewController{
     
     @IBOutlet weak var calendar: FSCalendar!
@@ -17,6 +17,7 @@ class ScheduleController: UIViewController{
     
     let dateFormatter = DateFormatter()
     var selectedDate : Date = .init()
+    var workTypesList : [ String : WorkType] = [ : ]
     
     var memoList: [String] = []
     
@@ -35,8 +36,8 @@ class ScheduleController: UIViewController{
        
         
          DBMemo.newMemo.getWorkType(userID: currentUser, completion: { (typesFromDB) in
-            workTypesList[typesFromDB.date] = typesFromDB.workType
-            print("worktypes!!!!!>>>\(workTypesList)")
+            self.workTypesList[typesFromDB.date] = typesFromDB.workType
+            print("worktypes!!!!!>>>\(self.workTypesList)")
             //self.calendar.reloadData()
         })
         
@@ -86,6 +87,7 @@ class ScheduleController: UIViewController{
         calendar.appearance.titleSelectionColor = .black
         // 서브 타이틀 컬러
         calendar.appearance.subtitleSelectionColor = .black
+        calendar.appearance.subtitleFont = UIFont.boldSystemFont(ofSize: 30)
         
         // 달력의 평일 날짜 색깔
         calendar.appearance.titleDefaultColor = .black
@@ -252,6 +254,8 @@ extension ScheduleController : FSCalendarDelegateAppearance {
      }
      }
      */
+    
+    
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
         //        let currentUser = Login.init().googleLogin()
         //       let key = self.dateFormatter.string(from: date)
@@ -274,12 +278,14 @@ extension ScheduleController : FSCalendarDelegateAppearance {
             case .NIGHT:
                 return .green
             case .OFF:
-                return .green
+                return .gray
             }
             //return color
         }
         return nil
     }
+ 
+ 
 }
 
 extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
@@ -307,18 +313,22 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
     
     // 날짜 밑에 문자열을 표시
     func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
-        switch dateFormatter.string(from: date) {
-        case dateFormatter.string(from: Date()):
-            return "오늘"
-        case "2021-01-12":
-            return "출근"
-        case "2021-01-13":
-            return "지각"
-        case "2021-01-14":
-            return "결근"
-        default:
-            return nil
+        
+        let key = self.dateFormatter.string(from: date)
+        if let type = workTypesList[key] {
+            switch type {
+            case .DAY:
+                return "☀️"
+            case .EVENING:
+                return "🌝"
+            case .NIGHT:
+                return "🌑"
+            case .OFF:
+                return "💤"
+            }
+            //return color
         }
+        return nil
     }
     
     //날짜 글씨 자체를 바꿔버릴 수 있고
