@@ -125,15 +125,24 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNg-nP-zIi">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="158"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="자유게시판"/>
+                                                <connections>
+                                                    <segue destination="whR-aS-cpp" kind="show" id="5MK-uY-s7v"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofb-vN-v7o">
                                                 <rect key="frame" x="130" y="0.0" width="130" height="158"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="취업게시판"/>
+                                                <connections>
+                                                    <segue destination="whR-aS-cpp" kind="show" id="uhM-7e-upU"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhs-ch-kBn">
                                                 <rect key="frame" x="260" y="0.0" width="130" height="158"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="간호지식QnA"/>
+                                                <connections>
+                                                    <segue destination="whR-aS-cpp" kind="show" id="ufS-rc-ZL7"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -142,15 +151,24 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZR9-BV-Z5Z">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="157.66666666666666"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="정보게시판"/>
+                                                <connections>
+                                                    <segue destination="whR-aS-cpp" kind="show" id="6Pl-fq-ZsD"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGm-C0-vpI">
                                                 <rect key="frame" x="130" y="0.0" width="130" height="157.66666666666666"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="신입게시판"/>
+                                                <connections>
+                                                    <segue destination="whR-aS-cpp" kind="show" id="tn9-DZ-dRW"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvT-T5-VOS">
                                                 <rect key="frame" x="260" y="0.0" width="130" height="157.66666666666666"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="더보기"/>
+                                                <connections>
+                                                    <segue destination="2v5-kD-ip1" kind="showDetail" id="Mfz-49-a7U"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -256,18 +274,18 @@
             <objects>
                 <viewController id="2v5-kD-ip1" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JqZ-7i-VqE">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MyN-qX-62p">
-                                <rect key="frame" x="0.0" y="44" width="390" height="800"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="y8I-xx-HLN">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="90"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Xx-Rr-rcO">
-                                        <rect key="frame" x="0.0" y="100" width="390" height="700"/>
+                                        <rect key="frame" x="0.0" y="90" width="390" height="700"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="q9J-Si-LF5" detailTextLabel="nNY-1b-2Iv" style="IBUITableViewCellStyleValue1" id="QKd-fE-a9s">
@@ -293,9 +311,6 @@
                                                         </label>
                                                     </subviews>
                                                 </tableViewCellContentView>
-                                                <connections>
-                                                    <segue destination="whR-aS-cpp" kind="show" id="Ctq-Cq-BC6"/>
-                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -315,7 +330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JNA-19-NpS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110.76923076923076" y="86.729857819905206"/>
+            <point key="canvasLocation" x="111" y="946"/>
         </scene>
         <!--고객센터-->
         <scene sceneID="gKl-UN-xVF">
@@ -402,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hm5-Q1-cnM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110.76923076923076" y="812.55924170616106"/>
+            <point key="canvasLocation" x="954" y="1046"/>
         </scene>
         <!--고객센터 or 공지사항글-->
         <scene sceneID="OOx-y5-f6V">
@@ -447,25 +462,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5WJ-2g-1Rm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="987.69230769230762" y="812.55924170616106"/>
+            <point key="canvasLocation" x="1831" y="1046"/>
         </scene>
         <!--게시글 목록-->
         <scene sceneID="sBo-y4-Wui">
             <objects>
-                <viewController id="whR-aS-cpp" sceneMemberID="viewController">
+                <viewController id="whR-aS-cpp" customClass="ListTableViewController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7w8-wz-uCA">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FhA-j3-Z1P">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="756"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="J0x-jN-I9T">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="90"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bzh-NN-7YV">
-                                        <rect key="frame" x="0.0" y="90" width="390" height="700"/>
+                                        <rect key="frame" x="0.0" y="56" width="390" height="700"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="130" id="Slz-eo-GXe">
@@ -533,18 +548,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XNy-mE-XdF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="953.84615384615381" y="86.729857819905206"/>
+            <point key="canvasLocation" x="111" y="87"/>
         </scene>
         <!--글 쓰기-->
         <scene sceneID="Xbn-pC-NRl">
             <objects>
                 <viewController id="Wab-cb-Vvr" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ij1-sL-yIZ">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0EK-Df-htO">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="xvl-KG-r98" style="IBUITableViewCellStyleDefault" id="Haw-k0-Wvt">
@@ -597,14 +612,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4C-bt-Nhd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1867.6923076923076" y="-645.4976303317535"/>
+            <point key="canvasLocation" x="1148" y="-645"/>
         </scene>
         <!--게시글-->
         <scene sceneID="NdH-1o-sJJ">
             <objects>
-                <tableViewController id="7j7-W6-mjm" sceneMemberID="viewController">
+                <tableViewController id="7j7-W6-mjm" customClass="DetailTableViewController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="W6p-Dp-WO5">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -689,7 +704,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0J-Zj-Y41" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1867.6923076923076" y="86.729857819905206"/>
+            <point key="canvasLocation" x="1148" y="87"/>
         </scene>
         <!--커뮤니티-->
         <scene sceneID="rlI-fg-8qN">
@@ -792,9 +807,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKG-hC-kdR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110.76923076923076" y="812.55924170616106"/>
+            <point key="canvasLocation" x="954" y="1046"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ufS-rc-ZL7"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
