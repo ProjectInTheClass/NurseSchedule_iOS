@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import FSCalendar
 
-var workTypesList : [ String : WorkType] = [ "2021-01-18" : .DAY]
+var workTypesList : [ String : WorkType] = [ : ]
 class ScheduleController: UIViewController{
     
     @IBOutlet weak var calendar: FSCalendar!
@@ -27,11 +27,19 @@ class ScheduleController: UIViewController{
     //https://ahyeonlog.tistory.com/7
     
     override func viewDidLoad() {
+        let currentUser = Login.init().googleLogin()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         calendar.delegate = self
         calendar.dataSource = self
         
-        calendar.reloadData()
+       
+        
+         DBMemo.newMemo.getWorkType(userID: currentUser, completion: { (typesFromDB) in
+            workTypesList[typesFromDB.date] = typesFromDB.workType
+            print("worktypes!!!!!>>>\(workTypesList)")
+            //self.calendar.reloadData()
+        })
+        
         
         memoView.delegate = self
         memoView.dataSource = self
@@ -252,13 +260,23 @@ extension ScheduleController : FSCalendarDelegateAppearance {
         //            }
         //            return nil
         //        }
-        let currentUser = Login.init().googleLogin()
-        DBMemo.newMemo.getWorkType(userID: currentUser,completion: { (worktype) in
-            workTypesList[self.dateFormatter.string(from: date)] = worktype
-        })
+//        let currentUser = Login.init().googleLogin()
+//        DBMemo.newMemo.getWorkType(userID: currentUser,completion: { (worktype) in
+//            workTypesList[self.dateFormatter.string(from: date)] = worktype
+//        })
         let key = self.dateFormatter.string(from: date)
-        if let color = workTypesList[key]?.color {
-            return color
+        if let type = workTypesList[key] {
+            switch type {
+            case .DAY:
+                return .yellow
+            case .EVENING:
+                return .orange
+            case .NIGHT:
+                return .green
+            case .OFF:
+                return .green
+            }
+            //return color
         }
         return nil
     }

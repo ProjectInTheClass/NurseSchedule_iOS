@@ -129,7 +129,7 @@ class ScheduleAddViewController: UIViewController{
         let currentUser = Login.init().googleLogin()
         DBMemo.newMemo.setMemo(userID: currentUser, newMemo: newMemo)
         //performSegue(withIdentifier: "showWorkType", sender: newMemo.workType)
-        workTypesList[newMemo.date] = newMemo.workType
+        //DBMemo.newMemo.setWorkType(userID: currentUser, newMemo: newMemo)
     }
     
 }
