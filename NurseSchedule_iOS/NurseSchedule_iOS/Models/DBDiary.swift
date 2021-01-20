@@ -9,58 +9,60 @@ import Foundation
 import Firebase
 
 
+
 class DBDiary {
+    
     let ref : DatabaseReference! = Database.database().reference()
     
     static let newDiary = DBDiary()
     
-    func addDiary(userID : String, newDiary : Day ) {
-        let reference = ref.child("Diary/ \(userID) / \(newDiary.date)") //데이터 목록에 새로 추가
-        //childByAutoId()를 호출할때마다 고유한 키 값 생성
+    var diarycellCount : Int = 0
+
+    func addDiary(userID: String, shortDate: String, new: Day){
         
-        let new = [ "D_emoji" : newDiary.emoji, "D_content":newDiary.content]
+        let reference = ref.child("Diary/\(userID)/\(shortDate)/\(new.date)") //데이터 목록에 추가
         
-        reference.setValue(new)
+        let newDiary = ["D_emoji" : new.emoji , "D_content" : new.content , "D_date" : new.date]
         
-        print("addDiary >>>> \(new)")
+        reference.setValue(newDiary)
         
+        print("addDiary >>> \(newDiary)")
     }
     
-//    func getDiaryWithoutDate(userID : String) -> Day{
-//        _ = ref.child("Diary/\(userID)").observe(.value, with: { snapshot in
-//           
-//            var diaryinfo = Day(emoji: "Emoji", date: "Date", content: "content")
-//            
-//            
-//            
-//            if let value = snapshot.value as? String {
-//                diaryinfo.date = value
-//                self.ref.child("Diary/ \(userID) / \(diaryinfo.date)").observe(.value, with: { snapshot in
-//                    diaryinfo.emoji = value["D_emoji"] as? String ?? " "
-//                    diaryinfo.content =  value["D_content"] as? String ?? " "
-//                })
-//            }
-//        })
-//        
-//        return 
-//    }
     
-    func getDiary(userID : String, date :String) -> Void{
-        _ = ref.child("Diary/\(userID)/\(date)").observe(.value, with: { snapshot in
-           
-            var diaryinfo = Day(emoji: "Emoji", date: "Date", content: "content")
-            
-            if let value = snapshot.value as? NSDictionary {
-                diaryinfo.emoji = value["D_emoji"] as? String ?? " "
-                diaryinfo.content =  value["D_content"] as? String ?? " "
-                
-                
-                
+    func getDiary(userID: String, shortDate : String, completion : @escaping (String) -> Void) {
+        ref.child("Diary/\(userID)/\(shortDate)").observeSingleEvent(of: .value, with: { snapshot in
+            self.diarycellCount = Int(snapshot.childrenCount)
+            print("snapshot.childrencount ->  \(snapshot.childrenCount)")
+            guard let value = snapshot.value as? [String: Any] else{
+                return
             }
+         //   print("Value: \(value)")
+            
+           // print(snapshot)
+            
+            let enumerator = snapshot.children
+                        while let rest = enumerator.nextObject() as? DataSnapshot {
+                           // rest.value["D_content"]
+                            print(rest.value)
+                        }
+            
+            
+
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                    
+
+
+            }
+//            for i in 1...snapshot.childrenCount {
+//                ref.child("Diary/\(userID)/\(shortDate)")
+//            }
+            
         })
-        
-        
     }
+    
+
 
     
  

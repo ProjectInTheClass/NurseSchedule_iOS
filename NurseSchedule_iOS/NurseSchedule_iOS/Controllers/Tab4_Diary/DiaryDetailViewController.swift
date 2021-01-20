@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class DiaryDetailViewController: UIViewController {
 
     @IBOutlet weak var date: UILabel!
