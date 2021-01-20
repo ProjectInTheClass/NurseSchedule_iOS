@@ -127,10 +127,10 @@
             </objects>
             <point key="canvasLocation" x="1311.5942028985507" y="3670.9821428571427"/>
         </scene>
-        <!--Add Diary Controller-->
+        <!--Add Diary Table Controller-->
         <scene sceneID="qLa-3B-6D6">
             <objects>
-                <tableViewController id="24Z-UK-ocX" customClass="AddDiaryController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="24Z-UK-ocX" customClass="AddDiaryTableController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="V3k-Ea-8mj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,7 +211,7 @@
                                                             <color key="tintColor" systemColor="labelColor"/>
                                                             <locale key="locale" localeIdentifier="ko"/>
                                                             <connections>
-                                                                <action selector="SelectDate:" destination="24Z-UK-ocX" eventType="valueChanged" id="xw7-XJ-yT9"/>
+                                                                <action selector="SelectDate:" destination="24Z-UK-ocX" eventType="valueChanged" id="NQt-od-OUc"/>
                                                             </connections>
                                                         </datePicker>
                                                     </subviews>
@@ -286,7 +286,7 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no"/>
                                                             <connections>
-                                                                <action selector="wroteDiary:" destination="24Z-UK-ocX" eventType="editingDidEnd" id="yMW-Z6-xIS"/>
+                                                                <action selector="ContentEditingDidEnd:" destination="24Z-UK-ocX" eventType="editingDidEnd" id="Fhs-zK-C9E"/>
                                                             </connections>
                                                         </textField>
                                                     </subviews>
@@ -313,9 +313,9 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="conditionSegment" destination="YMM-mg-fka" id="lqP-Zo-Ba7"/>
-                        <outlet property="diaryContent" destination="b79-wj-njv" id="HDY-2a-aNn"/>
-                        <outlet property="selected" destination="R93-G2-9DZ" id="bqs-QP-KGW"/>
+                        <outlet property="ContentTF" destination="b79-wj-njv" id="sOk-0K-5hM"/>
+                        <outlet property="SelectedDate" destination="R93-G2-9DZ" id="Iqd-h5-Uz3"/>
+                        <outlet property="conditionSegment" destination="YMM-mg-fka" id="dAT-6X-7m8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y2J-o3-4Hd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
