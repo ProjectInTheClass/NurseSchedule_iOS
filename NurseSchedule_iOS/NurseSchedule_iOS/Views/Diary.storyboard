@@ -110,13 +110,16 @@
                                     <rect key="frame" x="261.5" y="7" width="92" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="testButtonTapped:" destination="Zcn-qg-mjc" eventType="touchUpInside" id="5DP-gE-LAb"/>
+                                    </connections>
                                 </button>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Chm-eJ-3Yh" id="UNj-tp-2bO"/>
-                        <segue destination="zKc-Dc-ZiH" kind="show" identifier="popupDiary" id="RCw-Ij-aqg"/>
+                        <segue destination="zKc-Dc-ZiH" kind="presentation" identifier="popupDiary" id="RCw-Ij-aqg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fr4-D2-AJf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -453,11 +456,11 @@
             <objects>
                 <viewController id="zKc-Dc-ZiH" customClass="DiaryDetailViewController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kHP-sH-2oO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ycn-Nb-sua">
-                                <rect key="frame" x="50.5" y="194" width="313" height="508"/>
+                                <rect key="frame" x="50.5" y="167" width="313" height="508"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pnI-Bb-lDB">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="508"/>
@@ -468,6 +471,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKd-x9-6m2">
                                                         <rect key="frame" x="297.5" y="0.0" width="15.5" height="22"/>
                                                         <state key="normal" image="multiply" catalog="system"/>
+                                                        <connections>
+                                                            <segue destination="Oro-gd-F8D" kind="unwind" unwindAction="unwindToDiary:" id="IZo-Mt-Zmg"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -532,6 +538,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2O-6W-792" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Oro-gd-F8D" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2194" y="2991"/>
         </scene>

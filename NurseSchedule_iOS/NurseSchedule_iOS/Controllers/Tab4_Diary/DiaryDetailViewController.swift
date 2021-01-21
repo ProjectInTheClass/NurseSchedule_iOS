@@ -10,6 +10,7 @@ import UIKit
 
 
 class DiaryDetailViewController: UIViewController {
+    
 
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var emoji: UILabel!
@@ -24,13 +25,9 @@ class DiaryDetailViewController: UIViewController {
         emoji.text = detailInfoFromDay?.emoji
         content.text = detailInfoFromDay?.content
         // Do any additional setup after loading the view.
+       
+        
     }
-    
-    class ModalViewController: UIViewController {
-        override func viewDidLoad() {
-        }
-    }
-    
     /*
     // MARK: - Navigation
 

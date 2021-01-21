@@ -42,7 +42,6 @@ class DiaryController: UIViewController {
         // Use data from the view controller which initiated the unwind segue
     }
    
-
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -52,7 +51,6 @@ class DiaryController: UIViewController {
             DiaryDetailViewController.detailInfoFromDay = sender as? Day
         }
      }
-     
     
 }
 
