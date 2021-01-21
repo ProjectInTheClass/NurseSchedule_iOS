@@ -65,8 +65,6 @@ class DBMemo {
                     }
                 }
                 completion(gettype)
-                //print(rest.value["date"] as? String ?? "date")
-                //print(rest.value["workType"] as? String ?? "worktype")
             }
         })
     }
