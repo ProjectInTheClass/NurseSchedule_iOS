@@ -28,11 +28,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
-        // medicaBook 데이터 가져옴
+        // medicalBook 데이터 가져옴
         DBMedical.medicalBookData.getMedicalBookData { (term) in
             termsList.append(term)
         }
+       // termsList.sort{$0.englishTerm < $1.englishTerm}
         print(">>>>>appdelegate \(termsList)")
+        
+        
+        
+        
         
         // 다이어리 목록을 디비에서 불러옴
         let dateFormatter : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 0(월단위)
@@ -47,7 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         return true
     }
 
-    
+   
+
     
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
