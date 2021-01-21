@@ -28,7 +28,7 @@ class DBMemo {
         ref.child("Schedule/\(userID)/\(date)/").observeSingleEvent(of:.value, with: { snapshot in
             if let value = snapshot.value as? NSDictionary {
                 let result = value["memoList"] as? [String] ?? []
-                print("DBMemo getMemo >>> \(result)")
+            print("DBMemo getMemo >>> \(result)")
                 completion(result)
             } else {
                 completion([])

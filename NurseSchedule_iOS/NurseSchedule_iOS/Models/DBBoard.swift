@@ -24,6 +24,21 @@ class DBBoard  {
         return String(boardNum_Int)
     }
     
+    
+    func addContent(BoardType: String, DataType: String, new: InputTable) {
+        
+        let reference3 = ref.child("Board/\(BoardType)/\(DataType)/")
+        
+        let newContent = ["title": new.title, "content": new.content, "date": new.date, "user":new.user]
+        
+        reference3.setValue(newContent)
+        
+        print("addContent >>> \(newContent)")
+        
+        
+    }
+    
+    
     func addBoard(B_maker : String, B_description : String) {
         let reference2 = ref.child("ForNumbering/Board")
         ref.child("ForNumbering/Board").observeSingleEvent(of: .value, with : {
