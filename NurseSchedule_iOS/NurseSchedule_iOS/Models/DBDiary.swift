@@ -11,15 +11,12 @@ import Firebase
 
 
 class DBDiary {
-    
- 
-    
     let ref : DatabaseReference! = Database.database().reference()
     
     static let newDiary = DBDiary()
     
     var diarycellCount : Int = 0
-
+    
     func addDiary(userID: String, shortDate: String, new: Day){
         
         let reference = ref.child("Diary/\(userID)/\(shortDate)/\(new.date)") //데이터 목록에 추가
@@ -39,39 +36,32 @@ class DBDiary {
             guard let value = snapshot.value as? [String: Any] else{
                 return
             }
-         //   print("Value: \(value)")
-            
-           // print(snapshot)
-
+            //   print("Value: \(value)")
+            // print(snapshot)
             let enumerator = snapshot.children
-                        while let rest = enumerator.nextObject() as? DataSnapshot {
-                         
-                           // print(rest.value)
-                            var get = Day(emoji: "-", date: "-", content: "-")
-                            if let result = (rest.value as AnyObject)["D_content"]! as? String
-                            {
-                             //    print(result)
-                                get.content = result
-                            }
-                            if let result = (rest.value as AnyObject)["D_date"]! as? String
-                            {
-                             //   print(result)
-                                get.date = result
-                            }
-                            if let result = (rest.value as AnyObject)["D_emoji"]! as? String
-                            {
-                             //   print(result)
-                                get.emoji = result
-                            }
-                            
-                            completion(get)
-                          
-                        }
+            while let rest = enumerator.nextObject() as? DataSnapshot {
+                // print(rest.value)
+                var get = Day(emoji: "-", date: "-", content: "-")
+                if let result = (rest.value as AnyObject)["D_content"]! as? String {
+                    //    print(result)
+                    get.content = result
+                }
+                if let result = (rest.value as AnyObject)["D_date"]! as? String {
+                    //   print(result)
+                    get.date = result
+                }
+                if let result = (rest.value as AnyObject)["D_emoji"]! as? String {
+                    //   print(result)
+                    get.emoji = result
+                }
+                completion(get)
+                
+            }
         })
     }
-        
-
-
+    
+    
+    
     func getDayDiary(userID : String, date : Date, completion : @escaping (Day?) -> Void) {
         let dateFormatter : DateFormatter = DateFormatter()
         //DB에 들어갈 날짜용 0(월단위)

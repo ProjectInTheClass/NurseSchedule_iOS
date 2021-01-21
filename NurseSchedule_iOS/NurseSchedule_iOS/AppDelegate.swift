@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
-var termsList = [Term]()
+var termsList : [Term] = []
 
 var bringdays : [Day] = []
 
@@ -28,57 +28,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
-        
-        
-        let ref = Database.database().reference().child("Medical/")
-        
-        for i in 1...11052 {
-        _ = ref.child("\(i)").observe(.value, with: { snapshot in
-            
-            var newTerm = Term(definition: "There's no Description", englishTerm: "retriveE", koreanTerm: "retriveK")
-            
-            //print(snapshot)
-            if let value = snapshot.value as? NSDictionary {
-                
-                newTerm.definition = value["N_definition"] as? String ?? " "//정의 받아오는 부분, 정의에 대한 변수
-                //print(value?["N_definition"])
-                
-                newTerm.englishTerm = value["N_englishName"] as? String ?? " " //영어 이름 받아오는 부분, 영어 이름에 대한 변수
-                newTerm.koreanTerm = value["N_koreanName"] as? String ?? " " //한글 이름 받아오는 부분, 한글 이름에 대한 변수
-                termsList.append(newTerm)
-            }
-            
-            //self.tableView.reloadData()
-            
-        })
+        // medicaBook 데이터 가져옴
+        DBMedical.medicalBookData.getMedicalBookData { (term) in
+            termsList.append(term)
         }
         print(">>>>>appdelegate \(termsList)")
         
+        // 다이어리 목록을 디비에서 불러옴
         let dateFormatter : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 0(월단위)
         dateFormatter.dateFormat = "yyyy-MM"
         getDiaryDate = dateFormatter.string(from: Date.init())
-        
-        
-        DBDiary.newDiary.getDiary(userID: currentUser, shortDate: getDiaryDate, completion: {
-            result in
-            
-                //result에 Day(emoji: "😢", date: "2021-01-03", content: "getDiary")형식으로 저장되어있음
-            
+        DBDiary.newDiary.getDiary(userID: currentUser, shortDate: getDiaryDate, completion: { result in //result에 Day(emoji: "😢", date: "2021-01-03", content: "getDiary")형식으로 저장되어있음
             bringdays.append(result)
-            
             print("app delegate \(result)")
             //print(self.bringdays)
-           
         })
-
         
         return true
     }
 
-    
-    
-    
-    
     
     
     @available(iOS 9.0, *)

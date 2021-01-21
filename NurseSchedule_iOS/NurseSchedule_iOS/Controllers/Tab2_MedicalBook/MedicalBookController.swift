@@ -115,17 +115,19 @@ extension MedicalBookController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sortedDataForTableView.filter({ data in
-            return data.englishTerm.starts(with: self.firstLetters[section])
-        }).count
+        return sortedDataForTableView
+//            .filter({ data in
+//            return data.englishTerm.starts(with: self.firstLetters[section])
+//        })
+            .count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MedicalCell", for: indexPath) as! MedicalCell
-        let source = sortedDataForTableView.filter({ data in
-            return data.englishTerm.starts(with: self.firstLetters[indexPath.section])
-        })
-        let term = source[indexPath.row]
+//        let source = sortedDataForTableView.filter({ data in
+//            return data.englishTerm.starts(with: self.firstLetters[indexPath.section])
+//        })
+        let term = sortedDataForTableView[indexPath.row]
         
         // print("tableView>>>>> \(term)")
         cell.update(with: term)
