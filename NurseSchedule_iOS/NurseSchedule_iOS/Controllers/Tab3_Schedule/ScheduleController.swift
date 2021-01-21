@@ -83,22 +83,22 @@ class ScheduleController: UIViewController{
         
         // 날짜 선택됐을 때
         // 타이틀 컬러
-//        calendar.appearance.titleSelectionColor = .black
+        calendar.appearance.titleSelectionColor = .black
         // 서브 타이틀 컬러
         calendar.appearance.subtitleSelectionColor = .black
         calendar.appearance.subtitleFont = UIFont.boldSystemFont(ofSize: 30)
         
         // 달력의 평일 날짜 색깔
-//        calendar.appearance.titleDefaultColor = .black
+        calendar.appearance.titleDefaultColor = .black
         
         // 달력의 토,일 날짜 색깔
         calendar.appearance.titleWeekendColor = .gray
         
         // 달력의 맨 위의 년도, 월의 색깔
-//        calendar.appearance.headerTitleColor = .black
+       calendar.appearance.headerTitleColor = .black
         
         // 달력의 요일 글자 색깔
-//        calendar.appearance.weekdayTextColor = .black
+        calendar.appearance.weekdayTextColor = .black
         
         
         // 달력의 년월 글자 바꾸기
