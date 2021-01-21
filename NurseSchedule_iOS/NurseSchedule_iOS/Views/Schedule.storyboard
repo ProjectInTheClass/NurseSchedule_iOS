@@ -372,7 +372,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="YES"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="NO"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
-                                                <color key="value" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.70076072219999996" green="0.89874082799999999" blue="0.62450921540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
                                                 <color key="value" systemColor="opaqueSeparatorColor"/>
@@ -495,7 +495,7 @@
                                                             <segment title="OFF"/>
                                                         </segments>
                                                         <color key="tintColor" name="AccentColor"/>
-                                                        <color key="selectedSegmentTintColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="selectedSegmentTintColor" red="0.70076072219999996" green="0.89874082799999999" blue="0.62450921540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="workTypeSeleted:" destination="upM-zm-90w" eventType="valueChanged" id="kjY-hI-Kkb"/>
                                                         </connections>
@@ -575,6 +575,7 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" systemColor="systemBackgroundColor"/>
+                        <color key="barTintColor" red="0.70076072219999996" green="0.89874082799999999" blue="0.62450921540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
