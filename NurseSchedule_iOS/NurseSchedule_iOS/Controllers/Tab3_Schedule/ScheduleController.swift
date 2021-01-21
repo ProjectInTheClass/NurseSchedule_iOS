@@ -32,13 +32,12 @@ class ScheduleController: UIViewController{
         dateFormatter.dateFormat = "yyyy-MM-dd"
         calendar.delegate = self
         calendar.dataSource = self
-        
        
         
          DBMemo.newMemo.getWorkType(userID: currentUser, completion: { (typesFromDB) in
             self.workTypesList[typesFromDB.date] = typesFromDB.workType
-            print("ScheduleController.worktypes!!!!!>>>\(self.workTypesList)")
-            //self.calendar.reloadData()
+            //print("ScheduleController.worktypes!!!!!>>>\(self.workTypesList)")
+            self.calendar.reloadData()
         })
         
         

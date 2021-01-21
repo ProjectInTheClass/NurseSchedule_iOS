@@ -40,6 +40,7 @@ class MedicalBookController: UIViewController{
         tableView.delegate = self
         searchbar.delegate = self
         searchbar.placeholder = "용어를 검색하세요."
+        tableView.reloadData()
         print("viewdidload>>>>>\(termsList)")
         // Do any additional setup after loading the view.
     }
@@ -61,42 +62,10 @@ class MedicalBookController: UIViewController{
         }
     }
     
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         //dispose of any resources that can be recreated
     }
-    
-    //    func retrieveTerms(){
-    //
-    //        print(">>>>>termslist \(self.termsList)")
-    //
-    //
-    //        //DispatchQueue.main.async {
-    //            _ = self.ref.child("1").observe(.value, with: { snapshot in
-    //
-    //                var newTerm = Term(definition: "retrive", englishTerm: "retriveE", koreanTerm: "retriveK")
-    //
-    //                //print(snapshot)
-    //                if let value = snapshot.value as? NSDictionary {
-    //
-    //                    newTerm.definition = value["definition"] as? String ?? " "//정의 받아오는 부분, 정의에 대한 변수
-    //                    //print(value?["N_definition"])
-    //
-    //                    newTerm.englishTerm = value["englishTerm"] as? String ?? " " //영어 이름 받아오는 부분, 영어 이름에 대한 변수
-    //                    newTerm.koreanTerm = value["koreanTerm"] as? String ?? " " //한글 이름 받아오는 부분, 한글 이름에 대한 변수
-    //                    self.termsList.append(newTerm)
-    //                }
-    //                print(">>>>>termslist2 \(self.termsList)")
-    //                self.tableView.reloadData()
-    //
-    //
-    //            })
-    //
-    //       // }
-    //        print(">>>>>termslist3 \(self.termsList)")
-    //    }
-    
     
 }
 
@@ -122,15 +91,14 @@ extension MedicalBookController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MedicalCell", for: indexPath) as! MedicalCell
-        let source = sortedDataForTableView.filter({ data in
+        let filteredData = sortedDataForTableView.filter({ data in
             return data.englishTerm.starts(with: self.firstLetters[indexPath.section])
         })
-        let term = source[indexPath.row]
+        let term = filteredData[indexPath.row]
         
         // print("tableView>>>>> \(term)")
         cell.update(with: term)
         
-        cell.showsReorderControl = true
         return cell
     }
 }
