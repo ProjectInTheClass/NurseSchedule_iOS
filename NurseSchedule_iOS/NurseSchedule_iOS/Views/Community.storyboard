@@ -127,22 +127,16 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="158"/>
                                                 <state key="normal" title="자유게시판"/>
                                                 <connections>
-                                                    <segue destination="whR-aS-cpp" kind="show" id="5MK-uY-s7v"/>
+                                                    <segue destination="whR-aS-cpp" kind="show" id="rOa-AG-a2Z"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofb-vN-v7o">
                                                 <rect key="frame" x="130" y="0.0" width="130" height="158"/>
                                                 <state key="normal" title="취업게시판"/>
-                                                <connections>
-                                                    <segue destination="whR-aS-cpp" kind="show" id="uhM-7e-upU"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhs-ch-kBn">
                                                 <rect key="frame" x="260" y="0.0" width="130" height="158"/>
                                                 <state key="normal" title="간호지식QnA"/>
-                                                <connections>
-                                                    <segue destination="whR-aS-cpp" kind="show" id="ufS-rc-ZL7"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -152,16 +146,10 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZR9-BV-Z5Z">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="157.66666666666666"/>
                                                 <state key="normal" title="정보게시판"/>
-                                                <connections>
-                                                    <segue destination="whR-aS-cpp" kind="show" id="6Pl-fq-ZsD"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGm-C0-vpI">
                                                 <rect key="frame" x="130" y="0.0" width="130" height="157.66666666666666"/>
                                                 <state key="normal" title="신입게시판"/>
-                                                <connections>
-                                                    <segue destination="whR-aS-cpp" kind="show" id="tn9-DZ-dRW"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvT-T5-VOS">
                                                 <rect key="frame" x="260" y="0.0" width="130" height="157.66666666666666"/>
@@ -467,7 +455,7 @@
         <!--게시글 목록-->
         <scene sceneID="sBo-y4-Wui">
             <objects>
-                <viewController id="whR-aS-cpp" customClass="ListTableViewController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="whR-aS-cpp" customClass="ContentListController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7w8-wz-uCA">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -483,7 +471,7 @@
                                         <rect key="frame" x="0.0" y="56" width="390" height="700"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="130" id="Slz-eo-GXe">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="130" id="Slz-eo-GXe" customClass="ContentCell" customModule="NurseSchedule_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="390" height="130"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Slz-eo-GXe" id="s4t-5v-7vN">
@@ -521,6 +509,10 @@
                                                     </subviews>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="ContentContent" destination="4ac-we-lMY" id="0Hz-9Y-XXD"/>
+                                                    <outlet property="ContentDate" destination="Fb2-gu-YDh" id="3Fl-e7-IeP"/>
+                                                    <outlet property="ContentNum" destination="Byx-b0-fkr" id="ou3-J7-5CV"/>
+                                                    <outlet property="ContentTitle" destination="ZVS-TR-W07" id="ca2-g4-9jb"/>
                                                     <segue destination="7j7-W6-mjm" kind="show" id="pRY-wQ-itu"/>
                                                 </connections>
                                             </tableViewCell>
@@ -810,9 +802,6 @@
             <point key="canvasLocation" x="954" y="1046"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="ufS-rc-ZL7"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
