@@ -23,17 +23,7 @@ class MedicalBookController: UIViewController{
     
     // tableview에 뿌려질 데이터를 지니는 array
     var outputDataForTableView = [Term]()
-//    {
-//        didSet {
-//            sortedDataForTableView = outputDataForTableView.sorted{ $0.englishTerm < $1.englishTerm }
-//            self.tableView.reloadData()
-//        }
-//    }
-    
-//    // 정렬된 데이터 배열
-//    var sortedDataForTableView = [Term]()
-//
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         // retrieveTerms()
