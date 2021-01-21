@@ -65,8 +65,8 @@ class ScheduleController: UIViewController{
         //calendar
         
         //memoview와 view 구분 임시..
-        let colorLiteral = #colorLiteral(red: 0.9211722016, green: 0.967481792, blue: 0.8859727979, alpha: 1)
-        calendar.backgroundColor = colorLiteral
+//        let colorLiteral = #colorLiteral(red: 0.9211722016, green: 0.967481792, blue: 0.8859727979, alpha: 1)
+//        calendar.backgroundColor = colorLiteral
         
         
         // 날짜 여러개 선택 가능하게
@@ -76,7 +76,7 @@ class ScheduleController: UIViewController{
         calendar.swipeToChooseGesture.isEnabled = true
         
         // 선택된 날짜의 모서리 설정 ( 0으로 하면 사각형으로 표시 )
-        calendar.appearance.borderRadius = 0
+        calendar.appearance.borderRadius = 3
         // 스와이프 스크롤 작동 여부 ( 활성화하면 좌측 우측 상단에 다음달 살짝 보임, 비활성화하면 사라짐 )
         calendar.scrollEnabled = true
         // 스와이프 스크롤 방향 ( 버티칼로 스와이프 설정하면 좌측 우측 상단 다음달 표시 없어짐, 호리젠탈은 보임 )
@@ -93,13 +93,13 @@ class ScheduleController: UIViewController{
         calendar.appearance.titleDefaultColor = .black
         
         // 달력의 토,일 날짜 색깔
-        calendar.appearance.titleWeekendColor = .red
+        calendar.appearance.titleWeekendColor = .gray
         
         // 달력의 맨 위의 년도, 월의 색깔
-        calendar.appearance.headerTitleColor = .systemPink
+        calendar.appearance.headerTitleColor = .black
         
         // 달력의 요일 글자 색깔
-        calendar.appearance.weekdayTextColor = .brown
+        calendar.appearance.weekdayTextColor = .black
         
         
         // 달력의 년월 글자 바꾸기
