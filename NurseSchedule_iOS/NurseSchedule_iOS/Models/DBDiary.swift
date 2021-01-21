@@ -67,23 +67,35 @@ class DBDiary {
                             completion(get)
                           
                         }
-    
-          
-            
-            
-            
-            
-          
-//            for i in 1...snapshot.childrenCount {
-//                ref.child("Diary/\(userID)/\(shortDate)")
-//            }
-            
         })
     }
-    
+        
 
 
+    func getDayDiary(userID : String, date : Date, completion : @escaping (Day?) -> Void) {
+        let dateFormatter : DateFormatter = DateFormatter()
+        //DB에 들어갈 날짜용 0(월단위)
+        dateFormatter.dateFormat = "yyyy-MM"
+        let dayMonth = dateFormatter.string(from: date)
+        print("getDayDiary>> \(dayMonth)")
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let day = dateFormatter.string(from: date)
+        print("getDayDiary>> \(day)")
+        ref.child("Diary/\(userID)/\(dayMonth)/\(day)/").observeSingleEvent(of: .value) { (snapshot) in
+            var dayDiary : Day = Day(emoji: "", date: "", content: "")
+            //let noDiary : Day = Day(emoji: "no", date: "no", content: "no")
+            if let value = snapshot.value as? NSDictionary {
+                dayDiary.emoji = value["D_emoji"] as? String ?? "D_emoji_error"
+                dayDiary.date = value["D_date"] as? String ?? "D_date_error"
+                dayDiary.content = value["D_content"] as? String ?? "D_content_error"
+                print("DBgetDayDiary >>>>> \(dayDiary)")
+                completion(dayDiary)
+            } else {
+                completion(nil)
+            }
+            
+        }
+    }
     
- 
 }
 
