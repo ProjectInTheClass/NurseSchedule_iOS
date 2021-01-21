@@ -12,6 +12,8 @@ import Firebase
 
 class DBDiary {
     
+ 
+    
     let ref : DatabaseReference! = Database.database().reference()
     
     static let newDiary = DBDiary()
@@ -30,7 +32,7 @@ class DBDiary {
     }
     
     
-    func getDiary(userID: String, shortDate : String, completion : @escaping (String) -> Void) {
+    func getDiary(userID: String, shortDate : String, completion : @escaping (Day) -> Void) {
         ref.child("Diary/\(userID)/\(shortDate)").observeSingleEvent(of: .value, with: { snapshot in
             self.diarycellCount = Int(snapshot.childrenCount)
             print("snapshot.childrencount ->  \(snapshot.childrenCount)")
@@ -40,21 +42,38 @@ class DBDiary {
          //   print("Value: \(value)")
             
            // print(snapshot)
-            
+
             let enumerator = snapshot.children
                         while let rest = enumerator.nextObject() as? DataSnapshot {
-                           // rest.value["D_content"]
-                            print(rest.value)
+                         
+                           // print(rest.value)
+                            var get = Day(emoji: "-", date: "-", content: "-")
+                            if let result = (rest.value as AnyObject)["D_content"]! as? String
+                            {
+                             //    print(result)
+                                get.content = result
+                            }
+                            if let result = (rest.value as AnyObject)["D_date"]! as? String
+                            {
+                             //   print(result)
+                                get.date = result
+                            }
+                            if let result = (rest.value as AnyObject)["D_emoji"]! as? String
+                            {
+                             //   print(result)
+                                get.emoji = result
+                            }
+                            
+                            completion(get)
+                          
                         }
+    
+          
             
             
-
-            for child in snapshot.children {
-                let snap = child as! DataSnapshot
-                    
-
-
-            }
+            
+            
+          
 //            for i in 1...snapshot.childrenCount {
 //                ref.child("Diary/\(userID)/\(shortDate)")
 //            }
