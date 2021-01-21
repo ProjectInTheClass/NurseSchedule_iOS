@@ -10,6 +10,14 @@ import SafariServices
 import FSPagerView
 
 
+struct InputTable {
+    var title: String
+    var date: String
+    var content: String
+    var user: String
+}
+
+
 // 마일스톤
 class CommunityController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate {
     
