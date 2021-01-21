@@ -24,7 +24,7 @@ class MedicalCell: UITableViewCell {
     
     func update(with term : Term) {
         englishTerm.text = term.englishTerm
-        koreanTerm.text = term.koreanTerm
+      //  koreanTerm.text = term.koreanTerm
     }
 
 }
