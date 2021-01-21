@@ -110,17 +110,16 @@
                                     <rect key="frame" x="261.5" y="7" width="92" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="testButtonTapped:" destination="Zcn-qg-mjc" eventType="touchUpInside" id="5DP-gE-LAb"/>
+                                    </connections>
                                 </button>
-                                <connections>
-                                    <segue destination="zKc-Dc-ZiH" kind="popoverPresentation" popoverAnchorBarButtonItem="i1J-sS-qH2" id="gaD-Rs-Y10">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Chm-eJ-3Yh" id="UNj-tp-2bO"/>
+                        <segue destination="zKc-Dc-ZiH" kind="presentation" identifier="popupDiary" id="RCw-Ij-aqg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fr4-D2-AJf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -456,7 +455,7 @@
         <scene sceneID="ABD-jS-AQT">
             <objects>
                 <viewController id="zKc-Dc-ZiH" customClass="DiaryDetailViewController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" opaque="NO" contentMode="scaleToFill" id="kHP-sH-2oO">
+                    <view key="view" contentMode="scaleToFill" id="kHP-sH-2oO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -472,6 +471,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKd-x9-6m2">
                                                         <rect key="frame" x="297.5" y="0.0" width="15.5" height="22"/>
                                                         <state key="normal" image="multiply" catalog="system"/>
+                                                        <connections>
+                                                            <segue destination="Oro-gd-F8D" kind="unwind" unwindAction="unwindToDiary:" id="IZo-Mt-Zmg"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -511,7 +513,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.94527704830000003" green="1" blue="0.65348893630000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="pnI-Bb-lDB" secondAttribute="bottom" id="Hat-S4-jjC"/>
                                     <constraint firstAttribute="height" constant="508" id="XsX-9p-Y0i"/>
@@ -523,12 +525,12 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g4w-YK-e1I"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ycn-Nb-sua" firstAttribute="centerX" secondItem="kHP-sH-2oO" secondAttribute="centerX" id="80S-DZ-7qN"/>
                             <constraint firstItem="Ycn-Nb-sua" firstAttribute="centerY" secondItem="kHP-sH-2oO" secondAttribute="centerY" id="obH-Ub-pwJ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Y4H-yz-1pD"/>
                     <connections>
                         <outlet property="content" destination="MWA-E9-9wa" id="vcm-cx-QK6"/>
                         <outlet property="date" destination="qCr-Z9-tXd" id="Qi7-Td-lyA"/>
@@ -536,8 +538,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2O-6W-792" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Oro-gd-F8D" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1913" y="2997"/>
+            <point key="canvasLocation" x="2194" y="2991"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
