@@ -32,7 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         DBMedical.medicalBookData.getMedicalBookData { (term) in
             termsList.append(term)
         }
-       // termsList.sort{$0.englishTerm < $1.englishTerm}
         print(">>>>>appdelegate \(termsList)")
         
         
