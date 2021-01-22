@@ -21,3 +21,12 @@ struct Term {
     var koreanTerm : String
 }
 
+
+
+struct Article {
+    var title: String
+    var date: String
+    var content: String
+    var user: String
+}
+

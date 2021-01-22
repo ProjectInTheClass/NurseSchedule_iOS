@@ -7,43 +7,20 @@
 
 import UIKit
 
-class ContentListController: UIViewController , UITableViewDataSource{
-   
-
-    struct Data {
-        var num : Int
-        var date : String
-        var title : String
-        var content : String
-    }
-
-
-    var data : [Data] = [
-        Data(num: 1, date: "날짜1", title: "제목1", content: "내용1"),
-        Data(num: 2, date: "날짜2", title: "제목2", content: "내용2")
-    ]
+class ContentListController: UIViewController{
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ContentCell", for: indexPath) as! ContentCell
-        
-        cell.ContentNum.text = "\(data[indexPath.row].num)"
-        cell.ContentDate.text = data[indexPath.row].date
-        cell.ContentTitle.text = data[indexPath.row].title
-        cell.ContentContent.text = data[indexPath.row].content
-        
-        return cell
-    }
-    
-    
+    var boardType : String = ""
+    var articleList : [Article] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        DBBoard.board.getArticleListIn(BoardType: boardType) { (article) in
+            self.articleList.append(article)
+            print("ContentList>>>>>>>\(self.articleList)")
+        }
         // Do any additional setup after loading the view.
+        
     }
     
 
@@ -61,4 +38,23 @@ class ContentListController: UIViewController , UITableViewDataSource{
         // Use data from the view controller which initiated the unwind segue
     }
 
+}
+
+
+extension ContentListController : UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return articleList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContentCell", for: indexPath) as! ContentCell
+        
+        cell.ContentNum.text = String(indexPath.row)
+        cell.ContentDate.text = articleList[indexPath.row].date
+        cell.ContentTitle.text = articleList[indexPath.row].title
+        cell.ContentContent.text = articleList[indexPath.row].content
+        return cell
+    }
+    
 }

@@ -25,35 +25,21 @@ class DBBoard  {
         return String(boardNum_Int)
     }
     
-    func countContent(BoardType: String, DataType: String , new: InputTable){
-        
-        let reference4 = ref.child("Board/\(BoardType)/\(DataType)/\(self.countingContent)")
-        
-        let newContent = ["title": new.title, "content": new.content, "date": new.date, "user":new.user]
-        
-        reference4.setValue(newContent)
-        
-        
-    }
     
-    
-    func addContent(BoardType: String, DataType: String, new: InputTable) {
-        
+    func addContent(BoardType: String, DataType: String, new: Article) {
         let reference3 = ref.child("Board/\(BoardType)/\(DataType)/")
-        
-        
-        
         let newContent = ["title": new.title, "content": new.content, "date": new.date, "user":new.user]
         
     //    reference3.setValue(newContent)
-        
         countingContent+=1
-        
         countContent(BoardType: BoardType, DataType: DataType, new: new)
-        
         print("addContent >>> \(newContent)")
-        
-        
+    }
+    
+    func countContent(BoardType: String, DataType: String , new: Article){
+        let reference4 = ref.child("Board/\(BoardType)/\(DataType)/\(self.countingContent)")
+        let newContent = ["title": new.title, "content": new.content, "date": new.date, "user":new.user]
+        reference4.setValue(newContent)
     }
     
     
@@ -79,4 +65,28 @@ class DBBoard  {
             reference.setValue(boardInfo)
         })
     }
+    
+    
+    func getArticleListIn(BoardType: String, completion : @escaping (Article) -> Void) {
+        ref.child("Board/\(BoardType)/contentList").observeSingleEvent(of: .value, with: { snapshot in
+            let enumerator = snapshot.children
+            while let rest = enumerator.nextObject() as? DataSnapshot {
+                var eachArticle = Article(title: "", date: "", content: "", user: "")
+                if let result = (rest.value as AnyObject)["content"]! as? String {
+                    eachArticle.content = result
+                }
+                if let result = (rest.value as AnyObject)["date"]! as? String {
+                    eachArticle.date = result
+                }
+                if let result = (rest.value as AnyObject)["title"]! as? String {
+                    eachArticle.title = result
+                }
+                completion(eachArticle)
+                
+            }
+        })
+    }
+    
+    
+    
 }
