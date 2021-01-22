@@ -45,7 +45,7 @@ class DBBoard  {
         
         let newContent = ["title": new.title, "content": new.content, "date": new.date, "user":new.user]
         
-        reference3.setValue(newContent)
+    //    reference3.setValue(newContent)
         
         countingContent+=1
         
