@@ -373,7 +373,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="YES"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="NO"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
-                                                <color key="value" red="0.70076072219999996" green="0.89874082799999999" blue="0.62450921540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.70111000540000001" green="0.90072238449999997" blue="0.62348586319999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
                                                 <color key="value" systemColor="opaqueSeparatorColor"/>
