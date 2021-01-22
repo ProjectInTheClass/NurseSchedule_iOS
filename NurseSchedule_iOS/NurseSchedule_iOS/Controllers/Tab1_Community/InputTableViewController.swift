@@ -40,7 +40,10 @@ class InputTableViewController: UITableViewController {
                 newArticle.date = "\(Date.init())"
                 
                 
-                DBBoard.board.addContent(BoardType: self.BoardType, DataType: "contentList", new: newArticle)
+                DBBoard.board.addContent(BoardType: self.BoardType, DataType: "contentList", new: Input)
+                
+                self.dismiss(animated: true, completion: nil)
+                
             }
             
             

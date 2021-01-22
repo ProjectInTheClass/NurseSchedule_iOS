@@ -93,12 +93,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="일기장" id="EhD-4z-mGb">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="calendar" catalog="system" id="CVN-wx-NsB">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="fvp-3Q-dl9" kind="show" id="l0e-CW-Ja5"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="plus" catalog="system" id="Ygu-lQ-soU">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="24Z-UK-ocX" kind="popoverPresentation" popoverAnchorBarButtonItem="Ygu-lQ-soU" id="XPa-k4-My4">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -111,6 +113,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Button"/>
                                 </button>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -240,11 +243,11 @@
                                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YMM-mg-fka">
                                                             <rect key="frame" x="0.0" y="25.5" width="374" height="64.5"/>
                                                             <segments>
-                                                                <segment title="😊"/>
-                                                                <segment title="🥰"/>
-                                                                <segment title="😥"/>
-                                                                <segment title="🤒"/>
-                                                                <segment title="😡"/>
+                                                                <segment title="" image="0-love"/>
+                                                                <segment title="" image="0-happy"/>
+                                                                <segment title="" image="0-surprised"/>
+                                                                <segment title="" image="0-crying"/>
+                                                                <segment title="" image="0-devil"/>
                                                             </segments>
                                                             <connections>
                                                                 <action selector="SelectCondition:" destination="24Z-UK-ocX" eventType="valueChanged" id="mSI-qP-4Nt"/>
@@ -369,6 +372,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="RTc-nv-WgP">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="FYv-jG-z4b">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="24Z-UK-ocX" kind="presentation" id="KBb-6W-ZgX"/>
                             </connections>
@@ -570,6 +574,11 @@
         <segue reference="KBb-6W-ZgX"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="0-crying" width="35" height="35"/>
+        <image name="0-devil" width="35" height="35"/>
+        <image name="0-happy" width="35" height="35"/>
+        <image name="0-love" width="35" height="35"/>
+        <image name="0-surprised" width="35" height="35"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="multiply" catalog="system" width="128" height="111"/>
         <image name="plus" catalog="system" width="128" height="113"/>
