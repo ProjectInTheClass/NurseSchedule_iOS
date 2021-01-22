@@ -21,9 +21,12 @@ class ContentListController: UIViewController{
             print("ContentList>>>>>>>\(self.articleList)")
         }
         // Do any additional setup after loading the view.
-        
+        articleListTableView.reloadData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        articleListTableView.reloadData()
+    }
 
     /*
     // MARK: - Navigation
