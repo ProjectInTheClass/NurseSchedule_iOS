@@ -893,8 +893,11 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rtb-Hk-I2V">
-                                        <rect key="frame" x="0.0" y="260" width="390" height="413"/>
+                                        <rect key="frame" x="0.0" y="260" width="390" height="363"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="363" id="yAR-Wn-VQk"/>
+                                        </constraints>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="116" id="WEQ-No-Njw">
                                                 <rect key="frame" x="0.0" y="28" width="390" height="116"/>
@@ -949,6 +952,16 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Bcc-A5-NkV">
+                                        <rect key="frame" x="0.0" y="623" width="390" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="gQr-nI-X4b"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -973,11 +986,12 @@
                         <outlet property="articleDate" destination="CKN-VD-bJX" id="qHX-dC-Km5"/>
                         <outlet property="articleTitle" destination="xyZ-oG-aF6" id="86z-UD-BDx"/>
                         <outlet property="articleUser" destination="3mf-j7-7OL" id="eN0-EU-OTG"/>
+                        <outlet property="commentTextView" destination="Bcc-A5-NkV" id="rAv-Cy-d7B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAU-XR-p8v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072" y="76"/>
+            <point key="canvasLocation" x="1070.7692307692307" y="75.355450236966817"/>
         </scene>
     </scenes>
     <designables>

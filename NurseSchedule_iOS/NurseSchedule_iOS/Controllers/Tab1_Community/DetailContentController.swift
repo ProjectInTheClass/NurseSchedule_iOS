@@ -13,6 +13,7 @@ class DetailContentController: UIViewController {
     @IBOutlet weak var articleDate: UILabel!
     @IBOutlet weak var articleTitle: UILabel!
     @IBOutlet weak var articleContent: UILabel!
+    @IBOutlet weak var commentTextView: UITextView!
     
     var selectedArticle : Article? = nil
     
@@ -22,6 +23,9 @@ class DetailContentController: UIViewController {
         articleDate.text = selectedArticle?.date
         articleTitle.text = selectedArticle?.title
         articleContent.text = selectedArticle?.content
+        
+        commentTextView.delegate = self // txtvReview가 유저가 선언한 outlet
+        commentTextViewPlaceholderSetting()
         // Do any additional setup after loading the view.
     }
     
@@ -52,4 +56,28 @@ class DetailContentController: UIViewController {
     }
     */
 
+}
+
+extension DetailContentController : UITextViewDelegate {
+    func commentTextViewPlaceholderSetting() {
+        commentTextView.text = "댓글을 입력하세요"
+        commentTextView.textColor = UIColor.lightGray
+            
+        }
+        
+        
+        // TextView Place Holder
+        func textViewDidBeginEditing(_ textView: UITextView) {
+            if commentTextView.textColor == UIColor.lightGray {
+                commentTextView.text = nil
+                commentTextView.textColor = UIColor.black
+            }
+            
+        }
+        // TextView Place Holder
+        func textViewDidEndEditing(_ textView: UITextView) {
+            if commentTextView.text.isEmpty {
+                commentTextViewPlaceholderSetting()
+            }
+        }
 }
