@@ -31,28 +31,28 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb3-rh-V9E">
                                         <rect key="frame" x="0.0" y="0.0" width="97.666666666666671" height="45"/>
-                                        <state key="normal" image="대한간호협회 로고"/>
+                                        <state key="normal" image="Nursekorea"/>
                                         <connections>
                                             <action selector="firstLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="A4L-6K-f6j"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLc-MR-zge">
                                         <rect key="frame" x="97.666666666666686" y="0.0" width="97.333333333333314" height="45"/>
-                                        <state key="normal" image="너스케입 로고"/>
+                                        <state key="normal" image="Nurscape"/>
                                         <connections>
                                             <action selector="secondLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="VN0-Vo-5ZD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7l-xE-as1">
                                         <rect key="frame" x="195" y="0.0" width="97.666666666666686" height="45"/>
-                                        <state key="normal" image="널스스토리 로고"/>
+                                        <state key="normal" image="Nursestory"/>
                                         <connections>
                                             <action selector="thirdLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="wqp-al-GVc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvJ-fl-Vsk">
                                         <rect key="frame" x="292.66666666666669" y="0.0" width="97.333333333333314" height="45"/>
-                                        <state key="normal" image="널스잡 로고"/>
+                                        <state key="normal" image="NurseJob"/>
                                         <connections>
                                             <action selector="fourthLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="vA9-Kk-4nf"/>
                                         </connections>
@@ -117,14 +117,14 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNg-nP-zIi">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="145"/>
-                                                <state key="normal" title="자유게시판" image="자유게시판"/>
+                                                <state key="normal" title="자유게시판" image="Free"/>
                                                 <connections>
                                                     <action selector="board1Tapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="M9X-5D-Wd6"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofb-vN-v7o">
                                                 <rect key="frame" x="130" y="0.0" width="130" height="145"/>
-                                                <state key="normal" title="취업게시판" image="취업게시판"/>
+                                                <state key="normal" title="취업게시판" image="Job"/>
                                                 <connections>
                                                     <action selector="board2Tapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="PGS-fO-J2m"/>
                                                 </connections>
@@ -143,14 +143,14 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZR9-BV-Z5Z">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="145"/>
-                                                <state key="normal" title="정보게시판" image="정보게시판"/>
+                                                <state key="normal" title="정보게시판" image="Data"/>
                                                 <connections>
                                                     <action selector="board4Tapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="VlV-EW-srF"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGm-C0-vpI">
                                                 <rect key="frame" x="130" y="0.0" width="130" height="145"/>
-                                                <state key="normal" title="신입게시판" image="신입게시판"/>
+                                                <state key="normal" title="신입게시판" image="New"/>
                                                 <connections>
                                                     <action selector="board5Tapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="zY6-J2-0YT"/>
                                                 </connections>
@@ -970,6 +970,10 @@
         <image name="Job" width="388" height="384"/>
         <image name="MoreThing" width="392" height="384"/>
         <image name="New" width="388" height="384"/>
+        <image name="Nurscape" width="100" height="37"/>
+        <image name="NurseJob" width="100" height="37"/>
+        <image name="Nursekorea" width="100" height="30"/>
+        <image name="Nursestory" width="100" height="37"/>
         <image name="QnA" width="392" height="384"/>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
@@ -978,15 +982,6 @@
         <image name="person.2" catalog="system" width="128" height="81"/>
         <image name="person.2.fill" catalog="system" width="128" height="80"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <image name="너스케입 로고" width="100" height="37"/>
-        <image name="널스스토리 로고" width="100" height="37"/>
-        <image name="널스잡 로고" width="100" height="37"/>
-        <image name="대한간호협회 로고" width="100" height="30"/>
-        <image name="더 보기" width="392" height="384"/>
-        <image name="신입게시판" width="388" height="384"/>
-        <image name="자유게시판" width="128" height="128"/>
-        <image name="정보게시판" width="392" height="384"/>
-        <image name="취업게시판" width="388" height="384"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
