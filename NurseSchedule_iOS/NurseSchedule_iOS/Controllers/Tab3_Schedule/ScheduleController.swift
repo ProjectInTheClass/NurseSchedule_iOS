@@ -100,6 +100,9 @@ class ScheduleController: UIViewController{
         // 달력의 요일 글자 색깔
         calendar.appearance.weekdayTextColor = .black
         
+        // 달력의 오늘 색깔 
+        calendar.appearance.todayColor = #colorLiteral(red: 0.6445949674, green: 0.9079375863, blue: 0.5924149752, alpha: 1)
+        
         
         // 달력의 년월 글자 바꾸기
         calendar.appearance.headerDateFormat = "YYYY년 M월"

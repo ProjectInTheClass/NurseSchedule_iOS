@@ -651,7 +651,7 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="plus" catalog="system" id="CLo-mL-2Jg">
                                 <connections>
-                                    <segue destination="xcC-He-qon" kind="presentation" id="MHa-QG-PxD"/>
+                                    <segue destination="xcC-He-qon" kind="presentation" identifier="showAddForm" id="MHa-QG-PxD"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem style="plain" id="aIs-qW-cDu">
