@@ -37,7 +37,10 @@ class InputTableViewController: UITableViewController {
                 newArticle.user = currentUser
                 newArticle.content = self.StoredContentData!
                 newArticle.title = self.StoredTitleData!
-                newArticle.date = "\(Date.init())"
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                
+                newArticle.date = dateFormatter.string(from: Date.init())
                 
                 
                 print("add되기전에 게시판 이름 제대로야? \(boardType)")

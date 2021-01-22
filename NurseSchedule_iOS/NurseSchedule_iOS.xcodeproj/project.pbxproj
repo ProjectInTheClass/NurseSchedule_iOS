@@ -38,6 +38,7 @@
 		9991D6CC25B94F6800C3A7B1 /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991D6CB25B94F6800C3A7B1 /* ContentCell.swift */; };
 		9991D6D025B9517700C3A7B1 /* ContentListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991D6CF25B9517700C3A7B1 /* ContentListController.swift */; };
 		9991D6D625B986B500C3A7B1 /* DBMedical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991D6D525B986B500C3A7B1 /* DBMedical.swift */; };
+		99ABBA2A25BB2F8400FFBE51 /* ArticleContentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ABBA2925BB2F8400FFBE51 /* ArticleContentLabel.swift */; };
 		99D874B525AB452D0012D403 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D874B425AB452D0012D403 /* LoginController.swift */; };
 		99FB53A925A0BE7400FBF750 /* Community.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53A825A0BE7400FBF750 /* Community.storyboard */; };
 		99FB53AD25A0BFB100FBF750 /* MedicalBook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53AC25A0BFB100FBF750 /* MedicalBook.storyboard */; };
@@ -88,6 +89,7 @@
 		9991D6CB25B94F6800C3A7B1 /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 		9991D6CF25B9517700C3A7B1 /* ContentListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListController.swift; sourceTree = "<group>"; };
 		9991D6D525B986B500C3A7B1 /* DBMedical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMedical.swift; sourceTree = "<group>"; };
+		99ABBA2925BB2F8400FFBE51 /* ArticleContentLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleContentLabel.swift; sourceTree = "<group>"; };
 		99D874B425AB452D0012D403 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		99FB53A825A0BE7400FBF750 /* Community.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Community.storyboard; sourceTree = "<group>"; };
 		99FB53AC25A0BFB100FBF750 /* MedicalBook.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MedicalBook.storyboard; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		990AC3F0259DB3C400281E8B /* NurseSchedule_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				99ABBA2825BB2F5D00FFBE51 /* CustomLabel */,
 				7EFD380425B4A78F00FD3435 /* SlideImage */,
 				992F41ED25AF2C5300E25199 /* CustomCell */,
 				9926523225A4AD7B0043A16E /* Models */,
@@ -277,6 +280,14 @@
 				99FB53B525A0C1EB00FBF750 /* Setting.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		99ABBA2825BB2F5D00FFBE51 /* CustomLabel */ = {
+			isa = PBXGroup;
+			children = (
+				99ABBA2925BB2F8400FFBE51 /* ArticleContentLabel.swift */,
+			);
+			path = CustomLabel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,6 +463,7 @@
 				990AC3F4259DB3C400281E8B /* SceneDelegate.swift in Sources */,
 				9926523425A4ADB10043A16E /* CommunityController.swift in Sources */,
 				7E9F594425B95B290028D9A8 /* InputTableViewController.swift in Sources */,
+				99ABBA2A25BB2F8400FFBE51 /* ArticleContentLabel.swift in Sources */,
 				992F420B25AFDD2B00E25199 /* ScheduleAddViewController.swift in Sources */,
 				EC9708A625B65BEC00BF2593 /* DBDiary.swift in Sources */,
 			);
