@@ -117,14 +117,14 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNg-nP-zIi">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="145"/>
-                                                <state key="normal" title="자유게시판" image="FreeBoard"/>
+                                                <state key="normal" title="자유게시판" image="Free"/>
                                                 <connections>
                                                     <action selector="board1Tapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="M9X-5D-Wd6"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofb-vN-v7o">
                                                 <rect key="frame" x="130" y="0.0" width="130" height="145"/>
-                                                <state key="normal" title="취업게시판" image="JobBoard"/>
+                                                <state key="normal" title="취업게시판" image="Job"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhs-ch-kBn">
                                                 <rect key="frame" x="260" y="0.0" width="130" height="145"/>
@@ -137,15 +137,15 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZR9-BV-Z5Z">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="145"/>
-                                                <state key="normal" title="정보게시판" image="DataBoard"/>
+                                                <state key="normal" title="정보게시판" image="Data"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGm-C0-vpI">
                                                 <rect key="frame" x="130" y="0.0" width="130" height="145"/>
-                                                <state key="normal" title="신입게시판" image="NewBoard"/>
+                                                <state key="normal" title="신입게시판" image="New"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvT-T5-VOS">
                                                 <rect key="frame" x="260" y="0.0" width="130" height="145"/>
-                                                <state key="normal" title="더보기" image="More"/>
+                                                <state key="normal" title="더보기" image="MoreThing"/>
                                                 <connections>
                                                     <segue destination="2v5-kD-ip1" kind="showDetail" id="Mfz-49-a7U"/>
                                                 </connections>
@@ -953,11 +953,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DataBoard" width="392" height="384"/>
-        <image name="FreeBoard" width="392" height="384"/>
-        <image name="JobBoard" width="388" height="384"/>
-        <image name="More" width="392" height="384"/>
-        <image name="NewBoard" width="388" height="384"/>
+        <image name="Data" width="392" height="384"/>
+        <image name="Free" width="392" height="384"/>
+        <image name="Job" width="388" height="384"/>
+        <image name="MoreThing" width="392" height="384"/>
+        <image name="New" width="388" height="384"/>
         <image name="QnA" width="392" height="384"/>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
