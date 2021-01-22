@@ -41,6 +41,9 @@ class InputTableViewController: UITableViewController {
                 
                 
                 DBBoard.board.addContent(BoardType: self.BoardType, DataType: "contentList", new: Input)
+                
+                self.dismiss(animated: true, completion: nil)
+                
             }
             
             
