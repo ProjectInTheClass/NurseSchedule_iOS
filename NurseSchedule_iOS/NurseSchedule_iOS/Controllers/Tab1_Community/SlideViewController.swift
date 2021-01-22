@@ -28,7 +28,7 @@ class SlideViewController: UIViewController, FSPagerViewDataSource, FSPagerViewD
             // 무한스크롤 설정
             self.myPagerView.isInfinite = true
             // 자동 스크롤
-            self.myPagerView.automaticSlidingInterval = 4.0
+            self.myPagerView.automaticSlidingInterval = 3.0
         }
     }
     
