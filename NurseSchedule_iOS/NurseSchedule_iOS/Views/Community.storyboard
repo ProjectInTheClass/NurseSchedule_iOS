@@ -31,7 +31,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb3-rh-V9E">
                                         <rect key="frame" x="0.0" y="0.0" width="97.666666666666671" height="45"/>
-                                        <state key="normal" image="Nursekorea"/>
+                                        <state key="normal" image="NurseKorea"/>
                                         <connections>
                                             <action selector="firstLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="A4L-6K-f6j"/>
                                         </connections>
@@ -970,11 +970,11 @@
         <image name="Job" width="388" height="384"/>
         <image name="MoreThing" width="392" height="384"/>
         <image name="New" width="388" height="384"/>
-        <image name="Nurscape" width="100" height="37"/>
-        <image name="NurseJob" width="100" height="37"/>
-        <image name="Nursekorea" width="100" height="30"/>
-        <image name="Nursestory" width="100" height="37"/>
-        <image name="QnA" width="392" height="384"/>
+        <image name="Nurscape" width="200" height="75"/>
+        <image name="NurseJob" width="200" height="75"/>
+        <image name="NurseKorea" width="200" height="59"/>
+        <image name="Nursestory" width="200" height="75"/>
+        <image name="QnA" width="394" height="384"/>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>

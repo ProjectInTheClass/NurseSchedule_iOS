@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "NurseKorea.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "대한간호협회 로고.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -17,8 +17,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "template-rendering-intent" : "original"
   }
 }
