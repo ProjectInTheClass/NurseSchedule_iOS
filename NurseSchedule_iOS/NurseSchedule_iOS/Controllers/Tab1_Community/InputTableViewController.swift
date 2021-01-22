@@ -14,7 +14,7 @@ class InputTableViewController: UITableViewController {
     
     var BoardType : String = "임시게시판"
     let currentUser = Login.init().googleLogin()
-    var Input = InputTable(title: "default", date: "default", content: "default", user: "default")
+    var newArticle = Article(title: "default", date: "default", content: "default", user: "default")
     
     
     var StoredTitleData : String? = nil
@@ -34,10 +34,10 @@ class InputTableViewController: UITableViewController {
                 showAlert()
             } else {
                 
-                Input.user = currentUser
-                Input.content = self.StoredContentData!
-                Input.title = self.StoredTitleData!
-                Input.date = "\(Date.init())"
+                newArticle.user = currentUser
+                newArticle.content = self.StoredContentData!
+                newArticle.title = self.StoredTitleData!
+                newArticle.date = "\(Date.init())"
                 
                 
                 DBBoard.board.addContent(BoardType: self.BoardType, DataType: "contentList", new: Input)
@@ -50,8 +50,6 @@ class InputTableViewController: UITableViewController {
             
         }
     
-            
-        
     }
     
     func showAlert() {
@@ -63,10 +61,6 @@ class InputTableViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
         
     }
-    
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
