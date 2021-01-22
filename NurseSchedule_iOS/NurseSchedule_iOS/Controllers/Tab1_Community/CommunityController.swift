@@ -104,7 +104,12 @@ class CommunityController: UIViewController, FSPagerViewDataSource, FSPagerViewD
     }
     
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "articleList" {
+            let ContentListController = segue.destination as! ContentListController
+            ContentListController.boardType = sender as? String
+        }
+    }
     
     
     
@@ -138,35 +143,11 @@ class CommunityController: UIViewController, FSPagerViewDataSource, FSPagerViewD
             present(safariViewController, animated: true, completion: nil)
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    @IBAction func board1Tapped(_ sender: Any) {
+        performSegue(withIdentifier: "articleList", sender: "임시게시판")
+        
     }
-    */
-
-    // 링크넘어가기
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "koreanurseWeb" {
-//            if let vc = segue.destination as? ViewLinc {
-//                vc.urlString = "https://www.koreanurse.or.kr/"
-//            }
-//        } else if segue.identifier == "nursejobWeb" {
-//            if let vc = segue.destination as? ViewLinc {
-//                vc.urlString = "https://www.nursejob.co.kr/"
-//            }
-//        } else if segue.identifier == "nurscapeWeb" {
-//            if let vc = segue.destination as? ViewLinc {
-//                vc.urlString = "https://recruit.nurscape.net/"
-//            }
-//        } else if segue.identifier == "NursestoryWeb" {
-//            if let vc = segue.destination as? ViewLinc {
-//                vc.urlString = "https://www.nursestory.co.kr/"
-//            }
-//        }
-//    }
+    
 }

@@ -30,7 +30,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" id="A9a-3t-fBU">
-                                        <rect key="frame" x="0.0" y="270" width="391.33333333333331" height="22"/>
+                                        <rect key="frame" x="0.0" y="370.66666666666669" width="391.33333333333331" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb3-rh-V9E">
@@ -72,7 +72,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WfY-5U-Plk" userLabel="pageControl" customClass="FSPageControl" customModule="FSPagerView">
-                                <rect key="frame" x="0.0" y="301" width="391.33333333333331" height="20"/>
+                                <rect key="frame" x="0.0" y="301" width="390" height="20"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="46N-LG-5ja"/>
@@ -110,41 +110,41 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Lhf-4y-YY7">
-                                <rect key="frame" x="0.0" y="501" width="391.33333333333331" height="260"/>
+                                <rect key="frame" x="0.0" y="501" width="390" height="260"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9rm-6Q-LEa">
-                                        <rect key="frame" x="0.0" y="0.0" width="391.33333333333331" height="130"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="130"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNg-nP-zIi">
-                                                <rect key="frame" x="0.0" y="0.0" width="130.33333333333334" height="130"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                 <state key="normal" title="자유게시판"/>
                                                 <connections>
-                                                    <segue destination="whR-aS-cpp" kind="show" id="rOa-AG-a2Z"/>
+                                                    <action selector="board1Tapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="M9X-5D-Wd6"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofb-vN-v7o">
-                                                <rect key="frame" x="130.33333333333337" y="0.0" width="130.66666666666663" height="130"/>
+                                                <rect key="frame" x="130" y="0.0" width="130" height="130"/>
                                                 <state key="normal" title="취업게시판"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhs-ch-kBn">
-                                                <rect key="frame" x="261" y="0.0" width="130.33333333333337" height="130"/>
+                                                <rect key="frame" x="260" y="0.0" width="130" height="130"/>
                                                 <state key="normal" title="간호지식QnA"/>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PxY-B3-xNJ">
-                                        <rect key="frame" x="0.0" y="130" width="391.33333333333331" height="130"/>
+                                        <rect key="frame" x="0.0" y="130" width="390" height="130"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZR9-BV-Z5Z">
-                                                <rect key="frame" x="0.0" y="0.0" width="130.33333333333334" height="130"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                 <state key="normal" title="정보게시판"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGm-C0-vpI">
-                                                <rect key="frame" x="130.33333333333337" y="0.0" width="130.66666666666663" height="130"/>
+                                                <rect key="frame" x="130" y="0.0" width="130" height="130"/>
                                                 <state key="normal" title="신입게시판"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvT-T5-VOS">
-                                                <rect key="frame" x="261" y="0.0" width="130.33333333333337" height="130"/>
+                                                <rect key="frame" x="260" y="0.0" width="130" height="130"/>
                                                 <state key="normal" title="더보기"/>
                                                 <connections>
                                                     <segue destination="2v5-kD-ip1" kind="showDetail" id="Mfz-49-a7U"/>
@@ -204,6 +204,7 @@
                         <outlet property="myPageControl" destination="WfY-5U-Plk" id="Cmg-AQ-fps"/>
                         <outlet property="myPagerView" destination="LMo-4j-srw" id="PA3-oT-MOp"/>
                         <outlet property="rightBtn" destination="vVS-yr-GnB" id="B25-ZX-sJR"/>
+                        <segue destination="whR-aS-cpp" kind="show" identifier="articleList" id="T0b-Qh-uI6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXJ-tA-3Hb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -588,7 +589,7 @@
                                         <rect key="frame" x="0.0" y="106" width="390" height="650"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="130" id="Slz-eo-GXe" customClass="ContentCell" customModule="NurseSchedule_iOS" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContentCell" rowHeight="130" id="Slz-eo-GXe" customClass="ContentCell" customModule="NurseSchedule_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="390" height="130"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Slz-eo-GXe" id="s4t-5v-7vN">
@@ -667,6 +668,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="articleListTableView" destination="bzh-NN-7YV" id="Sph-4l-xLB"/>
+                        <outlet property="contentListNavigation" destination="hH0-nR-m5J" id="ZCk-u4-vy3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XNy-mE-XdF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

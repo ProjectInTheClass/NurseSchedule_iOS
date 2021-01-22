@@ -9,19 +9,26 @@ import UIKit
 
 class ContentListController: UIViewController{
     
-    var boardType : String = ""
+    var boardType : String? = nil
     var articleList : [Article] = []
     @IBOutlet weak var articleListTableView: UITableView!
+    @IBOutlet weak var contentListNavigation: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        DBBoard.board.getArticleListIn(BoardType: boardType) { (article) in
-            self.articleList.append(article)
-            print("ContentList>>>>>>>\(self.articleList)")
+        print("from >>>>>> \(boardType)")
+        if let boardType = boardType {
+            DBBoard.board.getArticleListIn(BoardType: boardType) { (article) in
+                self.articleList.append(article)
+                print("ContentList>>>>>>>\(self.articleList)")
+            }
+            // Do any additional setup after loading the view.
+            contentListNavigation.title = boardType
+            articleListTableView.reloadData()
         }
-        // Do any additional setup after loading the view.
-        articleListTableView.reloadData()
+        
+        articleListTableView.delegate = self
+        articleListTableView.dataSource = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
