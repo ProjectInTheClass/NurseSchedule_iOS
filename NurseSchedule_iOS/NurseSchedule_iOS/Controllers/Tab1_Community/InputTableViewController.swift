@@ -12,7 +12,7 @@ class InputTableViewController: UITableViewController {
     @IBOutlet weak var inputTitle: UITextField!
     @IBOutlet weak var inputContents: UITextView!
     
-    var BoardType : String = "임시게시판"
+    var boardType : String? = nil
     let currentUser = Login.init().googleLogin()
     var newArticle = Article(title: "default", date: "default", content: "default", user: "default")
     
@@ -40,8 +40,12 @@ class InputTableViewController: UITableViewController {
                 newArticle.date = "\(Date.init())"
                 
                 
-                DBBoard.board.addContent(BoardType: self.BoardType, DataType: "contentList", new: newArticle)
+                print("add되기전에 게시판 이름 제대로야? \(boardType)")
+                if let boardType = boardType {
+                    DBBoard.board.addContent(BoardType: boardType, DataType: "contentList", new: newArticle)
+                }
                 
+               
                 self.dismiss(animated: true, completion: nil)
                 
             }

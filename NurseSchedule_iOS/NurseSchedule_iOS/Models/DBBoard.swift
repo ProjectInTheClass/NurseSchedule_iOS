@@ -37,12 +37,12 @@ class DBBoard  {
     }
     
     func countContent(BoardType: String, DataType: String , new: Article){
-        let reference4 = ref.child("Board/\(BoardType)/\(DataType)/\(self.countingContent)")
+        let reference4 = ref.child("Board/\(BoardType)/\(DataType)/\(UUID().uuidString)")
         let newContent = ["title": new.title, "content": new.content, "date": new.date, "user":new.user]
         reference4.setValue(newContent)
     }
     
-    
+    /*
     func addBoard(B_maker : String, B_description : String) {
         let reference2 = ref.child("ForNumbering/Board")
         ref.child("ForNumbering/Board").observeSingleEvent(of: .value, with : {
@@ -66,6 +66,7 @@ class DBBoard  {
         })
     }
     
+    */
     
     func getArticleListIn(BoardType: String, completion : @escaping (Article) -> Void) {
         ref.child("Board/\(BoardType)/contentList").observeSingleEvent(of: .value, with: { snapshot in
