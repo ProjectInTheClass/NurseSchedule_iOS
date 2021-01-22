@@ -117,7 +117,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNg-nP-zIi">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="145"/>
-                                                <state key="normal" title="자유게시판" image="자유게시판"/>
+                                                <state key="normal" title="자유게시판" image="자유게시판"/>
                                                 <connections>
                                                     <action selector="board1Tapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="M9X-5D-Wd6"/>
                                                 </connections>
@@ -125,10 +125,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofb-vN-v7o">
                                                 <rect key="frame" x="130" y="0.0" width="130" height="145"/>
                                                 <state key="normal" title="취업게시판" image="취업게시판"/>
+                                                <connections>
+                                                    <action selector="board2Tapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="PGS-fO-J2m"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhs-ch-kBn">
                                                 <rect key="frame" x="260" y="0.0" width="130" height="145"/>
                                                 <state key="normal" title="간호지식" image="QnA"/>
+                                                <connections>
+                                                    <action selector="board3Tapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="ZC3-aL-VYK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -138,10 +144,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZR9-BV-Z5Z">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="145"/>
                                                 <state key="normal" title="정보게시판" image="정보게시판"/>
+                                                <connections>
+                                                    <action selector="board4Tapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="VlV-EW-srF"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGm-C0-vpI">
                                                 <rect key="frame" x="130" y="0.0" width="130" height="145"/>
                                                 <state key="normal" title="신입게시판" image="신입게시판"/>
+                                                <connections>
+                                                    <action selector="board5Tapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="zY6-J2-0YT"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvT-T5-VOS">
                                                 <rect key="frame" x="260" y="0.0" width="130" height="145"/>
@@ -982,7 +994,7 @@
         <image name="대한간호협회 로고" width="100" height="30"/>
         <image name="더 보기" width="392" height="384"/>
         <image name="신입게시판" width="388" height="384"/>
-        <image name="자유게시판" width="392" height="384"/>
+        <image name="자유게시판" width="128" height="128"/>
         <image name="정보게시판" width="392" height="384"/>
         <image name="취업게시판" width="388" height="384"/>
         <systemColor name="labelColor">

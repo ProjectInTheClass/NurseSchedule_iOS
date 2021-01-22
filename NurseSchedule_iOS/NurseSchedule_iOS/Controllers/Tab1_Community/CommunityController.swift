@@ -150,4 +150,20 @@ class CommunityController: UIViewController, FSPagerViewDataSource, FSPagerViewD
         
     }
     
+    @IBAction func board2Tapped(_ sender: Any) {
+        performSegue(withIdentifier: "articleList", sender: "취업게시판")
+    }
+    @IBAction func board3Tapped(_ sender: Any) {
+        performSegue(withIdentifier: "articleList", sender: "간호지식QnA")
+    }
+    
+    @IBAction func board4Tapped(_ sender: Any) {
+        performSegue(withIdentifier: "articleList", sender: "정보게시판")
+    }
+    
+    @IBAction func board5Tapped(_ sender: Any) {
+        performSegue(withIdentifier: "articleList", sender: "신입게시판")
+    }
+    
+    
 }
