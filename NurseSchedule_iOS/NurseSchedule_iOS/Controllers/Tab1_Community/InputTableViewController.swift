@@ -54,9 +54,7 @@ class InputTableViewController: UITableViewController {
     func showAlert() {
         
         let alert = UIAlertController(title: "비었습니다", message: "입력해주세요", preferredStyle: UIAlertController.Style.alert)
-        
         let okayButton = UIAlertAction(title: "OK", style: .default)
-        
         alert.addAction(okayButton)
         
         present(alert, animated: true, completion: nil)
