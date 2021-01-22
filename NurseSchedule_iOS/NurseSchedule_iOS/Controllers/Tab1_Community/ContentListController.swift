@@ -11,6 +11,7 @@ class ContentListController: UIViewController{
     
     var boardType : String = ""
     var articleList : [Article] = []
+    @IBOutlet weak var articleListTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
