@@ -152,7 +152,9 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="80" id="vl3-4W-K9h"/>
                                                             </constraints>
-                                                            <state key="normal" title="취소"/>
+                                                            <state key="normal" title="취소">
+                                                                <color key="titleColor" systemColor="systemRedColor"/>
+                                                            </state>
                                                             <connections>
                                                                 <segue destination="UCL-aq-S0e" kind="unwind" unwindAction="unwindToDiary:" id="GzP-9D-rgB"/>
                                                             </connections>
@@ -168,7 +170,9 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="80" id="PQ9-0t-D0c"/>
                                                             </constraints>
-                                                            <state key="normal" title="저장"/>
+                                                            <state key="normal" title="저장">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
                                                             <connections>
                                                                 <action selector="clickedSaveButton:" destination="24Z-UK-ocX" eventType="touchUpInside" id="P2s-2v-7YD"/>
                                                             </connections>
@@ -595,6 +599,9 @@
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
