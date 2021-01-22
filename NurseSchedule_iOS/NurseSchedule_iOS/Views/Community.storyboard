@@ -683,28 +683,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="게시글 목록" id="hH0-nR-m5J">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="plus" catalog="system" id="CLo-mL-2Jg">
-                                <connections>
-                                    <action selector="addArticleButtonTapped:" destination="whR-aS-cpp" id="ZeX-sx-ZO6"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem style="plain" id="aIs-qW-cDu">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="tMu-wQ-8us">
-                                    <rect key="frame" x="247.33333333333337" y="7" width="86" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Button"/>
-                                </button>
-                                <connections>
-                                    <segue destination="ljg-b1-e1O" kind="show" id="2c1-sg-Hxx"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="CLo-mL-2Jg">
+                            <connections>
+                                <action selector="addArticleButtonTapped:" destination="whR-aS-cpp" id="ZeX-sx-ZO6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="articleListTableView" destination="bzh-NN-7YV" id="Sph-4l-xLB"/>
                         <outlet property="contentListNavigation" destination="hH0-nR-m5J" id="ZCk-u4-vy3"/>
                         <segue destination="xcC-He-qon" kind="presentation" identifier="showAddForm" id="JNI-EQ-Jfq"/>
+                        <segue destination="ljg-b1-e1O" kind="show" identifier="articleDetail" id="Hug-78-E9m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XNy-mE-XdF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -979,6 +968,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="articleContent" destination="pi4-cU-gk4" id="JmB-9N-I95"/>
+                        <outlet property="articleDate" destination="CKN-VD-bJX" id="qHX-dC-Km5"/>
+                        <outlet property="articleTitle" destination="xyZ-oG-aF6" id="86z-UD-BDx"/>
+                        <outlet property="articleUser" destination="3mf-j7-7OL" id="eN0-EU-OTG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAU-XR-p8v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

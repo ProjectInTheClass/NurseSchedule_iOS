@@ -9,9 +9,19 @@ import UIKit
 
 class DetailContentController: UIViewController {
 
+    @IBOutlet weak var articleUser: UILabel!
+    @IBOutlet weak var articleDate: UILabel!
+    @IBOutlet weak var articleTitle: UILabel!
+    @IBOutlet weak var articleContent: UILabel!
+    
+    var selectedArticle : Article? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        articleUser.text = "익명"
+        articleDate.text = selectedArticle?.date
+        articleTitle.text = selectedArticle?.title
+        articleContent.text = selectedArticle?.content
         // Do any additional setup after loading the view.
     }
     

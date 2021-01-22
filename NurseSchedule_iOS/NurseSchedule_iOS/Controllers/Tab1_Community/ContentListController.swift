@@ -54,7 +54,14 @@ class ContentListController: UIViewController{
             let InputTableViewController = segue.destination as! InputTableViewController
             InputTableViewController.boardType = sender as? String
         }
+        
+        if segue.identifier == "articleDetail" {
+            let DetailContentController = segue.destination as! DetailContentController
+            DetailContentController.selectedArticle = sender as? Article
+        }
     }
+    
+    
     
     @IBAction func addArticleButtonTapped(_ sender: Any) {
         if let boardType = boardType {
@@ -89,6 +96,11 @@ extension ContentListController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+        performSegue(withIdentifier: "articleDetail", sender: articleList[indexPath.row])
     }
     
 }
