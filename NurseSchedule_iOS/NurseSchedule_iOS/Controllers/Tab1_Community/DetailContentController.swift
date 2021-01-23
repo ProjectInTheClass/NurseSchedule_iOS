@@ -85,7 +85,8 @@ class DetailContentController: UIViewController {
         guard let articleID = forCommentSavingInfo?.newComment.articleID else { return }
         let comment = commentTextView.text!
         DBBoard.board.addComment(BoardType: boardType, articleID: articleID, comment: comment)
-        commentTextViewPlaceholderSetting()        
+        commentTextViewPlaceholderSetting()
+        textViewDidBeginEditing(commentTextView)
         commentTableView.reloadData()
     }
 
@@ -97,7 +98,6 @@ extension DetailContentController : UITextViewDelegate {
         commentTextView.textColor = UIColor.lightGray
             
         }
-        
         
         // TextView Place Holder
         func textViewDidBeginEditing(_ textView: UITextView) {
