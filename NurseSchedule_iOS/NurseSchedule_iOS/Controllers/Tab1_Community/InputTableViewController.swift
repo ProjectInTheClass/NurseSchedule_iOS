@@ -14,7 +14,7 @@ class InputTableViewController: UITableViewController {
     
     var boardType : String? = nil
     let currentUser = Login.init().googleLogin()
-    var newArticle = Article(title: "default", date: "default", content: "default", user: "default")
+    var newArticle = Article(articleID : "default", title: "default", date: "default", content: "default", user: "default")
     
     
     var StoredTitleData : String? = nil

@@ -24,9 +24,23 @@ struct Term {
 
 
 struct Article {
+    var articleID : String
     var title: String
     var date: String
     var content: String
     var user: String
 }
 
+
+struct ForCommentSavingInfo {
+    var boardType : String
+    var newComment : Article
+    
+}
+
+struct Comment {
+    var writer : String
+    var date : String
+    var content : String
+    
+}

@@ -14,19 +14,52 @@ class DetailContentController: UIViewController {
     @IBOutlet weak var articleTitle: UILabel!
     @IBOutlet weak var articleContent: UILabel!
     @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var commentUploadButton: UIButton!
+    @IBOutlet weak var commentTableView: UITableView!
     
+    var forCommentSavingInfo : ForCommentSavingInfo? = nil
+    
+    
+    var commentsList : [Comment] = []
+    /*
+    var articleID : String? = nil
+    var boardType : String? = nil
     var selectedArticle : Article? = nil
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
         articleUser.text = "익명"
-        articleDate.text = selectedArticle?.date
-        articleTitle.text = selectedArticle?.title
-        articleContent.text = selectedArticle?.content
+        articleDate.text = forCommentSavingInfo?.newComment.date
+        articleTitle.text = forCommentSavingInfo?.newComment.title
+        articleContent.text = forCommentSavingInfo?.newComment.content
+    
         
         commentTextView.delegate = self // txtvReview가 유저가 선언한 outlet
         commentTextViewPlaceholderSetting()
         // Do any additional setup after loading the view.
+        guard let boardType = forCommentSavingInfo?.boardType else { return }
+        guard let articleID = forCommentSavingInfo?.newComment.articleID else { return }
+        DBBoard.board.getCommentsList(BoardType: boardType, articleID: articleID) { (comment) in
+            self.commentsList.append(comment)
+            print("commentLists get successful")
+            self.commentTableView.reloadData()
+        }
+        
+        commentTableView.delegate = self
+        commentTableView.dataSource = self
+        commentTableView.reloadData()
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        commentTableView.reloadData()
+        super.viewDidAppear(true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        commentTableView.reloadData()
+        super.viewWillAppear(true)
     }
     
     @IBAction func actionButton(_ sender: Any) {
@@ -46,15 +79,15 @@ class DetailContentController: UIViewController {
         present(actionSheet, animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func commentUploadButtomTapped(_ sender: Any) {
+        guard let boardType = forCommentSavingInfo?.boardType else { return }
+        guard let articleID = forCommentSavingInfo?.newComment.articleID else { return }
+        let comment = commentTextView.text!
+        DBBoard.board.addComment(BoardType: boardType, articleID: articleID, comment: comment)
+        commentTextViewPlaceholderSetting()        
+        commentTableView.reloadData()
     }
-    */
 
 }
 
@@ -80,4 +113,20 @@ extension DetailContentController : UITextViewDelegate {
                 commentTextViewPlaceholderSetting()
             }
         }
+}
+
+extension DetailContentController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return commentsList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentCell
+        
+        cell.commentContent.text = commentsList[indexPath.row].content
+        cell.commentDate.text = commentsList[indexPath.row].date
+        cell.commentUser.text = "익명"
+        //cell.commentUser.text = commentsList[indexPath.row].writer
+        return cell
+    }
 }

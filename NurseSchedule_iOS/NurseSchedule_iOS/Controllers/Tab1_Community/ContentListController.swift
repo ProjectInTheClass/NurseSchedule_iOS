@@ -54,10 +54,11 @@ class ContentListController: UIViewController{
             let InputTableViewController = segue.destination as! InputTableViewController
             InputTableViewController.boardType = sender as? String
         }
-        
-        if segue.identifier == "articleDetail" {
-            let DetailContentController = segue.destination as! DetailContentController
-            DetailContentController.selectedArticle = sender as? Article
+        if let boardType = boardType {
+            if segue.identifier == "articleDetail" {
+                let DetailContentController = segue.destination as! DetailContentController
+                DetailContentController.forCommentSavingInfo = sender as? ForCommentSavingInfo
+            }
         }
     }
     
@@ -100,7 +101,11 @@ extension ContentListController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
-        performSegue(withIdentifier: "articleDetail", sender: articleList[indexPath.row])
+        if let boardType = boardType {
+            let forCommentSavingInfo = ForCommentSavingInfo.init(boardType: boardType, newComment: articleList[indexPath.row])
+            performSegue(withIdentifier: "articleDetail", sender: forCommentSavingInfo)
+        }
+        
     }
     
 }
