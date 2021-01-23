@@ -15,7 +15,7 @@
             <objects>
                 <tableViewController id="bqb-Yu-6QS" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rrK-li-w0I">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
@@ -341,7 +341,7 @@
             <objects>
                 <viewController id="baq-nF-Rr0" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1eg-Iw-rKG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="8Uc-57-1RK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -426,12 +426,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="calendar" image="calendar.circle" catalog="system" selectedImage="calendar.circle.fill" id="BgW-88-YqU"/>
                     <navigationItem key="navigationItem" title="캘린더" id="nSH-Yv-sk2">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="person.fill.badge.plus" catalog="system" id="XVi-cn-cxs">
-                            <color key="tintColor" systemColor="labelColor"/>
-                            <connections>
-                                <segue destination="bqb-Yu-6QS" kind="show" id="ST6-Bd-88f"/>
-                            </connections>
-                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="plus" catalog="system" id="dLp-Km-jlh">
                                 <color key="tintColor" systemColor="labelColor"/>
@@ -466,7 +460,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="286" translatesAutoresizingMaskIntoConstraints="NO" id="Dla-pE-Jlj">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="286" translatesAutoresizingMaskIntoConstraints="NO" id="Dla-pE-Jlj">
                                 <rect key="frame" x="28" y="20" width="366" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kml-Sx-Clr">
@@ -527,7 +521,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="memo content" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MZq-oR-mJx">
-                                <rect key="frame" x="28" y="317" width="366" height="34"/>
+                                <rect key="frame" x="35" y="317" width="350" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -546,6 +540,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rgv-6H-MIG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rgv-6H-MIG" firstAttribute="bottom" secondItem="Dla-pE-Jlj" secondAttribute="bottom" constant="748" id="Ahg-vi-suV"/>
+                            <constraint firstItem="Dla-pE-Jlj" firstAttribute="leading" secondItem="Rgv-6H-MIG" secondAttribute="leading" constant="28" id="h5O-6F-zyJ"/>
+                            <constraint firstItem="Rgv-6H-MIG" firstAttribute="trailing" secondItem="Dla-pE-Jlj" secondAttribute="trailing" constant="20" id="iV1-KR-JZj"/>
+                            <constraint firstItem="Dla-pE-Jlj" firstAttribute="top" secondItem="Rgv-6H-MIG" secondAttribute="top" constant="20" id="w5a-6z-x7l"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yGg-vn-R1y"/>
                     <connections>
