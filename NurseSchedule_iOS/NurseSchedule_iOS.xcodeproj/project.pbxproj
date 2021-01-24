@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B734DB8FFAE10C573DCEC89 /* Pods_NurseSchedule_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1023850E893169F71BF98CFC /* Pods_NurseSchedule_iOS.framework */; };
 		7E68403C25BD37AB001CFBAC /* 간호사메인.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7E68403B25BD37AB001CFBAC /* 간호사메인.jpeg */; };
+		7E68406425BD629D001CFBAC /* DictionaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E68406325BD629D001CFBAC /* DictionaryLabel.swift */; };
 		7E9F58E325B833CD0028D9A8 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F58E225B833CD0028D9A8 /* DetailTableViewController.swift */; };
 		7E9F594425B95B290028D9A8 /* AddContentFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F594325B95B290028D9A8 /* AddContentFormController.swift */; };
 		7EFD380225B4A72300FD3435 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFD380125B4A72300FD3435 /* SlideViewController.swift */; };
@@ -62,6 +63,7 @@
 		1023850E893169F71BF98CFC /* Pods_NurseSchedule_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NurseSchedule_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		714F117F287D49765BF1C3EF /* Pods-NurseSchedule_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NurseSchedule_iOS.release.xcconfig"; path = "Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		7E68403B25BD37AB001CFBAC /* 간호사메인.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "간호사메인.jpeg"; sourceTree = "<group>"; };
+		7E68406325BD629D001CFBAC /* DictionaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryLabel.swift; sourceTree = "<group>"; };
 		7E9F58E225B833CD0028D9A8 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		7E9F594325B95B290028D9A8 /* AddContentFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContentFormController.swift; sourceTree = "<group>"; };
 		7EFD380125B4A72300FD3435 /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				ECF2B54E25B420C60080F9E0 /* DiaryCell.swift */,
 				9991D6CB25B94F6800C3A7B1 /* ContentCell.swift */,
 				997B460225BC089C0091ADFC /* CommentCell.swift */,
+				7E68406325BD629D001CFBAC /* DictionaryLabel.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				9951CB0425BD5DF5007DBD06 /* EditContentFormController.swift in Sources */,
 				ECF2B54F25B420C60080F9E0 /* DiaryCell.swift in Sources */,
 				990AC3F4259DB3C400281E8B /* SceneDelegate.swift in Sources */,
+				7E68406425BD629D001CFBAC /* DictionaryLabel.swift in Sources */,
 				9926523425A4ADB10043A16E /* CommunityController.swift in Sources */,
 				7E9F594425B95B290028D9A8 /* AddContentFormController.swift in Sources */,
 				99ABBA2A25BB2F8400FFBE51 /* ArticleContentLabel.swift in Sources */,

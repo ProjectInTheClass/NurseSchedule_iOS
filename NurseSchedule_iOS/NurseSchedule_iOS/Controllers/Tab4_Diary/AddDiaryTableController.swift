@@ -12,10 +12,10 @@ class AddDiaryTableController: UITableViewController {
     
     static let addDiaryController = AddDiaryTableController()
     
-
-    @IBOutlet weak var ContentTF: UITextField!
-    @IBOutlet weak var SelectedDate: UILabel!
+  @IBOutlet weak var SelectedDate: UILabel!
     @IBOutlet weak var conditionSegment: UISegmentedControl!
+    
+    @IBOutlet weak var contentTextView: UITextView!
     
     
     let currentUser = Login.init().googleLogin()
@@ -38,13 +38,7 @@ class AddDiaryTableController: UITableViewController {
     
     }
 
-    
-    //textfield 입력이 끝났을 때
-    @IBAction func ContentEditingDidEnd(_ sender: Any) {
-       writtencontent = ContentTF.text!
-        
-    }
-    
+
     //datePicker 선택 시 실행
     @IBAction func SelectDate(_ sender: UIDatePicker){
         let dateFormatter : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 0(월단위)
@@ -91,7 +85,7 @@ class AddDiaryTableController: UITableViewController {
     //저장버튼 클릭 시
     @IBAction func clickedSaveButton(_ sender: Any) {
      
-        if let writtencontent = ContentTF.text {
+        if let writtencontent = contentTextView.text {
             if writtencontent.isEmpty{ //textfield가 비었을 경우 alert 띄우기
                 showAlert(style: .alert)
             }
@@ -139,14 +133,14 @@ class AddDiaryTableController: UITableViewController {
     }
  
     
-    
-    func showData(textfield : String ,date : String , condition : String ){
-        ContentTF.text = textfield
-        SelectedDate.text = date
-        seletedCondition = condition
-        
-    }
-    
+//    데이터를 set하기 위함
+//    func showData(textfield : String ,date : String , condition : String ){
+//        contentTextView.text = textfield
+//        SelectedDate.text = date
+//        seletedCondition = condition
+//
+//    }
+//
     func modifyDiary(){
         self.new.content = ""//DB에 값 저장
         self.new.emoji = self.seletedCondition//DB에 값 저장
@@ -157,8 +151,14 @@ class AddDiaryTableController: UITableViewController {
         
     }
 
-    @IBAction func editChangeTextfield(_ sender: Any) {
-        
-    }
-    
+
 }
+
+extension AddDiaryTableController : UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        writtencontent = contentTextView.text
+        
+        print(writtencontent)
+    }
+}
+
