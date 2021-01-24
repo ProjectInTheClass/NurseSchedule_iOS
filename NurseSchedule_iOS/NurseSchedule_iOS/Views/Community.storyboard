@@ -28,38 +28,38 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="A9a-3t-fBU">
-                                <rect key="frame" x="10" y="345" width="370" height="32"/>
+                                <rect key="frame" x="15" y="345" width="360" height="32"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb3-rh-V9E">
-                                        <rect key="frame" x="0.0" y="0.0" width="34" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                         <state key="normal" image="koreaNurse2"/>
                                         <connections>
                                             <action selector="firstLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="A4L-6K-f6j"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGe-ml-9Jy">
-                                        <rect key="frame" x="84" y="0.0" width="34" height="32"/>
+                                        <rect key="frame" x="82" y="0.0" width="32" height="32"/>
                                         <state key="normal" image="NurseEdu"/>
                                         <connections>
                                             <action selector="newtLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="abj-T9-m9F"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLc-MR-zge">
-                                        <rect key="frame" x="168" y="0.0" width="34" height="32"/>
+                                        <rect key="frame" x="164" y="0.0" width="32" height="32"/>
                                         <state key="normal" image="NurseJob2"/>
                                         <connections>
                                             <action selector="secondLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="VN0-Vo-5ZD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7l-xE-as1">
-                                        <rect key="frame" x="252" y="0.0" width="34" height="32"/>
+                                        <rect key="frame" x="246" y="0.0" width="32" height="32"/>
                                         <state key="normal" image="Nurscape2"/>
                                         <connections>
                                             <action selector="thirdLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="wqp-al-GVc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvJ-fl-Vsk">
-                                        <rect key="frame" x="336" y="0.0" width="34" height="32"/>
+                                        <rect key="frame" x="328" y="0.0" width="32" height="32"/>
                                         <state key="normal" image="Nursestory3"/>
                                         <connections>
                                             <action selector="fourthLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="vA9-Kk-4nf"/>
@@ -178,34 +178,34 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="irN-Zj-mSt">
-                                <rect key="frame" x="0.0" y="385" width="390" height="15.666666666666686"/>
+                                <rect key="frame" x="1" y="385" width="388" height="15.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대한간호협회" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fG-w5-yFU">
-                                        <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="15.666666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="66.333333333333329" height="15.666666666666666"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  널스에듀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxI-dX-I7x">
-                                        <rect key="frame" x="80.666666666666671" y="0.0" width="67.000000000000014" height="15.666666666666666"/>
+                                        <rect key="frame" x="80.333333333333343" y="0.0" width="66.333333333333343" height="15.666666666666666"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="      널스잡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09V-Cl-Ote">
-                                        <rect key="frame" x="161.66666666666666" y="0.0" width="66.666666666666657" height="15.666666666666666"/>
+                                        <rect key="frame" x="160.66666666666666" y="0.0" width="66.666666666666657" height="15.666666666666666"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    널스케이프" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3W2-rD-MZN">
-                                        <rect key="frame" x="242.33333333333337" y="0.0" width="67" height="15.666666666666666"/>
+                                        <rect key="frame" x="241.33333333333334" y="0.0" width="66.333333333333343" height="15.666666666666666"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    널스스토리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ai-av-5xO">
-                                        <rect key="frame" x="323.33333333333331" y="0.0" width="66.666666666666686" height="15.666666666666666"/>
+                                        <rect key="frame" x="321.66666666666669" y="0.0" width="66.333333333333314" height="15.666666666666666"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -237,12 +237,12 @@
                             <constraint firstItem="WfY-5U-Plk" firstAttribute="top" secondItem="LMo-4j-srw" secondAttribute="bottom" constant="-25" id="UOX-x6-ksv"/>
                             <constraint firstItem="yr1-88-tlW" firstAttribute="bottom" secondItem="Lhf-4y-YY7" secondAttribute="bottom" constant="12" id="USo-fr-X2d"/>
                             <constraint firstItem="yr1-88-tlW" firstAttribute="top" secondItem="LMo-4j-srw" secondAttribute="top" id="WF4-rv-fEH"/>
-                            <constraint firstItem="A9a-3t-fBU" firstAttribute="leading" secondItem="yr1-88-tlW" secondAttribute="leading" constant="10" id="bKK-Bm-frr"/>
-                            <constraint firstItem="yr1-88-tlW" firstAttribute="trailing" secondItem="irN-Zj-mSt" secondAttribute="trailing" id="hTr-Xr-h1D"/>
-                            <constraint firstItem="yr1-88-tlW" firstAttribute="trailing" secondItem="A9a-3t-fBU" secondAttribute="trailing" constant="10" id="mhs-Dw-tD4"/>
+                            <constraint firstItem="A9a-3t-fBU" firstAttribute="leading" secondItem="yr1-88-tlW" secondAttribute="leading" constant="15" id="bKK-Bm-frr"/>
+                            <constraint firstItem="yr1-88-tlW" firstAttribute="trailing" secondItem="irN-Zj-mSt" secondAttribute="trailing" constant="1" id="hTr-Xr-h1D"/>
+                            <constraint firstItem="yr1-88-tlW" firstAttribute="trailing" secondItem="A9a-3t-fBU" secondAttribute="trailing" constant="15" id="mhs-Dw-tD4"/>
                             <constraint firstItem="yr1-88-tlW" firstAttribute="trailing" secondItem="WfY-5U-Plk" secondAttribute="trailing" id="op5-e5-1ch"/>
                             <constraint firstItem="yr1-88-tlW" firstAttribute="trailing" secondItem="Lhf-4y-YY7" secondAttribute="trailing" constant="12" id="s9L-rp-DIy"/>
-                            <constraint firstItem="irN-Zj-mSt" firstAttribute="leading" secondItem="yr1-88-tlW" secondAttribute="leading" id="xFo-bT-sFP"/>
+                            <constraint firstItem="irN-Zj-mSt" firstAttribute="leading" secondItem="yr1-88-tlW" secondAttribute="leading" constant="1" id="xFo-bT-sFP"/>
                             <constraint firstItem="WfY-5U-Plk" firstAttribute="top" secondItem="63K-qP-PtD" secondAttribute="bottom" constant="95" id="xGY-rQ-bOD"/>
                         </constraints>
                     </view>
@@ -444,14 +444,14 @@
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="boardListCell" id="ee1-gE-OU6" customClass="boardListCell" customModule="NurseSchedule_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="84" width="390" height="45"/>
+                                        <rect key="frame" x="0.0" y="84" width="390" height="45.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ee1-gE-OU6" id="Iyp-cP-s9c">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="45"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="45.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbT-XV-3ef">
-                                                    <rect key="frame" x="22" y="11" width="346" height="21"/>
+                                                    <rect key="frame" x="22" y="10.999999999999998" width="346" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
