@@ -32,7 +32,7 @@ class DetailContentController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        articleUser.text = "익명"
+        articleUser.text = "👤익명"
         articleDate.text = forCommentSavingInfo?.newComment.date
         articleTitle.text = forCommentSavingInfo?.newComment.title
         articleContent.text = forCommentSavingInfo?.newComment.content
@@ -162,7 +162,7 @@ extension DetailContentController : UITableViewDelegate, UITableViewDataSource {
         
         cell.commentContent.text = commentsList[indexPath.row].content
         cell.commentDate.text = commentsList[indexPath.row].date
-        cell.commentUser.text = "익명"
+        cell.commentUser.text = "👤익명"
         //cell.commentUser.text = commentsList[indexPath.row].writer
         return cell
     }
