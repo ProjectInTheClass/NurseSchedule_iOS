@@ -19,6 +19,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7fk-yi-Ht2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.74084085229999996" green="0.9099497795" blue="0.67754423620000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -48,14 +49,14 @@
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MedicalCell" id="Wbo-9U-6VI" customClass="MedicalCell" customModule="NurseSchedule_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="414" height="47"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="47.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wbo-9U-6VI" id="xF8-p5-ZaS">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="47"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="47.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHU-bq-ZBd">
-                                                    <rect key="frame" x="22" y="13" width="42" height="21"/>
+                                                    <rect key="frame" x="22" y="13" width="42" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -125,7 +126,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="definition" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kE-9H-AmJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="definition" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kE-9H-AmJ" customClass="DictionaryLabel" customModule="NurseSchedule_iOS" customModuleProvider="target">
                                 <rect key="frame" x="35" y="281" width="344" height="507"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,11 +159,6 @@
             <point key="canvasLocation" x="1760.8695652173915" y="55.580357142857139"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="6kE-9H-AmJ">
-            <size key="intrinsicContentSize" width="75" height="20.5"/>
-        </designable>
-    </designables>
     <resources>
         <image name="request" width="512" height="512"/>
         <image name="text.book.closed" catalog="system" width="115" height="128"/>
