@@ -280,10 +280,10 @@
             </objects>
             <point key="canvasLocation" x="111" y="-645"/>
         </scene>
-        <!--Input Table View Controller-->
+        <!--Add Content Form Controller-->
         <scene sceneID="4Mm-B0-z8G">
             <objects>
-                <tableViewController id="xcC-He-qon" customClass="InputTableViewController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="xcC-He-qon" customClass="AddContentFormController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="g2T-Nr-Las">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -315,7 +315,6 @@
                                                     <state key="normal" title="추가"/>
                                                     <connections>
                                                         <action selector="SaveButton:" destination="xcC-He-qon" eventType="touchUpInside" id="zdi-Ih-UU6"/>
-                                                        <segue destination="QIv-Xo-IbY" kind="unwind" unwindAction="unwindToContentListWithSegue:" id="8A5-Ym-EmU"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -333,9 +332,6 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
-                                                    <connections>
-                                                        <action selector="DoneTitle:" destination="xcC-He-qon" eventType="editingDidEnd" id="auM-vL-QSU"/>
-                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -347,7 +343,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="604"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="내용을 입력해주세요!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ghz-Er-I7s">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ghz-Er-I7s">
                                                     <rect key="frame" x="20" y="11" width="350" height="492"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -376,8 +372,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="inputContents" destination="ghz-Er-I7s" id="BL9-u5-wfm"/>
-                        <outlet property="inputTitle" destination="9Mu-fl-mYr" id="Guw-dP-EW5"/>
+                        <outlet property="articleContentTextView" destination="ghz-Er-I7s" id="61r-nH-iDN"/>
+                        <outlet property="articleTitleTextField" destination="9Mu-fl-mYr" id="iO5-as-w3x"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3pJ-af-zCH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -29,20 +29,7 @@ class DetailContentController: UIViewController {
     var boardType : String? = nil
     var selectedArticle : Article? = nil
     */
-    
-    func loadTableView() {
-        commentsList.removeAll()
-        guard let boardType = forCommentSavingInfo?.boardType else { return }
-        guard let articleID = forCommentSavingInfo?.newComment.articleID else { return }
-        DBBoard.board.getCommentsList(BoardType: boardType, articleID: articleID) { (comment) in
-            self.commentsList.append(comment)
-            print("commentLists get successful")
-            self.commentTableView.reloadData()
-        }
-        //commentTableView.reloadData()
-        
-    }
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +44,16 @@ class DetailContentController: UIViewController {
             self.navigationItem.setRightBarButton(nil, animated: true)
         }
         
-        loadTableView()
+        commentsList.removeAll()
+        guard let boardType = forCommentSavingInfo?.boardType else { return }
+        guard let articleID = forCommentSavingInfo?.newComment.articleID else { return }
+        DBBoard.board.getCommentsList(BoardType: boardType, articleID: articleID) { (comment) in
+            self.commentsList.append(comment)
+            print("commentLists get successful")
+            self.commentTableView.reloadData()
+        }
+        //commentTableView.reloadData()
+        
         
         commentTextView.delegate = self // txtvReview가 유저가 선언한 outlet
         commentTextViewPlaceholderSetting()
@@ -70,7 +66,7 @@ class DetailContentController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        loadTableView()
+        commentTableView.reloadData()
         super.viewDidAppear(true)
     }
     
