@@ -65,6 +65,8 @@ class DiaryDetailViewController: UIViewController {
             self.shortDate =  String(self.date.text!.prefix(7))
             
             DBDiary.newDiary.deleteDiary(userID: self.currentUser, shortDate: self.shortDate, date: self.date.text!)
+            
+            self.dismiss(animated: true, completion: nil)
         }
         let cancelButton = UIAlertAction(title: "아니요", style: .default){(action) in
             print("아니요")}
@@ -72,7 +74,6 @@ class DiaryDetailViewController: UIViewController {
         alert.addAction(deleteButton)
         alert.addAction(cancelButton)
         
-        print("alert!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         self.present(alert, animated: true, completion: nil)
     }
     
