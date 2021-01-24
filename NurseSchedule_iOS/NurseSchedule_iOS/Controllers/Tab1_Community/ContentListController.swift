@@ -10,7 +10,6 @@ class ContentListController: UIViewController{
     
     var boardType : String? = nil
     var articleList : [Article] = []
-    var numberOfCommentsInEachArticle : [String] = []
     
     @IBOutlet weak var articleListTableView: UITableView!
     @IBOutlet weak var contentListNavigation: UINavigationItem!
@@ -111,17 +110,16 @@ extension ContentListController : UITableViewDataSource, UITableViewDelegate {
         
         if let boardType = boardType {
             DBBoard.board.getNumberOfCommentsInEachArticle(BoardType: boardType, articleID: articleList[indexPath.row].articleID) { (numberOfComments) in
-                self.numberOfCommentsInEachArticle.append(String(numberOfComments))
-                print("bring success!!!!\(self.numberOfCommentsInEachArticle)")
+                print("bring success!!!!\(String(numberOfComments))")
                 cell.ContentNum.text = String(indexPath.row+1)
                 cell.ContentDate.text = self.articleList[indexPath.row].date
                 cell.ContentTitle.text = self.articleList[indexPath.row].title
                 cell.ContentContent.text = self.articleList[indexPath.row].content
-                cell.numberOfComments.text = "💬 " + self.numberOfCommentsInEachArticle[indexPath.row]
+                cell.numberOfComments.text = "💬 " + String(numberOfComments)
             }
             
-            print("table안에서도 배열 만들어졌음!!!! \(numberOfCommentsInEachArticle)")
-            print("indexPath.row >>>>>>>>> \(indexPath.row)")
+           // print("table안에서도 배열 만들어졌음!!!! \(numberOfCommentsInEachArticle)")
+          //  print("indexPath.row >>>>>>>>> \(indexPath.row)")
            
             return cell
         }
