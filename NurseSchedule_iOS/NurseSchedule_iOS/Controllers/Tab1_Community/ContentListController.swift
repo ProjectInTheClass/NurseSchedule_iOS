@@ -14,6 +14,8 @@ class ContentListController: UIViewController{
     @IBOutlet weak var articleListTableView: UITableView!
     @IBOutlet weak var contentListNavigation: UINavigationItem!
     
+    @IBAction func unwindToContentList(segue : UIStoryboardSegue) {}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("from >>>>>> \(boardType)")
@@ -70,11 +72,7 @@ class ContentListController: UIViewController{
         }
         
     }
-    
-    @IBAction func unwindToList(_ unwindSegue: UIStoryboardSegue) {
-        //let sourceViewController = unwindSegue.source
-        // Use data from the view controller which initiated the unwind segue
-    }
+
     
 }
 

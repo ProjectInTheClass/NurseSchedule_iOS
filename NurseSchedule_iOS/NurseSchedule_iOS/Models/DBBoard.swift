@@ -129,5 +129,9 @@ class DBBoard  {
         })
     }
     
+    func deleteArticle(BoardType: String, articleID : String) {
+        ref.child("\(BoardType)/contentList/\(articleID)").removeValue()
+    }
+    
     
 }

@@ -17,6 +17,9 @@ class DetailContentController: UIViewController {
     @IBOutlet weak var commentUploadButton: UIButton!
     @IBOutlet weak var commentTableView: UITableView!
     
+
+    @IBOutlet weak var editOrDeleteButton: UIBarButtonItem!
+    
     var forCommentSavingInfo : ForCommentSavingInfo? = nil
     
     
@@ -34,6 +37,11 @@ class DetailContentController: UIViewController {
         articleTitle.text = forCommentSavingInfo?.newComment.title
         articleContent.text = forCommentSavingInfo?.newComment.content
     
+        //글 작성자와 앱사용자가 다른 경우에 수정삭제 버튼 hidden
+        guard let contentUser = forCommentSavingInfo?.newComment.user else {   return  }
+        if currentUser != contentUser {
+            self.navigationItem.setRightBarButton(nil, animated: true)
+        }
         
         commentTextView.delegate = self // txtvReview가 유저가 선언한 outlet
         commentTextViewPlaceholderSetting()
@@ -62,22 +70,51 @@ class DetailContentController: UIViewController {
         super.viewWillAppear(true)
     }
     
-    @IBAction func actionButton(_ sender: Any) {
+    @IBAction func EditOrDeleteButtonTapped(_ sender: Any) {
         showActionSheet()
     }
     
-    
     func showActionSheet(){
-        let actionSheet = UIAlertController(title: "title", message: "message", preferredStyle: UIAlertController.Style.actionSheet)
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         
-        let editButton = UIAlertAction(title: "수정하기", style: .default)
-        let deleteButton = UIAlertAction(title: "삭제하기", style: .default)
+        
+        let editButton = UIAlertAction(title: "수정하기", style: .default) { (action) in
+        }
+        
+        
+        let deleteButton = UIAlertAction(title: "삭제하기", style: .destructive) {_ in
+            self.announceForActionCompleted(actionType: ActionType.delete.typeStr)
+        }
+        let cancelButton = UIAlertAction(title: "취소", style: .cancel)
         
         actionSheet.addAction(editButton)
         actionSheet.addAction(deleteButton)
-        
+        actionSheet.addAction(cancelButton)
         present(actionSheet, animated: true, completion: nil)
     }
+    
+    
+    func announceForActionCompleted(actionType: String) {
+        if actionType == ActionType.delete.typeStr {
+            let alert = UIAlertController(title: "삭제하시겠습니까?", message: "되돌이킬수없어요😭", preferredStyle: UIAlertController.Style.alert)
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+            let okAction = UIAlertAction(title: "확인", style: .destructive) { _ in
+                guard let boardType = self.forCommentSavingInfo?.boardType else { return }
+                guard let articleID = self.forCommentSavingInfo?.newComment.articleID else { return }
+                DBBoard.board.deleteArticle(BoardType: boardType, articleID: articleID)
+                self.performSegue(withIdentifier: "unwindToContentList", sender: nil)
+//
+//                let viewController = UIStoryboard(name: "Community", bundle: nil).instantiateViewController(withIdentifier: "ContentList") as UIViewController
+//                self.present(viewController, animated: true, completion: nil)
+//
+                
+            }
+            alert.addAction(cancelAction)
+            alert.addAction(okAction)
+            self.present(alert, animated: false, completion: nil)
+        }
+    }
+    
     
     
     @IBAction func commentUploadButtomTapped(_ sender: Any) {

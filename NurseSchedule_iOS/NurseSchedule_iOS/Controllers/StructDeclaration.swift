@@ -44,3 +44,17 @@ struct Comment {
     var content : String
     
 }
+
+enum ActionType {
+    case edit
+    case delete
+    
+    var typeStr : String {
+        switch self {
+        case .edit:
+            return "수정"
+        case .delete:
+            return "삭제"
+        }
+    }
+}

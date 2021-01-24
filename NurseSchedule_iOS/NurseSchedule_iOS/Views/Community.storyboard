@@ -1007,7 +1007,7 @@
                     <navigationItem key="navigationItem" id="hty-8c-Ub1">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="ellipsis" catalog="system" style="plain" id="yjX-oz-Cp3">
                             <connections>
-                                <action selector="actionButton:" destination="ljg-b1-e1O" id="oSl-jf-YeZ"/>
+                                <action selector="EditOrDeleteButtonTapped:" destination="ljg-b1-e1O" id="kxj-Gh-vNO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1019,9 +1019,12 @@
                         <outlet property="commentTableView" destination="Rtb-Hk-I2V" id="THd-pk-p3e"/>
                         <outlet property="commentTextView" destination="Bcc-A5-NkV" id="rAv-Cy-d7B"/>
                         <outlet property="commentUploadButton" destination="oTL-mg-ZjG" id="9Ct-un-LrB"/>
+                        <outlet property="editOrDeleteButton" destination="yjX-oz-Cp3" id="cv0-kR-dOq"/>
+                        <segue destination="mAu-Up-Hcx" kind="unwind" identifier="unwindToContentList" unwindAction="unwindToContentListWithSegue:" id="6R9-hN-30S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAU-XR-p8v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="mAu-Up-Hcx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1070.7692307692307" y="75.355450236966817"/>
         </scene>
