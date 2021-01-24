@@ -10,6 +10,8 @@
 		1B734DB8FFAE10C573DCEC89 /* Pods_NurseSchedule_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1023850E893169F71BF98CFC /* Pods_NurseSchedule_iOS.framework */; };
 		7E68403C25BD37AB001CFBAC /* 간호사메인.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7E68403B25BD37AB001CFBAC /* 간호사메인.jpeg */; };
 		7E68406425BD629D001CFBAC /* DictionaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E68406325BD629D001CFBAC /* DictionaryLabel.swift */; };
+		7E68406825BD7025001CFBAC /* CommunityContentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E68406725BD7025001CFBAC /* CommunityContentLabel.swift */; };
+		7E9F58E325B833CD0028D9A8 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F58E225B833CD0028D9A8 /* DetailTableViewController.swift */; };
 		7E9F594425B95B290028D9A8 /* AddContentFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F594325B95B290028D9A8 /* AddContentFormController.swift */; };
 		7EFD380225B4A72300FD3435 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFD380125B4A72300FD3435 /* SlideViewController.swift */; };
 		7EFD380925B4A7AE00FD3435 /* imageSlide2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EFD380525B4A7AD00FD3435 /* imageSlide2.png */; };
@@ -65,6 +67,8 @@
 		714F117F287D49765BF1C3EF /* Pods-NurseSchedule_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NurseSchedule_iOS.release.xcconfig"; path = "Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		7E68403B25BD37AB001CFBAC /* 간호사메인.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "간호사메인.jpeg"; sourceTree = "<group>"; };
 		7E68406325BD629D001CFBAC /* DictionaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryLabel.swift; sourceTree = "<group>"; };
+		7E68406725BD7025001CFBAC /* CommunityContentLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityContentLabel.swift; sourceTree = "<group>"; };
+		7E9F58E225B833CD0028D9A8 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		7E9F594325B95B290028D9A8 /* AddContentFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContentFormController.swift; sourceTree = "<group>"; };
 		7EFD380125B4A72300FD3435 /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		7EFD380525B4A7AD00FD3435 /* imageSlide2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageSlide2.png; sourceTree = "<group>"; };
@@ -304,6 +308,8 @@
 			children = (
 				99ABBA2925BB2F8400FFBE51 /* ArticleContentLabel.swift */,
 				99ABBA2D25BB3E1700FFBE51 /* MedicalContentLabel.swift */,
+				7E68406325BD629D001CFBAC /* DictionaryLabel.swift */,
+				7E68406725BD7025001CFBAC /* CommunityContentLabel.swift */,
 			);
 			path = CustomLabel;
 			sourceTree = "<group>";
@@ -490,6 +496,7 @@
 				EC9708A625B65BEC00BF2593 /* DBDiary.swift in Sources */,
 				997B460325BC089C0091ADFC /* CommentCell.swift in Sources */,
 				9973873D25BD97D7009DC92F /* boardListCell.swift in Sources */,
+				7E68406825BD7025001CFBAC /* CommunityContentLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
