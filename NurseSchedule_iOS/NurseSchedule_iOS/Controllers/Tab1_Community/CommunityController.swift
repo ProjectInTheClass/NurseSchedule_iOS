@@ -12,7 +12,7 @@ import FSPagerView
 // 마일스톤
 class CommunityController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate {
     
-    fileprivate let imageNames = ["imageSlide1.png", "imageSlide2.png", "imageSlide3.png", "imageSlide4.png"]
+    fileprivate let imageNames = ["간호사메인.jpeg", "간호사메인.jpeg", "간호사메인.jpeg", "간호사메인.jpeg"]
     
     @IBOutlet weak var leftBtn: UIButton!
     
