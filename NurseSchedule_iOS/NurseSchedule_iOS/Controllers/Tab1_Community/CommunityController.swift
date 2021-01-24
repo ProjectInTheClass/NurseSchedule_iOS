@@ -125,6 +125,14 @@ class CommunityController: UIViewController, FSPagerViewDataSource, FSPagerViewD
         
     }
     
+    @IBAction func newtLinkButtonTapped(_ sender: Any) {
+        if let url = URL(string: "http://www.koreanurse.or.kr/") {
+            let safariViewController = SFSafariViewController(url: url)
+            present(safariViewController, animated: true, completion: nil)
+        }
+        
+    }
+    
     @IBAction func secondLinkButtonTapped(_ sender: Any) {
         if let url = URL(string: "http://www.nursejob.co.kr/") {
             let safariViewController = SFSafariViewController(url: url)
