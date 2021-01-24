@@ -114,6 +114,16 @@ class DBBoard  {
         })
     }
     
+    func getNumberOfCommentsInEachArticle(BoardType:String, articleID: String, completion : @escaping (Int)->Void){
+        ref.child("\(BoardType)/contentList/\(articleID)/commentList").observe(.value, with: { snapshot in
+            let numberOfCommentsInEachArticle : Int = Int(snapshot.childrenCount)
+            print("numberOfCommentsInEachArticle!!!!! \(numberOfCommentsInEachArticle)")
+            completion(numberOfCommentsInEachArticle)
+        })
+    }
+    
+    
+    
     func deleteComment(BoardType: String, articleID: String, commentID: String) {
         ref.child("\(BoardType)/contentList/\(articleID)/commentList/\(commentID)").removeValue()
     }
