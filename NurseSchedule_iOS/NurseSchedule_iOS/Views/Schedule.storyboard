@@ -505,7 +505,6 @@
                                 </state>
                                 <connections>
                                     <action selector="addButtonTapped:" destination="upM-zm-90w" eventType="touchUpInside" id="LvD-jc-00K"/>
-                                    <segue destination="beA-Sq-9na" kind="unwind" identifier="showWorkType" unwindAction="unwindFromAddMemoWithSegue:" id="nz6-gI-LA0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kml-Sx-Clr">
@@ -514,6 +513,9 @@
                                 <state key="normal" title="취소">
                                     <color key="titleColor" systemColor="systemRedColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="beA-Sq-9na" kind="unwind" unwindAction="unwindFromAddMemoWithSegue:" id="NVb-7T-Gm2"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="LvO-fX-tcn">
                                 <rect key="frame" x="35" y="317" width="325.5" height="18"/>
