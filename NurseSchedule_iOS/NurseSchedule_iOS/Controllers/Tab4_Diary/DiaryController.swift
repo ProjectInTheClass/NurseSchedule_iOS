@@ -7,11 +7,6 @@
 
 import UIKit
 
-struct Day {
-    var emoji : String
-    var date : String
-    var content : String
-}
 
 
 class DiaryController: UIViewController {
