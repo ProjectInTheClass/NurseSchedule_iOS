@@ -2,7 +2,7 @@
 //  DictionaryLabel.swift
 //  NurseSchedule_iOS
 //
-//  Created by 박흥기 on 2021/01/24.
+//  Created by 이주원 on 2021/01/24.
 //
 
 import UIKit
