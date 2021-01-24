@@ -20,47 +20,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LMo-4j-srw" userLabel="pagerView" customClass="FSPagerView" customModule="FSPagerView">
-                                <rect key="frame" x="0.0" y="88" width="390" height="270"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="225"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="270" id="jyT-R3-YKf"/>
+                                    <constraint firstAttribute="height" constant="225" id="jyT-R3-YKf"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="A9a-3t-fBU">
-                                <rect key="frame" x="5" y="384" width="380" height="45"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="A9a-3t-fBU">
+                                <rect key="frame" x="10" y="345" width="370" height="32"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb3-rh-V9E">
-                                        <rect key="frame" x="0.0" y="0.0" width="95" height="45"/>
-                                        <state key="normal" image="NurseKorea"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="34" height="32"/>
+                                        <state key="normal" image="koreaNurse2"/>
                                         <connections>
                                             <action selector="firstLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="A4L-6K-f6j"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGe-ml-9Jy">
+                                        <rect key="frame" x="84" y="0.0" width="34" height="32"/>
+                                        <state key="normal" image="NurseEdu"/>
+                                        <connections>
+                                            <action selector="newtLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="abj-T9-m9F"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLc-MR-zge">
-                                        <rect key="frame" x="95" y="0.0" width="95" height="45"/>
-                                        <state key="normal" image="Nurscape"/>
+                                        <rect key="frame" x="168" y="0.0" width="34" height="32"/>
+                                        <state key="normal" image="NurseJob2"/>
                                         <connections>
                                             <action selector="secondLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="VN0-Vo-5ZD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7l-xE-as1">
-                                        <rect key="frame" x="190" y="0.0" width="95" height="45"/>
-                                        <state key="normal" image="Nursestory"/>
+                                        <rect key="frame" x="252" y="0.0" width="34" height="32"/>
+                                        <state key="normal" image="Nurscape2"/>
                                         <connections>
                                             <action selector="thirdLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="wqp-al-GVc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvJ-fl-Vsk">
-                                        <rect key="frame" x="285" y="0.0" width="95" height="45"/>
-                                        <state key="normal" image="NurseJob"/>
+                                        <rect key="frame" x="336" y="0.0" width="34" height="32"/>
+                                        <state key="normal" image="Nursestory3"/>
                                         <connections>
                                             <action selector="fourthLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="vA9-Kk-4nf"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="FO6-eX-vYR"/>
+                                    <constraint firstAttribute="height" constant="32" id="FO6-eX-vYR"/>
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-------------------- 공지사항-------------------- " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Mn-bx-TAN">
@@ -73,14 +80,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WfY-5U-Plk" userLabel="pageControl" customClass="FSPageControl" customModule="FSPagerView">
-                                <rect key="frame" x="0.0" y="333" width="390" height="20"/>
+                                <rect key="frame" x="0.0" y="288" width="390" height="20"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="46N-LG-5ja"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="270" translatesAutoresizingMaskIntoConstraints="NO" id="63K-qP-PtD">
-                                <rect key="frame" x="30" y="208" width="330" height="30"/>
+                                <rect key="frame" x="30" y="163" width="330" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9D-cy-r0K">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -170,8 +177,43 @@
                                     <constraint firstAttribute="height" constant="280" id="UTi-ji-YbH"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="irN-Zj-mSt">
+                                <rect key="frame" x="0.0" y="385" width="390" height="15.666666666666686"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대한간호협회" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fG-w5-yFU">
+                                        <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="15.666666666666666"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  널스에듀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxI-dX-I7x">
+                                        <rect key="frame" x="80.666666666666671" y="0.0" width="67.000000000000014" height="15.666666666666666"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="      널스잡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09V-Cl-Ote">
+                                        <rect key="frame" x="161.66666666666666" y="0.0" width="66.666666666666657" height="15.666666666666666"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    널스케이프" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3W2-rD-MZN">
+                                        <rect key="frame" x="242.33333333333337" y="0.0" width="67" height="15.666666666666666"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    널스스토리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ai-av-5xO">
+                                        <rect key="frame" x="323.33333333333331" y="0.0" width="66.666666666666686" height="15.666666666666666"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="관련링크" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pw7-9M-Zbw">
-                                <rect key="frame" x="166" y="361" width="59" height="21"/>
+                                <rect key="frame" x="166" y="316" width="59" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -188,16 +230,19 @@
                             <constraint firstItem="Lhf-4y-YY7" firstAttribute="top" secondItem="3Mn-bx-TAN" secondAttribute="bottom" id="9tT-lx-5xW"/>
                             <constraint firstItem="63K-qP-PtD" firstAttribute="centerX" secondItem="fKI-qa-3nT" secondAttribute="centerX" id="AfY-oM-nhr"/>
                             <constraint firstItem="3Mn-bx-TAN" firstAttribute="leading" secondItem="fKI-qa-3nT" secondAttribute="leading" id="DtK-wi-aYt"/>
-                            <constraint firstItem="3Mn-bx-TAN" firstAttribute="top" secondItem="A9a-3t-fBU" secondAttribute="bottom" id="Faj-dp-T6c"/>
                             <constraint firstItem="3Mn-bx-TAN" firstAttribute="trailing" secondItem="yr1-88-tlW" secondAttribute="trailing" id="Luz-AJ-UVb"/>
                             <constraint firstItem="Lhf-4y-YY7" firstAttribute="leading" secondItem="yr1-88-tlW" secondAttribute="leading" constant="12" id="O3b-Ye-FTu"/>
+                            <constraint firstItem="irN-Zj-mSt" firstAttribute="top" secondItem="A9a-3t-fBU" secondAttribute="bottom" constant="8" symbolic="YES" id="PPD-xw-qwE"/>
+                            <constraint firstItem="A9a-3t-fBU" firstAttribute="top" secondItem="LMo-4j-srw" secondAttribute="bottom" constant="32" id="PiR-rr-S4F"/>
                             <constraint firstItem="WfY-5U-Plk" firstAttribute="top" secondItem="LMo-4j-srw" secondAttribute="bottom" constant="-25" id="UOX-x6-ksv"/>
                             <constraint firstItem="yr1-88-tlW" firstAttribute="bottom" secondItem="Lhf-4y-YY7" secondAttribute="bottom" constant="12" id="USo-fr-X2d"/>
                             <constraint firstItem="yr1-88-tlW" firstAttribute="top" secondItem="LMo-4j-srw" secondAttribute="top" id="WF4-rv-fEH"/>
-                            <constraint firstItem="A9a-3t-fBU" firstAttribute="leading" secondItem="yr1-88-tlW" secondAttribute="leading" constant="5" id="bKK-Bm-frr"/>
-                            <constraint firstItem="yr1-88-tlW" firstAttribute="trailing" secondItem="A9a-3t-fBU" secondAttribute="trailing" constant="5" id="mhs-Dw-tD4"/>
+                            <constraint firstItem="A9a-3t-fBU" firstAttribute="leading" secondItem="yr1-88-tlW" secondAttribute="leading" constant="10" id="bKK-Bm-frr"/>
+                            <constraint firstItem="yr1-88-tlW" firstAttribute="trailing" secondItem="irN-Zj-mSt" secondAttribute="trailing" id="hTr-Xr-h1D"/>
+                            <constraint firstItem="yr1-88-tlW" firstAttribute="trailing" secondItem="A9a-3t-fBU" secondAttribute="trailing" constant="10" id="mhs-Dw-tD4"/>
                             <constraint firstItem="yr1-88-tlW" firstAttribute="trailing" secondItem="WfY-5U-Plk" secondAttribute="trailing" id="op5-e5-1ch"/>
                             <constraint firstItem="yr1-88-tlW" firstAttribute="trailing" secondItem="Lhf-4y-YY7" secondAttribute="trailing" constant="12" id="s9L-rp-DIy"/>
+                            <constraint firstItem="irN-Zj-mSt" firstAttribute="leading" secondItem="yr1-88-tlW" secondAttribute="leading" id="xFo-bT-sFP"/>
                             <constraint firstItem="WfY-5U-Plk" firstAttribute="top" secondItem="63K-qP-PtD" secondAttribute="bottom" constant="95" id="xGY-rQ-bOD"/>
                         </constraints>
                     </view>
@@ -1056,15 +1101,16 @@
         <image name="Info2" width="394" height="378"/>
         <image name="Job2" width="382" height="380"/>
         <image name="New2" width="382" height="380"/>
-        <image name="Nurscape" width="200" height="75"/>
-        <image name="NurseJob" width="200" height="75"/>
-        <image name="NurseKorea" width="200" height="59"/>
-        <image name="Nursestory" width="200" height="75"/>
+        <image name="Nurscape2" width="292" height="312"/>
+        <image name="NurseEdu" width="132" height="130"/>
+        <image name="NurseJob2" width="354" height="348"/>
+        <image name="Nursestory3" width="498" height="492"/>
         <image name="QnA2" width="374" height="378"/>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
+        <image name="koreaNurse2" width="150" height="156"/>
         <image name="more2" width="374" height="378"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>
         <image name="person.2" catalog="system" width="128" height="81"/>
