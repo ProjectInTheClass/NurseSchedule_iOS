@@ -298,7 +298,8 @@
                                                         <color key="titleColor" systemColor="systemRedColor"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="QIv-Xo-IbY" kind="unwind" unwindAction="unwindToList:" id="J4l-Dt-vyI"/>
+                                                        <action selector="cancleButtonTapped:" destination="xcC-He-qon" eventType="touchUpInside" id="pXq-qT-6MN"/>
+                                                        <segue destination="QIv-Xo-IbY" kind="unwind" identifier="unwindToContentList" unwindAction="unwindToContentListWithSegue:" id="3t0-TV-REj"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ef-I7-NR9">
@@ -307,6 +308,7 @@
                                                     <state key="normal" title="추가"/>
                                                     <connections>
                                                         <action selector="SaveButton:" destination="xcC-He-qon" eventType="touchUpInside" id="zdi-Ih-UU6"/>
+                                                        <segue destination="QIv-Xo-IbY" kind="unwind" unwindAction="unwindToContentListWithSegue:" id="8A5-Ym-EmU"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

@@ -30,6 +30,20 @@ class DetailContentController: UIViewController {
     var selectedArticle : Article? = nil
     */
     
+    func loadTableView() {
+        commentsList.removeAll()
+        guard let boardType = forCommentSavingInfo?.boardType else { return }
+        guard let articleID = forCommentSavingInfo?.newComment.articleID else { return }
+        DBBoard.board.getCommentsList(BoardType: boardType, articleID: articleID) { (comment) in
+            self.commentsList.append(comment)
+            print("commentLists get successful")
+            self.commentTableView.reloadData()
+        }
+        //commentTableView.reloadData()
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         articleUser.text = "👤익명"
@@ -43,31 +57,26 @@ class DetailContentController: UIViewController {
             self.navigationItem.setRightBarButton(nil, animated: true)
         }
         
+        loadTableView()
+        
         commentTextView.delegate = self // txtvReview가 유저가 선언한 outlet
         commentTextViewPlaceholderSetting()
         // Do any additional setup after loading the view.
-        guard let boardType = forCommentSavingInfo?.boardType else { return }
-        guard let articleID = forCommentSavingInfo?.newComment.articleID else { return }
-        DBBoard.board.getCommentsList(BoardType: boardType, articleID: articleID) { (comment) in
-            self.commentsList.append(comment)
-            print("commentLists get successful")
-            self.commentTableView.reloadData()
-        }
         
         commentTableView.delegate = self
         commentTableView.dataSource = self
-        commentTableView.reloadData()
+        //commentTableView.reloadData()
 
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        commentTableView.reloadData()
+        loadTableView()
         super.viewDidAppear(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        commentTableView.reloadData()
-        super.viewWillAppear(true)
+        //commentTableView.reloadData()
+        //super.viewWillAppear(true)
     }
     
     @IBAction func EditOrDeleteButtonTapped(_ sender: Any) {
