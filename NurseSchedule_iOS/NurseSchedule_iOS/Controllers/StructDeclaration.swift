@@ -39,6 +39,7 @@ struct ArticleAllInfo {
 }
 
 struct Comment {
+    var commentID : String
     var writer : String
     var date : String
     var content : String

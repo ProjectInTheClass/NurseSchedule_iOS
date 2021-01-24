@@ -114,6 +114,10 @@ class DBBoard  {
         })
     }
     
+    func deleteComment(BoardType: String, articleID: String, commentID: String) {
+        ref.child("\(BoardType)/contentList/\(articleID)/commentList/\(commentID)").removeValue()
+    }
+    
     func addComment(BoardType: String, articleID : String, comment: String) {
         let reference = ref.child("\(BoardType)/contentList/\(articleID)/commentList/\(UUID().uuidString)")
         let dateFormatter : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 0(월단위)
@@ -126,7 +130,7 @@ class DBBoard  {
         ref.child("\(BoardType)/contentList/\(articleID)/commentList").observeSingleEvent(of: .value, with: { snapshot in
             let enumerator = snapshot.children
             while let rest = enumerator.nextObject() as? DataSnapshot {
-                var comment = Comment(writer: "", date: "", content: "")
+                var comment = Comment(commentID: "", writer: "", date: "", content: "")
                 if let result = (rest.value as AnyObject)["comment"]! as? String {
                     comment.content = result
                 }
@@ -135,6 +139,9 @@ class DBBoard  {
                 }
                 if let result = (rest.value as AnyObject)["commentWriter"]! as? String {
                     comment.writer = result
+                }
+                if let result = rest.key as? String{
+                    comment.commentID = result
                 }
                 completion(comment)
                 

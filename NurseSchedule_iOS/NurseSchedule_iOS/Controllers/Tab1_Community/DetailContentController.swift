@@ -173,4 +173,27 @@ extension DetailContentController : UITableViewDelegate, UITableViewDataSource {
         //cell.commentUser.text = commentsList[indexPath.row].writer
         return cell
     }
+    
+    
+    
+    
+    
+    // 댓글 삭제
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if commentsList[indexPath.row].writer == currentUser {
+            return .delete
+        }
+        return .none
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let boardType = articleAllInfo?.boardType else { return }
+            guard let articleID = articleAllInfo?.articleInfo.articleID else { return }
+            DBBoard.board.deleteComment(BoardType:boardType , articleID: articleID, commentID: commentsList[indexPath.row].commentID)
+            commentsList.remove(at: indexPath.row)
+            commentTableView.deleteRows(at: [indexPath], with: .automatic)
+            
+        }
+    }
+    
 }
