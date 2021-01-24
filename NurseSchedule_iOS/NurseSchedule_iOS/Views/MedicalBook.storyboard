@@ -49,14 +49,14 @@
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MedicalCell" id="Wbo-9U-6VI" customClass="MedicalCell" customModule="NurseSchedule_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="414" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wbo-9U-6VI" id="xF8-p5-ZaS">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="47.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHU-bq-ZBd">
-                                                    <rect key="frame" x="22" y="13" width="42" height="21.5"/>
+                                                    <rect key="frame" x="22" y="13" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -104,7 +104,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pfw-UM-JRf">
-                                <rect key="frame" x="15" y="258" width="384" height="555"/>
+                                <rect key="frame" x="15" y="258" width="384" height="540"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="englishTerm" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxw-bB-Obg">
@@ -127,7 +127,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="definition" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kE-9H-AmJ" customClass="DictionaryLabel" customModule="NurseSchedule_iOS" customModuleProvider="target">
-                                <rect key="frame" x="35" y="281" width="344" height="507"/>
+                                <rect key="frame" x="35" y="281" width="344" height="497"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -136,10 +136,10 @@
                         <viewLayoutGuide key="safeArea" id="wZB-Q8-CiZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wZB-Q8-CiZ" firstAttribute="bottom" secondItem="Pfw-UM-JRf" secondAttribute="bottom" id="8wX-8s-FRn"/>
+                            <constraint firstItem="wZB-Q8-CiZ" firstAttribute="bottom" secondItem="Pfw-UM-JRf" secondAttribute="bottom" constant="15" id="8wX-8s-FRn"/>
                             <constraint firstItem="6kE-9H-AmJ" firstAttribute="leading" secondItem="wZB-Q8-CiZ" secondAttribute="leading" constant="35" id="A47-wU-po3"/>
                             <constraint firstItem="6kE-9H-AmJ" firstAttribute="top" secondItem="wZB-Q8-CiZ" secondAttribute="top" constant="193" id="C7U-1I-OBE"/>
-                            <constraint firstItem="wZB-Q8-CiZ" firstAttribute="bottom" secondItem="6kE-9H-AmJ" secondAttribute="bottom" constant="25" id="PNv-OS-Nqb"/>
+                            <constraint firstItem="wZB-Q8-CiZ" firstAttribute="bottom" secondItem="6kE-9H-AmJ" secondAttribute="bottom" constant="35" id="PNv-OS-Nqb"/>
                             <constraint firstItem="Pfw-UM-JRf" firstAttribute="leading" secondItem="wZB-Q8-CiZ" secondAttribute="leading" constant="15" id="Zi8-bm-CYA"/>
                             <constraint firstItem="wZB-Q8-CiZ" firstAttribute="trailing" secondItem="Pfw-UM-JRf" secondAttribute="trailing" constant="15" id="hzw-B6-OGq"/>
                             <constraint firstItem="wZB-Q8-CiZ" firstAttribute="trailing" secondItem="6kE-9H-AmJ" secondAttribute="trailing" constant="35" id="lyt-ca-feo"/>
