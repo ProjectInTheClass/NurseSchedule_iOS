@@ -47,7 +47,7 @@ class EditContentFormController: UITableViewController {
             if StoredTitleData.isEmpty || StoredContentData.isEmpty {
                 showAlert()
             } else {
-                newArticle.user = currentUser
+                //newArticle.user = currentUser
                 newArticle.content = StoredContentData
                 newArticle.title = StoredTitleData
                 //let dateFormatter = DateFormatter()
