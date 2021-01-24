@@ -88,6 +88,16 @@ class DBBoard  {
         })
     }
     
+    func getBoardList(completion : @escaping () -> Void){
+        ref.child("Board/").observeSingleEvent(of: .value, with: {
+            snapshot in
+            if let value = snapshot.value as? NSDictionary {
+                let result = value[""]
+            }
+            
+        })
+    }
     
     
+
 }

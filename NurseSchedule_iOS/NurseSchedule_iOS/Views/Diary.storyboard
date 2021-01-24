@@ -290,6 +290,7 @@
                                                             <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no"/>
                                                             <connections>
                                                                 <action selector="ContentEditingDidEnd:" destination="24Z-UK-ocX" eventType="editingDidEnd" id="Fhs-zK-C9E"/>
+                                                                <action selector="editChangeTextfield:" destination="24Z-UK-ocX" eventType="editingChanged" id="fVC-xh-dM0"/>
                                                             </connections>
                                                         </textField>
                                                     </subviews>
@@ -443,10 +444,16 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmV-fm-i1s">
                                                         <rect key="frame" x="0.0" y="0.0" width="101.5" height="30"/>
                                                         <state key="normal" title="삭제"/>
+                                                        <connections>
+                                                            <action selector="deleteButton2:" destination="zKc-Dc-ZiH" eventType="touchUpInside" id="dYh-9M-Gr7"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8W7-YA-4sf">
                                                         <rect key="frame" x="211.5" y="0.0" width="101.5" height="30"/>
                                                         <state key="normal" title="수정"/>
+                                                        <connections>
+                                                            <action selector="modifyButton2:" destination="zKc-Dc-ZiH" eventType="touchUpInside" id="tFp-og-yXh"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -475,6 +482,7 @@
                         <outlet property="content" destination="MWA-E9-9wa" id="vcm-cx-QK6"/>
                         <outlet property="date" destination="qCr-Z9-tXd" id="Qi7-Td-lyA"/>
                         <outlet property="emoji" destination="Veh-aV-FjZ" id="F2v-Kw-aUX"/>
+                        <segue destination="24Z-UK-ocX" kind="presentation" identifier="editDiary" id="Ant-ZF-VJ0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2O-6W-792" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -534,10 +542,16 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fu1-gx-RKp">
                                                         <rect key="frame" x="0.0" y="0.0" width="101.5" height="30"/>
                                                         <state key="normal" title="삭제"/>
+                                                        <connections>
+                                                            <action selector="deleteButton:" destination="1YB-Rd-rPt" eventType="touchUpInside" id="rDf-ER-d4c"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ehe-T0-2PR">
                                                         <rect key="frame" x="211.5" y="0.0" width="101.5" height="30"/>
                                                         <state key="normal" title="수정"/>
+                                                        <connections>
+                                                            <action selector="modifyButton:" destination="1YB-Rd-rPt" eventType="touchUpInside" id="hyp-we-Xw5"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -566,6 +580,7 @@
                         <outlet property="content" destination="MV7-M5-pwi" id="Go3-CN-DDZ"/>
                         <outlet property="date" destination="o3q-0j-r1R" id="qS2-BF-xY3"/>
                         <outlet property="emoji" destination="TVk-QR-wni" id="lWh-wL-sBT"/>
+                        <segue destination="24Z-UK-ocX" kind="presentation" identifier="editDiary" id="hzB-Tw-RO2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLD-UO-MCJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -575,7 +590,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KBb-6W-ZgX"/>
+        <segue reference="Ant-ZF-VJ0"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="0-crying" width="35" height="35"/>
