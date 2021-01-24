@@ -892,15 +892,8 @@
                                             <constraint firstAttribute="height" constant="250" id="qwr-zC-JnT"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IkL-pO-Xdb">
-                                        <rect key="frame" x="0.0" y="250" width="370" height="10"/>
-                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="10" id="4ea-Rd-PZh"/>
-                                        </constraints>
-                                    </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rtb-Hk-I2V">
-                                        <rect key="frame" x="0.0" y="260" width="370" height="363"/>
+                                        <rect key="frame" x="0.0" y="250" width="370" height="363"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="363" id="yAR-Wn-VQk"/>
@@ -971,7 +964,7 @@
                                         </prototypes>
                                     </tableView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUH-8b-GRp">
-                                        <rect key="frame" x="0.0" y="623" width="370" height="50"/>
+                                        <rect key="frame" x="0.0" y="613" width="370" height="50"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Bcc-A5-NkV">
                                                 <rect key="frame" x="0.0" y="0.0" width="343.66666666666669" height="50"/>
@@ -999,19 +992,29 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBe-wW-Hd0">
-                                        <rect key="frame" x="0.0" y="673" width="370" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="663" width="370" height="10"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IkL-pO-Xdb">
+                                <rect key="frame" x="0.0" y="338" width="390" height="5"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="4ea-Rd-PZh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XdR-zQ-7YR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="IkL-pO-Xdb" firstAttribute="top" secondItem="Utf-YG-yY5" secondAttribute="bottom" id="K3A-ro-wjk"/>
                             <constraint firstItem="XdR-zQ-7YR" firstAttribute="trailing" secondItem="GTK-7A-unp" secondAttribute="trailing" constant="10" id="a3c-5z-BLk"/>
+                            <constraint firstItem="IkL-pO-Xdb" firstAttribute="leading" secondItem="XdR-zQ-7YR" secondAttribute="leading" id="cVB-m9-wKw"/>
                             <constraint firstItem="GTK-7A-unp" firstAttribute="top" secondItem="XdR-zQ-7YR" secondAttribute="top" id="iZ3-Lz-Vuz"/>
+                            <constraint firstItem="XdR-zQ-7YR" firstAttribute="trailing" secondItem="IkL-pO-Xdb" secondAttribute="trailing" id="j0S-07-bZT"/>
                             <constraint firstItem="GTK-7A-unp" firstAttribute="leading" secondItem="XdR-zQ-7YR" secondAttribute="leading" constant="10" id="s67-rB-Ynv"/>
                             <constraint firstItem="XdR-zQ-7YR" firstAttribute="bottom" secondItem="GTK-7A-unp" secondAttribute="bottom" id="vKW-1u-6oj"/>
                         </constraints>
