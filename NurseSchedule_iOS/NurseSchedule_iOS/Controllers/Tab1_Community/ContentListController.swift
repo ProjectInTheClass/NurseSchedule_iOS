@@ -13,6 +13,7 @@ class ContentListController: UIViewController{
     var articleList : [Article] = []
     @IBOutlet weak var articleListTableView: UITableView!
     @IBOutlet weak var contentListNavigation: UINavigationItem!
+    @IBOutlet weak var boardInfoLabel: UILabel!
     
     @IBAction func unwindToContentList(segue : UIStoryboardSegue) {}
 
@@ -32,6 +33,8 @@ class ContentListController: UIViewController{
             contentListNavigation.title = boardType
             //articleListTableView.reloadData()
         }
+        
+        boardInfoLabel.text = "info : 건전한 커뮤니티 조성을 위해 바른말, 고운말을 씁시다"
         
         articleListTableView.delegate = self
         articleListTableView.dataSource = self
