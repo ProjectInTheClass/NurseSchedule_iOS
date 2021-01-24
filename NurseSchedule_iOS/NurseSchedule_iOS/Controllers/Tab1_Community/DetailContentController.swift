@@ -103,11 +103,7 @@ class DetailContentController: UIViewController {
                 guard let articleID = self.forCommentSavingInfo?.newComment.articleID else { return }
                 DBBoard.board.deleteArticle(BoardType: boardType, articleID: articleID)
                 self.performSegue(withIdentifier: "unwindToContentList", sender: nil)
-//
-//                let viewController = UIStoryboard(name: "Community", bundle: nil).instantiateViewController(withIdentifier: "ContentList") as UIViewController
-//                self.present(viewController, animated: true, completion: nil)
-//
-                
+          
             }
             alert.addAction(cancelAction)
             alert.addAction(okAction)
