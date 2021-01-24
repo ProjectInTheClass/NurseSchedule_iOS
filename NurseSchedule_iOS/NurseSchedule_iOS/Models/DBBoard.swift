@@ -41,6 +41,19 @@ class DBBoard  {
         
     }
   
+    func getBoardListIn(completion : @escaping (String) -> Void) {
+        print("getBoardListIn!!!")
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            let enumerator = snapshot.children
+            while let rest = enumerator.nextObject() as? DataSnapshot {
+                if let result = rest.key as? String {
+                    print("getBoardListIn >>>>>>>>>\(result)")
+                    completion(result)
+                }
+            }
+        })
+    }
+    
     /*
     func countContent(BoardType: String, DataType: String , new: Article){
         let reference4 = ref.child("Board/\(BoardType)/\(DataType)/\(UUID().uuidString)")

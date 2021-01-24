@@ -10,8 +10,8 @@ import Firebase
 import GoogleSignIn
 
 var termsList : [Term] = []
-
 var bringdays : [Day] = []
+var boardList : [String] = []
 
 var getDiaryDate : String = ""
 let currentUser = Login.init().googleLogin()
@@ -36,8 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         
         
-        
-        
         // 다이어리 목록을 디비에서 불러옴
         let dateFormatter : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 0(월단위)
         dateFormatter.dateFormat = "yyyy-MM"
@@ -47,6 +45,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print("app delegate \(result)")
             //print(self.bringdays)
         })
+        
+        
+        DBBoard.board.getBoardListIn { (list) in
+            print("AppDelegate : boardList bring success>>> \(list)")
+            boardList.append(list)
+        }
+        
         
         return true
     }

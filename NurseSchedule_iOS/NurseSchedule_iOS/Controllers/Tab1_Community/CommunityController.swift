@@ -109,6 +109,11 @@ class CommunityController: UIViewController, FSPagerViewDataSource, FSPagerViewD
             let ContentListController = segue.destination as! ContentListController
             ContentListController.boardType = sender as? String
         }
+//        if segue.identifier == "boardList" {
+//           // let BoardListController = segue.destination as! BoardListController
+//            //안넘어감
+//        }
+        
     }
     
     
@@ -172,6 +177,10 @@ class CommunityController: UIViewController, FSPagerViewDataSource, FSPagerViewD
     @IBAction func board5Tapped(_ sender: Any) {
         performSegue(withIdentifier: "articleList", sender: "신입게시판")
     }
+    
+//    @IBAction func board6Tapped(_ sender: Any) {
+////        performSegue(withIdentifier: "boardList", sender: nil)
+//    }
     
     
 }
