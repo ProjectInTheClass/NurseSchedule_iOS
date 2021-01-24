@@ -34,6 +34,7 @@
 		992F41F025AF2C9100E25199 /* MedicalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F41EF25AF2C9100E25199 /* MedicalCell.swift */; };
 		992F420825AF454300E25199 /* MedicalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F420725AF454300E25199 /* MedicalDetailViewController.swift */; };
 		992F420B25AFDD2B00E25199 /* ScheduleAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F420A25AFDD2B00E25199 /* ScheduleAddViewController.swift */; };
+		9951CB0425BD5DF5007DBD06 /* EditContentFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9951CB0325BD5DF5007DBD06 /* EditContentFormController.swift */; };
 		997059AB25A72D8A0037A342 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997059AA25A72D8A0037A342 /* TabBarController.swift */; };
 		997B460325BC089C0091ADFC /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997B460225BC089C0091ADFC /* CommentCell.swift */; };
 		997DD05C25B69E10007C5002 /* StructDeclaration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DD05B25B69E10007C5002 /* StructDeclaration.swift */; };
@@ -89,6 +90,7 @@
 		992F41EF25AF2C9100E25199 /* MedicalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalCell.swift; sourceTree = "<group>"; };
 		992F420725AF454300E25199 /* MedicalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalDetailViewController.swift; sourceTree = "<group>"; };
 		992F420A25AFDD2B00E25199 /* ScheduleAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddViewController.swift; sourceTree = "<group>"; };
+		9951CB0325BD5DF5007DBD06 /* EditContentFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContentFormController.swift; sourceTree = "<group>"; };
 		997059AA25A72D8A0037A342 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		997B460225BC089C0091ADFC /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		997DD05B25B69E10007C5002 /* StructDeclaration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructDeclaration.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				9991D6CF25B9517700C3A7B1 /* ContentListController.swift */,
 				7E9F594325B95B290028D9A8 /* AddContentFormController.swift */,
 				EC9ED33125BABEF600848426 /* DetailContentController.swift */,
+				9951CB0325BD5DF5007DBD06 /* EditContentFormController.swift */,
 			);
 			path = Tab1_Community;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				9926527E25A4CCE80043A16E /* DBBoard.swift in Sources */,
 				9991D6CC25B94F6800C3A7B1 /* ContentCell.swift in Sources */,
 				9926523E25A4ADEE0043A16E /* DiaryController.swift in Sources */,
+				9951CB0425BD5DF5007DBD06 /* EditContentFormController.swift in Sources */,
 				ECF2B54F25B420C60080F9E0 /* DiaryCell.swift in Sources */,
 				990AC3F4259DB3C400281E8B /* SceneDelegate.swift in Sources */,
 				7E68406425BD629D001CFBAC /* DictionaryLabel.swift in Sources */,

@@ -1074,12 +1074,114 @@
                         <outlet property="commentUploadButton" destination="oTL-mg-ZjG" id="9Ct-un-LrB"/>
                         <outlet property="editOrDeleteButton" destination="yjX-oz-Cp3" id="cv0-kR-dOq"/>
                         <segue destination="mAu-Up-Hcx" kind="unwind" identifier="unwindToContentList" unwindAction="unwindToContentListWithSegue:" id="6R9-hN-30S"/>
+                        <segue destination="1t4-HM-VnT" kind="presentation" identifier="editContent" id="lsN-OY-hJx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAU-XR-p8v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="mAu-Up-Hcx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1070.7692307692307" y="75.355450236966817"/>
+        </scene>
+        <!--Edit Content Form Controller-->
+        <scene sceneID="zsT-2N-Vg0">
+            <objects>
+                <tableViewController id="1t4-HM-VnT" customClass="EditContentFormController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DRl-IK-2FS">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="plB-ry-09q">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="46" id="RK7-ev-P1u">
+                                        <rect key="frame" x="0.0" y="28" width="390" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RK7-ev-P1u" id="JoC-hA-7bq">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="46"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atq-9p-DmP">
+                                                    <rect key="frame" x="28" y="8" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="취소">
+                                                        <color key="titleColor" systemColor="systemRedColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="cancleButtonTapped:" destination="1t4-HM-VnT" eventType="touchUpInside" id="2hB-Ma-bBn"/>
+                                                        <segue destination="Dzv-5b-Fxx" kind="unwind" identifier="unwindToContentList" unwindAction="unwindToContentListWithSegue:" id="ZFm-63-x6Z"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65i-Ro-bIc">
+                                                    <rect key="frame" x="332" y="8" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="추가"/>
+                                                    <connections>
+                                                        <action selector="SaveButton:" destination="1t4-HM-VnT" eventType="touchUpInside" id="6Fh-Ah-twU"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="46" id="kh3-CQ-8O4">
+                                        <rect key="frame" x="0.0" y="74" width="390" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kh3-CQ-8O4" id="wzo-s1-oBf">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="46"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="제목" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GZm-No-zvC">
+                                                    <rect key="frame" x="20" y="6" width="350" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="604" id="ax7-qs-SMq">
+                                        <rect key="frame" x="0.0" y="120" width="390" height="604"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ax7-qs-SMq" id="wS3-x0-zeN">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="604"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0sw-WM-4lo">
+                                                    <rect key="frame" x="20" y="11" width="350" height="492"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="1t4-HM-VnT" id="5GY-RI-5IF"/>
+                            <outlet property="delegate" destination="1t4-HM-VnT" id="lcS-bu-SfV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="K0n-xI-Q97">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="ZN6-EJ-cQp">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4Qa-jn-mzw">
+                                <rect key="frame" x="288" y="7" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="articleContentTextView" destination="0sw-WM-4lo" id="F14-f8-8Nf"/>
+                        <outlet property="articleTitleTextField" destination="GZm-No-zvC" id="xOg-LH-tug"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oYB-eR-YSj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Dzv-5b-Fxx" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1831" y="75"/>
         </scene>
     </scenes>
     <designables>

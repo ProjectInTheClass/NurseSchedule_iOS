@@ -65,7 +65,7 @@ class ContentListController: UIViewController{
         if let boardType = boardType {
             if segue.identifier == "articleDetail" {
                 let DetailContentController = segue.destination as! DetailContentController
-                DetailContentController.forCommentSavingInfo = sender as? ForCommentSavingInfo
+                DetailContentController.articleAllInfo = sender as? ArticleAllInfo
             }
         }
     }
@@ -108,8 +108,8 @@ extension ContentListController : UITableViewDataSource, UITableViewDelegate {
         print(indexPath)
         //loadTableView()
         if let boardType = boardType {
-            let forCommentSavingInfo = ForCommentSavingInfo.init(boardType: boardType, newComment: articleList[indexPath.row])
-            performSegue(withIdentifier: "articleDetail", sender: forCommentSavingInfo)
+            let articleAllInfo = ArticleAllInfo.init(boardType: boardType, articleInfo: articleList[indexPath.row])
+            performSegue(withIdentifier: "articleDetail", sender: articleAllInfo)
         }
         
     }
