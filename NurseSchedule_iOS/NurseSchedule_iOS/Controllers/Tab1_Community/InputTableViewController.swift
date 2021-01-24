@@ -13,7 +13,6 @@ class InputTableViewController: UITableViewController {
     @IBOutlet weak var inputContents: UITextView!
     
     var boardType : String? = nil
-    let currentUser = Login.init().googleLogin()
     var newArticle = Article(articleID : "default", title: "default", date: "default", content: "default", user: "default")
     
     
@@ -27,6 +26,10 @@ class InputTableViewController: UITableViewController {
         print(StoredTitleData)
     }
     
+    @IBAction func cancleButtonTapped(_ sender: Any) {
+    
+        performSegue(withIdentifier: "unwindToContentList", sender: nil)
+    }
     @IBAction func SaveButton(_ sender: Any) {
         
         if let StoredTitleData = inputTitle.text, let StoredContentData = inputContents.text {
@@ -49,7 +52,7 @@ class InputTableViewController: UITableViewController {
                 }
                 
                
-                self.dismiss(animated: true, completion: nil)
+                performSegue(withIdentifier: "unwindToContentList", sender: nil)
                 
             }
             

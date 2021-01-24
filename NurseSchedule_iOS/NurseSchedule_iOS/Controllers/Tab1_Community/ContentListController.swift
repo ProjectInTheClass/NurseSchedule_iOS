@@ -16,10 +16,9 @@ class ContentListController: UIViewController{
     
     @IBAction func unwindToContentList(segue : UIStoryboardSegue) {}
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("from >>>>>> \(boardType)")
+    func loadTableView() {
         if let boardType = boardType {
+            articleList.removeAll()
             DBBoard.board.getArticleListIn(BoardType: boardType) { (article) in
                 self.articleList.append(article)
                 print("ContentList>>>>>>>\(self.articleList)")
@@ -27,8 +26,16 @@ class ContentListController: UIViewController{
             }
             // Do any additional setup after loading the view.
             contentListNavigation.title = boardType
-            articleListTableView.reloadData()
+            //articleListTableView.reloadData()
         }
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("from >>>>>> \(boardType)")
+
+        loadTableView()
         articleListTableView.delegate = self
         articleListTableView.dataSource = self
         articleListTableView.estimatedRowHeight = 50
@@ -38,16 +45,18 @@ class ContentListController: UIViewController{
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        articleListTableView.reloadData()
+        //articleListTableView.reloadData()
         //        articleListTableView.estimatedRowHeight = 100
+        loadTableView()
         articleListTableView.rowHeight = UITableView.automaticDimension
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        //loadTableView()
         //        articleListTableView.estimatedRowHeight = 100
         articleListTableView.rowHeight = UITableView.automaticDimension
-        articleListTableView.reloadData()
+        //articleListTableView.reloadData()
+        
     }
     
     
@@ -68,6 +77,7 @@ class ContentListController: UIViewController{
     
     @IBAction func addArticleButtonTapped(_ sender: Any) {
         if let boardType = boardType {
+            articleList.removeAll()
             performSegue(withIdentifier: "showAddForm", sender: boardType)
         }
         
@@ -99,6 +109,7 @@ extension ContentListController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
+        //loadTableView()
         if let boardType = boardType {
             let forCommentSavingInfo = ForCommentSavingInfo.init(boardType: boardType, newComment: articleList[indexPath.row])
             performSegue(withIdentifier: "articleDetail", sender: forCommentSavingInfo)
