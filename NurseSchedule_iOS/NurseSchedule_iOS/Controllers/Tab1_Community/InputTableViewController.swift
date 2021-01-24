@@ -14,7 +14,7 @@ class InputTableViewController: UITableViewController {
     
     var boardType : String? = nil
     let currentUser = Login.init().googleLogin()
-    var newArticle = Article(title: "default", date: "default", content: "default", user: "default")
+    var newArticle = Article(articleID : "default", title: "default", date: "default", content: "default", user: "default")
     
     
     var StoredTitleData : String? = nil
@@ -83,7 +83,25 @@ class InputTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
+    // 내용 텍스트 placeholer 추가
     
+    
+//    textView.text = "Placeholder"
+//    textView.textColor = UIColor.lightGray
+//
+//    func textViewDidBeginEditing(_ textView: UITextView) {
+//        if textView.textColor == UIColor.lightGray {
+//            textView.text = nil
+//            textView.textColor = UIColor.black
+//        }
+//    }
+//
+//    func textViewDidEndEditing(_ textView: UITextView) {
+//        if textView.text.isEmpty {
+//            textView.text = "Placeholder"
+//            textView.textColor = UIColor.lightGray
+//        }
+//    }
 
 }
 

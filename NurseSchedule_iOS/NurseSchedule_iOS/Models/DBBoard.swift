@@ -13,7 +13,7 @@ import Firebase
 class DBBoard  {
     
     static let board = DBBoard()
-    let ref : DatabaseReference! = Database.database().reference()
+    let ref : DatabaseReference! = Database.database().reference().child("Board/")
     
     var boardNum_String : String = ""
     var boardNum_Int : Int = 0
@@ -27,20 +27,27 @@ class DBBoard  {
     
     
     func addContent(BoardType: String, DataType: String, new: Article) {
-        let reference3 = ref.child("Board/\(BoardType)/\(DataType)/")
+       /* let reference3 = ref.child("Board/\(BoardType)/\(DataType)/")
         let newContent = ["title": new.title, "content": new.content, "date": new.date, "user":new.user]
         
     //    reference3.setValue(newContent)
         countingContent+=1
         countContent(BoardType: BoardType, DataType: DataType, new: new)
         print("addContent >>> \(newContent)")
+ */
+        let reference4 = ref.child("\(BoardType)/\(DataType)/\(UUID().uuidString)")
+        let newContent = ["title": new.title, "content": new.content, "date": new.date, "user":new.user]
+        reference4.setValue(newContent)
+        
     }
-    
+  
+    /*
     func countContent(BoardType: String, DataType: String , new: Article){
         let reference4 = ref.child("Board/\(BoardType)/\(DataType)/\(UUID().uuidString)")
         let newContent = ["title": new.title, "content": new.content, "date": new.date, "user":new.user]
         reference4.setValue(newContent)
     }
+     */
     
     /*
     func addBoard(B_maker : String, B_description : String) {
@@ -69,10 +76,10 @@ class DBBoard  {
     */
     
     func getArticleListIn(BoardType: String, completion : @escaping (Article) -> Void) {
-        ref.child("Board/\(BoardType)/contentList").observeSingleEvent(of: .value, with: { snapshot in
+        ref.child("\(BoardType)/contentList").observeSingleEvent(of: .value, with: { snapshot in
             let enumerator = snapshot.children
             while let rest = enumerator.nextObject() as? DataSnapshot {
-                var eachArticle = Article(title: "", date: "", content: "", user: "")
+                var eachArticle = Article(articleID: "", title: "", date: "", content: "", user: "")
                 if let result = (rest.value as AnyObject)["content"]! as? String {
                     eachArticle.content = result
                 }
@@ -82,20 +89,48 @@ class DBBoard  {
                 if let result = (rest.value as AnyObject)["title"]! as? String {
                     eachArticle.title = result
                 }
+                if let result = (rest.value as AnyObject)["user"]! as? String {
+                    eachArticle.user = result
+                }
+                if let result = rest.key as? String{
+                    eachArticle.articleID = result
+                }
                 completion(eachArticle)
                 
             }
         })
     }
     
-    func getBoardList(completion : @escaping () -> Void){
-        ref.child("Board/").observeSingleEvent(of: .value, with: {
-            snapshot in
-            if let value = snapshot.value as? NSDictionary {
-                let result = value[""]
+    func addComment(BoardType: String, articleID : String, comment: String) {
+        let reference = ref.child("\(BoardType)/contentList/\(articleID)/commentList/\(UUID().uuidString)")
+        let dateFormatter : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 0(월단위)
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let newComment = ["comment": comment, "commentWriter": currentUser, "commentDate": dateFormatter.string(from: Date.init())]
+        reference.setValue(newComment)
+    }
+    
+    func getCommentsList(BoardType: String, articleID: String, completion : @escaping (Comment) -> Void) {
+        ref.child("\(BoardType)/contentList/\(articleID)/commentList").observeSingleEvent(of: .value, with: { snapshot in
+            let enumerator = snapshot.children
+            while let rest = enumerator.nextObject() as? DataSnapshot {
+                var comment = Comment(writer: "", date: "", content: "")
+                if let result = (rest.value as AnyObject)["comment"]! as? String {
+                    comment.content = result
+                }
+                if let result = (rest.value as AnyObject)["commentDate"]! as? String {
+                    comment.date = result
+                }
+                if let result = (rest.value as AnyObject)["commentWriter"]! as? String {
+                    comment.writer = result
+                }
+                completion(comment)
+                
             }
-            
         })
+    }
+    
+    func deleteArticle(BoardType: String, articleID : String) {
+        ref.child("\(BoardType)/contentList/\(articleID)").removeValue()
     }
     
     

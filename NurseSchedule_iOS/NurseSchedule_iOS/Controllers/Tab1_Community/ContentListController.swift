@@ -14,6 +14,8 @@ class ContentListController: UIViewController{
     @IBOutlet weak var articleListTableView: UITableView!
     @IBOutlet weak var contentListNavigation: UINavigationItem!
     
+    @IBAction func unwindToContentList(segue : UIStoryboardSegue) {}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("from >>>>>> \(boardType)")
@@ -54,10 +56,11 @@ class ContentListController: UIViewController{
             let InputTableViewController = segue.destination as! InputTableViewController
             InputTableViewController.boardType = sender as? String
         }
-        
-        if segue.identifier == "articleDetail" {
-            let DetailContentController = segue.destination as! DetailContentController
-            DetailContentController.selectedArticle = sender as? Article
+        if let boardType = boardType {
+            if segue.identifier == "articleDetail" {
+                let DetailContentController = segue.destination as! DetailContentController
+                DetailContentController.forCommentSavingInfo = sender as? ForCommentSavingInfo
+            }
         }
     }
     
@@ -69,11 +72,7 @@ class ContentListController: UIViewController{
         }
         
     }
-    
-    @IBAction func unwindToList(_ unwindSegue: UIStoryboardSegue) {
-        //let sourceViewController = unwindSegue.source
-        // Use data from the view controller which initiated the unwind segue
-    }
+
     
 }
 
@@ -100,7 +99,11 @@ extension ContentListController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
-        performSegue(withIdentifier: "articleDetail", sender: articleList[indexPath.row])
+        if let boardType = boardType {
+            let forCommentSavingInfo = ForCommentSavingInfo.init(boardType: boardType, newComment: articleList[indexPath.row])
+            performSegue(withIdentifier: "articleDetail", sender: forCommentSavingInfo)
+        }
+        
     }
     
 }

@@ -24,9 +24,37 @@ struct Term {
 
 
 struct Article {
+    var articleID : String
     var title: String
     var date: String
     var content: String
     var user: String
 }
 
+
+struct ForCommentSavingInfo {
+    var boardType : String
+    var newComment : Article
+    
+}
+
+struct Comment {
+    var writer : String
+    var date : String
+    var content : String
+    
+}
+
+enum ActionType {
+    case edit
+    case delete
+    
+    var typeStr : String {
+        switch self {
+        case .edit:
+            return "수정"
+        case .delete:
+            return "삭제"
+        }
+    }
+}
