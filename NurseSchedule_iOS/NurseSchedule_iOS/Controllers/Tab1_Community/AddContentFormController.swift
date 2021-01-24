@@ -1,42 +1,38 @@
 //
-//  InputTableViewController.swift
+//  AddContentFormController.swift
 //  NurseSchedule_iOS
 //
-//  Created by 박흥기 on 2021/01/21.
+//  Created by 이주원 on 2021/01/24.
 //
 
 import UIKit
 
-class InputTableViewController: UITableViewController {
+class AddContentFormController : UITableViewController {
     
-    @IBOutlet weak var inputTitle: UITextField!
-    @IBOutlet weak var inputContents: UITextView!
+  
+    @IBOutlet weak var articleTitleTextField: UITextField!
+    @IBOutlet weak var articleContentTextView: UITextView!
     
     var boardType : String? = nil
-    let currentUser = Login.init().googleLogin()
     var newArticle = Article(articleID : "default", title: "default", date: "default", content: "default", user: "default")
     
+    let placeholderText = "내용을 입력하세요"
+
     
-    var StoredTitleData : String? = nil
-    var StoredContentData : String? = nil
+    @IBAction func cancleButtonTapped(_ sender: Any) {
     
-    
-    
-    @IBAction func DoneTitle(_ sender: Any) {
-        StoredTitleData = inputTitle.text
-        print(StoredTitleData)
+        performSegue(withIdentifier: "unwindToContentList", sender: nil)
     }
     
     @IBAction func SaveButton(_ sender: Any) {
         
-        if let StoredTitleData = inputTitle.text, let StoredContentData = inputContents.text {
-            if StoredTitleData.isEmpty || StoredContentData.isEmpty {
+        if let StoredTitleData = articleTitleTextField.text, let StoredContentData = articleContentTextView.text {
+            if StoredTitleData.isEmpty || StoredContentData == placeholderText {
                 showAlert()
             } else {
-                
                 newArticle.user = currentUser
-                newArticle.content = self.StoredContentData!
-                newArticle.title = self.StoredTitleData!
+                newArticle.content = StoredContentData
+                newArticle.title = StoredTitleData
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd"
                 
@@ -47,13 +43,9 @@ class InputTableViewController: UITableViewController {
                 if let boardType = boardType {
                     DBBoard.board.addContent(BoardType: boardType, DataType: "contentList", new: newArticle)
                 }
-                
-               
-                self.dismiss(animated: true, completion: nil)
+                performSegue(withIdentifier: "unwindToContentList", sender: nil)
                 
             }
-            
-            
             
         }
     
@@ -61,11 +53,11 @@ class InputTableViewController: UITableViewController {
     
     func showAlert() {
         
-        let alert = UIAlertController(title: "비었습니다", message: "입력해주세요", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "작성이 완료되지 않았어요😂", message: "제목과 내용을 확인해주세요!", preferredStyle: UIAlertController.Style.alert)
         let okayButton = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okayButton)
         
-        present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
         
     }
     
@@ -77,8 +69,9 @@ class InputTableViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        articleContentTextView.delegate = self
+        articleContentTextViewPlaceholderSetting()
         
-        inputContents.delegate = self
     }
     
     // MARK: - Table view data source
@@ -105,11 +98,25 @@ class InputTableViewController: UITableViewController {
 
 }
 
-
-extension InputTableViewController: UITextViewDelegate {
-    func textViewDidChange(_ textView: UITextView) {
-        StoredContentData = inputContents.text
-        print(StoredContentData)
-      
-    }
+extension AddContentFormController: UITextViewDelegate {
+    func articleContentTextViewPlaceholderSetting() {
+        articleContentTextView.text = placeholderText
+        articleContentTextView.textColor = UIColor.lightGray
+            
+        }
+        
+        // TextView Place Holder
+        func textViewDidBeginEditing(_ textView: UITextView) {
+            if articleContentTextView.textColor == UIColor.lightGray {
+                articleContentTextView.text = nil
+                articleContentTextView.textColor = UIColor.black
+            }
+            
+        }
+        // TextView Place Holder
+        func textViewDidEndEditing(_ textView: UITextView) {
+            if articleContentTextView.text.isEmpty {
+                articleContentTextViewPlaceholderSetting()
+            }
+        }
 }

@@ -29,6 +29,7 @@ class DetailContentController: UIViewController {
     var boardType : String? = nil
     var selectedArticle : Article? = nil
     */
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +44,7 @@ class DetailContentController: UIViewController {
             self.navigationItem.setRightBarButton(nil, animated: true)
         }
         
-        commentTextView.delegate = self // txtvReview가 유저가 선언한 outlet
-        commentTextViewPlaceholderSetting()
-        // Do any additional setup after loading the view.
+        commentsList.removeAll()
         guard let boardType = forCommentSavingInfo?.boardType else { return }
         guard let articleID = forCommentSavingInfo?.newComment.articleID else { return }
         DBBoard.board.getCommentsList(BoardType: boardType, articleID: articleID) { (comment) in
@@ -53,10 +52,16 @@ class DetailContentController: UIViewController {
             print("commentLists get successful")
             self.commentTableView.reloadData()
         }
+        //commentTableView.reloadData()
+        
+        
+        commentTextView.delegate = self // txtvReview가 유저가 선언한 outlet
+        commentTextViewPlaceholderSetting()
+        // Do any additional setup after loading the view.
         
         commentTableView.delegate = self
         commentTableView.dataSource = self
-        commentTableView.reloadData()
+        //commentTableView.reloadData()
 
     }
     
@@ -66,8 +71,8 @@ class DetailContentController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        commentTableView.reloadData()
-        super.viewWillAppear(true)
+        //commentTableView.reloadData()
+        //super.viewWillAppear(true)
     }
     
     @IBAction func EditOrDeleteButtonTapped(_ sender: Any) {

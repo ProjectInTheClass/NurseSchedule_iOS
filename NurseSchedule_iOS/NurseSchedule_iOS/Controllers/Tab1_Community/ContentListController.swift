@@ -15,11 +15,14 @@ class ContentListController: UIViewController{
     @IBOutlet weak var contentListNavigation: UINavigationItem!
     
     @IBAction func unwindToContentList(segue : UIStoryboardSegue) {}
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("from >>>>>> \(boardType)")
+
         if let boardType = boardType {
+            articleList.removeAll()
             DBBoard.board.getArticleListIn(BoardType: boardType) { (article) in
                 self.articleList.append(article)
                 print("ContentList>>>>>>>\(self.articleList)")
@@ -27,8 +30,9 @@ class ContentListController: UIViewController{
             }
             // Do any additional setup after loading the view.
             contentListNavigation.title = boardType
-            articleListTableView.reloadData()
+            //articleListTableView.reloadData()
         }
+        
         articleListTableView.delegate = self
         articleListTableView.dataSource = self
         articleListTableView.estimatedRowHeight = 50
@@ -40,21 +44,23 @@ class ContentListController: UIViewController{
     override func viewDidAppear(_ animated: Bool) {
         articleListTableView.reloadData()
         //        articleListTableView.estimatedRowHeight = 100
+        //loadTableView()
         articleListTableView.rowHeight = UITableView.automaticDimension
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        //        articleListTableView.estimatedRowHeight = 100
+        //loadTableView()
+        //articleListTableView.estimatedRowHeight = 100
         articleListTableView.rowHeight = UITableView.automaticDimension
-        articleListTableView.reloadData()
+        //articleListTableView.reloadData()
+        
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showAddForm" {
-            let InputTableViewController = segue.destination as! InputTableViewController
-            InputTableViewController.boardType = sender as? String
+            let AddContentFormController = segue.destination as! AddContentFormController
+            AddContentFormController.boardType = sender as? String
         }
         if let boardType = boardType {
             if segue.identifier == "articleDetail" {
@@ -68,6 +74,7 @@ class ContentListController: UIViewController{
     
     @IBAction func addArticleButtonTapped(_ sender: Any) {
         if let boardType = boardType {
+            //articleList.removeAll()
             performSegue(withIdentifier: "showAddForm", sender: boardType)
         }
         
@@ -99,6 +106,7 @@ extension ContentListController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
+        //loadTableView()
         if let boardType = boardType {
             let forCommentSavingInfo = ForCommentSavingInfo.init(boardType: boardType, newComment: articleList[indexPath.row])
             performSegue(withIdentifier: "articleDetail", sender: forCommentSavingInfo)

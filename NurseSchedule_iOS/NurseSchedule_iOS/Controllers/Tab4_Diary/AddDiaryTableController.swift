@@ -137,6 +137,28 @@ class AddDiaryTableController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
         
     }
+ 
+    
+    
+    func showData(textfield : String ,date : String , condition : String ){
+        ContentTF.text = textfield
+        SelectedDate.text = date
+        seletedCondition = condition
+        
+    }
+    
+    func modifyDiary(){
+        self.new.content = ""//DB에 값 저장
+        self.new.emoji = self.seletedCondition//DB에 값 저장
+        
+        DBDiary.newDiary.modifyDiary(userID: self.currentUser, shortDate: self.selectedDate, new: self.new)
+        print("일기 수정")
+        self.dismiss(animated: true, completion: nil)
+        
+    }
 
-
+    @IBAction func editChangeTextfield(_ sender: Any) {
+        
+    }
+    
 }

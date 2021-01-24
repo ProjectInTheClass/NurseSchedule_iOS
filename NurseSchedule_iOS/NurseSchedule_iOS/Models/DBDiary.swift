@@ -73,6 +73,25 @@ class DBDiary {
         }
     }
     
+    
+    //다이어리 삭제 함수
+    func deleteDiary(userID : String, shortDate : String ,date: String){
+
+        ref.child("Diary/\(userID)/\(shortDate)/\(date)").removeValue(completionBlock: {(err, ref) in
+            if err != nil{
+                debugPrint("fail")
+                return
+            }
+        })
+    }
+    
+    //다이어리 수정 함수
+    func modifyDiary(userID: String, shortDate: String, new: Day){
+        let reference = ref.child("Diary/\(userID)/\(shortDate)/\(new.date)")
+        let changeDiary = ["D_emoji" : new.emoji , "D_content" : new.content , "D_date" : new.date]
+        reference.setValue(changeDiary)
+        print("modifyDiary >>> \(changeDiary)")
+    }
 }
 
 
