@@ -58,3 +58,11 @@ enum ActionType {
         }
     }
 }
+
+
+
+struct Day {
+    var emoji : String
+    var date : String
+    var content : String
+}

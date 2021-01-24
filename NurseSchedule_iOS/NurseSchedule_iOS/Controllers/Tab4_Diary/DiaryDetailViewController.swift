@@ -16,10 +16,12 @@ class DiaryDetailViewController: UIViewController {
     @IBOutlet weak var emoji: UILabel!
     @IBOutlet weak var content: UITextView!
     
+    
     let currentUser = Login.init().googleLogin()
     var detailInfoFromDay : Day? = nil
     
     var shortDate : String = ""
+    
     
     
 
@@ -27,6 +29,7 @@ class DiaryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         date.text = detailInfoFromDay?.date
         emoji.text = detailInfoFromDay?.emoji
         content.text = detailInfoFromDay?.content
@@ -43,12 +46,13 @@ class DiaryDetailViewController: UIViewController {
     }
     
     @IBAction func modifyButton2(_ sender: Any) {//tableView에서 detailView 들어갔을 때 수정버튼
-        performSegue(withIdentifier: "editDiary", sender: nil)
+        performSegue(withIdentifier: "editDiary", sender: detailInfoFromDay)
         AddDiaryTableController.addDiaryController.modifyDiary()
+        print(detailInfoFromDay)
         
     }
     @IBAction func modifyButton(_ sender: Any) {//Calendar에서 detailView 들어갔을 때 수정버튼
-        performSegue(withIdentifier: "editDiary", sender: nil)
+        performSegue(withIdentifier: "editDiary", sender: detailInfoFromDay)
         AddDiaryTableController.addDiaryController.modifyDiary()
         
     }
@@ -72,15 +76,25 @@ class DiaryDetailViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-  
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let nextViewController = segue.destination as? AddDiaryTableController else {
+            return
+        }
+        if segue.identifier == "addDiary" {
+            print("addDiary~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+//            nextViewController.ContentTextView = nil
+//            nextViewController.SelectedDate = nil
+//            nextViewController.conditionSegment = nil
+            
+        } else if segue.identifier == "editDiary"{
+            print("editDiary~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+//            nextViewController.ContentTF.text = detailInfoFromDay?.content
+//            nextViewController.SelectedDate.text = detailInfoFromDay?.date
+          //  nextViewController.SelectCondition(Any).self= detailInfoFromDay?.emoji
+            
+        }
     }
-    */
+  
 
 }
