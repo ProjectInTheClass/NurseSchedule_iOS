@@ -280,7 +280,9 @@
                             <outlet property="delegate" destination="dkG-DH-eHa" id="HmV-UV-Zdj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Setting" id="8w2-9g-Y1u"/>
+                    <navigationItem key="navigationItem" title="Setting" id="8w2-9g-Y1u">
+                        <barButtonItem key="backBarButtonItem" title="뒤로" id="4xg-ST-ldX"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bw-DJ-jKh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
