@@ -32,9 +32,9 @@ struct Article {
 }
 
 
-struct ForCommentSavingInfo {
+struct ArticleAllInfo {
     var boardType : String
-    var newComment : Article
+    var articleInfo : Article
     
 }
 

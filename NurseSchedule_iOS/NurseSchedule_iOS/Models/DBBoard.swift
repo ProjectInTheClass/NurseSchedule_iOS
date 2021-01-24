@@ -133,6 +133,10 @@ class DBBoard  {
         ref.child("\(BoardType)/contentList/\(articleID)").removeValue()
     }
     
-    
+    func editContent(BoardType: String, update: Article, articleID : String) {
+        let reference = ref.child("\(BoardType)/contentList/\(articleID)")
+        let newContent = ["title": update.title, "content": update.content, "date": update.date, "user":update.user]
+        reference.setValue(newContent)
+    }
 
 }

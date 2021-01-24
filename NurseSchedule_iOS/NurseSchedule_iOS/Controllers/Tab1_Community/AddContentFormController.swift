@@ -17,7 +17,10 @@ class AddContentFormController : UITableViewController {
     var newArticle = Article(articleID : "default", title: "default", date: "default", content: "default", user: "default")
     
     let placeholderText = "내용을 입력하세요"
-
+//
+//    @IBAction func unwindToEditContent(segue : UIStoryboardSegue) {}
+//
+//
     
     @IBAction func cancleButtonTapped(_ sender: Any) {
     
