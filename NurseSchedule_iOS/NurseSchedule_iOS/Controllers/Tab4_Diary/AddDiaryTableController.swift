@@ -23,7 +23,6 @@ class AddDiaryTableController: UITableViewController {
   
     let dateFormatter2 : DateFormatter = DateFormatter() //Label로 보여주기용
     
-    let currentUser = Login.init().googleLogin()
     var selectedDate : String = ""
     var todayDate : String = " "
     var showDate : String = " "
@@ -156,6 +155,11 @@ extension AddDiaryTableController : UITextViewDelegate {
         writtencontent = contentTextView.text
         
         print(writtencontent)
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        self.contentTextView.resignFirstResponder()//키보드 숨기기
+ 
     }
 }
 
