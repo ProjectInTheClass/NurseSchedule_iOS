@@ -21,11 +21,7 @@ class DiaryDetailViewController: UIViewController {
     var detailInfoFromDay : Day? = nil
     
     var shortDate : String = ""
-    
-    
     var editdate : String = ""
-
-    
 
    
     override func viewDidLoad() {
@@ -49,13 +45,13 @@ class DiaryDetailViewController: UIViewController {
     }
     
     @IBAction func modifyButton2(_ sender: Any) {//tableView에서 detailView 들어갔을 때 수정버튼
-        performSegue(withIdentifier: "editDiary", sender: editdate)
+        performSegue(withIdentifier: "editDiary", sender: detailInfoFromDay)
         //AddDiaryTableController.addDiaryController.modifyDiary()
         print(detailInfoFromDay)
         
     }
     @IBAction func modifyButton(_ sender: Any) {//Calendar에서 detailView 들어갔을 때 수정버튼
-        performSegue(withIdentifier: "editDiary", sender: editdate)
+        performSegue(withIdentifier: "editDiary", sender: detailInfoFromDay)
 //        AddDiaryTableController.addDiaryController.modifyDiary()
         
     }
@@ -94,7 +90,7 @@ class DiaryDetailViewController: UIViewController {
         } else if segue.identifier == "editDiary"{
             print("editDiary~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             let modifyDiaryTableController = segue.destination as! ModifyDiaryTableController
-            modifyDiaryTableController.change = sender as? Day
+            modifyDiaryTableController.day = sender as? Day
             
         }
     }

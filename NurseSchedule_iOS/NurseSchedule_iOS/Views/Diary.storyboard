@@ -122,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fr4-D2-AJf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1253.6231884057972" y="2935.7142857142858"/>
+            <point key="canvasLocation" x="1162" y="2663"/>
         </scene>
         <!--Add Diary Table Controller-->
         <scene sceneID="qLa-3B-6D6">
@@ -632,7 +632,7 @@
                                                                 <color key="titleColor" systemColor="systemRedColor"/>
                                                             </state>
                                                             <connections>
-                                                                <segue destination="sa7-BE-7Rw" kind="unwind" unwindAction="unwindToDiary:" id="v7d-Bd-CKx"/>
+                                                                <segue destination="sa7-BE-7Rw" kind="unwind" unwindAction="unwindToCalendarDiary:" id="xGL-eX-dHD"/>
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mee-sE-nSH">
@@ -650,7 +650,7 @@
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="clickedSaveButton:" destination="PVv-4f-Zde" eventType="touchUpInside" id="2Qb-Ns-hpF"/>
+                                                                <action selector="saveButton:" destination="PVv-4f-Zde" eventType="touchUpInside" id="Ylu-xg-alj"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -679,20 +679,20 @@
                                                     <rect key="frame" x="20" y="11" width="374" height="77"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6C9-Vc-lW1">
-                                                            <rect key="frame" x="0.0" y="0.0" width="38.5" height="77"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="68" height="77"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="Ygu-mB-fZ4">
-                                                            <rect key="frame" x="44.5" y="0.0" width="329.5" height="77"/>
-                                                            <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
-                                                            <color key="tintColor" systemColor="labelColor"/>
-                                                            <locale key="locale" localeIdentifier="ko"/>
-                                                            <connections>
-                                                                <action selector="SelectDate:" destination="PVv-4f-Zde" eventType="valueChanged" id="sx6-zh-dJd"/>
-                                                            </connections>
-                                                        </datePicker>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5le-CA-vnp">
+                                                            <rect key="frame" x="74" y="0.0" width="300" height="77"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="300" id="Efr-W5-3Fn"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
@@ -730,7 +730,7 @@
                                                                 <segment title="" image="0-devil"/>
                                                             </segments>
                                                             <connections>
-                                                                <action selector="SelectCondition:" destination="PVv-4f-Zde" eventType="valueChanged" id="OKU-KO-c74"/>
+                                                                <action selector="SelectCondition:" destination="PVv-4f-Zde" eventType="valueChanged" id="rG3-ff-Ntl"/>
                                                             </connections>
                                                         </segmentedControl>
                                                     </subviews>
@@ -791,9 +791,9 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="DateLabel" destination="5le-CA-vnp" id="3Ah-df-AlN"/>
                         <outlet property="ModifytextView" destination="Wyj-9I-5G2" id="cba-lM-0r4"/>
                         <outlet property="conditionSegController" destination="Idn-wz-ZWe" id="rnN-gw-bt0"/>
-                        <outlet property="datepicker" destination="Ygu-mB-fZ4" id="FUH-Kq-gWP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EjG-DC-gkC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
