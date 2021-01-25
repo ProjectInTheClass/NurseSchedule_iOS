@@ -204,6 +204,30 @@ extension ScheduleController : UITableViewDataSource, UITableViewDelegate {
         cell.textLabel?.text = data
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let alert = UIAlertController(title: "삭제하시겠습니까?", message: "되돌이킬수없어요😭", preferredStyle: UIAlertController.Style.alert)
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+            let okAction = UIAlertAction(title: "확인", style: .destructive) { _ in
+                self.dateFormatter.dateFormat = "yyyy-MM-dd"
+                DBMemo.newMemo.deleteMemo(date : self.dateFormatter.string(from:self.selectedDate), index: indexPath.row)
+                self.memoList.remove(at: indexPath.row)
+                self.memoView.deleteRows(at: [indexPath], with: .automatic)
+            }
+            alert.addAction(cancelAction)
+            alert.addAction(okAction)
+            self.present(alert, animated: false, completion: nil)
+            
+            
+        }
+    }
+    
+    
 }
 
 extension ScheduleController : FSCalendarDelegateAppearance {
