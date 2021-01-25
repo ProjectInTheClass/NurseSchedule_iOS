@@ -17,9 +17,16 @@ class AddDiaryTableController: UITableViewController {
     
     @IBOutlet weak var contentTextView: UITextView!
     
+    let dateFormatter : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 0(월단위)
+  
+    let dateFormatter1 : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 1 (일단위)
+  
+    let dateFormatter2 : DateFormatter = DateFormatter() //Label로 보여주기용
     
     let currentUser = Login.init().googleLogin()
     var selectedDate : String = ""
+    var todayDate : String = " "
+    var showDate : String = " "
     
    
     
@@ -33,23 +40,32 @@ class AddDiaryTableController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dateFormatter.dateFormat = "yyyy-MM"
+        dateFormatter1.dateFormat = "yyyy-MM-dd"
+        dateFormatter2.dateFormat = "M월dd일"
+        
+        var today = Date.init()
+        print(today)
+        todayDate = dateFormatter1.string(from: today)
+        print("todayDate ----------------\(todayDate)")
+        
+        new.date = todayDate
+        SelectedDate.text = dateFormatter2.string(from: today)
+        selectedDate = dateFormatter.string(from: today)
     }
 
 
     //datePicker 선택 시 실행
     @IBAction func SelectDate(_ sender: UIDatePicker){
-        let dateFormatter : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 0(월단위)
-        dateFormatter.dateFormat = "yyyy-MM"
-        selectedDate = dateFormatter.string(from: sender.date)//DB에 들어갈 날짜용
-   
+       
+       
+        self.selectedDate = dateFormatter.string(from: sender.date)//DB에 들어갈 날짜용
         
-        let dateFormatter1 : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 1 (일단위)
-        dateFormatter1.dateFormat = "yyyy-MM-dd"
         let selectedDate1 : String = dateFormatter1.string(from: sender.date) //DB에 들어갈 날짜용
         
-        let dateFormatter2 : DateFormatter = DateFormatter() //Label로 보여주기용
-        dateFormatter2.dateFormat = "M월dd일"
-        let showDate : String = dateFormatter2.string(from: sender.date) //Label로 보여주기용
+      
+      
+        self.showDate = dateFormatter2.string(from: sender.date) //Label로 보여주기용
 
         
         new.date = selectedDate1 // DB에 저장(format1)
