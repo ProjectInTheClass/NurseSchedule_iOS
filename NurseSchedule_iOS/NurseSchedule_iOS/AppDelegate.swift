@@ -20,7 +20,7 @@ var boardList : [String] = []
 var getDiaryDate : String = ""
 let currentUser = Login.init().googleLogin()
 
-
+var recentTitle : String = ""
 
 
 @main
@@ -39,6 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         print(">>>>>appdelegate \(termsList)")
         
         
+        DBBoard.board.getRecentNotice { (recent) in
+            recentTitle = recent
+        }
         
         
         
