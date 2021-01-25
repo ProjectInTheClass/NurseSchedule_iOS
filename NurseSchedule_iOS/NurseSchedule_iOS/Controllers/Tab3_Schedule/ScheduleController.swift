@@ -33,12 +33,12 @@ class ScheduleController: UIViewController{
         
         //keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         
         self.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
-           
+        
         
         
         super.viewDidLoad()
@@ -49,8 +49,8 @@ class ScheduleController: UIViewController{
     }
     
     @objc func tapDone(sender: Any) {
-            self.view.endEditing(true)
-        }
+        self.view.endEditing(true)
+    }
     
     //창 가려졌다가 다시 보이거나 암튼 내 화면 다시 보이게 될 때
     override func viewDidAppear(_ animated: Bool) {
@@ -181,13 +181,13 @@ class ScheduleController: UIViewController{
             
             let forSavingDayWorkNMemo = ForSavingDayWorkNMemo(date: savingDate, worktype: savingWorktype, memo: savingMemo)
             DBMemo.newMemo.addDaySchedule(newDay : forSavingDayWorkNMemo)
-      
+            
         }
         alert.addAction(cancelAction)
         alert.addAction(okAction)
         self.present(alert, animated: false, completion: nil)
         
-       
+        
     }
 }
 
@@ -217,6 +217,8 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
             self.memoTextView.text = self.showDaySchedule.memo
             if self.memoTextView.text.isEmpty {
                 self.memoTextViewPlaceholderSetting()
+            } else {
+                self.memoTextView.textColor = UIColor.black
             }
         })
     }
@@ -248,22 +250,7 @@ extension ScheduleController : UITextViewDelegate {
     func memoTextViewPlaceholderSetting() {
         memoTextView.text = "메모가 없어요😓"
         memoTextView.textColor = UIColor.lightGray
-            
-    }
         
-        // TextView Place Holder
-    func textViewDidBeginEditing(_ textView: UITextView) {
-            if memoTextView.textColor == UIColor.lightGray {
-                memoTextView.text = nil
-                memoTextView.textColor = UIColor.black
-            }
-        }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if memoTextView.text.isEmpty {
-            memoTextViewPlaceholderSetting()
-        }
-       // memoTextView.resignFirstResponder()
     }
     
     @objc
