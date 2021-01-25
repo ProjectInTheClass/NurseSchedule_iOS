@@ -29,7 +29,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OgP-GY-1Ww">
-                                                    <rect key="frame" x="10" y="10" width="394" height="98"/>
+                                                    <rect key="frame" x="10" y="5" width="394" height="98"/>
                                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Go-nA-evR">
@@ -71,10 +71,10 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="8Go-nA-evR" secondAttribute="bottom" constant="12" id="DM7-di-rdt"/>
                                                 <constraint firstItem="bsA-6e-SUn" firstAttribute="bottom" secondItem="miA-g0-Q7h" secondAttribute="bottomMargin" id="MWe-6z-EQB"/>
                                                 <constraint firstAttribute="trailing" secondItem="OgP-GY-1Ww" secondAttribute="trailing" constant="10" id="Nof-CC-rhF"/>
-                                                <constraint firstItem="OgP-GY-1Ww" firstAttribute="top" secondItem="miA-g0-Q7h" secondAttribute="top" constant="10" id="QVN-XG-8qr"/>
+                                                <constraint firstItem="OgP-GY-1Ww" firstAttribute="top" secondItem="miA-g0-Q7h" secondAttribute="top" constant="5" id="QVN-XG-8qr"/>
                                                 <constraint firstItem="bsA-6e-SUn" firstAttribute="top" secondItem="miA-g0-Q7h" secondAttribute="topMargin" id="RyQ-vj-LRf"/>
                                                 <constraint firstItem="FkB-lf-UPD" firstAttribute="top" secondItem="miA-g0-Q7h" secondAttribute="topMargin" constant="12" id="WD1-Yc-3G5"/>
-                                                <constraint firstAttribute="bottom" secondItem="OgP-GY-1Ww" secondAttribute="bottom" id="f3J-ZT-t2I"/>
+                                                <constraint firstAttribute="bottom" secondItem="OgP-GY-1Ww" secondAttribute="bottom" constant="5" id="f3J-ZT-t2I"/>
                                                 <constraint firstItem="bsA-6e-SUn" firstAttribute="leading" secondItem="miA-g0-Q7h" secondAttribute="leadingMargin" id="icl-W6-Bm2"/>
                                                 <constraint firstItem="OgP-GY-1Ww" firstAttribute="leading" secondItem="miA-g0-Q7h" secondAttribute="leading" constant="10" id="mlG-Qz-FTc"/>
                                                 <constraint firstItem="FkB-lf-UPD" firstAttribute="leading" secondItem="8Go-nA-evR" secondAttribute="trailing" constant="10" id="q5X-qi-cRy"/>
@@ -122,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fr4-D2-AJf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1253.6231884057972" y="2935.7142857142858"/>
+            <point key="canvasLocation" x="1162" y="2663"/>
         </scene>
         <!--Add Diary Table Controller-->
         <scene sceneID="qLa-3B-6D6">
@@ -154,7 +154,8 @@
                                                                 <color key="titleColor" systemColor="systemRedColor"/>
                                                             </state>
                                                             <connections>
-                                                                <segue destination="UCL-aq-S0e" kind="unwind" unwindAction="unwindToDiary:" id="GzP-9D-rgB"/>
+                                                                <action selector="cancelButton:" destination="24Z-UK-ocX" eventType="touchUpInside" id="ilJ-zM-Zm6"/>
+                                                                <segue destination="UCL-aq-S0e" kind="unwind" unwindAction="unwindToDiary:" id="Whc-yg-9VX"/>
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R93-G2-9DZ">
@@ -398,10 +399,10 @@
             </objects>
             <point key="canvasLocation" x="2409" y="3149"/>
         </scene>
-        <!--Diary Detail View Controller-->
+        <!--Detail Diary From Table Controller-->
         <scene sceneID="ABD-jS-AQT">
             <objects>
-                <viewController id="zKc-Dc-ZiH" customClass="DiaryDetailViewController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zKc-Dc-ZiH" customClass="DetailDiaryFromTableController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kHP-sH-2oO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -409,7 +410,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ycn-Nb-sua">
                                 <rect key="frame" x="50.5" y="167" width="313" height="508"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pnI-Bb-lDB">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pnI-Bb-lDB">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="508"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="OM1-QJ-CVR">
@@ -428,20 +429,20 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Date-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCr-Z9-tXd">
-                                                <rect key="frame" x="0.0" y="32" width="313" height="24"/>
+                                                <rect key="frame" x="0.0" y="22" width="313" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😊" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Veh-aV-FjZ">
-                                                <rect key="frame" x="0.0" y="66" width="313" height="101.5"/>
+                                                <rect key="frame" x="0.0" y="46" width="313" height="101.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="85"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MWA-E9-9wa">
-                                                <rect key="frame" x="0.0" y="177.5" width="313" height="290.5"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <rect key="frame" x="0.0" y="147.5" width="313" height="330.5"/>
+                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -456,7 +457,7 @@
                                                             <color key="titleColor" systemColor="systemRedColor"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="deleteButton2:" destination="zKc-Dc-ZiH" eventType="touchUpInside" id="dYh-9M-Gr7"/>
+                                                            <action selector="deleteButton2:" destination="zKc-Dc-ZiH" eventType="touchUpInside" id="Qfe-Ls-2Dy"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8W7-YA-4sf">
@@ -465,7 +466,7 @@
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="modifyButton2:" destination="zKc-Dc-ZiH" eventType="touchUpInside" id="tFp-og-yXh"/>
+                                                            <action selector="modifyButton2:" destination="zKc-Dc-ZiH" eventType="touchUpInside" id="7UH-Zn-mnc"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -473,7 +474,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.94527704830000003" green="1" blue="0.65348893630000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="pnI-Bb-lDB" secondAttribute="bottom" id="Hat-S4-jjC"/>
                                     <constraint firstAttribute="height" constant="508" id="XsX-9p-Y0i"/>
@@ -492,10 +493,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Y4H-yz-1pD"/>
                     <connections>
-                        <outlet property="content" destination="MWA-E9-9wa" id="vcm-cx-QK6"/>
-                        <outlet property="date" destination="qCr-Z9-tXd" id="Qi7-Td-lyA"/>
-                        <outlet property="emoji" destination="Veh-aV-FjZ" id="F2v-Kw-aUX"/>
-                        <segue destination="24Z-UK-ocX" kind="presentation" identifier="editDiary" id="Ant-ZF-VJ0"/>
+                        <outlet property="content" destination="MWA-E9-9wa" id="p0v-P4-pTq"/>
+                        <outlet property="date" destination="qCr-Z9-tXd" id="hZJ-6m-Qnm"/>
+                        <outlet property="emoji" destination="Veh-aV-FjZ" id="dSi-ZN-hHR"/>
                         <segue destination="PVv-4f-Zde" kind="presentation" identifier="editDiary" id="w1D-LL-xW7"/>
                     </connections>
                 </viewController>
@@ -632,7 +632,7 @@
                                                                 <color key="titleColor" systemColor="systemRedColor"/>
                                                             </state>
                                                             <connections>
-                                                                <segue destination="sa7-BE-7Rw" kind="unwind" unwindAction="unwindToDiary:" id="v7d-Bd-CKx"/>
+                                                                <segue destination="sa7-BE-7Rw" kind="unwind" unwindAction="unwindToDiary:" id="I7u-17-DC9"/>
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mee-sE-nSH">
@@ -650,7 +650,7 @@
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="clickedSaveButton:" destination="PVv-4f-Zde" eventType="touchUpInside" id="2Qb-Ns-hpF"/>
+                                                                <action selector="saveButton:" destination="PVv-4f-Zde" eventType="touchUpInside" id="Ylu-xg-alj"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -679,20 +679,20 @@
                                                     <rect key="frame" x="20" y="11" width="374" height="77"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6C9-Vc-lW1">
-                                                            <rect key="frame" x="0.0" y="0.0" width="38.5" height="77"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="68" height="77"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="Ygu-mB-fZ4">
-                                                            <rect key="frame" x="44.5" y="0.0" width="329.5" height="77"/>
-                                                            <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
-                                                            <color key="tintColor" systemColor="labelColor"/>
-                                                            <locale key="locale" localeIdentifier="ko"/>
-                                                            <connections>
-                                                                <action selector="SelectDate:" destination="PVv-4f-Zde" eventType="valueChanged" id="sx6-zh-dJd"/>
-                                                            </connections>
-                                                        </datePicker>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5le-CA-vnp">
+                                                            <rect key="frame" x="74" y="0.0" width="300" height="77"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="300" id="Efr-W5-3Fn"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
@@ -730,7 +730,7 @@
                                                                 <segment title="" image="0-devil"/>
                                                             </segments>
                                                             <connections>
-                                                                <action selector="SelectCondition:" destination="PVv-4f-Zde" eventType="valueChanged" id="OKU-KO-c74"/>
+                                                                <action selector="SelectCondition:" destination="PVv-4f-Zde" eventType="valueChanged" id="rG3-ff-Ntl"/>
                                                             </connections>
                                                         </segmentedControl>
                                                     </subviews>
@@ -791,9 +791,9 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="DateLabel" destination="5le-CA-vnp" id="3Ah-df-AlN"/>
                         <outlet property="ModifytextView" destination="Wyj-9I-5G2" id="cba-lM-0r4"/>
                         <outlet property="conditionSegController" destination="Idn-wz-ZWe" id="rnN-gw-bt0"/>
-                        <outlet property="datepicker" destination="Ygu-mB-fZ4" id="FUH-Kq-gWP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EjG-DC-gkC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -804,7 +804,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="w1D-LL-xW7"/>
-        <segue reference="Ant-ZF-VJ0"/>
+        <segue reference="XPa-k4-My4"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="0-crying" width="35" height="35"/>

@@ -84,14 +84,14 @@ class ScheduleController: UIViewController{
         
         
         // 달력의 오늘 색깔
-        calendar.appearance.todayColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
-        calendar.appearance.titleTodayColor = .white
+//        calendar.appearance.todayColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+//        calendar.appearance.titleTodayColor = .white
         // 오늘인데 선택되면
-        calendar.appearance.todaySelectionColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+//        calendar.appearance.todaySelectionColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
         
         // 날짜 선택됐을 때
         // 달력의 선택한 색깔
-        calendar.appearance.selectionColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+//        calendar.appearance.selectionColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         // 타이틀 컬러
         calendar.appearance.titleSelectionColor = .white
         // 서브 타이틀 컬러
