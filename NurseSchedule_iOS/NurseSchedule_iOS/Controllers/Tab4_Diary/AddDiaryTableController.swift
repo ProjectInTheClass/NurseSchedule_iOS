@@ -33,9 +33,6 @@ class AddDiaryTableController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-    
-    
     }
 
 
@@ -133,23 +130,7 @@ class AddDiaryTableController: UITableViewController {
     }
  
     
-//    데이터를 set하기 위함
-//    func showData(textfield : String ,date : String , condition : String ){
-//        contentTextView.text = textfield
-//        SelectedDate.text = date
-//        seletedCondition = condition
-//
-//    }
-//
-    func modifyDiary(){
-        self.new.content = ""//DB에 값 저장
-        self.new.emoji = self.seletedCondition//DB에 값 저장
-        
-        DBDiary.newDiary.modifyDiary(userID: self.currentUser, shortDate: self.selectedDate, new: self.new)
-        print("일기 수정")
-        self.dismiss(animated: true, completion: nil)
-        
-    }
+
 
 
 }

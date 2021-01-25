@@ -10,6 +10,10 @@ import Firebase
 import GoogleSignIn
 
 var termsList : [Term] = []
+//
+//var bringdays : [Day] = []
+//
+//var getDiaryDate : String = ""
 var bringdays : [Day] = []
 var boardList : [String] = []
 
@@ -36,6 +40,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         
         
+        
+        
+//        // 다이어리 목록을 디비에서 불러옴
+//        let dateFormatter : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 0(월단위)
+//        dateFormatter.dateFormat = "yyyy-MM"
+//        getDiaryDate = dateFormatter.string(from: Date.init())
+//        DBDiary.newDiary.getDiary(userID: currentUser, shortDate: getDiaryDate, completion: { result in //result에 Day(emoji: "😢", date: "2021-01-03", content: "getDiary")형식으로 저장되어있음
+//            bringdays.append(result)
+//            print("app delegate \(result)")
+//            //print(self.bringdays)
+//        })
         // 다이어리 목록을 디비에서 불러옴
         let dateFormatter : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 0(월단위)
         dateFormatter.dateFormat = "yyyy-MM"

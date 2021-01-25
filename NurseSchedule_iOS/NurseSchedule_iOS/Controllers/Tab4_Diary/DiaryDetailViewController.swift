@@ -23,6 +23,8 @@ class DiaryDetailViewController: UIViewController {
     var shortDate : String = ""
     
     
+    var editdate : String = ""
+
     
 
    
@@ -35,6 +37,7 @@ class DiaryDetailViewController: UIViewController {
         content.text = detailInfoFromDay?.content
         // Do any additional setup after loading the view.
        
+        self.editdate = detailInfoFromDay!.date
         
     }
     @IBAction func deleteButton2(_ sender: Any) {//tableView에서 detailView 들어갔을 때 삭제버튼
@@ -46,14 +49,14 @@ class DiaryDetailViewController: UIViewController {
     }
     
     @IBAction func modifyButton2(_ sender: Any) {//tableView에서 detailView 들어갔을 때 수정버튼
-        performSegue(withIdentifier: "editDiary", sender: detailInfoFromDay)
-        AddDiaryTableController.addDiaryController.modifyDiary()
+        performSegue(withIdentifier: "editDiary", sender: editdate)
+        //AddDiaryTableController.addDiaryController.modifyDiary()
         print(detailInfoFromDay)
         
     }
     @IBAction func modifyButton(_ sender: Any) {//Calendar에서 detailView 들어갔을 때 수정버튼
-        performSegue(withIdentifier: "editDiary", sender: detailInfoFromDay)
-        AddDiaryTableController.addDiaryController.modifyDiary()
+        performSegue(withIdentifier: "editDiary", sender: editdate)
+//        AddDiaryTableController.addDiaryController.modifyDiary()
         
     }
     
@@ -65,6 +68,10 @@ class DiaryDetailViewController: UIViewController {
             self.shortDate =  String(self.date.text!.prefix(7))
             
             DBDiary.newDiary.deleteDiary(userID: self.currentUser, shortDate: self.shortDate, date: self.date.text!)
+            
+            
+            //--------------------------------------------------------
+            //DiaryController.diarycontroller.tableView.reloadData()
             
             self.dismiss(animated: true, completion: nil)
         }
@@ -79,20 +86,15 @@ class DiaryDetailViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let nextViewController = segue.destination as? AddDiaryTableController else {
-            return
-        }
         if segue.identifier == "addDiary" {
             print("addDiary~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-//            nextViewController.ContentTextView = nil
-//            nextViewController.SelectedDate = nil
-//            nextViewController.conditionSegment = nil
+//            let nextViewController = segue.destination as! AddDiaryTableController
+//            nextViewController
             
         } else if segue.identifier == "editDiary"{
             print("editDiary~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-//            nextViewController.ContentTF.text = detailInfoFromDay?.content
-//            nextViewController.SelectedDate.text = detailInfoFromDay?.date
-          //  nextViewController.SelectCondition(Any).self= detailInfoFromDay?.emoji
+            let modifyDiaryTableController = segue.destination as! ModifyDiaryTableController
+            modifyDiaryTableController.change = sender as? Day
             
         }
     }
