@@ -110,7 +110,8 @@ class ScheduleController: UIViewController{
         // 달력의 요일 글자 색깔
         calendar.appearance.weekdayTextColor = .black
         
-        
+        // date selection with square
+        calendar.appearance.borderRadius = 0
         
         // 달력의 년월 글자 바꾸기
         calendar.appearance.headerDateFormat = "YYYY년 M월"
@@ -267,8 +268,9 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
                 return "💤"
             }
             //return color
+        } else {
+            return " "
         }
-        return nil
     }
     
     //날짜 글씨 자체를 바꿔버릴 수 있고
