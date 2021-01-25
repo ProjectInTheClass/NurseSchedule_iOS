@@ -11,6 +11,7 @@
 		7E68403C25BD37AB001CFBAC /* 간호사메인.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7E68403B25BD37AB001CFBAC /* 간호사메인.jpeg */; };
 		7E68406825BD7025001CFBAC /* CommunityContentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E68406725BD7025001CFBAC /* CommunityContentLabel.swift */; };
 		7E9F594425B95B290028D9A8 /* AddContentFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F594325B95B290028D9A8 /* AddContentFormController.swift */; };
+		7EEAAD0C25BED499003E2B9E /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEAAD0B25BED498003E2B9E /* MainTableViewController.swift */; };
 		7EFD380225B4A72300FD3435 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFD380125B4A72300FD3435 /* SlideViewController.swift */; };
 		7EFD380925B4A7AE00FD3435 /* imageSlide2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EFD380525B4A7AD00FD3435 /* imageSlide2.png */; };
 		7EFD380A25B4A7AE00FD3435 /* imageSlide3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EFD380625B4A7AD00FD3435 /* imageSlide3.png */; };
@@ -57,6 +58,7 @@
 		EC9708A625B65BEC00BF2593 /* DBDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9708A525B65BEC00BF2593 /* DBDiary.swift */; };
 		EC9ED33225BABEF600848426 /* DetailContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9ED33125BABEF600848426 /* DetailContentController.swift */; };
 		EC9ED33C25BD64D700848426 /* ModifyDiaryTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9ED33B25BD64D700848426 /* ModifyDiaryTableController.swift */; };
+		ECE6A7C425BED7AC00F59320 /* SerialNumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6A7C325BED7AC00F59320 /* SerialNumController.swift */; };
 		ECF2B54F25B420C60080F9E0 /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2B54E25B420C60080F9E0 /* DiaryCell.swift */; };
 		ECF2B55625B441BA0080F9E0 /* DiaryCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2B55525B441BA0080F9E0 /* DiaryCalendar.swift */; };
 		ECF2B59E25B562070080F9E0 /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2B59D25B562070080F9E0 /* DiaryDetailViewController.swift */; };
@@ -69,6 +71,7 @@
 		7E68403B25BD37AB001CFBAC /* 간호사메인.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "간호사메인.jpeg"; sourceTree = "<group>"; };
 		7E68406725BD7025001CFBAC /* CommunityContentLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityContentLabel.swift; sourceTree = "<group>"; };
 		7E9F594325B95B290028D9A8 /* AddContentFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContentFormController.swift; sourceTree = "<group>"; };
+		7EEAAD0B25BED498003E2B9E /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		7EFD380125B4A72300FD3435 /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		7EFD380525B4A7AD00FD3435 /* imageSlide2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageSlide2.png; sourceTree = "<group>"; };
 		7EFD380625B4A7AD00FD3435 /* imageSlide3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageSlide3.png; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 		EC9708A525B65BEC00BF2593 /* DBDiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBDiary.swift; sourceTree = "<group>"; };
 		EC9ED33125BABEF600848426 /* DetailContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentController.swift; sourceTree = "<group>"; };
 		EC9ED33B25BD64D700848426 /* ModifyDiaryTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyDiaryTableController.swift; sourceTree = "<group>"; };
+		ECE6A7C325BED7AC00F59320 /* SerialNumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialNumController.swift; sourceTree = "<group>"; };
 		ECF2B54E25B420C60080F9E0 /* DiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCell.swift; sourceTree = "<group>"; };
 		ECF2B55525B441BA0080F9E0 /* DiaryCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCalendar.swift; sourceTree = "<group>"; };
 		ECF2B59D25B562070080F9E0 /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
@@ -253,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				9926523325A4ADB10043A16E /* CommunityController.swift */,
+				7EEAAD0B25BED498003E2B9E /* MainTableViewController.swift */,
 				7EFD380125B4A72300FD3435 /* SlideViewController.swift */,
 				9991D6CF25B9517700C3A7B1 /* ContentListController.swift */,
 				7E9F594325B95B290028D9A8 /* AddContentFormController.swift */,
@@ -289,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				992F41C825AEB82D00E25199 /* SettingTableViewController.swift */,
+				ECE6A7C325BED7AC00F59320 /* SerialNumController.swift */,
 			);
 			path = Tab5_Setting;
 			sourceTree = "<group>";
@@ -465,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				992F41C925AEB82D00E25199 /* SettingTableViewController.swift in Sources */,
+				7EEAAD0C25BED499003E2B9E /* MainTableViewController.swift in Sources */,
 				ECF2B59E25B562070080F9E0 /* DiaryDetailViewController.swift in Sources */,
 				992F41F025AF2C9100E25199 /* MedicalCell.swift in Sources */,
 				9991D6D025B9517700C3A7B1 /* ContentListController.swift in Sources */,
@@ -502,6 +509,7 @@
 				997B460325BC089C0091ADFC /* CommentCell.swift in Sources */,
 				9973873D25BD97D7009DC92F /* boardListCell.swift in Sources */,
 				7E68406825BD7025001CFBAC /* CommunityContentLabel.swift in Sources */,
+				ECE6A7C425BED7AC00F59320 /* SerialNumController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
