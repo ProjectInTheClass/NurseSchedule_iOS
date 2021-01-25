@@ -22,7 +22,7 @@ class MedicalDetailViewController: UIViewController {
         englishTerm.text = term?.englishTerm
         koreanTerm.text = term?.koreanTerm
         definition.text = term?.definition
-        navigationBar?.title = term?.englishTerm
+        navigationBar?.title = "용어 설명"
         
         // Do any additional setup after loading the view.
     }

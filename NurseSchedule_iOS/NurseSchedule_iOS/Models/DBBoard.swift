@@ -168,5 +168,20 @@ class DBBoard  {
         let newContent = ["title": update.title, "content": update.content, "date": update.date, "user":update.user]
         reference.setValue(newContent)
     }
-
+    
+    
+    
+    func getRecentNotice(completion: @escaping (String) -> Void) {
+        
+        ref.child("공지사항/contentList").observeSingleEvent(of: .value, with: { snapshot in
+            while let rest = snapshot.children.nextObject() as? DataSnapshot {
+                var recentArticle = Article(articleID: "", title: "", date: "", content: "", user: "")
+                if let result = (rest.value as AnyObject)["title"]! as? String {
+                    recentArticle.title = result
+                }
+                completion(recentArticle.title)
+                return
+            }
+        })
+    }
 }

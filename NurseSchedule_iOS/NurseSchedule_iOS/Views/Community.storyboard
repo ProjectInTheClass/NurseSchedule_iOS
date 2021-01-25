@@ -27,10 +27,9 @@
                                     <constraint firstAttribute="height" constant="225" id="jyT-R3-YKf"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQl-dQ-7V3">
-                                <rect key="frame" x="5" y="395.33333333333331" width="380" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                <state key="normal" title="---------공지사항---------"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQl-dQ-7V3">
+                                <rect key="frame" x="0.0" y="407" width="390" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="toNoticeTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="u1d-pI-gVw"/>
                                 </connections>
@@ -260,6 +259,7 @@
                         <outlet property="leftBtn" destination="g9D-cy-r0K" id="BvJ-tx-Gbv"/>
                         <outlet property="myPageControl" destination="WfY-5U-Plk" id="Cmg-AQ-fps"/>
                         <outlet property="myPagerView" destination="LMo-4j-srw" id="PA3-oT-MOp"/>
+                        <outlet property="recentNoticeButton" destination="gQl-dQ-7V3" id="Pkk-Iq-OlD"/>
                         <outlet property="rightBtn" destination="vVS-yr-GnB" id="B25-ZX-sJR"/>
                         <segue destination="whR-aS-cpp" kind="show" identifier="articleList" id="T0b-Qh-uI6"/>
                     </connections>
