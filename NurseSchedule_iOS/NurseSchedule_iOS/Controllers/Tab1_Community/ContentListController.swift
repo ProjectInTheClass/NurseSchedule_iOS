@@ -14,7 +14,7 @@ class ContentListController: UIViewController{
     @IBOutlet weak var articleListTableView: UITableView!
     @IBOutlet weak var contentListNavigation: UINavigationItem!
     @IBOutlet weak var boardInfoLabel: UILabel!
-    
+ 
     @IBAction func unwindToContentList(segue : UIStoryboardSegue) {}
     
     
@@ -41,6 +41,11 @@ class ContentListController: UIViewController{
             //                }
             //
             //            }
+            if boardType == "공지사항" {
+                self.navigationItem.setRightBarButton(nil, animated: true)
+            }
+            
+            
             
         }
         
@@ -109,6 +114,9 @@ extension ContentListController : UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContentCell", for: indexPath) as! ContentCell
         
         if let boardType = boardType {
+            if boardType == "공지사항" {
+                cell.numberOfComments.isHidden = true
+            }
             DBBoard.board.getNumberOfCommentsInEachArticle(BoardType: boardType, articleID: articleList[indexPath.row].articleID) { (numberOfComments) in
                 print("bring success!!!!\(String(numberOfComments))")
                 cell.ContentNum.text = String(indexPath.row+1)

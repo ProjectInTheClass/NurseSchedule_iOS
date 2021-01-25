@@ -33,6 +33,7 @@
 		992F41F025AF2C9100E25199 /* MedicalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F41EF25AF2C9100E25199 /* MedicalCell.swift */; };
 		992F420825AF454300E25199 /* MedicalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F420725AF454300E25199 /* MedicalDetailViewController.swift */; };
 		992F420B25AFDD2B00E25199 /* ScheduleAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F420A25AFDD2B00E25199 /* ScheduleAddViewController.swift */; };
+		992FCF3925BE8E6000674C88 /* NoticeNCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992FCF3825BE8E6000674C88 /* NoticeNCenterCell.swift */; };
 		9951CB0425BD5DF5007DBD06 /* EditContentFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9951CB0325BD5DF5007DBD06 /* EditContentFormController.swift */; };
 		9951CB0825BD6D40007DBD06 /* BoardListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9951CB0725BD6D40007DBD06 /* BoardListController.swift */; };
 		997059AB25A72D8A0037A342 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997059AA25A72D8A0037A342 /* TabBarController.swift */; };
@@ -92,6 +93,7 @@
 		992F41EF25AF2C9100E25199 /* MedicalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalCell.swift; sourceTree = "<group>"; };
 		992F420725AF454300E25199 /* MedicalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalDetailViewController.swift; sourceTree = "<group>"; };
 		992F420A25AFDD2B00E25199 /* ScheduleAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddViewController.swift; sourceTree = "<group>"; };
+		992FCF3825BE8E6000674C88 /* NoticeNCenterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeNCenterCell.swift; sourceTree = "<group>"; };
 		9951CB0325BD5DF5007DBD06 /* EditContentFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContentFormController.swift; sourceTree = "<group>"; };
 		9951CB0725BD6D40007DBD06 /* BoardListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListController.swift; sourceTree = "<group>"; };
 		997059AA25A72D8A0037A342 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				9991D6CB25B94F6800C3A7B1 /* ContentCell.swift */,
 				997B460225BC089C0091ADFC /* CommentCell.swift */,
 				9973873C25BD97D7009DC92F /* boardListCell.swift */,
+				992FCF3825BE8E6000674C88 /* NoticeNCenterCell.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				99ABBA2A25BB2F8400FFBE51 /* ArticleContentLabel.swift in Sources */,
 				992F420B25AFDD2B00E25199 /* ScheduleAddViewController.swift in Sources */,
 				EC9708A625B65BEC00BF2593 /* DBDiary.swift in Sources */,
+				992FCF3925BE8E6000674C88 /* NoticeNCenterCell.swift in Sources */,
 				997B460325BC089C0091ADFC /* CommentCell.swift in Sources */,
 				9973873D25BD97D7009DC92F /* boardListCell.swift in Sources */,
 				7E68406825BD7025001CFBAC /* CommunityContentLabel.swift in Sources */,

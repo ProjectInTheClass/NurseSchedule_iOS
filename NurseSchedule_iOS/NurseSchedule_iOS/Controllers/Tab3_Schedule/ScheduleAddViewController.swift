@@ -130,6 +130,8 @@ class ScheduleAddViewController: UIViewController{
         DBMemo.newMemo.setMemo(userID: currentUser, newMemo: newMemo)
         //performSegue(withIdentifier: "showWorkType", sender: newMemo.workType)
         //DBMemo.newMemo.setWorkType(userID: currentUser, newMemo: newMemo)
+        
+        self.dismiss(animated: true) {  }
     }
     
 }

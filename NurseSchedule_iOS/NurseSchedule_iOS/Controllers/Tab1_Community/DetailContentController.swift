@@ -55,7 +55,9 @@ class DetailContentController: UIViewController {
         }
         //commentTableView.reloadData()
         
-        
+        if boardType == "공지사항" {
+            numberOfCommentsLabel.isHidden = true
+        }
         DBBoard.board.getNumberOfCommentsInEachArticle(BoardType: boardType, articleID: articleID) { (numberOfComments) in
 
             self.numberOfCommentsLabel.text = "💬 "+String(numberOfComments)

@@ -18,6 +18,8 @@ class CommunityController: UIViewController, FSPagerViewDataSource, FSPagerViewD
     
     @IBOutlet weak var rightBtn: UIButton!
     
+    @IBOutlet weak var recentNoticeButton: UIButton!
+    
     @IBOutlet weak var myPagerView: FSPagerView!{
         didSet{
             // 페이저뷰에 쎌을 등록한다.
@@ -52,6 +54,8 @@ class CommunityController: UIViewController, FSPagerViewDataSource, FSPagerViewD
         self.rightBtn.layer.cornerRadius = self.rightBtn.frame.height / 2
 
         // Do any additional setup after loading the view.
+        
+        recentNoticeButton.setTitle(recentTitle, for: .normal)
     }
     
     @IBAction func onLeftBtnClicked(_ sender: UIButton) {
@@ -158,6 +162,11 @@ class CommunityController: UIViewController, FSPagerViewDataSource, FSPagerViewD
     }
     
     
+    @IBAction func toNoticeTapped(_ sender: Any) {
+        performSegue(withIdentifier: "articleList", sender: "공지사항")
+    }
+    
+    
     @IBAction func board1Tapped(_ sender: Any) {
         performSegue(withIdentifier: "articleList", sender: "자유게시판")
         
@@ -178,9 +187,6 @@ class CommunityController: UIViewController, FSPagerViewDataSource, FSPagerViewD
         performSegue(withIdentifier: "articleList", sender: "신입게시판")
     }
     
-//    @IBAction func board6Tapped(_ sender: Any) {
-////        performSegue(withIdentifier: "boardList", sender: nil)
-//    }
-    
+
     
 }
