@@ -17,7 +17,8 @@ class DetailContentController: UIViewController {
     @IBOutlet weak var commentUploadButton: UIButton!
     @IBOutlet weak var commentTableView: UITableView!
     
-
+    @IBOutlet weak var numberOfCommentsLabel: UILabel!
+    
     @IBOutlet weak var editOrDeleteButton: UIBarButtonItem!
     
     var articleAllInfo : ArticleAllInfo? = nil
@@ -53,6 +54,14 @@ class DetailContentController: UIViewController {
             self.commentTableView.reloadData()
         }
         //commentTableView.reloadData()
+        
+        
+        DBBoard.board.getNumberOfCommentsInEachArticle(BoardType: boardType, articleID: articleID) { (numberOfComments) in
+
+            self.numberOfCommentsLabel.text = "💬 "+String(numberOfComments)
+        }
+
+
         
         
         commentTextView.delegate = self // txtvReview가 유저가 선언한 outlet
