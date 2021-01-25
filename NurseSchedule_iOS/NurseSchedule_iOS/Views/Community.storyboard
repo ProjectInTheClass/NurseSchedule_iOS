@@ -693,7 +693,7 @@
                     <navigationItem key="navigationItem" title="널'스케줄" id="TBE-XL-fBp">
                         <barButtonItem key="rightBarButtonItem" image="bell.fill" catalog="system" style="plain" id="Ed9-v1-g9A">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jg3-W1-PRV">
-                                <rect key="frame" x="288" y="7" width="73" height="22"/>
+                                <rect key="frame" x="301" y="11" width="73" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="bell.fill" catalog="system">
