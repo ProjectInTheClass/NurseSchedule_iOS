@@ -36,6 +36,10 @@ class DBMemo {
         })
     }
     
+    func deleteMemo(date : String, index: Int) {
+        ref.child("Schedule/\(currentUser)/\(date)/memoList/\(index)").removeValue()
+    }
+    
     func getWorkType(userID : String, completion: @escaping (NewMemo)-> Void){
         _ = ref.child("Schedule/\(userID)/").observe(.value,with: { snapshot in
             let enumerator = snapshot.children
