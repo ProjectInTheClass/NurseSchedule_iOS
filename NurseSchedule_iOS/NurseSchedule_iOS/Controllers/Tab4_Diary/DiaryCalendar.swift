@@ -32,7 +32,7 @@ class DiaryCalendar: UIViewController {
         diaryCalendar.allowsMultipleSelection = false
         
         // 날짜 스와프해서 여러개 선택되도록
-        diaryCalendar.swipeToChooseGesture.isEnabled = true
+        diaryCalendar.swipeToChooseGesture.isEnabled = false
         
         // 선택된 날짜의 모서리 설정 ( 0으로 하면 사각형으로 표시 )
         diaryCalendar.appearance.borderRadius = 3
@@ -63,6 +63,11 @@ class DiaryCalendar: UIViewController {
         // 달력의 오늘 색깔
         diaryCalendar.appearance.todayColor = #colorLiteral(red: 0.6445949674, green: 0.9079375863, blue: 0.5924149752, alpha: 1)
         
+     
+        
+        //선택한 날짜색
+        diaryCalendar.appearance.selectionColor = UIColor(#colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1))
+        
         
         // 달력의 년월 글자 바꾸기
         diaryCalendar.appearance.headerDateFormat = "YYYY년 M월"
@@ -73,6 +78,10 @@ class DiaryCalendar: UIViewController {
         // 년월에 흐릿하게 보이는 애들 없애기 0: 없앰 , 1: 뚜렷
         diaryCalendar.appearance.headerMinimumDissolvedAlpha = 0
         
+        
+        //이벤트 컬러 마크 색깔을 원하는 색깔. (default = blue)
+        diaryCalendar.appearance.eventDefaultColor = UIColor.green
+        diaryCalendar.appearance.eventSelectionColor = UIColor.green
         
         
     }
@@ -112,6 +121,7 @@ class DiaryCalendar: UIViewController {
 //}
 
 
+
 extension DiaryCalendar : FSCalendarDelegate , FSCalendarDataSource{
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("\(date) 선택됨")
@@ -131,6 +141,7 @@ extension DiaryCalendar : FSCalendarDelegate , FSCalendarDataSource{
                 
             }
         }
-        
+    
+  
 }
 

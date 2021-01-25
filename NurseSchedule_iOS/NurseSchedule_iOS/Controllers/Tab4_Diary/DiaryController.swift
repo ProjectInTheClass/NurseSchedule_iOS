@@ -13,20 +13,33 @@ class DiaryController: UIViewController {
     
     let currentUser = Login.init().googleLogin()
     
+    var bringdays : [Day] = []
+
+    var getDiaryDate : String = ""
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //tableView.reloadData()
+        // Do any additional setup after loading the view.
+        // 다이어리 목록을 디비에서 불러옴
+        let dateFormatter : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 0(월단위)
+        dateFormatter.dateFormat = "yyyy-MM"
+        self.getDiaryDate = dateFormatter.string(from: Date.init())
+        self.bringdays.removeAll()
+        DBDiary.newDiary.getDiary(userID: currentUser, shortDate: self.getDiaryDate, completion: { result in //result에 Day(emoji: "😢", date: "2021-01-03", content: "getDiary")형식으로 저장되어있음
+            self.bringdays.append(result)
+            print("app delegate \(result)")
+            self.tableView.reloadData()
+        })
+        
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.reloadData()
-        // Do any additional setup after loading the view.
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
         tableView.reloadData()
     }
     
