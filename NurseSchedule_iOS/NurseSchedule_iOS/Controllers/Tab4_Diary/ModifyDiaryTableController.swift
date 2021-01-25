@@ -29,6 +29,7 @@ class ModifyDiaryTableController: UITableViewController {
     //DB로 새로 저장하기 위함
     var change = Day(emoji: "default", date: "default", content: "default")
     
+  
     
     
     //string -> index
@@ -74,12 +75,14 @@ class ModifyDiaryTableController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setConditionIndex(change: day ?? Day(emoji: " ", date:  " " , content: " "))
         
         DateLabel.text = day?.date
         conditionSegController.selectedSegmentIndex = conditionIndex
         ModifytextView.text = day?.content
         
-
+        self.change.date = self.day?.date ?? "default"
+        self.change.emoji = self.day?.emoji ?? "default"
         
         
         
@@ -97,6 +100,9 @@ class ModifyDiaryTableController: UITableViewController {
                shortDate =  String(self.day?.date.prefix(7) ?? " ")
                 
                 DBDiary.newDiary.addDiary(userID: currentUser, shortDate: shortDate, new: change)
+                
+                print("modify > saveButton click------------")
+                dismiss(animated: true, completion: nil)
             }
         }
     }
