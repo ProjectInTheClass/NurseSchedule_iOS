@@ -13,38 +13,33 @@ import FSCalendar
 class ScheduleController: UIViewController{
     
     @IBOutlet weak var calendar: FSCalendar!
-    @IBOutlet weak var memoView: UITableView!
+    @IBOutlet weak var selectedDateLabel: UILabel!
+    @IBOutlet weak var workTypeSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var memoTextView: UITextView!
+    
     
     let dateFormatter = DateFormatter()
     var selectedDate : Date = .init()
-    var workTypesList : [ String : WorkType] = [ : ]
-    
-    var memoList: [String] = []
-    
-    //var events : [ Date : WorkType ] = [ Date.init() : .DAY ]
-    //var events : WorkType = .DAY
+    var showDaySchedule : ForSavingDayWorkNMemo = ForSavingDayWorkNMemo(date: "", worktype: "", memo: "")
     
     //FSCalendar
     //https://ahyeonlog.tistory.com/7
     
     override func viewDidLoad() {
-        let currentUser = Login.init().googleLogin()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         calendar.delegate = self
         calendar.dataSource = self
-       
+        memoTextView.delegate = self
         
-         DBMemo.newMemo.getWorkType(userID: currentUser, completion: { (typesFromDB) in
-            self.workTypesList[typesFromDB.date] = typesFromDB.workType
-            //print("ScheduleController.worktypes!!!!!>>>\(self.workTypesList)")
-            self.calendar.reloadData()
-        })
+        //keyboard
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         
-        memoView.delegate = self
-        memoView.dataSource = self
-        memoView.reloadData()
-        // print("tableView>>>>> \(term)")
+        self.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
+           
+        
         
         super.viewDidLoad()
         
@@ -53,20 +48,17 @@ class ScheduleController: UIViewController{
         // Do any additional setup after loading the view.
     }
     
+    @objc func tapDone(sender: Any) {
+            self.view.endEditing(true)
+        }
+    
     //창 가려졌다가 다시 보이거나 암튼 내 화면 다시 보이게 될 때
     override func viewDidAppear(_ animated: Bool) {
         updateUI()
-        memoView.reloadData()
         calendar.reloadData()
     }
     
     func updateUI() {
-        //calendar
-        
-        //memoview와 view 구분 임시..
-//        let colorLiteral = #colorLiteral(red: 0.9211722016, green: 0.967481792, blue: 0.8859727979, alpha: 1)
-//        calendar.backgroundColor = colorLiteral
-        
         
         // 날짜 여러개 선택 가능하게
         calendar.allowsMultipleSelection = false
@@ -83,15 +75,6 @@ class ScheduleController: UIViewController{
         
         
         
-        // 달력의 오늘 색깔
-//        calendar.appearance.todayColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
-//        calendar.appearance.titleTodayColor = .white
-        // 오늘인데 선택되면
-//        calendar.appearance.todaySelectionColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
-        
-        // 날짜 선택됐을 때
-        // 달력의 선택한 색깔
-//        calendar.appearance.selectionColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         // 타이틀 컬러
         calendar.appearance.titleSelectionColor = .white
         // 서브 타이틀 컬러
@@ -105,7 +88,7 @@ class ScheduleController: UIViewController{
         calendar.appearance.titleWeekendColor = .gray
         
         // 달력의 맨 위의 년도, 월의 색깔
-       calendar.appearance.headerTitleColor = .black
+        calendar.appearance.headerTitleColor = .black
         
         // 달력의 요일 글자 색깔
         calendar.appearance.weekdayTextColor = .black
@@ -122,7 +105,7 @@ class ScheduleController: UIViewController{
         // 년월에 흐릿하게 보이는 애들 없애기 0: 없앰 , 1: 뚜렷
         calendar.appearance.headerMinimumDissolvedAlpha = 0
         
-        
+        selectedDateLabel.text = dateFormatter.string(from: selectedDate)
         
     }
     
@@ -134,16 +117,6 @@ class ScheduleController: UIViewController{
     
     @IBAction func unwindFromAddMemo(segue : UIStoryboardSegue) {
         
-    }
-    
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addNewMemo" {
-            let viewcontollerToAddNewMemo = segue.destination as! ScheduleAddViewController
-            viewcontollerToAddNewMemo.selectedDate = sender as! Date
-        }
     }
     
     @IBAction func capture(_ sender: Any) {
@@ -179,96 +152,73 @@ class ScheduleController: UIViewController{
         }
     }
     
-    // 메모 추가 버튼 눌렀을 때 발생되는 액션
-    @IBAction func addMemoButtonTapped(_ sender: Any) {
-        addNewEvent(selectedDate: selectedDate)
-    }
     
-    func addNewEvent(selectedDate date:Date){
-        performSegue(withIdentifier: "addNewMemo", sender: selectedDate)
+    @IBAction func updateButtonTapped(_ sender: Any) {
+        let alert = UIAlertController(title: "저장하시겠습니까?", message: "언제든지 수정가능해요!😊", preferredStyle: UIAlertController.Style.alert)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        let okAction = UIAlertAction(title: "확인", style: .default) { _ in
+            let savingDate = self.dateFormatter.string(from: self.selectedDate)
+            var savingWorktype : String {
+                switch self.workTypeSegmentedControl.selectedSegmentIndex {
+                case 0:
+                    return Worktype.day.typeStr
+                case 1:
+                    return Worktype.evening.typeStr
+                case 2:
+                    return Worktype.night.typeStr
+                case 3:
+                    return Worktype.off.typeStr
+                case 4:
+                    return Worktype.free.typeStr
+                default:
+                    return "error"
+                }
+            }
+            var savingMemo = ""
+            if let memo = self.memoTextView.text {
+                savingMemo = memo
+            }
+            
+            let forSavingDayWorkNMemo = ForSavingDayWorkNMemo(date: savingDate, worktype: savingWorktype, memo: savingMemo)
+            DBMemo.newMemo.addDaySchedule(newDay : forSavingDayWorkNMemo)
+      
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        self.present(alert, animated: false, completion: nil)
+        
+       
     }
 }
 
-extension ScheduleController : UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // 메모 계층 아래에
-        // 선택(selectedDate)날짜 계층 아래에
-        // 메모 정리되도록 디비 넣어서
-        // 메모/selectedDate해서 디비 읽어와서 배열에 저장해서 생성한다.
-        // 그 배열.count를 return 시키면 될거같아
-        return self.memoList.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.memoView.dequeueReusableCell(withIdentifier: "MemoCell", for: indexPath)
-        let data = self.memoList[indexPath.row]
-        cell.textLabel?.text = data
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let alert = UIAlertController(title: "삭제하시겠습니까?", message: "되돌이킬수없어요😭", preferredStyle: UIAlertController.Style.alert)
-            let cancelAction = UIAlertAction(title: "취소", style: .cancel)
-            let okAction = UIAlertAction(title: "확인", style: .destructive) { _ in
-                self.dateFormatter.dateFormat = "yyyy-MM-dd"
-                DBMemo.newMemo.deleteMemo(date : self.dateFormatter.string(from:self.selectedDate), index: indexPath.row)
-                self.memoList.remove(at: indexPath.row)
-                self.memoView.deleteRows(at: [indexPath], with: .automatic)
-            }
-            alert.addAction(cancelAction)
-            alert.addAction(okAction)
-            self.present(alert, animated: false, completion: nil)
-            
-            
-        }
-    }
-    
-    
-}
-
-extension ScheduleController : FSCalendarDelegateAppearance {
-    /*
-    // 근무타입에 따른 색깔
-    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
-        let key = self.dateFormatter.string(from: date)
-        if let type = workTypesList[key] {
-            switch type {
-            case .DAY:
-                return .yellow
-            case .EVENING:
-                return .orange
-            case .NIGHT:
-                return .green
-            case .OFF:
-                return .gray
-            }
-        }
-        return nil
-    }
- */
- 
-}
 
 extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
-    // 날짜 선택 시 콜백 메소드
-    //모달 창으로 이벤트 추가
+    
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print(dateFormatter.string(from: date) + " 선택됨")
         selectedDate = date
         
-        let currentUser = Login.init().googleLogin()
-        DBMemo.newMemo.getMemo(userID: currentUser, date: dateFormatter.string(from:selectedDate), completion: { memo in
-            self.memoList = memo
-            self.memoView.reloadData()
+        selectedDateLabel.text = dateFormatter.string(from: selectedDate)
+        DBMemo.newMemo.getDaySchedule(date: dateFormatter.string(from: selectedDate), completion: { (dayScheduleFromDB) in
+            self.showDaySchedule = dayScheduleFromDB
+            switch self.showDaySchedule.worktype {
+            case "day":
+                self.workTypeSegmentedControl.selectedSegmentIndex = 0
+            case "evening":
+                self.workTypeSegmentedControl.selectedSegmentIndex = 1
+            case "night":
+                self.workTypeSegmentedControl.selectedSegmentIndex = 2
+            case "off":
+                self.workTypeSegmentedControl.selectedSegmentIndex = 3
+            case "free":
+                self.workTypeSegmentedControl.selectedSegmentIndex = 4
+            default :
+                self.workTypeSegmentedControl.selectedSegmentIndex = 0
+            }
+            self.memoTextView.text = self.showDaySchedule.memo
         })
-        memoView.reloadData()
     }
     
-    // 날짜 선택 해제 시 콜백 메소드
+    
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
         calendar.appearance.titleDefaultColor = .none
         print(dateFormatter.string(from: date) + " 해제됨")
@@ -276,47 +226,10 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
     
     
     
-    // 날짜 밑에 문자열을 표시
-    func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
-        
-        let key = self.dateFormatter.string(from: date)
-        if let type = workTypesList[key] {
-            switch type {
-            case .DAY:
-                return "☀️"
-            case .EVENING:
-                return "🌝"
-            case .NIGHT:
-                return "🌑"
-            case .OFF:
-                return "💤"
-            }
-            //return color
-        } else {
-            return " "
-        }
+    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
+        return UIImage.init()
     }
     
-    //날짜 글씨 자체를 바꿔버릴 수 있고
-    func calendar(_ calendar: FSCalendar, titleFor date: Date) -> String? {
-        switch dateFormatter.string(from: date) {
-        case "":
-            return "D-day"
-        default:
-            return nil
-        }
-    }
-    
-    
-    //날짜 최대 선택 가능 개수
-    func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
-        // 날짜 3개까지만 선택되도록
-        if calendar.selectedDates.count > 1 {
-            return false
-        } else {
-            return true
-        }
-    }
     
     //날짜 선택해제
     func calendar(_ calendar: FSCalendar, shouldDeselect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
@@ -325,5 +238,55 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
         
         // 선택해제 가능
         return true
+    }
+}
+
+extension ScheduleController : UITextViewDelegate {
+    func memoTextViewPlaceholderSetting() {
+        memoTextView.text = "메모가 없어요😓"
+        memoTextView.textColor = UIColor.lightGray
+            
+    }
+        
+        // TextView Place Holder
+    func textViewDidBeginEditing(_ textView: UITextView) {
+            if memoTextView.textColor == UIColor.lightGray {
+                memoTextView.text = nil
+                memoTextView.textColor = UIColor.black
+            }
+        }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if memoTextView.text.isEmpty {
+            memoTextViewPlaceholderSetting()
+        }
+       // memoTextView.resignFirstResponder()
+    }
+    
+    @objc
+    func keyboardWillShow(_ sender: Notification) {
+        
+        self.view.frame.origin.y = -200 // Move view 150 points upward
+        
+    }
+    
+    @objc
+    func keyboardWillHide(_ sender: Notification) {
+        self.view.frame.origin.y = +85 // Move view to original position
+    }
+    
+    
+    
+    func addDoneButton(title: String, target: Any, selector: Selector) {
+        
+        let toolBar = UIToolbar(frame: CGRect(x: 0.0,
+                                              y: 0.0,
+                                              width: UIScreen.main.bounds.size.width,
+                                              height: 44.0))//1
+        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)//2
+        
+        let barButton = UIBarButtonItem(title: title, style: .plain, target: target, action: selector)//3
+        toolBar.setItems([flexible, barButton], animated: false)//4
+        self.memoTextView.inputAccessoryView = toolBar//5
     }
 }

@@ -124,7 +124,7 @@ class AddDiaryTableController: UITableViewController {
             self.new.content = ""//DB에 값 저장
             self.new.emoji = self.seletedCondition//DB에 값 저장
             
-            DBDiary.newDiary.addDiary(userID: self.currentUser, shortDate: self.selectedDate, new: self.new)
+            DBDiary.newDiary.addDiary(userID: currentUser, shortDate: self.selectedDate, new: self.new)
             print("새 일기 작성 저장")
             self.dismiss(animated: true, completion: nil)
             

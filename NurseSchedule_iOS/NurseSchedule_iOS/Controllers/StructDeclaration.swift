@@ -60,7 +60,34 @@ enum ActionType {
     }
 }
 
+enum Worktype {
+    case day
+    case evening
+    case night
+    case off
+    case free
+    
+    var typeStr : String {
+        switch self {
+        case .day:
+            return "day"
+        case .evening:
+            return "evening"
+        case .night:
+            return "night"
+        case .off:
+            return "off"
+        case .free:
+            return "free"
+        }
+    }
+}
 
+struct ForSavingDayWorkNMemo {
+    var date : String
+    var worktype : String
+    var memo : String
+}
 
 struct Day {
     var emoji : String
