@@ -30,6 +30,8 @@ class ModifyDiaryTableController: UITableViewController {
     var change = Day(emoji: "default", date: "default", content: "default")
     
     
+    
+    //string -> index
     func setConditionIndex(change : Day ){
         var condition : String = change.emoji
         switch condition {
@@ -44,7 +46,7 @@ class ModifyDiaryTableController: UITableViewController {
         case "😡":
             conditionIndex = 4
         default:
-            conditionIndex = 0
+            conditionIndex = 1
             
         }
     }
@@ -77,22 +79,7 @@ class ModifyDiaryTableController: UITableViewController {
         conditionSegController.selectedSegmentIndex = conditionIndex
         ModifytextView.text = day?.content
         
-        
-//        
-//        articleTitleTextField.text = forEditing?.articleInfo.title
-//        articleContentTextView.text = forEditing?.articleInfo.content
-//        
-//        guard let articleID = forEditing?.articleInfo.articleID else {return}
-//        guard let date = forEditing?.articleInfo.date else {return}
-//        guard let title = forEditing?.articleInfo.title else {return}
-//        guard let content = forEditing?.articleInfo.content else {return}
-//        guard let user = forEditing?.articleInfo.user else {return}
-//        newArticle.articleID = articleID
-//        newArticle.date = date
-//        newArticle.title = title
-//        newArticle.content = content
-//        newArticle.user = user
-//        
+
         
         
         
