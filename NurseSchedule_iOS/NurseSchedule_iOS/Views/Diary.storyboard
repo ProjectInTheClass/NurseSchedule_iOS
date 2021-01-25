@@ -154,7 +154,8 @@
                                                                 <color key="titleColor" systemColor="systemRedColor"/>
                                                             </state>
                                                             <connections>
-                                                                <segue destination="UCL-aq-S0e" kind="unwind" unwindAction="unwindToDiary:" id="GzP-9D-rgB"/>
+                                                                <action selector="cancelButton:" destination="24Z-UK-ocX" eventType="touchUpInside" id="ilJ-zM-Zm6"/>
+                                                                <segue destination="UCL-aq-S0e" kind="unwind" unwindAction="unwindToDiary:" id="Whc-yg-9VX"/>
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R93-G2-9DZ">
@@ -398,10 +399,10 @@
             </objects>
             <point key="canvasLocation" x="2409" y="3149"/>
         </scene>
-        <!--Diary Detail View Controller-->
+        <!--Detail Diary From Table Controller-->
         <scene sceneID="ABD-jS-AQT">
             <objects>
-                <viewController id="zKc-Dc-ZiH" customClass="DiaryDetailViewController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zKc-Dc-ZiH" customClass="DetailDiaryFromTableController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kHP-sH-2oO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -456,7 +457,7 @@
                                                             <color key="titleColor" systemColor="systemRedColor"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="deleteButton2:" destination="zKc-Dc-ZiH" eventType="touchUpInside" id="dYh-9M-Gr7"/>
+                                                            <action selector="deleteButton2:" destination="zKc-Dc-ZiH" eventType="touchUpInside" id="Qfe-Ls-2Dy"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8W7-YA-4sf">
@@ -465,7 +466,7 @@
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="modifyButton2:" destination="zKc-Dc-ZiH" eventType="touchUpInside" id="tFp-og-yXh"/>
+                                                            <action selector="modifyButton2:" destination="zKc-Dc-ZiH" eventType="touchUpInside" id="7UH-Zn-mnc"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -492,10 +493,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Y4H-yz-1pD"/>
                     <connections>
-                        <outlet property="content" destination="MWA-E9-9wa" id="vcm-cx-QK6"/>
-                        <outlet property="date" destination="qCr-Z9-tXd" id="Qi7-Td-lyA"/>
-                        <outlet property="emoji" destination="Veh-aV-FjZ" id="F2v-Kw-aUX"/>
-                        <segue destination="24Z-UK-ocX" kind="presentation" identifier="editDiary" id="Ant-ZF-VJ0"/>
+                        <outlet property="content" destination="MWA-E9-9wa" id="p0v-P4-pTq"/>
+                        <outlet property="date" destination="qCr-Z9-tXd" id="hZJ-6m-Qnm"/>
+                        <outlet property="emoji" destination="Veh-aV-FjZ" id="dSi-ZN-hHR"/>
                         <segue destination="PVv-4f-Zde" kind="presentation" identifier="editDiary" id="w1D-LL-xW7"/>
                     </connections>
                 </viewController>
@@ -632,7 +632,7 @@
                                                                 <color key="titleColor" systemColor="systemRedColor"/>
                                                             </state>
                                                             <connections>
-                                                                <segue destination="sa7-BE-7Rw" kind="unwind" unwindAction="unwindToCalendarDiary:" id="xGL-eX-dHD"/>
+                                                                <segue destination="sa7-BE-7Rw" kind="unwind" unwindAction="unwindToDiary:" id="I7u-17-DC9"/>
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mee-sE-nSH">
@@ -804,7 +804,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="w1D-LL-xW7"/>
-        <segue reference="Ant-ZF-VJ0"/>
+        <segue reference="XPa-k4-My4"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="0-crying" width="35" height="35"/>

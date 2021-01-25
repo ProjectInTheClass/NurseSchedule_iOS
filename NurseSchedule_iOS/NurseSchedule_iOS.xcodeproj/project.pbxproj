@@ -33,6 +33,7 @@
 		992F41F025AF2C9100E25199 /* MedicalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F41EF25AF2C9100E25199 /* MedicalCell.swift */; };
 		992F420825AF454300E25199 /* MedicalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F420725AF454300E25199 /* MedicalDetailViewController.swift */; };
 		992F420B25AFDD2B00E25199 /* ScheduleAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F420A25AFDD2B00E25199 /* ScheduleAddViewController.swift */; };
+		992FCF3925BE8E6000674C88 /* NoticeNCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992FCF3825BE8E6000674C88 /* NoticeNCenterCell.swift */; };
 		9951CB0425BD5DF5007DBD06 /* EditContentFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9951CB0325BD5DF5007DBD06 /* EditContentFormController.swift */; };
 		9951CB0825BD6D40007DBD06 /* BoardListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9951CB0725BD6D40007DBD06 /* BoardListController.swift */; };
 		997059AB25A72D8A0037A342 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997059AA25A72D8A0037A342 /* TabBarController.swift */; };
@@ -51,6 +52,7 @@
 		99FB53B025A0C0EA00FBF750 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53AF25A0C0EA00FBF750 /* Schedule.storyboard */; };
 		99FB53B325A0C17200FBF750 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53B225A0C17200FBF750 /* Diary.storyboard */; };
 		99FB53B625A0C1EB00FBF750 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53B525A0C1EB00FBF750 /* Setting.storyboard */; };
+		EC3A9EF525BE92E400509DA8 /* DetailDiaryFromTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3A9EF425BE92E400509DA8 /* DetailDiaryFromTableController.swift */; };
 		EC83993E25B7143F00B58778 /* AddDiaryTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC83993D25B7143F00B58778 /* AddDiaryTableController.swift */; };
 		EC9708A625B65BEC00BF2593 /* DBDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9708A525B65BEC00BF2593 /* DBDiary.swift */; };
 		EC9ED33225BABEF600848426 /* DetailContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9ED33125BABEF600848426 /* DetailContentController.swift */; };
@@ -91,6 +93,7 @@
 		992F41EF25AF2C9100E25199 /* MedicalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalCell.swift; sourceTree = "<group>"; };
 		992F420725AF454300E25199 /* MedicalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalDetailViewController.swift; sourceTree = "<group>"; };
 		992F420A25AFDD2B00E25199 /* ScheduleAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddViewController.swift; sourceTree = "<group>"; };
+		992FCF3825BE8E6000674C88 /* NoticeNCenterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeNCenterCell.swift; sourceTree = "<group>"; };
 		9951CB0325BD5DF5007DBD06 /* EditContentFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContentFormController.swift; sourceTree = "<group>"; };
 		9951CB0725BD6D40007DBD06 /* BoardListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListController.swift; sourceTree = "<group>"; };
 		997059AA25A72D8A0037A342 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 		99FB53AF25A0C0EA00FBF750 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		99FB53B225A0C17200FBF750 /* Diary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
 		99FB53B525A0C1EB00FBF750 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		EC3A9EF425BE92E400509DA8 /* DetailDiaryFromTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDiaryFromTableController.swift; sourceTree = "<group>"; };
 		EC83993D25B7143F00B58778 /* AddDiaryTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryTableController.swift; sourceTree = "<group>"; };
 		EC9708A525B65BEC00BF2593 /* DBDiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBDiary.swift; sourceTree = "<group>"; };
 		EC9ED33125BABEF600848426 /* DetailContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentController.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 				9991D6CB25B94F6800C3A7B1 /* ContentCell.swift */,
 				997B460225BC089C0091ADFC /* CommentCell.swift */,
 				9973873C25BD97D7009DC92F /* boardListCell.swift */,
+				992FCF3825BE8E6000674C88 /* NoticeNCenterCell.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 				EC83993D25B7143F00B58778 /* AddDiaryTableController.swift */,
 				EC9ED33B25BD64D700848426 /* ModifyDiaryTableController.swift */,
 				ECF2B59D25B562070080F9E0 /* DiaryDetailViewController.swift */,
+				EC3A9EF425BE92E400509DA8 /* DetailDiaryFromTableController.swift */,
 			);
 			path = Tab4_Diary;
 			sourceTree = "<group>";
@@ -484,6 +490,7 @@
 				9926523E25A4ADEE0043A16E /* DiaryController.swift in Sources */,
 				9951CB0425BD5DF5007DBD06 /* EditContentFormController.swift in Sources */,
 				ECF2B54F25B420C60080F9E0 /* DiaryCell.swift in Sources */,
+				EC3A9EF525BE92E400509DA8 /* DetailDiaryFromTableController.swift in Sources */,
 				990AC3F4259DB3C400281E8B /* SceneDelegate.swift in Sources */,
 				9951CB0825BD6D40007DBD06 /* BoardListController.swift in Sources */,
 				9926523425A4ADB10043A16E /* CommunityController.swift in Sources */,
@@ -491,6 +498,7 @@
 				99ABBA2A25BB2F8400FFBE51 /* ArticleContentLabel.swift in Sources */,
 				992F420B25AFDD2B00E25199 /* ScheduleAddViewController.swift in Sources */,
 				EC9708A625B65BEC00BF2593 /* DBDiary.swift in Sources */,
+				992FCF3925BE8E6000674C88 /* NoticeNCenterCell.swift in Sources */,
 				997B460325BC089C0091ADFC /* CommentCell.swift in Sources */,
 				9973873D25BD97D7009DC92F /* boardListCell.swift in Sources */,
 				7E68406825BD7025001CFBAC /* CommunityContentLabel.swift in Sources */,

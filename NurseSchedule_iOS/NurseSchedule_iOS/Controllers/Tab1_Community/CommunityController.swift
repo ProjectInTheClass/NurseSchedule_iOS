@@ -158,6 +158,11 @@ class CommunityController: UIViewController, FSPagerViewDataSource, FSPagerViewD
     }
     
     
+    @IBAction func toNoticeTapped(_ sender: Any) {
+        performSegue(withIdentifier: "articleList", sender: "공지사항")
+    }
+    
+    
     @IBAction func board1Tapped(_ sender: Any) {
         performSegue(withIdentifier: "articleList", sender: "자유게시판")
         
@@ -178,9 +183,6 @@ class CommunityController: UIViewController, FSPagerViewDataSource, FSPagerViewD
         performSegue(withIdentifier: "articleList", sender: "신입게시판")
     }
     
-//    @IBAction func board6Tapped(_ sender: Any) {
-////        performSegue(withIdentifier: "boardList", sender: nil)
-//    }
-    
+
     
 }
