@@ -32,13 +32,14 @@ struct Article {
 }
 
 
-struct ForCommentSavingInfo {
+struct ArticleAllInfo {
     var boardType : String
-    var newComment : Article
+    var articleInfo : Article
     
 }
 
 struct Comment {
+    var commentID : String
     var writer : String
     var date : String
     var content : String

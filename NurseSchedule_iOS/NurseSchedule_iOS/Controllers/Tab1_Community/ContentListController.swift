@@ -6,21 +6,22 @@
 //
 
 import UIKit
-
 class ContentListController: UIViewController{
     
     var boardType : String? = nil
     var articleList : [Article] = []
+    
     @IBOutlet weak var articleListTableView: UITableView!
     @IBOutlet weak var contentListNavigation: UINavigationItem!
+    @IBOutlet weak var boardInfoLabel: UILabel!
     
     @IBAction func unwindToContentList(segue : UIStoryboardSegue) {}
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("from >>>>>> \(boardType)")
-
+        
         if let boardType = boardType {
             articleList.removeAll()
             DBBoard.board.getArticleListIn(BoardType: boardType) { (article) in
@@ -31,13 +32,27 @@ class ContentListController: UIViewController{
             // Do any additional setup after loading the view.
             contentListNavigation.title = boardType
             //articleListTableView.reloadData()
+            
+            //            for i in 0..<articleList.count {
+            //
+            //                DBBoard.board.getNumberOfCommentsInEachArticle(BoardType: boardType, articleID: articleList[i].articleID) { (numberOfComments) in
+            //                    self.numberOfCommentsInEachArticle.append(String(numberOfComments))
+            //                    print("bring success!!!!\(self.numberOfCommentsInEachArticle[i])")
+            //                }
+            //
+            //            }
+            
         }
+        
+        boardInfoLabel.text = "info : 건전한 커뮤니티 조성을 위해 바른말, 고운말을 씁시다"
         
         articleListTableView.delegate = self
         articleListTableView.dataSource = self
         articleListTableView.estimatedRowHeight = 50
         articleListTableView.rowHeight = UITableView.automaticDimension
         //
+        
+        
         
     }
     
@@ -65,7 +80,7 @@ class ContentListController: UIViewController{
         if let boardType = boardType {
             if segue.identifier == "articleDetail" {
                 let DetailContentController = segue.destination as! DetailContentController
-                DetailContentController.forCommentSavingInfo = sender as? ForCommentSavingInfo
+                DetailContentController.articleAllInfo = sender as? ArticleAllInfo
             }
         }
     }
@@ -79,7 +94,7 @@ class ContentListController: UIViewController{
         }
         
     }
-
+    
     
 }
 
@@ -93,10 +108,22 @@ extension ContentListController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContentCell", for: indexPath) as! ContentCell
         
-        cell.ContentNum.text = String(indexPath.row+1)
-        cell.ContentDate.text = articleList[indexPath.row].date
-        cell.ContentTitle.text = articleList[indexPath.row].title
-        cell.ContentContent.text = articleList[indexPath.row].content
+        if let boardType = boardType {
+            DBBoard.board.getNumberOfCommentsInEachArticle(BoardType: boardType, articleID: articleList[indexPath.row].articleID) { (numberOfComments) in
+                print("bring success!!!!\(String(numberOfComments))")
+                cell.ContentNum.text = String(indexPath.row+1)
+                cell.ContentDate.text = self.articleList[indexPath.row].date
+                cell.ContentTitle.text = self.articleList[indexPath.row].title
+                cell.ContentContent.text = self.articleList[indexPath.row].content
+                cell.numberOfComments.text = "💬 " + String(numberOfComments)
+            }
+            
+           // print("table안에서도 배열 만들어졌음!!!! \(numberOfCommentsInEachArticle)")
+          //  print("indexPath.row >>>>>>>>> \(indexPath.row)")
+           
+            return cell
+        }
+        
         return cell
     }
     
@@ -108,8 +135,8 @@ extension ContentListController : UITableViewDataSource, UITableViewDelegate {
         print(indexPath)
         //loadTableView()
         if let boardType = boardType {
-            let forCommentSavingInfo = ForCommentSavingInfo.init(boardType: boardType, newComment: articleList[indexPath.row])
-            performSegue(withIdentifier: "articleDetail", sender: forCommentSavingInfo)
+            let articleAllInfo = ArticleAllInfo.init(boardType: boardType, articleInfo: articleList[indexPath.row])
+            performSegue(withIdentifier: "articleDetail", sender: articleAllInfo)
         }
         
     }

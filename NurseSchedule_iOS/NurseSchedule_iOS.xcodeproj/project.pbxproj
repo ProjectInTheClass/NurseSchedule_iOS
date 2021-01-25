@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B734DB8FFAE10C573DCEC89 /* Pods_NurseSchedule_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1023850E893169F71BF98CFC /* Pods_NurseSchedule_iOS.framework */; };
 		7E68403C25BD37AB001CFBAC /* 간호사메인.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7E68403B25BD37AB001CFBAC /* 간호사메인.jpeg */; };
-		7E9F58E325B833CD0028D9A8 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F58E225B833CD0028D9A8 /* DetailTableViewController.swift */; };
+		7E68406825BD7025001CFBAC /* CommunityContentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E68406725BD7025001CFBAC /* CommunityContentLabel.swift */; };
 		7E9F594425B95B290028D9A8 /* AddContentFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F594325B95B290028D9A8 /* AddContentFormController.swift */; };
 		7EFD380225B4A72300FD3435 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFD380125B4A72300FD3435 /* SlideViewController.swift */; };
 		7EFD380925B4A7AE00FD3435 /* imageSlide2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EFD380525B4A7AD00FD3435 /* imageSlide2.png */; };
@@ -33,7 +33,11 @@
 		992F41F025AF2C9100E25199 /* MedicalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F41EF25AF2C9100E25199 /* MedicalCell.swift */; };
 		992F420825AF454300E25199 /* MedicalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F420725AF454300E25199 /* MedicalDetailViewController.swift */; };
 		992F420B25AFDD2B00E25199 /* ScheduleAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F420A25AFDD2B00E25199 /* ScheduleAddViewController.swift */; };
+		9951CB0425BD5DF5007DBD06 /* EditContentFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9951CB0325BD5DF5007DBD06 /* EditContentFormController.swift */; };
+		9951CB0825BD6D40007DBD06 /* BoardListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9951CB0725BD6D40007DBD06 /* BoardListController.swift */; };
 		997059AB25A72D8A0037A342 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997059AA25A72D8A0037A342 /* TabBarController.swift */; };
+		9973873D25BD97D7009DC92F /* boardListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9973873C25BD97D7009DC92F /* boardListCell.swift */; };
+		9973874125BDB74F009DC92F /* DictionaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9973874025BDB74F009DC92F /* DictionaryLabel.swift */; };
 		997B460325BC089C0091ADFC /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997B460225BC089C0091ADFC /* CommentCell.swift */; };
 		997DD05C25B69E10007C5002 /* StructDeclaration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DD05B25B69E10007C5002 /* StructDeclaration.swift */; };
 		997DD05F25B69E8D007C5002 /* DBMemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DD05E25B69E8D007C5002 /* DBMemo.swift */; };
@@ -41,7 +45,6 @@
 		9991D6D025B9517700C3A7B1 /* ContentListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991D6CF25B9517700C3A7B1 /* ContentListController.swift */; };
 		9991D6D625B986B500C3A7B1 /* DBMedical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991D6D525B986B500C3A7B1 /* DBMedical.swift */; };
 		99ABBA2A25BB2F8400FFBE51 /* ArticleContentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ABBA2925BB2F8400FFBE51 /* ArticleContentLabel.swift */; };
-		99ABBA2E25BB3E1700FFBE51 /* MedicalContentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ABBA2D25BB3E1700FFBE51 /* MedicalContentLabel.swift */; };
 		99D874B525AB452D0012D403 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D874B425AB452D0012D403 /* LoginController.swift */; };
 		99FB53A925A0BE7400FBF750 /* Community.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53A825A0BE7400FBF750 /* Community.storyboard */; };
 		99FB53AD25A0BFB100FBF750 /* MedicalBook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53AC25A0BFB100FBF750 /* MedicalBook.storyboard */; };
@@ -62,7 +65,7 @@
 		1023850E893169F71BF98CFC /* Pods_NurseSchedule_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NurseSchedule_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		714F117F287D49765BF1C3EF /* Pods-NurseSchedule_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NurseSchedule_iOS.release.xcconfig"; path = "Target Support Files/Pods-NurseSchedule_iOS/Pods-NurseSchedule_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		7E68403B25BD37AB001CFBAC /* 간호사메인.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "간호사메인.jpeg"; sourceTree = "<group>"; };
-		7E9F58E225B833CD0028D9A8 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		7E68406725BD7025001CFBAC /* CommunityContentLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityContentLabel.swift; sourceTree = "<group>"; };
 		7E9F594325B95B290028D9A8 /* AddContentFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContentFormController.swift; sourceTree = "<group>"; };
 		7EFD380125B4A72300FD3435 /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		7EFD380525B4A7AD00FD3435 /* imageSlide2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imageSlide2.png; sourceTree = "<group>"; };
@@ -88,7 +91,11 @@
 		992F41EF25AF2C9100E25199 /* MedicalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalCell.swift; sourceTree = "<group>"; };
 		992F420725AF454300E25199 /* MedicalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalDetailViewController.swift; sourceTree = "<group>"; };
 		992F420A25AFDD2B00E25199 /* ScheduleAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddViewController.swift; sourceTree = "<group>"; };
+		9951CB0325BD5DF5007DBD06 /* EditContentFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContentFormController.swift; sourceTree = "<group>"; };
+		9951CB0725BD6D40007DBD06 /* BoardListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListController.swift; sourceTree = "<group>"; };
 		997059AA25A72D8A0037A342 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		9973873C25BD97D7009DC92F /* boardListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boardListCell.swift; sourceTree = "<group>"; };
+		9973874025BDB74F009DC92F /* DictionaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryLabel.swift; sourceTree = "<group>"; };
 		997B460225BC089C0091ADFC /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		997DD05B25B69E10007C5002 /* StructDeclaration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructDeclaration.swift; sourceTree = "<group>"; };
 		997DD05E25B69E8D007C5002 /* DBMemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMemo.swift; sourceTree = "<group>"; };
@@ -96,7 +103,6 @@
 		9991D6CF25B9517700C3A7B1 /* ContentListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListController.swift; sourceTree = "<group>"; };
 		9991D6D525B986B500C3A7B1 /* DBMedical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMedical.swift; sourceTree = "<group>"; };
 		99ABBA2925BB2F8400FFBE51 /* ArticleContentLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleContentLabel.swift; sourceTree = "<group>"; };
-		99ABBA2D25BB3E1700FFBE51 /* MedicalContentLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalContentLabel.swift; sourceTree = "<group>"; };
 		99D874B425AB452D0012D403 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		99FB53A825A0BE7400FBF750 /* Community.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Community.storyboard; sourceTree = "<group>"; };
 		99FB53AC25A0BFB100FBF750 /* MedicalBook.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MedicalBook.storyboard; sourceTree = "<group>"; };
@@ -224,6 +230,7 @@
 				ECF2B54E25B420C60080F9E0 /* DiaryCell.swift */,
 				9991D6CB25B94F6800C3A7B1 /* ContentCell.swift */,
 				997B460225BC089C0091ADFC /* CommentCell.swift */,
+				9973873C25BD97D7009DC92F /* boardListCell.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -242,10 +249,11 @@
 			children = (
 				9926523325A4ADB10043A16E /* CommunityController.swift */,
 				7EFD380125B4A72300FD3435 /* SlideViewController.swift */,
-				7E9F58E225B833CD0028D9A8 /* DetailTableViewController.swift */,
 				9991D6CF25B9517700C3A7B1 /* ContentListController.swift */,
 				7E9F594325B95B290028D9A8 /* AddContentFormController.swift */,
 				EC9ED33125BABEF600848426 /* DetailContentController.swift */,
+				9951CB0325BD5DF5007DBD06 /* EditContentFormController.swift */,
+				9951CB0725BD6D40007DBD06 /* BoardListController.swift */,
 			);
 			path = Tab1_Community;
 			sourceTree = "<group>";
@@ -297,7 +305,8 @@
 			isa = PBXGroup;
 			children = (
 				99ABBA2925BB2F8400FFBE51 /* ArticleContentLabel.swift */,
-				99ABBA2D25BB3E1700FFBE51 /* MedicalContentLabel.swift */,
+				7E68406725BD7025001CFBAC /* CommunityContentLabel.swift */,
+				9973874025BDB74F009DC92F /* DictionaryLabel.swift */,
 			);
 			path = CustomLabel;
 			sourceTree = "<group>";
@@ -461,11 +470,10 @@
 				997059AB25A72D8A0037A342 /* TabBarController.swift in Sources */,
 				997DD05C25B69E10007C5002 /* StructDeclaration.swift in Sources */,
 				990AC3F6259DB3C400281E8B /* ViewController.swift in Sources */,
-				7E9F58E325B833CD0028D9A8 /* DetailTableViewController.swift in Sources */,
 				9991D6D625B986B500C3A7B1 /* DBMedical.swift in Sources */,
 				992651E725A470A90043A16E /* DBUser.swift in Sources */,
 				997DD05F25B69E8D007C5002 /* DBMemo.swift in Sources */,
-				99ABBA2E25BB3E1700FFBE51 /* MedicalContentLabel.swift in Sources */,
+				9973874125BDB74F009DC92F /* DictionaryLabel.swift in Sources */,
 				9926523825A4ADCC0043A16E /* ScheduleController.swift in Sources */,
 				992F420825AF454300E25199 /* MedicalDetailViewController.swift in Sources */,
 				EC83993E25B7143F00B58778 /* AddDiaryTableController.swift in Sources */,
@@ -474,14 +482,18 @@
 				9926527E25A4CCE80043A16E /* DBBoard.swift in Sources */,
 				9991D6CC25B94F6800C3A7B1 /* ContentCell.swift in Sources */,
 				9926523E25A4ADEE0043A16E /* DiaryController.swift in Sources */,
+				9951CB0425BD5DF5007DBD06 /* EditContentFormController.swift in Sources */,
 				ECF2B54F25B420C60080F9E0 /* DiaryCell.swift in Sources */,
 				990AC3F4259DB3C400281E8B /* SceneDelegate.swift in Sources */,
+				9951CB0825BD6D40007DBD06 /* BoardListController.swift in Sources */,
 				9926523425A4ADB10043A16E /* CommunityController.swift in Sources */,
 				7E9F594425B95B290028D9A8 /* AddContentFormController.swift in Sources */,
 				99ABBA2A25BB2F8400FFBE51 /* ArticleContentLabel.swift in Sources */,
 				992F420B25AFDD2B00E25199 /* ScheduleAddViewController.swift in Sources */,
 				EC9708A625B65BEC00BF2593 /* DBDiary.swift in Sources */,
 				997B460325BC089C0091ADFC /* CommentCell.swift in Sources */,
+				9973873D25BD97D7009DC92F /* boardListCell.swift in Sources */,
+				7E68406825BD7025001CFBAC /* CommunityContentLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

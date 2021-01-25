@@ -81,11 +81,21 @@ class ScheduleController: UIViewController{
         // 스와이프 스크롤 방향 ( 버티칼로 스와이프 설정하면 좌측 우측 상단 다음달 표시 없어짐, 호리젠탈은 보임 )
         calendar.scrollDirection = .vertical
         
+        
+        
+        // 달력의 오늘 색깔
+        calendar.appearance.todayColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+        calendar.appearance.titleTodayColor = .white
+        // 오늘인데 선택되면
+        calendar.appearance.todaySelectionColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+        
         // 날짜 선택됐을 때
+        // 달력의 선택한 색깔
+        calendar.appearance.selectionColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         // 타이틀 컬러
-        calendar.appearance.titleSelectionColor = .black
+        calendar.appearance.titleSelectionColor = .white
         // 서브 타이틀 컬러
-        calendar.appearance.subtitleSelectionColor = .black
+        calendar.appearance.subtitleSelectionColor = .white
         calendar.appearance.subtitleFont = UIFont.boldSystemFont(ofSize: 30)
         
         // 달력의 평일 날짜 색깔
@@ -100,8 +110,6 @@ class ScheduleController: UIViewController{
         // 달력의 요일 글자 색깔
         calendar.appearance.weekdayTextColor = .black
         
-        // 달력의 오늘 색깔 
-        calendar.appearance.todayColor = #colorLiteral(red: 0.6445949674, green: 0.9079375863, blue: 0.5924149752, alpha: 1)
         
         
         // 달력의 년월 글자 바꾸기
@@ -198,66 +206,8 @@ extension ScheduleController : UITableViewDataSource, UITableViewDelegate {
 }
 
 extension ScheduleController : FSCalendarDelegateAppearance {
-    
-    //선택한 날짜 색깔 변경
-    //    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
-    //        switch dateFormatter.string(from:date) {
-    //        //색깔 넣어보자
-    //        case "2021-01-01":
-    //            return .yellow
-    //        case "2021-01-02":
-    //            return .orange
-    //        case "2021-01-03":
-    //            return .green
-    //        case "2021-01-04":
-    //            return .white
-    //        default :
-    //            return .systemPink
-    //        }
-    //    }
     /*
-     //색깔이 나타나긴 하는데 무한 부팅되면서 날짜를 선택할 수도 없음. 캘린더 얼어버림.
-     //모든 날짜들에 대한 색을 표현하려고 하다보니 그러는듯.
-     
-     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
-     let currentUser = Login.init().googleLogin()
-     DBMemo.newMemo.getWorkType(userID: currentUser, date: dateFormatter.string(from:date), completion: { worktype in
-     switch worktype {
-     case "DAY" :
-     self.workTypesList[self.dateFormatter.string(from:date)] = UIColor.yellow
-     case "EVENING" :
-     self.workTypesList[self.dateFormatter.string(from:date)] = UIColor.orange
-     case "NIGHT" :
-     self.workTypesList[self.dateFormatter.string(from:date)] = UIColor.green
-     case "OFF" :
-     self.workTypesList[self.dateFormatter.string(from:date)] = UIColor.gray
-     default :
-     self.workTypesList[self.dateFormatter.string(from:date)] = UIColor.gray
-     }
-     self.calendar.reloadData()
-     })
-     //calendar.reloadData()
-     return self.workTypesList[self.dateFormatter.string(from:date)]
-     }
-     */
-    /*
-     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
-     switch events[date] {
-     case .DAY:
-     return .yellow
-     case .EVENING:
-     return .orange
-     case .NIGHT:
-     return .green
-     case .OFF:
-     return .gray
-     default :
-     return .gray
-     }
-     }
-     */
-    
-    
+    // 근무타입에 따른 색깔
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
         let key = self.dateFormatter.string(from: date)
         if let type = workTypesList[key] {
@@ -274,7 +224,7 @@ extension ScheduleController : FSCalendarDelegateAppearance {
         }
         return nil
     }
- 
+ */
  
 }
 

@@ -19,6 +19,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7fk-yi-Ht2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.74084085229999996" green="0.9099497795" blue="0.67754423620000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -48,14 +49,14 @@
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MedicalCell" id="Wbo-9U-6VI" customClass="MedicalCell" customModule="NurseSchedule_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="414" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wbo-9U-6VI" id="xF8-p5-ZaS">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="47.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHU-bq-ZBd">
-                                                    <rect key="frame" x="22" y="13" width="42" height="21.5"/>
+                                                    <rect key="frame" x="22" y="13" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -102,56 +103,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="LaW-1Z-6Kk">
-                                <rect key="frame" x="20" y="113" width="372.5" height="652.5"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ABC" translatesAutoresizingMaskIntoConstraints="NO" id="6wv-gM-mvO">
-                                        <rect key="frame" x="0.0" y="0.0" width="372.5" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="xMH-19-QLP"/>
-                                        </constraints>
-                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="englishTerm" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxw-bB-Obg">
-                                        <rect key="frame" x="0.0" y="39" width="372.5" height="24"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ㄱㄴㄷ" translatesAutoresizingMaskIntoConstraints="NO" id="rnb-LW-WxQ">
-                                        <rect key="frame" x="0.0" y="77" width="372.5" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="DJ2-JI-Enb"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="koreanTerm" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffa-Ds-CYN">
-                                        <rect key="frame" x="0.0" y="116" width="372.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Definition" translatesAutoresizingMaskIntoConstraints="NO" id="zIY-J3-9Rk">
-                                        <rect key="frame" x="0.0" y="150.5" width="372.5" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="x0L-Nt-WdD"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="definition" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kE-9H-AmJ">
-                                        <rect key="frame" x="0.0" y="189.5" width="372.5" height="463"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pfw-UM-JRf">
+                                <rect key="frame" x="15" y="258" width="384" height="540"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="englishTerm" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxw-bB-Obg">
+                                <rect key="frame" x="20" y="138" width="373" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="request" translatesAutoresizingMaskIntoConstraints="NO" id="3ti-7T-PZE">
+                                <rect key="frame" x="351" y="231" width="42" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="koreanTerm" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffa-Ds-CYN">
+                                <rect key="frame" x="15" y="189" width="385" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="definition" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kE-9H-AmJ" customClass="DictionaryLabel" customModule="NurseSchedule_iOS" customModuleProvider="target">
+                                <rect key="frame" x="35" y="281" width="344" height="497"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wZB-Q8-CiZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="LaW-1Z-6Kk" firstAttribute="top" secondItem="wZB-Q8-CiZ" secondAttribute="top" constant="25" id="Qi0-kW-ebl"/>
-                            <constraint firstItem="LaW-1Z-6Kk" firstAttribute="width" secondItem="wZB-Q8-CiZ" secondAttribute="width" multiplier="0.9" id="Sac-HG-fmy"/>
-                            <constraint firstItem="LaW-1Z-6Kk" firstAttribute="height" secondItem="wZB-Q8-CiZ" secondAttribute="height" multiplier="0.9" id="Uzl-Kv-GVY"/>
-                            <constraint firstItem="LaW-1Z-6Kk" firstAttribute="leading" secondItem="wZB-Q8-CiZ" secondAttribute="leading" constant="20" id="d9r-ZA-F6w"/>
+                            <constraint firstItem="wZB-Q8-CiZ" firstAttribute="bottom" secondItem="Pfw-UM-JRf" secondAttribute="bottom" constant="15" id="8wX-8s-FRn"/>
+                            <constraint firstItem="6kE-9H-AmJ" firstAttribute="leading" secondItem="wZB-Q8-CiZ" secondAttribute="leading" constant="35" id="A47-wU-po3"/>
+                            <constraint firstItem="6kE-9H-AmJ" firstAttribute="top" secondItem="wZB-Q8-CiZ" secondAttribute="top" constant="193" id="C7U-1I-OBE"/>
+                            <constraint firstItem="wZB-Q8-CiZ" firstAttribute="bottom" secondItem="6kE-9H-AmJ" secondAttribute="bottom" constant="35" id="PNv-OS-Nqb"/>
+                            <constraint firstItem="Pfw-UM-JRf" firstAttribute="leading" secondItem="wZB-Q8-CiZ" secondAttribute="leading" constant="15" id="Zi8-bm-CYA"/>
+                            <constraint firstItem="wZB-Q8-CiZ" firstAttribute="trailing" secondItem="Pfw-UM-JRf" secondAttribute="trailing" constant="15" id="hzw-B6-OGq"/>
+                            <constraint firstItem="wZB-Q8-CiZ" firstAttribute="trailing" secondItem="6kE-9H-AmJ" secondAttribute="trailing" constant="35" id="lyt-ca-feo"/>
+                            <constraint firstItem="Pfw-UM-JRf" firstAttribute="top" secondItem="wZB-Q8-CiZ" secondAttribute="top" constant="170" id="t7u-HG-Mfz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="정의" id="sBL-s9-vh5"/>
@@ -168,13 +160,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ABC" width="870" height="60"/>
-        <image name="Definition" width="870" height="60"/>
+        <image name="request" width="512" height="512"/>
         <image name="text.book.closed" catalog="system" width="115" height="128"/>
         <image name="text.book.closed.fill" catalog="system" width="115" height="128"/>
-        <image name="ㄱㄴㄷ" width="870" height="60"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -20,7 +20,7 @@ class DetailContentController: UIViewController {
 
     @IBOutlet weak var editOrDeleteButton: UIBarButtonItem!
     
-    var forCommentSavingInfo : ForCommentSavingInfo? = nil
+    var articleAllInfo : ArticleAllInfo? = nil
     
     
     var commentsList : [Comment] = []
@@ -34,19 +34,19 @@ class DetailContentController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         articleUser.text = "👤익명"
-        articleDate.text = forCommentSavingInfo?.newComment.date
-        articleTitle.text = forCommentSavingInfo?.newComment.title
-        articleContent.text = forCommentSavingInfo?.newComment.content
+        articleDate.text = articleAllInfo?.articleInfo.date
+        articleTitle.text = articleAllInfo?.articleInfo.title
+        articleContent.text = articleAllInfo?.articleInfo.content
     
         //글 작성자와 앱사용자가 다른 경우에 수정삭제 버튼 hidden
-        guard let contentUser = forCommentSavingInfo?.newComment.user else {   return  }
+        guard let contentUser = articleAllInfo?.articleInfo.user else {   return  }
         if currentUser != contentUser {
             self.navigationItem.setRightBarButton(nil, animated: true)
         }
         
         commentsList.removeAll()
-        guard let boardType = forCommentSavingInfo?.boardType else { return }
-        guard let articleID = forCommentSavingInfo?.newComment.articleID else { return }
+        guard let boardType = articleAllInfo?.boardType else { return }
+        guard let articleID = articleAllInfo?.articleInfo.articleID else { return }
         DBBoard.board.getCommentsList(BoardType: boardType, articleID: articleID) { (comment) in
             self.commentsList.append(comment)
             print("commentLists get successful")
@@ -83,7 +83,8 @@ class DetailContentController: UIViewController {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         
         
-        let editButton = UIAlertAction(title: "수정하기", style: .default) { (action) in
+        let editButton = UIAlertAction(title: "수정하기", style: .default) {_ in
+            self.performSegue(withIdentifier: "editContent", sender: self.articleAllInfo)
         }
         
         
@@ -104,8 +105,8 @@ class DetailContentController: UIViewController {
             let alert = UIAlertController(title: "삭제하시겠습니까?", message: "되돌이킬수없어요😭", preferredStyle: UIAlertController.Style.alert)
             let cancelAction = UIAlertAction(title: "취소", style: .cancel)
             let okAction = UIAlertAction(title: "확인", style: .destructive) { _ in
-                guard let boardType = self.forCommentSavingInfo?.boardType else { return }
-                guard let articleID = self.forCommentSavingInfo?.newComment.articleID else { return }
+                guard let boardType = self.articleAllInfo?.boardType else { return }
+                guard let articleID = self.articleAllInfo?.articleInfo.articleID else { return }
                 DBBoard.board.deleteArticle(BoardType: boardType, articleID: articleID)
                 self.performSegue(withIdentifier: "unwindToContentList", sender: nil)
           
@@ -116,11 +117,16 @@ class DetailContentController: UIViewController {
         }
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editContent" {
+            let EditContentFormController = segue.destination as! EditContentFormController
+            EditContentFormController.forEditing = sender as? ArticleAllInfo
+        }
+    }
     
     @IBAction func commentUploadButtomTapped(_ sender: Any) {
-        guard let boardType = forCommentSavingInfo?.boardType else { return }
-        guard let articleID = forCommentSavingInfo?.newComment.articleID else { return }
+        guard let boardType = articleAllInfo?.boardType else { return }
+        guard let articleID = articleAllInfo?.articleInfo.articleID else { return }
         let comment = commentTextView.text!
         DBBoard.board.addComment(BoardType: boardType, articleID: articleID, comment: comment)
         commentTextViewPlaceholderSetting()
@@ -167,4 +173,27 @@ extension DetailContentController : UITableViewDelegate, UITableViewDataSource {
         //cell.commentUser.text = commentsList[indexPath.row].writer
         return cell
     }
+    
+    
+    
+    
+    
+    // 댓글 삭제
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if commentsList[indexPath.row].writer == currentUser {
+            return .delete
+        }
+        return .none
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let boardType = articleAllInfo?.boardType else { return }
+            guard let articleID = articleAllInfo?.articleInfo.articleID else { return }
+            DBBoard.board.deleteComment(BoardType:boardType , articleID: articleID, commentID: commentsList[indexPath.row].commentID)
+            commentsList.remove(at: indexPath.row)
+            commentTableView.deleteRows(at: [indexPath], with: .automatic)
+            
+        }
+    }
+    
 }

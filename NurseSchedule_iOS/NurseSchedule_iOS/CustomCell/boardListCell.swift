@@ -1,19 +1,15 @@
 //
-//  ContentCell.swift
+//  boardListCell.swift
 //  NurseSchedule_iOS
 //
-//  Created by 이주원 on 2021/01/21.
+//  Created by 이주원 on 2021/01/24.
 //
 
 import UIKit
 
-class ContentCell: UITableViewCell {
+class boardListCell: UITableViewCell {
 
-    @IBOutlet weak var ContentNum: UILabel!
-    @IBOutlet weak var ContentDate: UILabel!
-    @IBOutlet weak var ContentTitle: UILabel!
-    @IBOutlet weak var ContentContent: UILabel!
-    @IBOutlet weak var numberOfComments: UILabel!
+    @IBOutlet weak var boardList: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
