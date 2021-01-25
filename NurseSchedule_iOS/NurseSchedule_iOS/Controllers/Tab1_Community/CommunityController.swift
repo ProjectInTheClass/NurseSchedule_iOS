@@ -20,8 +20,16 @@ class CommunityController: UIViewController, FSPagerViewDataSource, FSPagerViewD
     
     @IBOutlet weak var recentNoticeButton: UIButton!
     
+    @IBOutlet weak var freeBoard: UIButton!
+    @IBOutlet weak var jobBoard: UIButton!
+    @IBOutlet weak var QnABoard: UIButton!
+    @IBOutlet weak var infoBoard: UIButton!
+    @IBOutlet weak var newBoard: UIButton!
+    @IBOutlet weak var moreBoard: UIButton!
+    
     @IBOutlet weak var myPagerView: FSPagerView!{
         didSet{
+            
             // 페이저뷰에 쎌을 등록한다.
             self.myPagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
             // 아이템 크기 설정
@@ -46,6 +54,13 @@ class CommunityController: UIViewController, FSPagerViewDataSource, FSPagerViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.freeBoard.imageView?.contentMode  = .scaleAspectFit
+        self.jobBoard.imageView?.contentMode  = .scaleAspectFit
+        self.QnABoard.imageView?.contentMode  = .scaleAspectFit
+        self.infoBoard.imageView?.contentMode  = .scaleAspectFit
+        self.newBoard.imageView?.contentMode  = .scaleAspectFit
+        self.moreBoard.imageView?.contentMode  = .scaleAspectFit
         
         self.myPagerView.dataSource = self
         self.myPagerView.delegate = self
