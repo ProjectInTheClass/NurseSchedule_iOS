@@ -17,7 +17,8 @@ class DetailContentController: UIViewController {
     @IBOutlet weak var commentUploadButton: UIButton!
     @IBOutlet weak var commentTableView: UITableView!
     
-
+    @IBOutlet weak var numberOfCommentsLabel: UILabel!
+    
     @IBOutlet weak var editOrDeleteButton: UIBarButtonItem!
     
     var articleAllInfo : ArticleAllInfo? = nil
@@ -53,6 +54,14 @@ class DetailContentController: UIViewController {
             self.commentTableView.reloadData()
         }
         //commentTableView.reloadData()
+        
+        
+        DBBoard.board.getNumberOfCommentsInEachArticle(BoardType: boardType, articleID: articleID) { (numberOfComments) in
+
+            self.numberOfCommentsLabel.text = "💬 "+String(numberOfComments)
+        }
+
+
         
         
         commentTextView.delegate = self // txtvReview가 유저가 선언한 outlet
@@ -187,11 +196,19 @@ extension DetailContentController : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            guard let boardType = articleAllInfo?.boardType else { return }
-            guard let articleID = articleAllInfo?.articleInfo.articleID else { return }
-            DBBoard.board.deleteComment(BoardType:boardType , articleID: articleID, commentID: commentsList[indexPath.row].commentID)
-            commentsList.remove(at: indexPath.row)
-            commentTableView.deleteRows(at: [indexPath], with: .automatic)
+            let alert = UIAlertController(title: "삭제하시겠습니까?", message: "되돌이킬수없어요😭", preferredStyle: UIAlertController.Style.alert)
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+            let okAction = UIAlertAction(title: "확인", style: .destructive) { _ in
+                guard let boardType = self.articleAllInfo?.boardType else { return }
+                guard let articleID = self.articleAllInfo?.articleInfo.articleID else { return }
+                DBBoard.board.deleteComment(BoardType:boardType , articleID: articleID, commentID: self.commentsList[indexPath.row].commentID)
+                self.commentsList.remove(at: indexPath.row)
+                self.commentTableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+            alert.addAction(cancelAction)
+            alert.addAction(okAction)
+            self.present(alert, animated: false, completion: nil)
+            
             
         }
     }
