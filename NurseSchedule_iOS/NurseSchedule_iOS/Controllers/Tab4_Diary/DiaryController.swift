@@ -12,17 +12,17 @@ import UIKit
 class DiaryController: UIViewController {
     
     let currentUser = Login.init().googleLogin()
-    
     var bringdays : [Day] = []
-
     var getDiaryDate : String = ""
     
     @IBOutlet weak var tableView: UITableView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //tableView.reloadData()
+        // tableView.reloadData()
         // Do any additional setup after loading the view.
         // 다이어리 목록을 디비에서 불러옴
         let dateFormatter : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 0(월단위)
@@ -49,9 +49,7 @@ class DiaryController: UIViewController {
         let sourceViewController = unwindSegue.source
         // Use data from the view controller which initiated the unwind segue
     }
-   
      // MARK: - Navigation
-     
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "popupDiary" {
@@ -59,11 +57,9 @@ class DiaryController: UIViewController {
             detailDiaryFromTableController.detailInfoFromDay = sender as? Day
         }
      }
-    
 }
 
 extension DiaryController :UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //  return days.count
         //  return DBDiary.newDiary.diarycellCount
@@ -75,14 +71,11 @@ extension DiaryController :UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryCell", for: indexPath) as! DiaryCell
         
         //let bringday = bringdays
-        
         print("bringday \(bringdays)")
-        
         cell.emojiLabel.text = bringdays[indexPath.row].emoji
         cell.dateLabel.text = bringdays[indexPath.row].date
         cell.contentLabel.text = bringdays[indexPath.row].content
-        
-        
+
         return cell
     }
     
@@ -91,7 +84,6 @@ extension DiaryController :UITableViewDataSource {
 extension DiaryController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
-        
         performSegue(withIdentifier: "popupDiary", sender: bringdays[indexPath.row])
     }
     
