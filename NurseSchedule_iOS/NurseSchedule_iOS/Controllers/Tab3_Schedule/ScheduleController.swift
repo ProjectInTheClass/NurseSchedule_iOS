@@ -215,6 +215,9 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
                 self.workTypeSegmentedControl.selectedSegmentIndex = 0
             }
             self.memoTextView.text = self.showDaySchedule.memo
+            if self.memoTextView.text.isEmpty {
+                self.memoTextViewPlaceholderSetting()
+            }
         })
     }
     
