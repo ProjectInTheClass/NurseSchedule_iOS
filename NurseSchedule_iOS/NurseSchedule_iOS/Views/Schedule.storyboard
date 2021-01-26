@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -364,8 +365,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QbO-j9-JO4" customClass="FSCalendar">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="510"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="450" id="W1l-Kx-I7i"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="eventSelectionColor">
                                                 <color key="value" systemColor="systemIndigoColor"/>
@@ -386,32 +390,52 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oqq-1X-eeA">
-                                        <rect key="frame" x="0.0" y="510" width="414" height="215"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aop-eX-Av0">
+                                        <rect key="frame" x="0.0" y="450" width="414" height="275"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wg4-Sg-cZq">
+                                                <rect key="frame" x="8" y="19" width="220" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tIM-Ev-gAp">
+                                                <rect key="frame" x="8" y="56" width="397" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <segments>
+                                                    <segment title="" image="day"/>
+                                                    <segment title="" image="evening"/>
+                                                    <segment title="" image="night"/>
+                                                    <segment title="" image="off"/>
+                                                    <segment title="" image="free"/>
+                                                </segments>
+                                            </segmentedControl>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9k4-Nz-O8b">
+                                                <rect key="frame" x="8" y="97" width="398" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7t-a4-KGK">
+                                                <rect key="frame" x="329" y="16" width="57" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.96722583830627074" green="0.99763482809066772" blue="0.7850638399577855" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <color key="tintColor" red="0.15790402910000001" green="0.35576082479999999" blue="0.22151219690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="완료">
+                                                    <color key="titleColor" red="0.1153413429" green="0.25986627140000002" blue="0.161804068" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <imageReference key="image" image="checkmark.circle.fill" catalog="system" symbolScale="large"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="updateButtonTapped:" destination="KNe-Tg-fe9" eventType="touchUpInside" id="NxG-F3-sUc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="215" id="GPc-w2-gbS"/>
-                                        </constraints>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemoCell" textLabel="pO7-Q7-aIO" style="IBUITableViewCellStyleDefault" id="wO0-c1-Z8N">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wO0-c1-Z8N" id="As5-tA-JoD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pO7-Q7-aIO">
-                                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                        </prototypes>
-                                    </tableView>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -426,26 +450,19 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="calendar" image="calendar.circle" catalog="system" selectedImage="calendar.circle.fill" id="BgW-88-YqU"/>
                     <navigationItem key="navigationItem" title="캘린더" id="nSH-Yv-sk2">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="plus" catalog="system" id="dLp-Km-jlh">
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <connections>
-                                    <action selector="addMemoButtonTapped:" destination="KNe-Tg-fe9" id="6rR-ei-z8K"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Item" image="camera.viewfinder" catalog="system" id="eYC-1j-9y5">
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <connections>
-                                    <action selector="capture:" destination="KNe-Tg-fe9" id="5o2-pv-J10"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="camera.viewfinder" catalog="system" id="eYC-1j-9y5">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="capture:" destination="KNe-Tg-fe9" id="5o2-pv-J10"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="calendar" destination="QbO-j9-JO4" id="3hA-wo-PWp"/>
-                        <outlet property="memoView" destination="Oqq-1X-eeA" id="573-WX-nFF"/>
-                        <segue destination="upM-zm-90w" kind="presentation" identifier="addNewMemo" id="9BZ-wi-OPN"/>
+                        <outlet property="memoTextView" destination="9k4-Nz-O8b" id="eK6-ip-1fh"/>
+                        <outlet property="selectedDateLabel" destination="Wg4-Sg-cZq" id="3ln-AK-7fz"/>
+                        <outlet property="workTypeSegmentedControl" destination="tIM-Ev-gAp" id="svH-TP-hza"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UA3-ls-qgY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -457,23 +474,23 @@
             <objects>
                 <viewController storyboardIdentifier="ScheduleAddViewController" id="upM-zm-90w" customClass="ScheduleAddViewController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ddh-qV-e0V">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 메모 추가 뷰&lt;DATE&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o62-Td-lLb">
-                                <rect key="frame" x="94" y="161" width="228" height="24"/>
+                                <rect key="frame" x="94" y="205" width="228" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.5665841103" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMf-4y-Q86">
-                                <rect key="frame" x="35" y="222" width="120" height="30"/>
+                                <rect key="frame" x="35" y="266" width="120" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.5665841103" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jtm-Y8-MHm">
-                                <rect key="frame" x="35" y="272" width="344" height="46"/>
+                                <rect key="frame" x="35" y="316" width="344" height="46"/>
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="lOa-b7-YBn"/>
@@ -492,13 +509,13 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="근무를 선택하세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxB-UZ-n59">
-                                <rect key="frame" x="163.5" y="235" width="105" height="17"/>
+                                <rect key="frame" x="163.5" y="279" width="105" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" systemColor="opaqueSeparatorColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYh-61-rHU">
-                                <rect key="frame" x="344" y="62" width="35" height="36"/>
+                                <rect key="frame" x="344" y="106" width="35" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <state key="normal" title="추가">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -508,7 +525,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kml-Sx-Clr">
-                                <rect key="frame" x="35" y="62" width="63" height="36"/>
+                                <rect key="frame" x="35" y="106" width="63" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <state key="normal" title="취소">
                                     <color key="titleColor" systemColor="systemRedColor"/>
@@ -518,7 +535,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="LvO-fX-tcn">
-                                <rect key="frame" x="35" y="317" width="325.5" height="18"/>
+                                <rect key="frame" x="35" y="361" width="325.5" height="18"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     데이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pad-2K-FdH">
                                         <rect key="frame" x="0.0" y="0.0" width="45.5" height="18"/>
@@ -553,19 +570,19 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEMO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csr-Vk-rmN">
-                                <rect key="frame" x="35" y="368" width="76.5" height="30"/>
+                                <rect key="frame" x="35" y="412" width="76.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.5665841103" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="간단한 메모를 남겨보세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWG-zT-tQ9">
-                                <rect key="frame" x="119.5" y="381" width="186.5" height="17"/>
+                                <rect key="frame" x="119.5" y="425" width="186.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" systemColor="opaqueSeparatorColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="memo content" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MZq-oR-mJx">
-                                <rect key="frame" x="35" y="406" width="344" height="34"/>
+                                <rect key="frame" x="35" y="450" width="344" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
@@ -649,8 +666,13 @@
         <image name="calendar.circle" catalog="system" width="128" height="121"/>
         <image name="calendar.circle.fill" catalog="system" width="128" height="121"/>
         <image name="camera.viewfinder" catalog="system" width="128" height="115"/>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="day" width="35" height="35"/>
+        <image name="evening" width="35" height="35"/>
+        <image name="free" width="35" height="35"/>
+        <image name="night" width="35" height="35"/>
+        <image name="off" width="35" height="35"/>
         <image name="person.fill.badge.plus" catalog="system" width="128" height="124"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

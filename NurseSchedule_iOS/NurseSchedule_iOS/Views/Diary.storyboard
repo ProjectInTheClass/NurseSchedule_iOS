@@ -322,7 +322,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y2J-o3-4Hd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="UCL-aq-S0e" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2409" y="2489"/>
+            <point key="canvasLocation" x="2293" y="2389"/>
         </scene>
         <!--일기장-->
         <scene sceneID="ROp-VM-Ax0">

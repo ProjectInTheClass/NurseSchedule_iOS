@@ -23,7 +23,6 @@ class AddDiaryTableController: UITableViewController {
   
     let dateFormatter2 : DateFormatter = DateFormatter() //Label로 보여주기용
     
-    let currentUser = Login.init().googleLogin()
     var selectedDate : String = ""
     var todayDate : String = " "
     var showDate : String = " "
@@ -125,7 +124,7 @@ class AddDiaryTableController: UITableViewController {
             self.new.content = ""//DB에 값 저장
             self.new.emoji = self.seletedCondition//DB에 값 저장
             
-            DBDiary.newDiary.addDiary(userID: self.currentUser, shortDate: self.selectedDate, new: self.new)
+            DBDiary.newDiary.addDiary(userID: currentUser, shortDate: self.selectedDate, new: self.new)
             print("새 일기 작성 저장")
             self.dismiss(animated: true, completion: nil)
             
@@ -156,6 +155,11 @@ extension AddDiaryTableController : UITextViewDelegate {
         writtencontent = contentTextView.text
         
         print(writtencontent)
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        self.contentTextView.resignFirstResponder()//키보드 숨기기
+ 
     }
 }
 
