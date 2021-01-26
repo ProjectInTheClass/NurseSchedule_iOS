@@ -40,6 +40,9 @@ class DetailDiaryFromTableController: UIViewController {
         
     }
     
+    @IBAction func cancelButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     func showDeleteAlert() {
         let alert = UIAlertController(title: "삭제하시겠습니까?", message: " ", preferredStyle: UIAlertController.Style.alert)

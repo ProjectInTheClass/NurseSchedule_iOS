@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -393,19 +392,18 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UFW-Tk-8pK">
+                                        <rect key="frame" x="0.0" y="450" width="414" height="3"/>
+                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3" id="kq0-Ei-RMf"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aop-eX-Av0">
-                                        <rect key="frame" x="0.0" y="450" width="414" height="275"/>
+                                        <rect key="frame" x="0.0" y="453" width="414" height="272"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wg4-Sg-cZq">
-                                                <rect key="frame" x="8" y="19" width="220" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tIM-Ev-gAp">
-                                                <rect key="frame" x="8" y="56" width="397" height="32"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tIM-Ev-gAp">
+                                                <rect key="frame" x="8" y="43" width="398" height="32"/>
                                                 <segments>
                                                     <segment title="" image="day"/>
                                                     <segment title="" image="evening"/>
@@ -414,30 +412,48 @@
                                                     <segment title="" image="free"/>
                                                 </segments>
                                             </segmentedControl>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9k4-Nz-O8b">
-                                                <rect key="frame" x="8" y="97" width="398" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <color key="textColor" systemColor="labelColor"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9k4-Nz-O8b">
+                                                <rect key="frame" x="8" y="87" width="398" height="175"/>
+                                                <color key="backgroundColor" red="0.93321973089999999" green="0.93331867459999995" blue="0.93730396029999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" systemColor="systemGray6Color"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7t-a4-KGK">
-                                                <rect key="frame" x="329" y="16" width="57" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.96722583830627074" green="0.99763482809066772" blue="0.7850638399577855" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                <color key="tintColor" red="0.15790402910000001" green="0.35576082479999999" blue="0.22151219690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="완료">
-                                                    <color key="titleColor" red="0.1153413429" green="0.25986627140000002" blue="0.161804068" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <imageReference key="image" image="checkmark.circle.fill" catalog="system" symbolScale="large"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7t-a4-KGK">
+                                                <rect key="frame" x="349.5" y="8" width="56.5" height="23"/>
+                                                <color key="backgroundColor" red="0.74084085229999996" green="0.9099497795" blue="0.67754423620000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="저장" image="checkmark" catalog="system">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="updateButtonTapped:" destination="KNe-Tg-fe9" eventType="touchUpInside" id="NxG-F3-sUc"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wg4-Sg-cZq">
+                                                <rect key="frame" x="130" y="14" width="154" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="tIM-Ev-gAp" secondAttribute="trailing" constant="8" id="4BX-Di-WcX"/>
+                                            <constraint firstItem="I7t-a4-KGK" firstAttribute="top" secondItem="Aop-eX-Av0" secondAttribute="top" constant="8" id="ALq-Bi-wcC"/>
+                                            <constraint firstItem="9k4-Nz-O8b" firstAttribute="leading" secondItem="Aop-eX-Av0" secondAttribute="leading" constant="8" id="Aw8-hP-04f"/>
+                                            <constraint firstItem="I7t-a4-KGK" firstAttribute="leading" secondItem="Wg4-Sg-cZq" secondAttribute="trailing" constant="65.5" id="C1C-bH-r8l"/>
+                                            <constraint firstAttribute="trailing" secondItem="I7t-a4-KGK" secondAttribute="trailing" constant="8" id="Ccp-2F-AP7"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wg4-Sg-cZq" secondAttribute="trailing" constant="130" id="DAk-tZ-TPp"/>
+                                            <constraint firstItem="9k4-Nz-O8b" firstAttribute="top" secondItem="tIM-Ev-gAp" secondAttribute="bottom" constant="13" id="M3p-iQ-xzj"/>
+                                            <constraint firstItem="tIM-Ev-gAp" firstAttribute="top" secondItem="Wg4-Sg-cZq" secondAttribute="bottom" constant="8.5" id="W5M-YM-ore"/>
+                                            <constraint firstItem="Wg4-Sg-cZq" firstAttribute="top" secondItem="Aop-eX-Av0" secondAttribute="top" constant="14" id="bVS-nH-npe"/>
+                                            <constraint firstItem="Wg4-Sg-cZq" firstAttribute="leading" secondItem="Aop-eX-Av0" secondAttribute="leading" constant="130" id="iWo-jV-I8l"/>
+                                            <constraint firstItem="tIM-Ev-gAp" firstAttribute="leading" secondItem="Aop-eX-Av0" secondAttribute="leading" constant="8" id="ic6-88-uOs"/>
+                                            <constraint firstAttribute="trailing" secondItem="9k4-Nz-O8b" secondAttribute="trailing" constant="8" id="lDy-ma-7Sq"/>
+                                            <constraint firstAttribute="bottom" secondItem="9k4-Nz-O8b" secondAttribute="bottom" constant="10" id="wvL-qG-vue"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -669,7 +685,7 @@
         <image name="calendar.circle" catalog="system" width="128" height="121"/>
         <image name="calendar.circle.fill" catalog="system" width="128" height="121"/>
         <image name="camera.viewfinder" catalog="system" width="128" height="115"/>
-        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="day" width="35" height="35"/>
         <image name="evening" width="35" height="35"/>
         <image name="free" width="35" height="35"/>
@@ -687,6 +703,12 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

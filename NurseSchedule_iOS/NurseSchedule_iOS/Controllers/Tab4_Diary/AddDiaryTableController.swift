@@ -18,24 +18,18 @@ class AddDiaryTableController: UITableViewController {
     @IBOutlet weak var contentTextView: UITextView!
     
     let dateFormatter : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 0(월단위)
-  
     let dateFormatter1 : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 1 (일단위)
-  
     let dateFormatter2 : DateFormatter = DateFormatter() //Label로 보여주기용
     
     var selectedDate : String = ""
     var todayDate : String = " "
     var showDate : String = " "
     
-   
-    
     //DB로 값을 보내기 위함
     var new = Day(emoji: "default", date: "default", content: "default")
     
     var writtencontent : String? = nil // TextField 내용
-    var seletedCondition : String = " " // segmentedcontrol로 선택된 condition값
-    
-    
+    var seletedCondition : String = "❔" // segmentedcontrol로 선택된 condition값
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,28 +46,17 @@ class AddDiaryTableController: UITableViewController {
         SelectedDate.text = dateFormatter2.string(from: today)
         selectedDate = dateFormatter.string(from: today)
     }
-
-
+    
     //datePicker 선택 시 실행
     @IBAction func SelectDate(_ sender: UIDatePicker){
-       
-       
         self.selectedDate = dateFormatter.string(from: sender.date)//DB에 들어갈 날짜용
-        
         let selectedDate1 : String = dateFormatter1.string(from: sender.date) //DB에 들어갈 날짜용
-        
-      
-      
         self.showDate = dateFormatter2.string(from: sender.date) //Label로 보여주기용
 
-        
         new.date = selectedDate1 // DB에 저장(format1)
         SelectedDate.text = showDate // Label에 사용자가 선택한 날짜를 출력해줌
-        
-        
     }
     
-
     //segmentControl 작동 시 해당되는 emoji를 저장
     @IBAction func SelectCondition(_ sender: Any) {
         switch conditionSegment.selectedSegmentIndex {
@@ -92,8 +75,7 @@ class AddDiaryTableController: UITableViewController {
         }
     }
     
-    
-    
+
     //저장버튼 클릭 시
     @IBAction func clickedSaveButton(_ sender: Any) {
      
@@ -106,14 +88,10 @@ class AddDiaryTableController: UITableViewController {
                 self.new.emoji = self.seletedCondition //DB에 값 저장
                 
                 DBDiary.newDiary.addDiary(userID: currentUser, shortDate: selectedDate, new: new)
-                
                 self.dismiss(animated: true, completion: nil)} //모달창 내리기
+            }
         }
 
-        
-        }
-
-    
     
     //alert 띄우기
     func showAlert(style : UIAlertController.Style){
@@ -136,7 +114,6 @@ class AddDiaryTableController: UITableViewController {
         let cancel = UIAlertAction(title: "취소", style: .default){(action) in
             print("취소")}
         
-        
         alert.addAction(save)
         alert.addAction(cancel)
         
@@ -146,9 +123,12 @@ class AddDiaryTableController: UITableViewController {
  
     
 
-
-
+    @IBAction func cancelButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
+
+
 
 extension AddDiaryTableController : UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {

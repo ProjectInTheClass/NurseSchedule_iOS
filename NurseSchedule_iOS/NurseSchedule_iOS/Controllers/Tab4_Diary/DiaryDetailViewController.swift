@@ -27,7 +27,6 @@ class DiaryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         date.text = detailInfoFromDay?.date
         emoji.text = detailInfoFromDay?.emoji
         content.text = detailInfoFromDay?.content
@@ -42,6 +41,9 @@ class DiaryDetailViewController: UIViewController {
         
     }
     
+    @IBAction func cancelButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func modifyButton(_ sender: Any) {//Calendar에서 detailView 들어갔을 때 수정버튼
         performSegue(withIdentifier: "editDiary", sender: detailInfoFromDay)
