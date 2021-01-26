@@ -42,10 +42,19 @@ class DiaryController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        
+        tableView.estimatedRowHeight = 70
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     override func viewDidAppear(_ animated: Bool) {
         tableView.reloadData()
+        tableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     
@@ -97,6 +106,10 @@ extension DiaryController :UITableViewDataSource {
         cell.contentLabel.text = bringdays[indexPath.row].content
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
    
