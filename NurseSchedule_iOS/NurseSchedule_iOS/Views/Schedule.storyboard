@@ -414,11 +414,11 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7t-a4-KGK">
-                                        <rect key="frame" x="349.5" y="8" width="56.5" height="23"/>
-                                        <color key="backgroundColor" red="0.74084085229999996" green="0.9099497795" blue="0.67754423620000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <rect key="frame" x="349.5" y="3" width="56.5" height="34"/>
+                                        <color key="backgroundColor" red="0.77269226310000005" green="0.92534029480000002" blue="0.71377497909999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="저장" image="checkmark" catalog="system">
+                                        <state key="normal" title="저장">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -435,7 +435,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="tIM-Ev-gAp" secondAttribute="trailing" constant="8" id="4BX-Di-WcX"/>
-                                    <constraint firstItem="I7t-a4-KGK" firstAttribute="top" secondItem="Aop-eX-Av0" secondAttribute="top" constant="8" id="ALq-Bi-wcC"/>
+                                    <constraint firstItem="I7t-a4-KGK" firstAttribute="top" secondItem="Aop-eX-Av0" secondAttribute="top" constant="3" id="ALq-Bi-wcC"/>
                                     <constraint firstItem="9k4-Nz-O8b" firstAttribute="leading" secondItem="Aop-eX-Av0" secondAttribute="leading" constant="8" id="Aw8-hP-04f"/>
                                     <constraint firstItem="I7t-a4-KGK" firstAttribute="leading" secondItem="Wg4-Sg-cZq" secondAttribute="trailing" constant="65.5" id="C1C-bH-r8l"/>
                                     <constraint firstAttribute="trailing" secondItem="I7t-a4-KGK" secondAttribute="trailing" constant="8" id="Ccp-2F-AP7"/>
@@ -684,7 +684,6 @@
         <image name="calendar.circle" catalog="system" width="128" height="121"/>
         <image name="calendar.circle.fill" catalog="system" width="128" height="121"/>
         <image name="camera.viewfinder" catalog="system" width="128" height="115"/>
-        <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="day" width="35" height="35"/>
         <image name="evening" width="35" height="35"/>
         <image name="free" width="35" height="35"/>
