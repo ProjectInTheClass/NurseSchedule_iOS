@@ -403,13 +403,13 @@
                                 <rect key="frame" x="50.5" y="167" width="313" height="508"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pnI-Bb-lDB">
-                                        <rect key="frame" x="0.0" y="0.0" width="313" height="508"/>
+                                        <rect key="frame" x="13" y="0.0" width="287" height="508"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="OM1-QJ-CVR">
-                                                <rect key="frame" x="0.0" y="0.0" width="313" height="123.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="287" height="27.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKd-x9-6m2">
-                                                        <rect key="frame" x="297.5" y="0.0" width="15.5" height="123.5"/>
+                                                        <rect key="frame" x="271.5" y="0.0" width="15.5" height="27.5"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="multiply" catalog="system">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -421,16 +421,24 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Date-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCr-Z9-tXd">
-                                                <rect key="frame" x="0.0" y="123.5" width="313" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="27.5" width="287" height="27.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lu4-46-jym">
-                                                <rect key="frame" x="0.0" y="147.5" width="313" height="128"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNR-7V-bRF">
+                                                <rect key="frame" x="0.0" y="55" width="287" height="8"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lu4-46-jym">
+                                                <rect key="frame" x="0.0" y="63" width="287" height="121"/>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MWA-E9-9wa">
-                                                <rect key="frame" x="0.0" y="275.5" width="313" height="202.5"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2uJ-Zz-XYt">
+                                                <rect key="frame" x="0.0" y="184" width="287" height="8.5"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MWA-E9-9wa">
+                                                <rect key="frame" x="0.0" y="192.5" width="287" height="285.5"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" systemColor="labelColor"/>
@@ -438,10 +446,10 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                             </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="110" translatesAutoresizingMaskIntoConstraints="NO" id="WNZ-gU-9FA">
-                                                <rect key="frame" x="0.0" y="478" width="313" height="30"/>
+                                                <rect key="frame" x="0.0" y="478" width="287" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmV-fm-i1s">
-                                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="88.5" height="30"/>
                                                         <state key="normal" title="삭제">
                                                             <color key="titleColor" systemColor="systemRedColor"/>
                                                         </state>
@@ -450,7 +458,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8W7-YA-4sf">
-                                                        <rect key="frame" x="211.5" y="0.0" width="101.5" height="30"/>
+                                                        <rect key="frame" x="198.5" y="0.0" width="88.5" height="30"/>
                                                         <state key="normal" title="수정">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -461,6 +469,14 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="OM1-QJ-CVR" firstAttribute="height" secondItem="qCr-Z9-tXd" secondAttribute="height" id="IzM-0t-m6G"/>
+                                            <constraint firstItem="NNR-7V-bRF" firstAttribute="height" secondItem="qCr-Z9-tXd" secondAttribute="height" multiplier="0.3" id="JE5-KK-aQJ"/>
+                                            <constraint firstItem="NNR-7V-bRF" firstAttribute="height" secondItem="Lu4-46-jym" secondAttribute="height" multiplier="0.0680628" id="On8-2n-0ut"/>
+                                            <constraint firstItem="2uJ-Zz-XYt" firstAttribute="height" secondItem="Lu4-46-jym" secondAttribute="height" multiplier="0.07" id="RxS-Nu-BPn"/>
+                                            <constraint firstItem="WNZ-gU-9FA" firstAttribute="height" secondItem="MWA-E9-9wa" secondAttribute="height" multiplier="0.104712" id="XnR-UZ-n8p"/>
+                                            <constraint firstItem="MWA-E9-9wa" firstAttribute="height" secondItem="2uJ-Zz-XYt" secondAttribute="height" multiplier="33.7059" id="g3Y-2f-ch6"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -469,8 +485,8 @@
                                     <constraint firstAttribute="height" constant="508" id="XsX-9p-Y0i"/>
                                     <constraint firstItem="pnI-Bb-lDB" firstAttribute="top" secondItem="Ycn-Nb-sua" secondAttribute="top" id="aRR-xR-4nn"/>
                                     <constraint firstAttribute="width" constant="313" id="hoJ-PJ-7yR"/>
-                                    <constraint firstAttribute="trailing" secondItem="pnI-Bb-lDB" secondAttribute="trailing" id="npD-Cb-1nu"/>
-                                    <constraint firstItem="pnI-Bb-lDB" firstAttribute="leading" secondItem="Ycn-Nb-sua" secondAttribute="leading" id="zKl-eS-Sj9"/>
+                                    <constraint firstAttribute="trailing" secondItem="pnI-Bb-lDB" secondAttribute="trailing" constant="13" id="npD-Cb-1nu"/>
+                                    <constraint firstItem="pnI-Bb-lDB" firstAttribute="leading" secondItem="Ycn-Nb-sua" secondAttribute="leading" constant="13" id="zKl-eS-Sj9"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -490,7 +506,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2O-6W-792" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1122" y="3372"/>
+            <point key="canvasLocation" x="1121.7391304347827" y="3371.6517857142858"/>
         </scene>
         <!--Diary Detail View Controller-->
         <scene sceneID="7m6-1x-gY0">
@@ -788,7 +804,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GHk-wU-Sj9"/>
+        <segue reference="w1D-LL-xW7"/>
         <segue reference="XPa-k4-My4"/>
     </inferredMetricsTieBreakers>
     <resources>

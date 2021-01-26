@@ -34,11 +34,11 @@ class DiaryController: UIViewController {
         dateFormatter.dateFormat = "yyyy-MM"
         self.getDiaryDate = dateFormatter.string(from: Date.init())
         self.bringdays.removeAll()
-        DBDiary.newDiary.getDiary(userID: currentUser, shortDate: self.getDiaryDate, completion: { result in //result에 Day(emoji: "😢", date: "2021-01-03", content: "getDiary")형식으로 저장되어있음
-            self.bringdays.append(result)
-            print("app delegate \(result)")
-            self.tableView.reloadData()
-        })
+//        DBDiary.newDiary.getDiary(userID: currentUser, shortDate: self.getDiaryDate, completion: { result in //result에 Day(emoji: "😢", date: "2021-01-03", content: "getDiary")형식으로 저장되어있음
+//            self.bringdays.append(result)
+//            print("app delegate \(result)")
+//            self.tableView.reloadData()
+//        })
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -49,8 +49,16 @@ class DiaryController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        tableView.reloadData()
+       
         tableView.rowHeight = UITableView.automaticDimension
+        
+        self.bringdays.removeAll()
+        DBDiary.newDiary.getDiary(userID: currentUser, shortDate: self.getDiaryDate, completion: { result in //result에 Day(emoji: "😢", date: "2021-01-03", content: "getDiary")형식으로 저장되어있음
+            self.bringdays.append(result)
+            print("app delegate \(result)")
+            self.tableView.reloadData()
+        })
+        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
