@@ -15,7 +15,7 @@ class ModifyDiaryTableController: UITableViewController {
     var day : Day? = nil// 기존에 저장되어있던 내용
     
     var writtencontent : String? = nil // 작성된 TextView 내용
-    var seletedCondition : Int = 0 // segmentedcontrol로 선택된 condition Index를 저정하기 위한 변수
+    var selectedCondition : Int = 0 // segmentedcontrol로 선택된 condition Index를 저정하기 위한 변수
     
     var shortDate : String = " "
     
@@ -26,17 +26,17 @@ class ModifyDiaryTableController: UITableViewController {
     @IBAction func SelectCondition(_ sender: Any) { //SegmentController를 touch하였을 경우
         switch conditionSegController.selectedSegmentIndex {
         case 0:
-            seletedCondition = 0
+            selectedCondition = 0
         case 1:
-            seletedCondition = 1
+            selectedCondition = 1
         case 2:
-            seletedCondition = 2
+            selectedCondition = 2
         case 3:
-            seletedCondition = 3
+            selectedCondition = 3
         case 4:
-            seletedCondition = 4
+            selectedCondition = 4
         default:
-            seletedCondition = 0 //default : ?로 설정
+            selectedCondition = 0 //default : ?로 설정
         }
     }
     
@@ -46,10 +46,8 @@ class ModifyDiaryTableController: UITableViewController {
         super.viewDidLoad()
         self.change.date = self.day?.date ?? "default"
         self.change.emoji = self.day?.emoji ?? 0
-        
-        var emojiForChange = self.change.emoji
-        
-        
+        print("viewDidLoad change.emoji -------- \(self.change.emoji)")
+    
         DateLabel.text = day?.date
         
         if let storedEmoji = day?.emoji{
@@ -68,8 +66,7 @@ class ModifyDiaryTableController: UITableViewController {
                 showAlert(style: .alert)
             }else {
                 self.change.content = writtencontent
-                                
-                self.change.emoji = self.seletedCondition
+                print("saveButton seletedCondition -----\(selectedCondition)")
                 
                 shortDate =  String(self.day?.date.prefix(7) ?? " ")
                 print("ShortDate in saveButton(ModifyDiaryController)--------------\(shortDate)")
@@ -95,7 +92,8 @@ class ModifyDiaryTableController: UITableViewController {
             self.change.content = ""//DB에 값 저장
             
 
-            self.change.emoji = self.seletedCondition
+      //      self.change.emoji = self.selectedCondition
+            print("showAlert seletedCondition -----\(self.selectedCondition)")
             
             self.shortDate =  String(self.day?.date.prefix(7) ?? " ")
             DBDiary.newDiary.addDiary(userID: currentUser, shortDate: self.shortDate, new: self.change)
