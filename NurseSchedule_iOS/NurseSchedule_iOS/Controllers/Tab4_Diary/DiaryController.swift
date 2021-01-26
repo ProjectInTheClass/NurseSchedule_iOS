@@ -15,6 +15,11 @@ class DiaryController: UIViewController {
     var bringdays : [Day] = []
     var getDiaryDate : String = ""
     
+    let img0 = UIImage(named: "0-love.png")
+    let img1 = UIImage(named: "0-happy.png")
+    let img2 = UIImage(named: "0-surprised.png")
+    let img3 = UIImage(named: "0-crying.png")
+    let img4 = UIImage(named: "0-devil.png")
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -73,13 +78,28 @@ extension DiaryController :UITableViewDataSource {
         
         //let bringday = bringdays
         print("bringday \(bringdays)")
-        cell.emojiLabel.text = bringdays[indexPath.row].emoji
+        switch bringdays[indexPath.row].emoji {
+        case 0:
+            cell.emojiImage.image = img0
+        case 1:
+            cell.emojiImage.image = img1
+        case 2:
+            cell.emojiImage.image = img2
+        case 3:
+            cell.emojiImage.image = img3
+        case 4:
+            cell.emojiImage.image = img4
+        default:
+            print("emojiImage")
+        }
+       
         cell.dateLabel.text = bringdays[indexPath.row].date
         cell.contentLabel.text = bringdays[indexPath.row].content
 
         return cell
     }
     
+   
 }
 
 extension DiaryController : UITableViewDelegate {
@@ -89,3 +109,4 @@ extension DiaryController : UITableViewDelegate {
     }
     
 }
+

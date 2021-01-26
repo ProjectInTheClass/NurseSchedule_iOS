@@ -90,7 +90,7 @@ struct ForSavingDayWorkNMemo {
 }
 
 struct Day {
-    var emoji : String
+    var emoji : Int
     var date : String
     var content : String
 }

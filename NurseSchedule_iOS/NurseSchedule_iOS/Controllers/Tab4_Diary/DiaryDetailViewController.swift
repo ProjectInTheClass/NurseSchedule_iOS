@@ -13,8 +13,14 @@ class DiaryDetailViewController: UIViewController {
     
 
     @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var emoji: UILabel!
+    @IBOutlet weak var emojiImage: UIImageView!
     @IBOutlet weak var content: UITextView!
+    
+    let img0 = UIImage(named: "0-love.png")
+    let img1 = UIImage(named: "0-happy.png")
+    let img2 = UIImage(named: "0-surprised.png")
+    let img3 = UIImage(named: "0-crying.png")
+    let img4 = UIImage(named: "0-devil.png")
     
     
     let currentUser = Login.init().googleLogin()
@@ -28,7 +34,24 @@ class DiaryDetailViewController: UIViewController {
         super.viewDidLoad()
 
         date.text = detailInfoFromDay?.date
-        emoji.text = detailInfoFromDay?.emoji
+       
+        if let emojinum = detailInfoFromDay?.emoji{
+            switch emojinum {
+            case 0:
+                emojiImage.image = img0
+            case 1:
+                emojiImage.image = img1
+            case 2:
+                emojiImage.image = img2
+            case 3:
+                emojiImage.image = img3
+            case 4:
+                emojiImage.image = img4
+            default:
+                print("emojiImage")
+            }
+        }
+        
         content.text = detailInfoFromDay?.content
         // Do any additional setup after loading the view.
        
@@ -89,6 +112,6 @@ class DiaryDetailViewController: UIViewController {
             
         }
     }
-  
+    
 
 }
