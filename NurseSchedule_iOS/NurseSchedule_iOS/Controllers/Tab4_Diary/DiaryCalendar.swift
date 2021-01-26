@@ -71,8 +71,8 @@ class DiaryCalendar: UIViewController {
      
         
         //선택한 날짜색
-        diaryCalendar.appearance.selectionColor = UIColor(#colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1))
-        
+//        diaryCalendar.appearance.selectionColor = UIColor(#colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1))
+//        
         
         // 달력의 년월 글자 바꾸기
         diaryCalendar.appearance.headerDateFormat = "YYYY년 M월"
