@@ -242,15 +242,15 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
         if let type = showDayWorkType[date] {
             switch type {
             case "day":
-                return UIImage(named: "day")!
+                return UIImage(named: "day_1")!
             case "evening":
-                return UIImage(named: "evening")!
+                return UIImage(named: "evening_1")!
             case "night":
-                return UIImage(named: "night")!
+                return UIImage(named: "night_1")!
             case "off":
-                return UIImage(named: "off")!
+                return UIImage(named: "whiteOff_1")!
             case "free":
-                return UIImage(named: "free")!
+                return UIImage(named: "free_1")!
             default :
                 return UIImage.init()
             }
