@@ -101,27 +101,24 @@ class AddDiaryTableController: UITableViewController {
 
     //저장버튼 클릭 시
     @IBAction func clickedSaveButton(_ sender: Any) {
-     
-    
-        
-        if let writtencontent = contentTextView.text {
-            if writtencontent.isEmpty{ //textfield가 비었을 경우 alert 띄우기
-                showAlert(style: .alert)
-            }
-            else { //사용자가 textfield에 입력을 하였을 경우
-                self.new.content = writtencontent //DB에 값 저장
-                self.new.emoji = self.seletedCondition //DB에 값 저장
-                
-                DBDiary.newDiary.addDiary(userID: currentUser, shortDate: selectedDate, new: new)
-                //self.dismiss(animated: true, completion: nil)} //모달창 내리기
-            }
-        }
         for i in existedDate {
             if existedDate.contains(new.date) {
                 showCheckAlert()
             }
         }
         
+        if let writtencontent = self.contentTextView.text {
+            if writtencontent.isEmpty{ //textfield가 비었을 경우 alert 띄우기
+                self.showAlert(style: .alert)
+            }
+            else { //사용자가 textfield에 입력을 하였을 경우
+                self.new.content = writtencontent //DB에 값 저장
+                self.new.emoji = self.seletedCondition //DB에 값 저장
+                
+                DBDiary.newDiary.addDiary(userID: currentUser, shortDate: self.selectedDate, new: self.new)
+                
+            }
+        }
     }
     func makeListOfExistDate() {
         DBDiary.newDiary.checkDiary(userID: currentUser, shortDate: selectedDate, completion: { result in //result에 String으로 저장
@@ -134,15 +131,22 @@ class AddDiaryTableController: UITableViewController {
         let alert = UIAlertController(title: "이미 작성된 일기가 있습니다.", message: "덮어씌우겠습니까?", preferredStyle: UIAlertController.Style.alert)
         let save = UIAlertAction(title: "확인", style: .default){(action) in
             
-            self.new.content = self.writtencontent ?? "showCheckAlert error"//DB에 값 저장
-            self.new.emoji = self.seletedCondition//DB에 값 저장
+            if let writtencontent = self.contentTextView.text {
+                if writtencontent.isEmpty{ //textfield가 비었을 경우 alert 띄우기
+                    self.showAlert(style: .alert)
+                }
+                else { //사용자가 textfield에 입력을 하였을 경우
+                    self.new.content = writtencontent //DB에 값 저장
+                    self.new.emoji = self.seletedCondition //DB에 값 저장
+                    
+                    DBDiary.newDiary.addDiary(userID: currentUser, shortDate: self.selectedDate, new: self.new)
+                }
+            }
         
             DBDiary.newDiary.addDiary(userID: currentUser, shortDate: self.selectedDate, new: self.new)
             print("일기 덮어 저장")
-            self.dismiss(animated: true, completion: nil)
-            
-         
-        } //모달창 내리기
+      
+        }
         let cancel = UIAlertAction(title: "취소", style: .default){(action) in
             print("취소")}
         
@@ -163,8 +167,8 @@ class AddDiaryTableController: UITableViewController {
             
             DBDiary.newDiary.addDiary(userID: currentUser, shortDate: self.selectedDate, new: self.new)
             print("새 일기 작성 저장")
+       
             self.dismiss(animated: true, completion: nil)
-            
          
         } //모달창 내리기
         let cancel = UIAlertAction(title: "취소", style: .default){(action) in
