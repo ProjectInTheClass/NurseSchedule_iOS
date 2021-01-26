@@ -507,6 +507,7 @@
                     <connections>
                         <outlet property="content" destination="MWA-E9-9wa" id="p0v-P4-pTq"/>
                         <outlet property="date" destination="qCr-Z9-tXd" id="hZJ-6m-Qnm"/>
+                        <outlet property="detailView" destination="Ycn-Nb-sua" id="jDh-hr-cKI"/>
                         <outlet property="emojiImage" destination="Lu4-46-jym" id="c5j-FW-n3W"/>
                         <segue destination="PVv-4f-Zde" kind="presentation" identifier="editDiary" id="w1D-LL-xW7"/>
                     </connections>
@@ -610,6 +611,7 @@
                     <connections>
                         <outlet property="content" destination="MV7-M5-pwi" id="Go3-CN-DDZ"/>
                         <outlet property="date" destination="o3q-0j-r1R" id="qS2-BF-xY3"/>
+                        <outlet property="detailView" destination="tYo-zG-f0U" id="e2Z-Vn-ZrQ"/>
                         <outlet property="emojiImage" destination="wWR-EY-emc" id="XIt-3H-BOp"/>
                         <segue destination="PVv-4f-Zde" kind="presentation" identifier="editDiary" id="GHk-wU-Sj9"/>
                     </connections>
@@ -811,16 +813,18 @@
                         <outlet property="DateLabel" destination="5le-CA-vnp" id="3Ah-df-AlN"/>
                         <outlet property="ModifytextView" destination="Wyj-9I-5G2" id="cba-lM-0r4"/>
                         <outlet property="conditionSegController" destination="Idn-wz-ZWe" id="rnN-gw-bt0"/>
+                        <segue destination="Ikg-oW-2Fp" kind="unwind" identifier="unwindToDiaryList" unwindAction="unwindToDiaryList:" id="G54-w4-qNE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EjG-DC-gkC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Ikg-oW-2Fp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3103" y="3410"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="GHk-wU-Sj9"/>
-        <segue reference="XPa-k4-My4"/>
+        <segue reference="KBb-6W-ZgX"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="0-crying" width="35" height="35"/>

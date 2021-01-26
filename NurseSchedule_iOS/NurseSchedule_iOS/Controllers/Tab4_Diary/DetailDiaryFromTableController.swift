@@ -9,9 +9,13 @@ import UIKit
 
 class DetailDiaryFromTableController: UIViewController {
     
+//    static let detailDiaryFromTableController = DetailDiaryFromTableController()
+    
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var emojiImage: UIImageView!
     @IBOutlet weak var content: UITextView!
+    
+    @IBOutlet weak var detailView: UIView!
     
     let img0 = UIImage(named: "0-love.png")
     let img1 = UIImage(named: "0-happy.png")
@@ -58,7 +62,7 @@ class DetailDiaryFromTableController: UIViewController {
     @IBAction func modifyButton2(_ sender: Any) {//tableView에서 detailView 들어갔을 때 수정버튼
         performSegue(withIdentifier: "editDiary", sender: detailInfoFromDay)
         //AddDiaryTableController.addDiaryController.modifyDiary()
-        print(detailInfoFromDay)
+        detailView.isHidden = true
         
     }
     
