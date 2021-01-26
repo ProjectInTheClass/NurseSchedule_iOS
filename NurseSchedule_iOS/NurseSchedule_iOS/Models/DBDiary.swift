@@ -113,6 +113,24 @@ class DBDiary {
         reference.setValue(changeDiary)
         print("modifyDiary >>> \(changeDiary)")
     }
+    
+    
+    //이미 작성 된 날짜인지 확인하기 위함
+    func checkDiary(userID : String, shortDate: String ,completion :  @escaping (String) -> Void) {
+        ref.child("Diary/\(userID)/\(shortDate)").observeSingleEvent(of: .value, with: { (snapshot) in
+            let enumerator = snapshot.children
+            
+            while let rest = enumerator.nextObject() as? DataSnapshot {
+                var getdate : String = "getdate error"
+                if let contentResult = (rest.value as AnyObject)["D_date"]! as? String {
+                    getdate = contentResult
+                }
+                completion(getdate)
+            }
+        })
+    }
 }
+
+
 
 

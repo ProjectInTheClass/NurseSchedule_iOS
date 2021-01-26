@@ -310,11 +310,12 @@
                         <outlet property="SelectedDate" destination="R93-G2-9DZ" id="Iqd-h5-Uz3"/>
                         <outlet property="conditionSegment" destination="YMM-mg-fka" id="dAT-6X-7m8"/>
                         <outlet property="contentTextView" destination="Ud2-bB-wmq" id="n3Q-nD-ywo"/>
+                        <outlet property="datePicker" destination="aFZ-8b-V9N" id="kt8-rj-J8I"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y2J-o3-4Hd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2293" y="2389"/>
+            <point key="canvasLocation" x="2562" y="2363"/>
         </scene>
         <!--일기장-->
         <scene sceneID="ROp-VM-Ax0">
