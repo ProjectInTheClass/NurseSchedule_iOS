@@ -10,6 +10,10 @@ class ContentListController: UIViewController{
     
     var boardType : String? = nil
     var articleList : [Article] = []
+    var filteredArticleList : [Article]!
+    var outputArticleList = [Article]()
+    
+    @IBOutlet weak var searchbar: UISearchBar!
     
     @IBOutlet weak var articleListTableView: UITableView!
     @IBOutlet weak var contentListNavigation: UINavigationItem!
@@ -21,6 +25,9 @@ class ContentListController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         print("from >>>>>> \(boardType)")
+        
+        outputArticleList = articleList
+        
         
         if let boardType = boardType {
             articleList.removeAll()
@@ -57,11 +64,15 @@ class ContentListController: UIViewController{
         articleListTableView.rowHeight = UITableView.automaticDimension
         //
         
+        searchbar.delegate = self
+        searchbar.placeholder = "게시글을 검색하세요."
+        
         
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        outputArticleList = articleList
         articleListTableView.reloadData()
         //        articleListTableView.estimatedRowHeight = 100
         //loadTableView()
@@ -71,8 +82,9 @@ class ContentListController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         //loadTableView()
         //articleListTableView.estimatedRowHeight = 100
+        outputArticleList = articleList
         articleListTableView.rowHeight = UITableView.automaticDimension
-        //articleListTableView.reloadData()
+        articleListTableView.reloadData()
         
     }
     
@@ -107,7 +119,7 @@ class ContentListController: UIViewController{
 extension ContentListController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articleList.count
+        return outputArticleList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -117,12 +129,12 @@ extension ContentListController : UITableViewDataSource, UITableViewDelegate {
             if boardType == "공지사항" {
                 cell.numberOfComments.isHidden = true
             }
-            DBBoard.board.getNumberOfCommentsInEachArticle(BoardType: boardType, articleID: articleList[indexPath.row].articleID) { (numberOfComments) in
+            DBBoard.board.getNumberOfCommentsInEachArticle(BoardType: boardType, articleID: outputArticleList[indexPath.row].articleID) { (numberOfComments) in
                 print("bring success!!!!\(String(numberOfComments))")
                 cell.ContentNum.text = String(indexPath.row+1)
-                cell.ContentDate.text = self.articleList[indexPath.row].date
-                cell.ContentTitle.text = self.articleList[indexPath.row].title
-                cell.ContentContent.text = self.articleList[indexPath.row].content
+                cell.ContentDate.text = self.outputArticleList[indexPath.row].date
+                cell.ContentTitle.text = self.outputArticleList[indexPath.row].title
+                cell.ContentContent.text = self.outputArticleList[indexPath.row].content
                 cell.numberOfComments.text = "💬 " + String(numberOfComments)
             }
             
@@ -143,10 +155,30 @@ extension ContentListController : UITableViewDataSource, UITableViewDelegate {
         print(indexPath)
         //loadTableView()
         if let boardType = boardType {
-            let articleAllInfo = ArticleAllInfo.init(boardType: boardType, articleInfo: articleList[indexPath.row])
+            let articleAllInfo = ArticleAllInfo.init(boardType: boardType, articleInfo: outputArticleList[indexPath.row])
             performSegue(withIdentifier: "articleDetail", sender: articleAllInfo)
         }
         
     }
     
 }
+
+extension ContentListController : UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if(searchText == "") {
+            filteredArticleList = articleList
+        } else {
+            //filteredTermsBySearchbar = []
+            // termsList = allData
+            filteredArticleList = articleList.filter({
+                $0.content.contains(searchText) || $0.title.contains(searchText)
+            })
+            //termsList = filteredTerms
+        }
+        outputArticleList = filteredArticleList
+        //termsList = filteredTerms
+        self.articleListTableView.reloadData()
+    }
+    
+}
+
