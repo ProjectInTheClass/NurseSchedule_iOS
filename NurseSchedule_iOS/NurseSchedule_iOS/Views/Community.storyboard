@@ -433,7 +433,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="929" id="bbq-eQ-MXU">
                                         <rect key="frame" x="0.0" y="28" width="390" height="929"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bbq-eQ-MXU" id="AA2-a9-7Yi">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bbq-eQ-MXU" id="AA2-a9-7Yi" customClass="FSPagerView" customModule="FSPagerView">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="929"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -441,7 +441,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="390" height="929"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z5j-ik-hGB" userLabel="pagerView" customClass="FSPagerView" customModule="FSPagerView">
+                                                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z5j-ik-hGB" customClass="FSPagerView" customModule="FSPagerView">
                                                             <rect key="frame" x="0.0" y="0.0" width="390" height="225"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="tintColor" systemColor="systemBackgroundColor"/>
@@ -504,7 +504,7 @@
                                                                 <constraint firstAttribute="height" constant="32" id="PbR-LI-KLM"/>
                                                             </constraints>
                                                         </stackView>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCc-W3-xRq" userLabel="pageControl" customClass="FSPageControl" customModule="FSPagerView">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCc-W3-xRq" customClass="FSPageControl" customModule="FSPagerView">
                                                             <rect key="frame" x="0.0" y="200" width="390" height="20"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
