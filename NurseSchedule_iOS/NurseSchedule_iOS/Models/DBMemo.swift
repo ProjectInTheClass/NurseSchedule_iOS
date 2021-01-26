@@ -36,7 +36,7 @@ class DBMemo {
     }
     
     func getWorkType(completion : @escaping (ForSavingDayWorkNMemo) -> Void) {
-        _ = ref.child("Schdule/\(currentUser)/").observe(.value, with: { (snapshot) in
+        ref.child("Schedule/\(currentUser)/").observeSingleEvent(of : .value, with: { (snapshot) in
             let enumerator = snapshot.children
             while let rest = enumerator.nextObject() as? DataSnapshot {
                 var gettype = ForSavingDayWorkNMemo(date: "getWorkTypeDate", worktype: "", memo: "")
@@ -48,11 +48,15 @@ class DBMemo {
                     print(workTypeResult)
                     gettype.worktype = workTypeResult
                 }
+                if let memoresult = (rest.value as AnyObject)["date"]! as? String {
+                    print(memoresult)
+                    gettype.memo = memoresult
+                }
                 completion(gettype)
             }
         })
     }
-
+    
     //    func getWorkType(userID : String, completion: @escaping (NewMemo)-> Void){
     //        _ = ref.child("Schedule/\(userID)/").observe(.value,with: { snapshot in
     //            let enumerator = snapshot.children
@@ -87,34 +91,34 @@ class DBMemo {
     //    }
     
     
-//    func setMemo(userID : String, newMemo : NewMemo) {
-//        getMemo(userID: userID, date: newMemo.date) { (currentMemo) in
-//            //            self.memoList.append(contentsOf: currentMemo)
-//            let reference  = self.ref.child("Schedule/\(userID)/\(newMemo.date)")
-//            let memoList = currentMemo + [newMemo.memo]
-//            let addmemo = ["date" : newMemo.date, "workType" : newMemo.workType.workAt, "memoList" : memoList] as [String : Any]
-//            reference.setValue(addmemo)
-//            print("setMemo >>>>>\(addmemo)")
-//        }
-//    }
-//
-//    func getMemo(userID : String, date : String, completion: @escaping ([String]) -> Void){
-//        ref.child("Schedule/\(userID)/\(date)/").observeSingleEvent(of:.value, with: { snapshot in
-//            if let value = snapshot.value as? NSDictionary {
-//                let result = value["memoList"] as? [String] ?? []
-//            print("DBMemo getMemo >>> \(result)")
-//                completion(result)
-//            } else {
-//                completion([])
-//            }
-//        })
-//    }
-//
-//    func deleteMemo(date : String, index: Int) {
-//        ref.child("Schedule/\(currentUser)/\(date)/memoList/\(index)").removeValue()
-//    }
-//
-
+    //    func setMemo(userID : String, newMemo : NewMemo) {
+    //        getMemo(userID: userID, date: newMemo.date) { (currentMemo) in
+    //            //            self.memoList.append(contentsOf: currentMemo)
+    //            let reference  = self.ref.child("Schedule/\(userID)/\(newMemo.date)")
+    //            let memoList = currentMemo + [newMemo.memo]
+    //            let addmemo = ["date" : newMemo.date, "workType" : newMemo.workType.workAt, "memoList" : memoList] as [String : Any]
+    //            reference.setValue(addmemo)
+    //            print("setMemo >>>>>\(addmemo)")
+    //        }
+    //    }
+    //
+    //    func getMemo(userID : String, date : String, completion: @escaping ([String]) -> Void){
+    //        ref.child("Schedule/\(userID)/\(date)/").observeSingleEvent(of:.value, with: { snapshot in
+    //            if let value = snapshot.value as? NSDictionary {
+    //                let result = value["memoList"] as? [String] ?? []
+    //            print("DBMemo getMemo >>> \(result)")
+    //                completion(result)
+    //            } else {
+    //                completion([])
+    //            }
+    //        })
+    //    }
+    //
+    //    func deleteMemo(date : String, index: Int) {
+    //        ref.child("Schedule/\(currentUser)/\(date)/memoList/\(index)").removeValue()
+    //    }
+    //
+    
     
     
     

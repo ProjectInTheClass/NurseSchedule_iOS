@@ -32,6 +32,14 @@ class ScheduleController: UIViewController{
         calendar.dataSource = self
         memoTextView.delegate = self
         
+        DBMemo.newMemo.getWorkType { (dayWorkType) in
+            print("getwork!!!!!!!!!!!!!!!!!!!")
+            self.showDayWorkType[dayWorkType.date] = dayWorkType.worktype
+            self.calendar.reloadData()
+        }
+        print("getWorkType didLoad >>>>> \(showDayWorkType)")
+        
+        
         //keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
@@ -39,16 +47,7 @@ class ScheduleController: UIViewController{
         
         
         self.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
-        
-        DBMemo.newMemo.getWorkType { (dayWorkType) in
-            
-            print("getwrok!!!!!!!!!!!!!!!!!!!")
-            self.showDayWorkType[dayWorkType.date] = dayWorkType.worktype
-            self.calendar.reloadData()
-        }
-        print("getWorkType didLoad >>>>> \(showDayWorkType)")
-        
-        
+       
         super.viewDidLoad()
         
         updateUI()
