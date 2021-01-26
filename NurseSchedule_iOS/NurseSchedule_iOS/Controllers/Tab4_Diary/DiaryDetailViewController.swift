@@ -77,7 +77,10 @@ class DiaryDetailViewController: UIViewController {
     
     func showDeleteAlert() {
         let alert = UIAlertController(title: "삭제하시겠습니까?", message: " ", preferredStyle: UIAlertController.Style.alert)
-        let deleteButton = UIAlertAction(title: "네", style: .default){(action) in
+        
+        let cancelButton = UIAlertAction(title: "취소", style: .cancel){(action) in
+            print("아니요")}
+        let deleteButton = UIAlertAction(title: "확인", style: .destructive){(action) in
       
             self.shortDate =  String(self.date.text!.prefix(7))
             
@@ -89,11 +92,9 @@ class DiaryDetailViewController: UIViewController {
             
             self.dismiss(animated: true, completion: nil)
         }
-        let cancelButton = UIAlertAction(title: "아니요", style: .default){(action) in
-            print("아니요")}
         
-        alert.addAction(deleteButton)
         alert.addAction(cancelButton)
+        alert.addAction(deleteButton)
         
         self.present(alert, animated: true, completion: nil)
     }

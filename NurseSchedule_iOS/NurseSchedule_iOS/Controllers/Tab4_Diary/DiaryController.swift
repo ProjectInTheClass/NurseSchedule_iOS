@@ -43,7 +43,8 @@ class DiaryController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.estimatedRowHeight = 70
+        
+        tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
     }
     
