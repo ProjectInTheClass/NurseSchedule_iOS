@@ -16,7 +16,7 @@ class DiaryCalendar: UIViewController {
 
     
     let dateFormatter = DateFormatter()
-    var dayDiary = Day(emoji: "DiaryCalendar_default_emoji", date: "DiaryCalendar_default_date", content: "DiaryCalendar_default_content")
+    var dayDiary = Day(emoji: 0, date: "DiaryCalendar_default_date", content: "DiaryCalendar_default_content")
 
     
     // 달력이미지 꾸미기(캘린더와 같은 버전)
