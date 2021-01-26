@@ -271,9 +271,24 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
 
 extension ScheduleController : UITextViewDelegate {
     func memoTextViewPlaceholderSetting() {
-        memoTextView.text = "메모가 없어요😓"
+        memoTextView.text = "✅메모를 입력해주세요"
         memoTextView.textColor = UIColor.lightGray
         
+    }
+    
+    // TextView Place Holder
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if memoTextView.textColor == UIColor.lightGray {
+            memoTextView.text = nil
+            memoTextView.textColor = UIColor.black
+        }
+        
+    }
+    // TextView Place Holder
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if memoTextView.text.isEmpty {
+            memoTextViewPlaceholderSetting()
+        }
     }
     
     @objc
