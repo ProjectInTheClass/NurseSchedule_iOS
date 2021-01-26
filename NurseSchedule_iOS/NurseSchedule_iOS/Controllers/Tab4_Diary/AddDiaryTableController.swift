@@ -17,6 +17,7 @@ class AddDiaryTableController: UITableViewController {
     
     @IBOutlet weak var contentTextView: UITextView!
     
+    //DateFormatter
     let dateFormatter : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 0(월단위)
     let dateFormatter1 : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 1 (일단위)
     let dateFormatter2 : DateFormatter = DateFormatter() //Label로 보여주기용
@@ -26,25 +27,26 @@ class AddDiaryTableController: UITableViewController {
     var showDate : String = " "
     
     //DB로 값을 보내기 위함
-    var new = Day(emoji: "default", date: "default", content: "default")
+    var new = Day(emoji: 0, date: "default", content: "default")
     
     var writtencontent : String? = nil // TextField 내용
-    var seletedCondition : String = "❔" // segmentedcontrol로 선택된 condition값
+    var seletedCondition : Int = 0 // segmentedcontrol로 선택된 condition값
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        //dateFormatter setting
         dateFormatter.dateFormat = "yyyy-MM"
         dateFormatter1.dateFormat = "yyyy-MM-dd"
         dateFormatter2.dateFormat = "M월dd일"
         
+        // date 설정하지 않아도 오늘 날짜로 지정
         var today = Date.init()
         print(today)
         todayDate = dateFormatter1.string(from: today)
-        print("todayDate ----------------\(todayDate)")
-        
         new.date = todayDate
-        SelectedDate.text = dateFormatter2.string(from: today)
-        selectedDate = dateFormatter.string(from: today)
+        SelectedDate.text = dateFormatter2.string(from: today)//선택된 날짜로 label 값 변경 00월 00일 형식으로
+        selectedDate = dateFormatter.string(from: today)// date 설정하지 않아도 오늘 날짜로 지정
     }
     
     //datePicker 선택 시 실행
@@ -57,21 +59,21 @@ class AddDiaryTableController: UITableViewController {
         SelectedDate.text = showDate // Label에 사용자가 선택한 날짜를 출력해줌
     }
     
-    //segmentControl 작동 시 해당되는 emoji를 저장
+    //segmentControl 작동 시 해당되는 emoji를 seletedCondition에 Int형식으로 저장
     @IBAction func SelectCondition(_ sender: Any) {
         switch conditionSegment.selectedSegmentIndex {
         case 0:
-            seletedCondition = "😊"
+            seletedCondition = 0
         case 1:
-            seletedCondition = "🥰"
+            seletedCondition = 1
         case 2:
-            seletedCondition = "😢"
+            seletedCondition = 2
         case 3:
-            seletedCondition = "🤒"
+            seletedCondition = 3
         case 4:
-            seletedCondition = "😡"
+            seletedCondition = 4
         default:
-            seletedCondition = "-"
+            seletedCondition = 0
         }
     }
     
@@ -108,9 +110,6 @@ class AddDiaryTableController: UITableViewController {
             
          
         } //모달창 내리기
-        
-       
-
         let cancel = UIAlertAction(title: "취소", style: .default){(action) in
             print("취소")}
         
@@ -120,12 +119,12 @@ class AddDiaryTableController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
         
     }
- 
-    
 
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+
 }
 
 

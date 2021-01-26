@@ -17,7 +17,7 @@ class DBDiary {
     
     func addDiary(userID: String, shortDate: String, new: Day){
         let reference = ref.child("Diary/\(userID)/\(shortDate)/\(new.date)") //데이터 목록에 추가
-        let newDiary = ["D_emoji" : new.emoji , "D_content" : new.content , "D_date" : new.date]
+        let newDiary = ["D_emoji" : new.emoji , "D_content" : new.content , "D_date" : new.date] as [String : Any]
         reference.setValue(newDiary)
         print("addDiary >>> \(newDiary)")
     }
@@ -28,7 +28,7 @@ class DBDiary {
             let enumerator = snapshot.children
             while let rest = enumerator.nextObject() as? DataSnapshot {
                 // print(rest.value)
-                var get = Day(emoji: "-", date: "-", content: "-")
+                var get = Day(emoji: 0, date: "-", content: "-")
                 if let result = (rest.value as AnyObject)["D_content"]! as? String {
                     //    print(result)
                     get.content = result
@@ -37,7 +37,7 @@ class DBDiary {
                     //   print(result)
                     get.date = result
                 }
-                if let result = (rest.value as AnyObject)["D_emoji"]! as? String {
+                if let result = (rest.value as AnyObject)["D_emoji"]! as? Int {
                     //   print(result)
                     get.emoji = result
                 }
@@ -59,9 +59,9 @@ class DBDiary {
         let day = dateFormatter.string(from: date)
         print("getDayDiary>> \(day)")
         ref.child("Diary/\(userID)/\(dayMonth)/\(day)/").observeSingleEvent(of: .value) { (snapshot) in
-            var dayDiary : Day = Day(emoji: "", date: "", content: "")
+            var dayDiary : Day = Day(emoji: 0, date: "", content: "")
             if let value = snapshot.value as? NSDictionary {
-                dayDiary.emoji = value["D_emoji"] as? String ?? "D_emoji_error"
+                dayDiary.emoji = value["D_emoji"] as? Int ?? 10
                 dayDiary.date = value["D_date"] as? String ?? "D_date_error"
                 dayDiary.content = value["D_content"] as? String ?? "D_content_error"
                 print("DBgetDayDiary >>>>> \(dayDiary)")
@@ -88,7 +88,7 @@ class DBDiary {
     //다이어리 수정 함수
     func modifyDiary(userID: String, shortDate: String, new: Day){
         let reference = ref.child("Diary/\(userID)/\(shortDate)/\(new.date)")
-        let changeDiary = ["D_emoji" : new.emoji , "D_content" : new.content , "D_date" : new.date]
+        let changeDiary = ["D_emoji" : new.emoji , "D_content" : new.content , "D_date" : new.date] as [String : Any]
         reference.setValue(changeDiary)
         print("modifyDiary >>> \(changeDiary)")
     }

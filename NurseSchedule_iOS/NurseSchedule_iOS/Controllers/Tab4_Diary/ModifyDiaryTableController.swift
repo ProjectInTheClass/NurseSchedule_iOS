@@ -15,60 +15,47 @@ class ModifyDiaryTableController: UITableViewController {
     var day : Day? = nil// 기존에 저장되어있던 내용
     
     var writtencontent : String? = nil // 작성된 TextView 내용
-    var seletedCondition : String = " " // segmentedcontrol로 선택된 condition값
-    var conditionIndex : Int = 0 //기존에 선택된 condition값에 대한 Index
+    var seletedCondition : Int = 0 // segmentedcontrol로 선택된 condition Index를 저정하기 위한 변수
     
     var shortDate : String = " "
     
     //DB로 새로 저장하기 위함
-    var change = Day(emoji: "default", date: "default", content: "default")
+    var change = Day(emoji: 0, date: "default", content: "default")
     
-    //string -> index
-    func setConditionIndex(change : Day ){
-        var condition : String = change.emoji
-        switch condition {
-        case "😊":
-            conditionIndex = 0
-        case "🥰":
-            conditionIndex = 1
-        case "😢":
-            conditionIndex = 2
-        case "🤒":
-            conditionIndex = 3
-        case "😡":
-            conditionIndex = 4
-        default :
-            print("❔")
-        }
-    }
     
-    @IBAction func SelectCondition(_ sender: Any) {
+    @IBAction func SelectCondition(_ sender: Any) { //SegmentController를 touch하였을 경우
         switch conditionSegController.selectedSegmentIndex {
         case 0:
-            seletedCondition = "😊"
+            seletedCondition = 0
         case 1:
-            seletedCondition = "🥰"
+            seletedCondition = 1
         case 2:
-            seletedCondition = "😢"
+            seletedCondition = 2
         case 3:
-            seletedCondition = "🤒"
+            seletedCondition = 3
         case 4:
-            seletedCondition = "😡"
+            seletedCondition = 4
         default:
-            seletedCondition = "❔"
+            seletedCondition = 0 //default : ?로 설정
         }
     }
     
     override func viewDidLoad() {
+        
+        //segmentController을 touch하지 않을 경우를 위한 setting -> default값으로 저장
         super.viewDidLoad()
         self.change.date = self.day?.date ?? "default"
-        self.change.emoji = self.day?.emoji ?? "default"
+        self.change.emoji = self.day?.emoji ?? 0
         
-        var emoji = day?.emoji
-        setConditionIndex(change: day ?? Day(emoji: "\(emoji)" , date:  " " , content: " "))
+        var emojiForChange = self.change.emoji
+        
         
         DateLabel.text = day?.date
-        conditionSegController.selectedSegmentIndex = conditionIndex
+        
+        if let storedEmoji = day?.emoji{
+            conditionSegController.selectedSegmentIndex = storedEmoji
+        }
+     
         ModifytextView.text = day?.content
         
 
@@ -81,12 +68,7 @@ class ModifyDiaryTableController: UITableViewController {
                 showAlert(style: .alert)
             }else {
                 self.change.content = writtencontent
-                
-                if let dayemoji = day?.emoji{
-                    seletedCondition = dayemoji
-                }
-              
-                
+                                
                 self.change.emoji = self.seletedCondition
                 
                 shortDate =  String(self.day?.date.prefix(7) ?? " ")
@@ -111,7 +93,9 @@ class ModifyDiaryTableController: UITableViewController {
         let save = UIAlertAction(title: "저장", style: .default){(action) in //textfield가 비었는데도 저장할 경우
             
             self.change.content = ""//DB에 값 저장
-            self.change.emoji = self.seletedCondition//DB에 값 저장
+            
+
+            self.change.emoji = self.seletedCondition
             
             self.shortDate =  String(self.day?.date.prefix(7) ?? " ")
             DBDiary.newDiary.addDiary(userID: currentUser, shortDate: self.shortDate, new: self.change)

@@ -9,7 +9,8 @@ import UIKit
 
 class DiaryCell: UITableViewCell {
 
-    @IBOutlet weak var emojiLabel: UILabel!
+
+    @IBOutlet weak var emojiImage: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     
