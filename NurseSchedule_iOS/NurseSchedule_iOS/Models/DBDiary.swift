@@ -47,7 +47,28 @@ class DBDiary {
         })
     }
     
-    
+    func getDayEmoji(month : String, completion : @escaping (Day) -> Void) {
+        print("getDayIemoji DBDBDBDBDBDDBDBb")
+        ref.child("Diary/\(currentUser)/\(month)/").observeSingleEvent(of : .value, with: { (snapshot) in
+            let enumerator = snapshot.children
+            while let rest = enumerator.nextObject() as? DataSnapshot {
+                var getemoji = Day(emoji: 0, date: "", content: "")
+                if let contentResult = (rest.value as AnyObject)["D_content"]! as? String {
+                    print(contentResult)
+                    getemoji.content = contentResult
+                }
+                if let dateResult = (rest.value as AnyObject)["D_date"]! as? String {
+                    print(dateResult)
+                    getemoji.date = dateResult
+                }
+                if let emojiResult = (rest.value as AnyObject)["D_emoji"]! as? Int {
+                    print(emojiResult)
+                    getemoji.emoji = emojiResult
+                }
+                completion(getemoji)
+            }
+        })
+    }
     
     func getDayDiary(userID : String, date : Date, completion : @escaping (Day?) -> Void) {
         let dateFormatter : DateFormatter = DateFormatter()

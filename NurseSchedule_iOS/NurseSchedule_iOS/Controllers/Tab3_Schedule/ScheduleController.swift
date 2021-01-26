@@ -257,16 +257,6 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
         }
         return nil
     }
-    
-//    // 메모 있는 날은 이벤트 dot 표시
-//    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-//        let date = dateFormatter.string(from: date as Date)
-//        if let type = showDayWorkType[date] {
-//        return 1
-//        }
-//        return 0
-//    }
-//
  
     
     //날짜 선택해제

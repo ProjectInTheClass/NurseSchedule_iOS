@@ -17,7 +17,10 @@ class DiaryCalendar: UIViewController {
     
     let dateFormatter = DateFormatter()
     var dayDiary = Day(emoji: 0, date: "DiaryCalendar_default_date", content: "DiaryCalendar_default_content")
-
+    var showDayEmoji : [String : Int] = [ : ]
+    
+    //print(month)
+    
     
     // 달력이미지 꾸미기(캘린더와 같은 버전)
     func updateUI() {
@@ -91,15 +94,32 @@ class DiaryCalendar: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        let currentPageDate = diaryCalendar.currentPage
+
+        dateFormatter.dateFormat = "yyyy-MM"
+        let monthDate = dateFormatter.string(from: currentPageDate)
+        //print("monthDate!!!!!!!!!!!!!!! >>>>>>>>>>>\(currentPageDate)")
+        print("monthDate!!!!!!!!!!!!!!! >>>>>>>>>>>\(monthDate)")
+
         updateUI()
         diaryCalendar.delegate = self
         diaryCalendar.dataSource = self
         //view.addSubview(diaryCalendar)
-    
+        
+        
+        DBDiary.newDiary.getDayEmoji(month: monthDate, completion: { (dayEmoji) in
+            print("getemoji!!!!!!!!!!!!!!!!!!")
+            self.showDayEmoji[dayEmoji.date] = dayEmoji.emoji
+            self.diaryCalendar.reloadData()
+        })
+        print("getemoji didLoad >>>>> \(showDayEmoji)")
+   
+    }
+        
+        
 
         // Do any additional setup after loading the view.
-    }
+
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -141,7 +161,36 @@ extension DiaryCalendar : FSCalendarDelegate , FSCalendarDataSource{
                 
             }
         }
-    
+//    // 메모 있는 날은 이벤트 dot 표시
+//    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+//        let date = dateFormatter.string(from: date as Date)
+//        if let type = showDayWorkType[date] {
+//        return 1
+//        }
+//        return 0
+//    }
+//
   
+    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.string(from: date)
+        if let type = showDayEmoji[date] {
+            switch type {
+            case 0:
+                return UIImage(named: "0-love")!
+            case 1:
+                return UIImage(named: "0-happy")!
+            case 2:
+                return UIImage(named: "0-surprised")!
+            case 3:
+                return UIImage(named: "0-crying")!
+            case 4:
+                return UIImage(named: "0-devil")!
+            default :
+                return UIImage.init()
+            }
+        }
+        return nil
+    }
 }
 

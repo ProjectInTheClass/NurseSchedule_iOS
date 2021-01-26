@@ -47,6 +47,21 @@ class AddDiaryTableController: UITableViewController {
         new.date = todayDate
         SelectedDate.text = dateFormatter2.string(from: today)//선택된 날짜로 label 값 변경 00월 00일 형식으로
         selectedDate = dateFormatter.string(from: today)// date 설정하지 않아도 오늘 날짜로 지정
+        
+        
+        //keyboard
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        
+        self.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
+       
+    }
+    
+    
+    @objc func tapDone(sender: Any) {
+        self.view.endEditing(true)
     }
     
     //datePicker 선택 시 실행
@@ -139,6 +154,33 @@ extension AddDiaryTableController : UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         self.contentTextView.resignFirstResponder()//키보드 숨기기
  
+    }
+    
+    @objc
+    func keyboardWillShow(_ sender: Notification) {
+        
+        self.view.frame.origin.y = -150 // Move view 150 points upward
+        
+    }
+    
+    @objc
+    func keyboardWillHide(_ sender: Notification) {
+        self.view.frame.origin.y = 0 // Move view to original position
+    }
+    
+    
+    
+    func addDoneButton(title: String, target: Any, selector: Selector) {
+        
+        let toolBar = UIToolbar(frame: CGRect(x: 0.0,
+                                              y: 0.0,
+                                              width: UIScreen.main.bounds.size.width,
+                                              height: 44.0))//1
+        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)//2
+        
+        let barButton = UIBarButtonItem(title: title, style: .plain, target: target, action: selector)//3
+        toolBar.setItems([flexible, barButton], animated: false)//4
+        self.contentTextView.inputAccessoryView = toolBar//5
     }
 }
 
