@@ -415,10 +415,10 @@
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7t-a4-KGK">
                                         <rect key="frame" x="349.5" y="3" width="56.5" height="34"/>
-                                        <color key="backgroundColor" red="0.77269226310000005" green="0.92534029480000002" blue="0.71377497909999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="저장">
+                                        <state key="normal">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -431,6 +431,9 @@
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="save" translatesAutoresizingMaskIntoConstraints="NO" id="k4i-ef-s2m">
+                                        <rect key="frame" x="345" y="0.0" width="65" height="47"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -440,12 +443,16 @@
                                     <constraint firstItem="I7t-a4-KGK" firstAttribute="leading" secondItem="Wg4-Sg-cZq" secondAttribute="trailing" constant="65.5" id="C1C-bH-r8l"/>
                                     <constraint firstAttribute="trailing" secondItem="I7t-a4-KGK" secondAttribute="trailing" constant="8" id="Ccp-2F-AP7"/>
                                     <constraint firstAttribute="trailing" secondItem="Wg4-Sg-cZq" secondAttribute="trailing" constant="130" id="DAk-tZ-TPp"/>
+                                    <constraint firstItem="k4i-ef-s2m" firstAttribute="leading" secondItem="Wg4-Sg-cZq" secondAttribute="trailing" constant="61" id="EmE-T3-lI7"/>
                                     <constraint firstItem="9k4-Nz-O8b" firstAttribute="top" secondItem="tIM-Ev-gAp" secondAttribute="bottom" constant="13" id="M3p-iQ-xzj"/>
+                                    <constraint firstAttribute="trailing" secondItem="k4i-ef-s2m" secondAttribute="trailing" constant="4" id="URq-U3-wG8"/>
                                     <constraint firstItem="tIM-Ev-gAp" firstAttribute="top" secondItem="Wg4-Sg-cZq" secondAttribute="bottom" constant="8.5" id="W5M-YM-ore"/>
                                     <constraint firstItem="Wg4-Sg-cZq" firstAttribute="top" secondItem="Aop-eX-Av0" secondAttribute="top" constant="14" id="bVS-nH-npe"/>
                                     <constraint firstItem="Wg4-Sg-cZq" firstAttribute="leading" secondItem="Aop-eX-Av0" secondAttribute="leading" constant="130" id="iWo-jV-I8l"/>
                                     <constraint firstItem="tIM-Ev-gAp" firstAttribute="leading" secondItem="Aop-eX-Av0" secondAttribute="leading" constant="8" id="ic6-88-uOs"/>
+                                    <constraint firstItem="k4i-ef-s2m" firstAttribute="top" secondItem="Aop-eX-Av0" secondAttribute="top" id="kwh-vX-eUm"/>
                                     <constraint firstAttribute="trailing" secondItem="9k4-Nz-O8b" secondAttribute="trailing" constant="8" id="lDy-ma-7Sq"/>
+                                    <constraint firstAttribute="bottom" secondItem="k4i-ef-s2m" secondAttribute="bottom" constant="220" id="nE0-8o-2Es"/>
                                     <constraint firstAttribute="bottom" secondItem="9k4-Nz-O8b" secondAttribute="bottom" constant="10" id="wvL-qG-vue"/>
                                 </constraints>
                             </view>
@@ -690,6 +697,7 @@
         <image name="night" width="35" height="35"/>
         <image name="off" width="35" height="35"/>
         <image name="person.fill.badge.plus" catalog="system" width="128" height="124"/>
+        <image name="save" width="128" height="80"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
