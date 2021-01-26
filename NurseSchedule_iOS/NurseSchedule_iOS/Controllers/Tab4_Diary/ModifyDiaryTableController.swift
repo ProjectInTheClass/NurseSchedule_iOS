@@ -101,6 +101,7 @@ class ModifyDiaryTableController: UITableViewController {
             DBDiary.newDiary.addDiary(userID: currentUser, shortDate: self.shortDate, new: self.change)
             print("일기 수정")
             self.dismiss(animated: true, completion: nil)
+           
         } //모달창 내리기
         
         let cancel = UIAlertAction(title: "취소", style: .default){(action) in
