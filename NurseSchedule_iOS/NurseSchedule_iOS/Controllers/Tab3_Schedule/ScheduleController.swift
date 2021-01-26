@@ -21,6 +21,7 @@ class ScheduleController: UIViewController{
     let dateFormatter = DateFormatter()
     var selectedDate : Date = .init()
     var showDaySchedule : ForSavingDayWorkNMemo = ForSavingDayWorkNMemo(date: "", worktype: "", memo: "")
+    var showDayWorkType : [String : String] = [ : ]
     
     //FSCalendar
     //https://ahyeonlog.tistory.com/7
@@ -39,6 +40,13 @@ class ScheduleController: UIViewController{
         
         self.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
         
+        DBMemo.newMemo.getWorkType { (dayWorkType) in
+            
+            print("getwrok!!!!!!!!!!!!!!!!!!!")
+            self.showDayWorkType[dayWorkType.date] = dayWorkType.worktype
+            self.calendar.reloadData()
+        }
+        print("getWorkType didLoad >>>>> \(showDayWorkType)")
         
         
         super.viewDidLoad()
@@ -230,9 +238,37 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
     }
     
     
-    
     func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
-        return UIImage.init()
+        let date = dateFormatter.string(from: date)
+        if let type = showDayWorkType[date] {
+            switch type {
+            case "day":
+                return UIImage(named: "day")!
+            case "evening":
+                return UIImage(named: "evening")!
+            case "night":
+                return UIImage(named: "night")!
+            case "off":
+                return UIImage(named: "off")!
+            case "free":
+                return UIImage(named: "free")!
+            default :
+                return UIImage.init()
+            }
+        }
+        return nil
+    }
+    
+    // 메모 있는 날은 이벤트 dot 표시
+    func calendar(calendar: FSCalendar!, hasEventForDate date: NSDate!) -> Bool {
+        DBMemo.newMemo.getDaySchedule(date: dateFormatter.string(from: selectedDate as Date), completion: { (dayScheduleFromDB) in
+            self.showDaySchedule = dayScheduleFromDB
+        })
+        if self.showDaySchedule.memo != "" {
+            return true
+        } else {
+            return false
+        }
     }
     
     

@@ -20,12 +20,13 @@ class DBMemo {
     }
     
     func getDaySchedule(date : String, completion : @escaping (ForSavingDayWorkNMemo) -> Void ) {
-        ref.child("Schedule/\(currentUser)/\(date)/").observeSingleEvent(of: .value) { (snapshot) in
+        ref.child("Schedule/\(currentUser)/\(date)").observeSingleEvent(of: .value) { (snapshot) in
             var daySchedule : ForSavingDayWorkNMemo = ForSavingDayWorkNMemo(date: date, worktype: "", memo: "")
             if let value = snapshot.value as? NSDictionary {
                 daySchedule.date = value["date"] as? String ?? "date_error"
                 daySchedule.worktype = value["workType"] as? String ?? "workType_error"
                 daySchedule.memo = value["memo"] as? String ?? "memo_error"
+                print("getDaySchedule >>>> \(value)")
                 completion(daySchedule)
             } else {
                 print("getDaySchedule >>>> no Memo")
@@ -33,7 +34,59 @@ class DBMemo {
             }
         }
     }
+    
+    func getWorkType(completion : @escaping (ForSavingDayWorkNMemo) -> Void) {
+        _ = ref.child("Schdule/\(currentUser)/").observe(.value, with: { (snapshot) in
+            let enumerator = snapshot.children
+            while let rest = enumerator.nextObject() as? DataSnapshot {
+                var gettype = ForSavingDayWorkNMemo(date: "getWorkTypeDate", worktype: "", memo: "")
+                if let dateResult = (rest.value as AnyObject)["date"]! as? String {
+                    print(dateResult)
+                    gettype.date = dateResult
+                }
+                if let workTypeResult = (rest.value as AnyObject)["workType"]! as? String {
+                    print(workTypeResult)
+                    gettype.worktype = workTypeResult
+                }
+                completion(gettype)
+            }
+        })
+    }
 
+    //    func getWorkType(userID : String, completion: @escaping (NewMemo)-> Void){
+    //        _ = ref.child("Schedule/\(userID)/").observe(.value,with: { snapshot in
+    //            let enumerator = snapshot.children
+    //            while let rest = enumerator.nextObject() as? DataSnapshot {
+    //                //print(rest.value)
+    //                //let result = rest.value["date"] as? String
+    //                var gettype = NewMemo(date: "getWorktypeDate", workType: .OFF, memo: "")
+    //                if let dateresult = (rest.value as AnyObject)["date"]! as? String
+    //                {
+    //                   print(dateresult)
+    //                    gettype.date = dateresult
+    //                }
+    //                if let worktyperesult = (rest.value as AnyObject)["workType"]! as? String
+    //                {
+    //                   print(worktyperesult)
+    //                    switch worktyperesult {
+    //                    case "DAY":
+    //                        gettype.workType = .DAY
+    //                    case "EVENING":
+    //                        gettype.workType = .EVENING
+    //                    case "NIGHT":
+    //                        gettype.workType = .NIGHT
+    //                    case "OFF":
+    //                        gettype.workType = .OFF
+    //                    default:
+    //                        gettype.workType = .OFF
+    //                    }
+    //                }
+    //                completion(gettype)
+    //            }
+    //        })
+    //    }
+    
+    
 //    func setMemo(userID : String, newMemo : NewMemo) {
 //        getMemo(userID: userID, date: newMemo.date) { (currentMemo) in
 //            //            self.memoList.append(contentsOf: currentMemo)
@@ -61,38 +114,7 @@ class DBMemo {
 //        ref.child("Schedule/\(currentUser)/\(date)/memoList/\(index)").removeValue()
 //    }
 //
-//    func getWorkType(userID : String, completion: @escaping (NewMemo)-> Void){
-//        _ = ref.child("Schedule/\(userID)/").observe(.value,with: { snapshot in
-//            let enumerator = snapshot.children
-//            while let rest = enumerator.nextObject() as? DataSnapshot {
-//                //print(rest.value)
-//                //let result = rest.value["date"] as? String
-//                var gettype = NewMemo(date: "getWorktypeDate", workType: .OFF, memo: "")
-//                if let dateresult = (rest.value as AnyObject)["date"]! as? String
-//                {
-//                   print(dateresult)
-//                    gettype.date = dateresult
-//                }
-//                if let worktyperesult = (rest.value as AnyObject)["workType"]! as? String
-//                {
-//                   print(worktyperesult)
-//                    switch worktyperesult {
-//                    case "DAY":
-//                        gettype.workType = .DAY
-//                    case "EVENING":
-//                        gettype.workType = .EVENING
-//                    case "NIGHT":
-//                        gettype.workType = .NIGHT
-//                    case "OFF":
-//                        gettype.workType = .OFF
-//                    default:
-//                        gettype.workType = .OFF
-//                    }
-//                }
-//                completion(gettype)
-//            }
-//        })
-//    }
+
     
     
     
