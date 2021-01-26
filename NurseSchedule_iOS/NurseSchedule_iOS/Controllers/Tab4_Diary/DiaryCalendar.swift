@@ -66,6 +66,8 @@ class DiaryCalendar: UIViewController {
         // 달력의 오늘 색깔
         diaryCalendar.appearance.todayColor = #colorLiteral(red: 0.6445949674, green: 0.9079375863, blue: 0.5924149752, alpha: 1)
         
+        // date selection with square
+        diaryCalendar.appearance.borderRadius = 0
      
         
         //선택한 날짜색

@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         
         DBBoard.board.getRecentNotice { (recent) in
-            recentTitle = recent
+            recentTitle = "📌 " + recent + " 📌"
         }
 
         

@@ -37,6 +37,9 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wnh-Tk-kgW">
                                                             <rect key="frame" x="0.0" y="0.0" width="154" height="165"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="80" id="BP9-Tm-IEl"/>
+                                                            </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="FkB-lf-UPD">
                                                             <rect key="frame" x="154" y="0.0" width="220" height="165"/>
@@ -786,7 +789,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="GHk-wU-Sj9"/>
-        <segue reference="KBb-6W-ZgX"/>
+        <segue reference="XPa-k4-My4"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="0-crying" width="35" height="35"/>
