@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         DBBoard.board.getRecentNotice { (recent) in
             recentTitle = recent
         }
-        
+
         
         
 //        // 다이어리 목록을 디비에서 불러옴
