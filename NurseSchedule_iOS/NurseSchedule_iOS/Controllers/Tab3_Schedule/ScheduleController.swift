@@ -258,18 +258,16 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
         return nil
     }
     
-    // 메모 있는 날은 이벤트 dot 표시
-    func calendar(calendar: FSCalendar!, hasEventForDate date: NSDate!) -> Bool {
-        DBMemo.newMemo.getDaySchedule(date: dateFormatter.string(from: selectedDate as Date), completion: { (dayScheduleFromDB) in
-            self.showDaySchedule = dayScheduleFromDB
-        })
-        if self.showDaySchedule.memo != "" {
-            return true
-        } else {
-            return false
-        }
-    }
-    
+//    // 메모 있는 날은 이벤트 dot 표시
+//    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+//        let date = dateFormatter.string(from: date as Date)
+//        if let type = showDayWorkType[date] {
+//        return 1
+//        }
+//        return 0
+//    }
+//
+ 
     
     //날짜 선택해제
     func calendar(_ calendar: FSCalendar, shouldDeselect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
