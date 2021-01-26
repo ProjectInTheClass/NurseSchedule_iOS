@@ -67,7 +67,7 @@ class ContentListController: UIViewController{
         searchbar.delegate = self
         searchbar.placeholder = "게시글을 검색하세요."
         
-        
+        articleListTableView.keyboardDismissMode = .onDrag
         
     }
     
