@@ -89,6 +89,33 @@ class DBBoard  {
     */
     
     func getArticleListIn(BoardType: String, completion : @escaping (Article) -> Void) {
+        ref.child("\(BoardType)/contentList").queryOrdered(byChild: "date").observeSingleEvent(of: .value) { (snapshot) in
+            let enumerator = snapshot.children
+            while let rest = enumerator.nextObject() as? DataSnapshot {
+                var eachArticle = Article(articleID: "", title: "", date: "", content: "", user: "")
+                if let result = (rest.value as AnyObject)["content"]! as? String {
+                    eachArticle.content = result
+                }
+                if let result = (rest.value as AnyObject)["date"]! as? String {
+                    eachArticle.date = result
+                }
+                if let result = (rest.value as AnyObject)["title"]! as? String {
+                    eachArticle.title = result
+                }
+                if let result = (rest.value as AnyObject)["user"]! as? String {
+                    eachArticle.user = result
+                }
+                if let result = rest.key as? String{
+                    eachArticle.articleID = result
+                }
+                completion(eachArticle)
+                
+            }
+        }
+    }
+    
+    /* before sorting
+    func getArticleListIn(BoardType: String, completion : @escaping (Article) -> Void) {
         ref.child("\(BoardType)/contentList").observeSingleEvent(of: .value, with: { snapshot in
             let enumerator = snapshot.children
             while let rest = enumerator.nextObject() as? DataSnapshot {
@@ -113,6 +140,7 @@ class DBBoard  {
             }
         })
     }
+     */
     
     func getNumberOfCommentsInEachArticle(BoardType:String, articleID: String, completion : @escaping (Int)->Void){
         ref.child("\(BoardType)/contentList/\(articleID)/commentList").observe(.value, with: { snapshot in
@@ -130,14 +158,14 @@ class DBBoard  {
     
     func addComment(BoardType: String, articleID : String, comment: String) {
         let reference = ref.child("\(BoardType)/contentList/\(articleID)/commentList/\(UUID().uuidString)")
-        let dateFormatter : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 0(월단위)
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dateFormatter : DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd, HH:mm:ss"
         let newComment = ["comment": comment, "commentWriter": currentUser, "commentDate": dateFormatter.string(from: Date.init())]
         reference.setValue(newComment)
     }
     
     func getCommentsList(BoardType: String, articleID: String, completion : @escaping (Comment) -> Void) {
-        ref.child("\(BoardType)/contentList/\(articleID)/commentList").observeSingleEvent(of: .value, with: { snapshot in
+        ref.child("\(BoardType)/contentList/\(articleID)/commentList").queryOrdered(byChild: "commentDate").observeSingleEvent(of: .value, with: { snapshot in
             let enumerator = snapshot.children
             while let rest = enumerator.nextObject() as? DataSnapshot {
                 var comment = Comment(commentID: "", writer: "", date: "", content: "")
@@ -145,7 +173,9 @@ class DBBoard  {
                     comment.content = result
                 }
                 if let result = (rest.value as AnyObject)["commentDate"]! as? String {
-                    comment.date = result
+                    let index = result.firstIndex(of: ",") ?? result.endIndex
+                    let beginning = result[..<index]
+                    comment.date = String(beginning)
                 }
                 if let result = (rest.value as AnyObject)["commentWriter"]! as? String {
                     comment.writer = result
