@@ -10,6 +10,7 @@ import Firebase
 
 class DBMemo {
     let ref : DatabaseReference! = Database.database().reference()
+    let currentUser = Auth.auth().currentUser?.uid
     
     static let newMemo = DBMemo()
     
