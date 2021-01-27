@@ -66,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             boardList.append(list)
         }
         
-        
+        Thread.sleep(forTimeInterval: 2.0)
         return true
     }
 
