@@ -5,6 +5,7 @@
 //  Created by 강성희 on 2021/01/24.
 //
 import UIKit
+import Firebase
 
 class ModifyDiaryTableController: UITableViewController {
     
@@ -12,6 +13,12 @@ class ModifyDiaryTableController: UITableViewController {
     @IBOutlet weak var conditionSegController: UISegmentedControl!
     @IBOutlet weak var ModifytextView: UITextView!
     
+    let currentUser = Auth.auth().currentUser?.uid
+    
+    
+    var startViewNDay : [String : Day]? = nil
+    
+    var startView : String? = nil
     var day : Day? = nil// 기존에 저장되어있던 내용
     
     var writtencontent : String? = nil // 작성된 TextView 내용
@@ -26,6 +33,7 @@ class ModifyDiaryTableController: UITableViewController {
     
     @IBAction func SelectCondition(_ sender: Any) { //SegmentController를 touch하였을 경우
         switch conditionSegController.selectedSegmentIndex {
+        
         case 0:
             selectedCondition = 0
         case 1:
@@ -45,24 +53,39 @@ class ModifyDiaryTableController: UITableViewController {
         
         //segmentController을 touch하지 않을 경우를 위한 set -> default값으로 저장
         super.viewDidLoad()
-        self.selectedCondition = self.day?.emoji ?? 0
-        self.change.date = self.day?.date ?? "default"
-        self.change.emoji = self.day?.emoji ?? 0
-        print("viewDidLoad change.emoji -------- \(self.change.emoji)")
-    
-        DateLabel.text = day?.date
         
-        if let storedEmoji = day?.emoji{
-            conditionSegController.selectedSegmentIndex = storedEmoji
+        if let dataExist = startViewNDay {
+            day = dataExist["DiaryDetailViewController"]
+            self.selectedCondition = self.day?.emoji ?? 0
+            self.change.date = self.day?.date ?? "default"
+            self.change.emoji = self.day?.emoji ?? 0
+            print("viewDidLoad change.emoji -------- \(self.change.emoji)")
+        
+            DateLabel.text = day?.date
+            
+            if let storedEmoji = day?.emoji{
+                conditionSegController.selectedSegmentIndex = storedEmoji
+            }
+         
+            ModifytextView.text = day?.content
+
+            
         }
-     
-        ModifytextView.text = day?.content
         
+        //day = startViewNDay[startView]
+        
+      
 
         
     }
     
     @IBAction func saveButton(_ sender: Any) {
+        if ModifytextView.text.isEmpty {
+            showAlert(style: .alert)
+        } else {
+            saveDB(content: ModifytextView.text)
+        }
+    /*
         if let writtencontent = ModifytextView.text{
             if writtencontent.isEmpty{
                 showAlert(style: .alert)
@@ -81,40 +104,68 @@ class ModifyDiaryTableController: UITableViewController {
                 print("modify > saveButton click------------")
                 dismiss(animated: true, completion: nil)
             }
+
+            if Array(startViewNDay!.keys)[0] == "DiaryDetailViewController" {
+                performSegue(withIdentifier: "unwindToCalendarDiary", sender: nil)
+            } else {
+                performSegue(withIdentifier: "unwindToDiaryList", sender: nil)
+            }
         }
+ */
     }
     
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
+    func saveDB(content : String) {
+        self.change.content = content
+
+        print("saveButton seletedCondition -----\(selectedCondition)")
+        
+        self.change.emoji = selectedCondition
+        
+        shortDate =  String(self.day?.date.prefix(7) ?? " ")
+        print("ShortDate in saveButton(ModifyDiaryController)--------------\(shortDate)")
+        
+        DBDiary.newDiary.addDiary(userID: currentUser!, shortDate: shortDate, new: change)
+        
+        print("modify > saveButton click------------")
+   
+        if Array(startViewNDay!.keys)[0] == "DiaryDetailViewController" {
+        performSegue(withIdentifier: "unwindToCalendarDiary", sender: nil)
+        } else {
+        performSegue(withIdentifier: "unwindToDiaryList", sender: nil)
+        }
+    }
+    
     
     //alert 띄우기
     func showAlert(style : UIAlertController.Style){
         let alert = UIAlertController(title: "기록이 비었습니다", message: "그대로 저장하시겠습니까?", preferredStyle: style)
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel){(action) in
+            print("취소")}
+        
         let save = UIAlertAction(title: "저장", style: .default){(action) in //textfield가 비었는데도 저장할 경우
             
             self.change.content = ""//DB에 값 저장
-            
-
             self.change.emoji = self.selectedCondition
             print("showAlert seletedCondition -----\(self.selectedCondition)")
             
             self.shortDate =  String(self.day?.date.prefix(7) ?? " ")
-            DBDiary.newDiary.addDiary(userID: currentUser!, shortDate: self.shortDate, new: self.change)
+            DBDiary.newDiary.addDiary(userID: self.currentUser!, shortDate: self.shortDate, new: self.change)
             print("일기 수정")
-            self.dismiss(animated: true, completion: nil)
+            //self.dismiss(animated: true, completion: nil)
            // self.performSegue(withIdentifier: "rewindToDiaryList", sender: nil)
-            
-            
+            ㄴ
+            self.saveDB(content: "")
             
         } //모달창 내리기
+  
         
-        let cancel = UIAlertAction(title: "취소", style: .default){(action) in
-            print("취소")}
-        
-        alert.addAction(save)
         alert.addAction(cancel)
+        alert.addAction(save)
         
         self.present(alert, animated: true, completion: nil)
     }
