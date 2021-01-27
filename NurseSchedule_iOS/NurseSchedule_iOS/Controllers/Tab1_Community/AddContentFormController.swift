@@ -33,7 +33,7 @@ class AddContentFormController : UITableViewController {
             if StoredTitleData.isEmpty || StoredContentData == placeholderText {
                 showAlert()
             } else {
-                newArticle.user = currentUser
+                newArticle.user = currentUser!
                 newArticle.content = StoredContentData
                 newArticle.title = StoredTitleData
                 let dateFormatter = DateFormatter()

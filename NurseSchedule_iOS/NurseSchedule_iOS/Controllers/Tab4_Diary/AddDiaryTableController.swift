@@ -115,13 +115,13 @@ class AddDiaryTableController: UITableViewController {
                 self.new.content = writtencontent //DB에 값 저장
                 self.new.emoji = self.seletedCondition //DB에 값 저장
                 
-                DBDiary.newDiary.addDiary(userID: currentUser, shortDate: self.selectedDate, new: self.new)
+                DBDiary.newDiary.addDiary(userID: currentUser!, shortDate: self.selectedDate, new: self.new)
                 
             }
         }
     }
     func makeListOfExistDate() {
-        DBDiary.newDiary.checkDiary(userID: currentUser, shortDate: selectedDate, completion: { result in //result에 String으로 저장
+        DBDiary.newDiary.checkDiary(userID: currentUser!, shortDate: selectedDate, completion: { result in //result에 String으로 저장
             self.existedDate.append(result)
         })
     }
@@ -139,11 +139,11 @@ class AddDiaryTableController: UITableViewController {
                     self.new.content = writtencontent //DB에 값 저장
                     self.new.emoji = self.seletedCondition //DB에 값 저장
                     
-                    DBDiary.newDiary.addDiary(userID: currentUser, shortDate: self.selectedDate, new: self.new)
+                    DBDiary.newDiary.addDiary(userID: currentUser!, shortDate: self.selectedDate, new: self.new)
                 }
             }
         
-            DBDiary.newDiary.addDiary(userID: currentUser, shortDate: self.selectedDate, new: self.new)
+            DBDiary.newDiary.addDiary(userID: currentUser!, shortDate: self.selectedDate, new: self.new)
             print("일기 덮어 저장")
       
         }
@@ -165,7 +165,7 @@ class AddDiaryTableController: UITableViewController {
             self.new.content = ""//DB에 값 저장
             self.new.emoji = self.seletedCondition//DB에 값 저장
             
-            DBDiary.newDiary.addDiary(userID: currentUser, shortDate: self.selectedDate, new: self.new)
+            DBDiary.newDiary.addDiary(userID: currentUser!, shortDate: self.selectedDate, new: self.new)
             print("새 일기 작성 저장")
        
             self.dismiss(animated: true, completion: nil)

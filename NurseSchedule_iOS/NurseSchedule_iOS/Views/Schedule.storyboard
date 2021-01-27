@@ -355,7 +355,7 @@
         <!--캘린더-->
         <scene sceneID="RQ0-CS-wbp">
             <objects>
-                <viewController id="KNe-Tg-fe9" customClass="ScheduleController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScheduleController" id="KNe-Tg-fe9" customClass="ScheduleController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gbl-eg-0tK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

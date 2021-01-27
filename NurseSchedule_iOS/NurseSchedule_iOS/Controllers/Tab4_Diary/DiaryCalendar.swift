@@ -148,8 +148,8 @@ extension DiaryCalendar : FSCalendarDelegate , FSCalendarDataSource{
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("\(date) 선택됨")
         
-        let currentUser = Login.init().googleLogin()
-            DBDiary.newDiary.getDayDiary(userID: currentUser, date: date) { (result) in
+        let currentUser = Auth.auth().currentUser?.uid
+            DBDiary.newDiary.getDayDiary(userID: currentUser!, date: date) { (result) in
                 if result != nil {
                     self.dayDiary = result!
                     self.performSegue(withIdentifier: "popCalendarDiary", sender: self.dayDiary)

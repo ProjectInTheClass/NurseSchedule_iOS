@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class DetailDiaryFromTableController: UIViewController {
     
@@ -19,7 +20,7 @@ class DetailDiaryFromTableController: UIViewController {
     let img3 = UIImage(named: "0-crying.png")
     let img4 = UIImage(named: "0-devil.png")
     
-    let currentUser = Login.init().googleLogin()
+    let currentUser = Auth.auth().currentUser?.uid
     var detailInfoFromDay : Day? = nil
     
     var shortDate : String = ""
@@ -75,7 +76,7 @@ class DetailDiaryFromTableController: UIViewController {
       
             self.shortDate =  String(self.date.text!.prefix(7))
             
-            DBDiary.newDiary.deleteDiary(userID: self.currentUser, shortDate: self.shortDate, date: self.date.text!)
+            DBDiary.newDiary.deleteDiary(userID: self.currentUser!, shortDate: self.shortDate, date: self.date.text!)
             
             
             //--------------------------------------------------------

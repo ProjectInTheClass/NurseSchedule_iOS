@@ -12,10 +12,48 @@ import GoogleSignIn
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet weak var googleSignInButton: GIDSignInButton!
+    
+
+    var currentUser : String? = Auth.auth().currentUser?.uid {
+        didSet {
+            performSegue(withIdentifier: "unwindToSchedule", sender: currentUser)
+            print(currentUser)
+            print("‼️LOGIN success")
+        }
+    }
+    
+  
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        
+        let firebaseAuth = Auth.auth()
+      do {
+        try firebaseAuth.signOut()
+        //logoutButton.isHidden = true
+        print("‼️LOGOUT \(String(describing: currentUser))")
+      } catch let signOutError as NSError {
+        print ("Error signing out: %@", signOutError)
+      }
+    }
+    
     //    var ref : DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+       
+        print("ViewDidLOAD‼️\(currentUser)")
+        
+     //  Auth.auth().addIDTokenDidChangeListener { (auth, user) in
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        //currentUser = Auth.auth().currentUser?.uid
+        
+//            if let currentUser = auth.currentUser?.uid {
+//                self.performSegue(withIdentifier: "unwindToSchedule", sender: currentUser)
+//            } else {
+//                GIDSignIn.sharedInstance().signIn()
+//            }
+    //    }
         
 
         
@@ -35,23 +73,21 @@ class ViewController: UIViewController {
        // DBBoard.board.addBoard(B_maker : "고객센터", B_description : "문의바랍니다.")
 
     }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("ViewDidAppear‼️\(currentUser)")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        print("ViewDidAppear‼️\(currentUser)")
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "koreanurseWeb" {
-//            if let vc = segue.destination as? ViewLinc {
-//                vc.urlString = "https://www.koreanurse.or.kr/"
-//                
-//}
-//            
-//}
-//                else if segue.identifier == "nursejobWeb" {
-//                    if let vc = segue.destination as? ViewLinc {
-//                        vc.urlString = "https://www.google.com/"
-//}
-//}
-//                else if segue.identifier == "nurscapeWeb" {
-//                    if let vc = segue.destination as? ViewLinc {
-//                        vc.urlString = "https://www.google.com/"
 }
         

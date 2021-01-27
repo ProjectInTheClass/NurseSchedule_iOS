@@ -12,15 +12,15 @@ import GoogleSignIn
 
 struct Login {
    
-    let noUser = "no"
+    //let noUser = "no"
     
-    func googleLogin() -> String {
+    func googleLogin() -> String? {
         //Google user manage
         //https://firebase.google.com/docs/auth/ios/manage-users
         //구글 로그인
         
         let user = Auth.auth().currentUser
-        let uid : String
+        let uid : String?
         if let user = user {
           // The user's ID, unique to the Firebase project.
           // Do NOT use this value to authenticate with your backend server,
@@ -35,7 +35,7 @@ struct Login {
 //          }
           // ...
         } else {
-            uid = noUser
+            uid = nil
         }
         
         return uid

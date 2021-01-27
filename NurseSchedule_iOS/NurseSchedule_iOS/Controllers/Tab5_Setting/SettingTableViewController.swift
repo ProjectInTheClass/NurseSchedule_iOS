@@ -26,7 +26,7 @@ class SettingTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,13 +36,26 @@ class SettingTableViewController: UITableViewController {
     
 
     @IBAction func logoutButton(_ sender: Any) {
-        let firebaseAuth = Auth.auth()
-      do {
-        try firebaseAuth.signOut()
-        //logoutButton.isHidden = true
-      } catch let signOutError as NSError {
-        print ("Error signing out: %@", signOutError)
-      }
+       
+        let alert = UIAlertController(title: "로그아웃하시겠습니까?", message: "😭", preferredStyle: UIAlertController.Style.alert)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        let okAction = UIAlertAction(title: "확인", style: .destructive) {_ in
+            
+            let firebaseAuth = Auth.auth()
+          do {
+            try firebaseAuth.signOut()
+          } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+          }
+            
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        self.present(alert, animated: false, completion: nil)
+        
+        
+        
+      
     }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
