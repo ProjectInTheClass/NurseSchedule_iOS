@@ -9,9 +9,10 @@ import UIKit
 
 class CommunityNavigationController: UINavigationController {
 
+    @IBOutlet weak var navigationbar: UINavigationBar!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //navigationbar.titleTextAttributes = "wow"
         // Do any additional setup after loading the view.
     }
     

@@ -153,7 +153,7 @@ class MainTableViewController: UITableViewController, FSPagerViewDataSource, FSP
         }
         
         @IBAction func newtLinkButtonTapped(_ sender: Any) {
-            if let url = URL(string: "http://www.koreanurse.or.kr/") {
+            if let url = URL(string:  "https://khna.or.kr/home/about/greeting.php") {
                 let safariViewController = SFSafariViewController(url: url)
                 present(safariViewController, animated: true, completion: nil)
             }
@@ -173,7 +173,7 @@ class MainTableViewController: UITableViewController, FSPagerViewDataSource, FSP
             }
         }
         @IBAction func fourthLinkButtonTapped(_ sender: Any) {
-            if let url = URL(string: "http://www.nursestory.co.kr/") {
+            if let url = URL(string: "http://www.nurse-edu.co.kr") {
                 let safariViewController = SFSafariViewController(url: url)
                 present(safariViewController, animated: true, completion: nil)
             }

@@ -778,14 +778,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="boardListCell" id="ee1-gE-OU6" customClass="boardListCell" customModule="NurseSchedule_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="390" height="45"/>
+                                        <rect key="frame" x="0.0" y="28" width="390" height="45.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ee1-gE-OU6" id="Iyp-cP-s9c">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="45"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="45.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbT-XV-3ef">
-                                                    <rect key="frame" x="22" y="11" width="346" height="21"/>
+                                                    <rect key="frame" x="22" y="10.999999999999998" width="346" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1022,7 +1022,7 @@
         <!--커뮤니티-->
         <scene sceneID="rlI-fg-8qN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DeA-w9-gpu" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DeA-w9-gpu" customClass="CommunityNavigationController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="커뮤니티" image="person.2" catalog="system" selectedImage="person.2.fill" id="YbE-gB-1ve"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="XlO-ho-vxI">
@@ -1039,6 +1039,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
+                        <outlet property="navigationbar" destination="XlO-ho-vxI" id="jmM-p1-Amk"/>
                         <segue destination="WAB-l8-B7C" kind="relationship" relationship="rootViewController" id="cbv-V0-awv"/>
                     </connections>
                 </navigationController>
@@ -1456,7 +1457,7 @@
         <image name="New2" width="382" height="380"/>
         <image name="Nurscape2" width="292" height="312"/>
         <image name="NurseEdu" width="132" height="130"/>
-        <image name="NurseJob2" width="354" height="348"/>
+        <image name="NurseJob2" width="132" height="114"/>
         <image name="Nursestory3" width="498" height="492"/>
         <image name="QnA2" width="374" height="378"/>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
