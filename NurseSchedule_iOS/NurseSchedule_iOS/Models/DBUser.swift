@@ -15,11 +15,15 @@ class DBUser {
     
     
     func setUser(userID : String) {
-        let userInfo = ["userID" : userID]
-
-        let reference  = ref.child("Users/\(userID)/")
-
-        reference.setValue(userInfo)
+        //var userExist = userID
+        ref.child("Users/\(userID)").observeSingleEvent(of: .value) { (snapshot) in
+            if snapshot.value == nil {
+                let userInfo = ["userID" : userID]
+                let reference  = self.ref.child("Users/\(userID)/")
+                reference.setValue(userInfo)
+            }
+                
+        }
         
 //        let childautoID = reference.key
 //        print("childautoID: \(childautoID)")
