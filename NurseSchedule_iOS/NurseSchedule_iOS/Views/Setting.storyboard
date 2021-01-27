@@ -194,7 +194,7 @@
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.74084085229999996" green="0.9099497795" blue="0.67754423620000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -331,9 +331,7 @@
                             <outlet property="delegate" destination="dkG-DH-eHa" id="HmV-UV-Zdj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Setting" id="8w2-9g-Y1u">
-                        <barButtonItem key="backBarButtonItem" title="뒤로" id="4xg-ST-ldX"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Setting" id="8w2-9g-Y1u"/>
                     <connections>
                         <outlet property="sectionOneCellOne" destination="1Cv-K2-bmQ" id="oiu-bX-Eqa"/>
                         <outlet property="sectionThreeCellOne" destination="c04-AT-8Us" id="37Z-TY-zlt"/>

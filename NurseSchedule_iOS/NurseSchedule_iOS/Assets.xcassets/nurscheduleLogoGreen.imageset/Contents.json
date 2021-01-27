@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "nurscheduleLogoGreen.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "nurscheduleLogoGreen.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
