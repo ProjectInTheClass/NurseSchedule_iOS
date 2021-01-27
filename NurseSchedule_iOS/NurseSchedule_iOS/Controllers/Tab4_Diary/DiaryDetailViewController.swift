@@ -70,7 +70,10 @@ class DiaryDetailViewController: UIViewController {
     }
     
     @IBAction func modifyButton(_ sender: Any) {//Calendar에서 detailView 들어갔을 때 수정버튼
-        performSegue(withIdentifier: "editDiary", sender: detailInfoFromDay)
+        let dayForSender = detailInfoFromDay
+        let startView = "DiaryDetailViewController"
+        let senderData = [startView : dayForSender]
+        performSegue(withIdentifier: "editDiary", sender: senderData)
 //        AddDiaryTableController.addDiaryController.modifyDiary()
       
         
@@ -110,7 +113,7 @@ class DiaryDetailViewController: UIViewController {
         } else if segue.identifier == "editDiary"{
             print("editDiary~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             let modifyDiaryTableController = segue.destination as! ModifyDiaryTableController
-            modifyDiaryTableController.day = sender as? Day
+            modifyDiaryTableController.startViewNDay = sender as? [String : Day]
             
         }
     }
