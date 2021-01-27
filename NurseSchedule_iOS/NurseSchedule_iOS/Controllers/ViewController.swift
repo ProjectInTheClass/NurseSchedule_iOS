@@ -25,17 +25,7 @@ class ViewController: UIViewController {
     }
     
   
-    @IBAction func logoutButtonTapped(_ sender: Any) {
-        
-        let firebaseAuth = Auth.auth()
-      do {
-        try firebaseAuth.signOut()
-        //logoutButton.isHidden = true
-        print("‼️LOGOUT \(String(describing: currentUser))")
-      } catch let signOutError as NSError {
-        print ("Error signing out: %@", signOutError)
-      }
-    }
+
     
     //    var ref : DatabaseReference!
     override func viewDidLoad() {

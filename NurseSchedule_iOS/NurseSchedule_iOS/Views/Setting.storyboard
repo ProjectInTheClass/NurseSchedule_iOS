@@ -212,9 +212,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="Wwp-e9-gru" kind="presentation" id="yI5-xS-EdA"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -295,22 +292,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdV-oI-raG">
-                                                    <rect key="frame" x="5" y="5" width="404" height="34"/>
-                                                    <state key="normal" title="로그아웃">
-                                                        <color key="titleColor" systemColor="labelColor"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="logoutButton:" destination="dkG-DH-eHa" eventType="touchUpInside" id="M1w-7N-9GM"/>
-                                                    </connections>
-                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="로그아웃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zA7-8L-epk">
+                                                    <rect key="frame" x="19" y="12" width="59" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="QdV-oI-raG" secondAttribute="bottom" constant="5" id="7Jc-lm-tLU"/>
-                                                <constraint firstItem="QdV-oI-raG" firstAttribute="leading" secondItem="0ER-fG-rYK" secondAttribute="leading" constant="5" id="h4i-DU-HSF"/>
-                                                <constraint firstItem="QdV-oI-raG" firstAttribute="top" secondItem="0ER-fG-rYK" secondAttribute="top" constant="5" id="jvD-5U-Nwv"/>
-                                                <constraint firstAttribute="trailing" secondItem="QdV-oI-raG" secondAttribute="trailing" constant="5" id="one-k5-AY2"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -324,6 +313,14 @@
                     <navigationItem key="navigationItem" title="Setting" id="8w2-9g-Y1u">
                         <barButtonItem key="backBarButtonItem" title="뒤로" id="4xg-ST-ldX"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="sectionOneCellOne" destination="1Cv-K2-bmQ" id="oiu-bX-Eqa"/>
+                        <outlet property="sectionThreeCellOne" destination="c04-AT-8Us" id="37Z-TY-zlt"/>
+                        <outlet property="sectionThreeCellTwo" destination="FV2-EZ-6H2" id="kvL-Kh-HWh"/>
+                        <outlet property="sectionTwoCellOne" destination="ihu-pC-kvV" id="mr1-9e-eil"/>
+                        <outlet property="sectionTwoCellTwo" destination="b9c-cq-myL" id="VN0-pS-vsU"/>
+                        <segue destination="Wwp-e9-gru" kind="presentation" identifier="serialNumCheck" id="GEp-M1-uvC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bw-DJ-jKh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

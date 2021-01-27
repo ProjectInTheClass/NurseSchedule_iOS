@@ -101,17 +101,10 @@
                                     <constraint firstAttribute="width" constant="230" id="fzG-cY-Avz"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yua-0H-2e8">
-                                <rect key="frame" x="155" y="471" width="86" height="42"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="rPg-Mm-iHl">
+                                <rect key="frame" x="75" y="208" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
-                                <state key="normal" title="Logout">
-                                    <color key="titleColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="logoutButtonTapped:" destination="5K6-YA-oZw" eventType="touchUpInside" id="hT8-Xg-Ukm"/>
-                                </connections>
-                            </button>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uSC-1t-d9Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -132,6 +125,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AppIcon" width="411" height="411"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -11,7 +11,14 @@ import GoogleSignIn
 
 class SettingTableViewController: UITableViewController {
 
-
+    @IBOutlet weak var sectionOneCellOne: UITableViewCell!
+    @IBOutlet weak var sectionTwoCellOne: UITableViewCell!
+    @IBOutlet weak var sectionTwoCellTwo: UITableViewCell!
+    @IBOutlet weak var sectionThreeCellOne: UITableViewCell!
+    @IBOutlet weak var sectionThreeCellTwo: UITableViewCell!
+    
+    let numberOfsections : [Int] = [1,2,2]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,16 +33,91 @@ class SettingTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return numberOfsections.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return numberOfsections[section]
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell.init()
+        switch indexPath.section {
+            case 0:
+                switch indexPath.row {
+                case 0:
+                    sectionOneCellOne.textLabel?.text = "나의 일련 번호"
+                    sectionOneCellOne.detailTextLabel?.text = currentUser
+                    return sectionOneCellOne
+                default:
+                    break
+                }
+        case 1:
+            switch indexPath.row {
+            case 0:
+                       sectionTwoCellOne.textLabel?.text = "내가 쓴 글"
+                return sectionTwoCellOne
+            case 1:
+                       sectionTwoCellTwo.textLabel?.text = "내가 쓴 댓글"
+                return sectionTwoCellTwo
+            default:
+                break
+            }
+        case 2:
+            switch indexPath.row {
+            case 0:
+                sectionThreeCellOne.textLabel?.text = "앱버전"
+                sectionThreeCellOne.detailTextLabel?.text = "1.1"
+                return sectionThreeCellOne
+            case 1:
+                sectionThreeCellTwo.detailTextLabel?.text = "로그아웃"
+                return sectionThreeCellTwo
+            default:
+                break
+            }
+        default :
+            break
+        }
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+            case 0:
+                switch indexPath.row {
+                case 0:
+                    performSegue(withIdentifier: "serialNumCheck", sender: nil)
+                default:
+                    break
+                }
+        case 1:
+            switch indexPath.row {
+            case 0:
+                print("n")
+//                       sectionTwoCellOne.textLabel?.text = "내가 쓴 글"
+            case 1:
+                print("n")
+//                       sectionTwoCellTwo.textLabel?.text = "내가 쓴 댓글"
+            default:
+                break
+            }
+        case 2:
+            switch indexPath.row {
+            case 0:
+               print("app version")
+            case 1:
+               Logout()
+            default:
+                break
+            }
+        default :
+            break
+        }
     }
     
 
-    @IBAction func logoutButton(_ sender: Any) {
+    func Logout() {
        
         let alert = UIAlertController(title: "로그아웃하시겠습니까?", message: "😭", preferredStyle: UIAlertController.Style.alert)
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)
@@ -52,7 +134,6 @@ class SettingTableViewController: UITableViewController {
         alert.addAction(cancelAction)
         alert.addAction(okAction)
         self.present(alert, animated: false, completion: nil)
-        
         
     }
     /*
