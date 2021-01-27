@@ -10,8 +10,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="HangeulNuriR.ttf">
-            <string>HangeulNuri</string>
+        <array key="HangeulNuriB.ttf">
+            <string>HangeulNuri-Bold</string>
         </array>
     </customFonts>
     <scenes>
@@ -415,7 +415,7 @@
                                         <rect key="frame" x="8" y="87" width="398" height="170"/>
                                         <color key="backgroundColor" red="0.93321973089999999" green="0.93331867459999995" blue="0.93730396029999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" systemColor="systemGray6Color"/>
-                                        <fontDescription key="fontDescription" name="HangeulNuri" family="HangeulNuri" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="HangeulNuri-Bold" family="HangeulNuri" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7t-a4-KGK">

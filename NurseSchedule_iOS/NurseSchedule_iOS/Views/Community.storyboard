@@ -498,14 +498,13 @@
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfb-oR-XjZ">
-                                                    <rect key="frame" x="10" y="292.66666666666669" width="370" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                    <rect key="frame" x="10" y="292.66666666666669" width="370" height="34"/>
+                                                    <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                                     <state key="normal">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="toNoticeTapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="MA4-xu-pLq"/>
-                                                        <action selector="toNoticeTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="qwX-QX-Uwd"/>
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCc-W3-xRq" customClass="FSPageControl" customModule="FSPagerView">
@@ -523,7 +522,6 @@
                                                             <state key="normal" image="koreaNurse2"/>
                                                             <connections>
                                                                 <action selector="firstLinkButtonTapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="AOg-lt-EPy"/>
-                                                                <action selector="firstLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="Zm1-rT-aOy"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oZ-Ot-UdP">
@@ -531,7 +529,6 @@
                                                             <state key="normal" image="nurseassociation"/>
                                                             <connections>
                                                                 <action selector="newtLinkButtonTapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="Mbb-Sa-Yxg"/>
-                                                                <action selector="newtLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="rSc-Gm-gMV"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auC-Gl-7OP">
@@ -539,14 +536,12 @@
                                                             <state key="normal" image="NurseJob2"/>
                                                             <connections>
                                                                 <action selector="secondLinkButtonTapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="LOm-LF-iul"/>
-                                                                <action selector="secondLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="axQ-ZM-tw3"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yn-ma-ELi">
                                                             <rect key="frame" x="224.33333333333334" y="0.0" width="35.000000000000028" height="32"/>
                                                             <state key="normal" image="Nurscape2"/>
                                                             <connections>
-                                                                <action selector="thirdLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="cUl-ST-Jed"/>
                                                                 <action selector="thirdLinkButtonTapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="da7-MK-MIY"/>
                                                             </connections>
                                                         </button>
@@ -555,7 +550,6 @@
                                                             <state key="normal" image="NurseEdu"/>
                                                             <connections>
                                                                 <action selector="fourthLinkButtonTapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="IID-Xz-djS"/>
-                                                                <action selector="fourthLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="SGn-N6-w9S"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -595,7 +589,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lhu-6n-dEw" userLabel="Board Stack View">
-                                                    <rect key="frame" x="10" y="325.66666666666669" width="370" height="240.00000000000006"/>
+                                                    <rect key="frame" x="10" y="329.66666666666669" width="370" height="240.00000000000006"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zfU-Xx-HMR">
                                                             <rect key="frame" x="0.0" y="0.0" width="370" height="120"/>
@@ -697,7 +691,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46a-3T-BqV">
-                                                    <rect key="frame" x="10" y="575.66666666666663" width="370" height="343.33333333333337"/>
+                                                    <rect key="frame" x="10" y="579.66666666666663" width="370" height="339.33333333333337"/>
                                                     <color key="backgroundColor" red="0.92557317019999996" green="0.91752618549999998" blue="0.92560875419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
                                             </subviews>
@@ -1453,7 +1447,7 @@
     </scenes>
     <designables>
         <designable name="4ac-we-lMY">
-            <size key="intrinsicContentSize" width="41" height="17"/>
+            <size key="intrinsicContentSize" width="37" height="17.666666666666668"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
