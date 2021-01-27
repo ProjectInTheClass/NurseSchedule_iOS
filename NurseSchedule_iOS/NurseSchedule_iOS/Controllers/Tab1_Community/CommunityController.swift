@@ -150,7 +150,7 @@ class CommunityController: UIViewController, FSPagerViewDataSource, FSPagerViewD
     }
     
     @IBAction func newtLinkButtonTapped(_ sender: Any) {
-        if let url = URL(string: "https://khna.or.kr/home/about/greeting.php") {
+        if let url = URL(string: "https://khna.or.kr/home/main/") {
             let safariViewController = SFSafariViewController(url: url)
             present(safariViewController, animated: true, completion: nil)
         }
