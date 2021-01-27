@@ -15,6 +15,7 @@ class DiaryDetailViewController: UIViewController {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var emojiImage: UIImageView!
     @IBOutlet weak var content: UITextView!
+    @IBOutlet weak var detailView: UIView!
     
     let img0 = UIImage(named: "0-love.png")
     let img1 = UIImage(named: "0-happy.png")
@@ -71,9 +72,13 @@ class DiaryDetailViewController: UIViewController {
     @IBAction func modifyButton(_ sender: Any) {//Calendar에서 detailView 들어갔을 때 수정버튼
         performSegue(withIdentifier: "editDiary", sender: detailInfoFromDay)
 //        AddDiaryTableController.addDiaryController.modifyDiary()
+        detailView.isHidden = true
+        detailView.isOpaque = true
         
     }
-    
+//
+//    override func touchesBegan(_ touches: Set, with event: UIEvent?) { super.touchesBegan(touches, with: event) if let touch = touches.first , touch.view == self.view { self.dismiss(animated: true, completion: nil) } }
+
     
     func showDeleteAlert() {
         let alert = UIAlertController(title: "삭제하시겠습니까?", message: " ", preferredStyle: UIAlertController.Style.alert)

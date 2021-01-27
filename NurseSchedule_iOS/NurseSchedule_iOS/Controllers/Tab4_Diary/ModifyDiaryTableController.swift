@@ -66,6 +66,7 @@ class ModifyDiaryTableController: UITableViewController {
                 showAlert(style: .alert)
             }else {
                 self.change.content = writtencontent
+
                 print("saveButton seletedCondition -----\(selectedCondition)")
                 
                 shortDate =  String(self.day?.date.prefix(7) ?? " ")
@@ -92,14 +93,16 @@ class ModifyDiaryTableController: UITableViewController {
             self.change.content = ""//DB에 값 저장
             
 
-      //      self.change.emoji = self.selectedCondition
+            self.change.emoji = self.selectedCondition
             print("showAlert seletedCondition -----\(self.selectedCondition)")
             
             self.shortDate =  String(self.day?.date.prefix(7) ?? " ")
             DBDiary.newDiary.addDiary(userID: currentUser!, shortDate: self.shortDate, new: self.change)
             print("일기 수정")
             self.dismiss(animated: true, completion: nil)
-           
+           // self.performSegue(withIdentifier: "rewindToDiaryList", sender: nil)
+            
+            
         } //모달창 내리기
         
         let cancel = UIAlertAction(title: "취소", style: .default){(action) in
@@ -111,3 +114,7 @@ class ModifyDiaryTableController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
+
+
+
+//calendar 에서 추가 버튼 누르면 datepicker가 오늘 날짜로 초기화 되어있는거 바꿔야함

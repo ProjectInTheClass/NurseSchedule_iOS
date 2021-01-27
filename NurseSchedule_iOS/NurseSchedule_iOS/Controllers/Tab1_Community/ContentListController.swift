@@ -131,7 +131,7 @@ extension ContentListController : UITableViewDataSource, UITableViewDelegate {
             }
             DBBoard.board.getNumberOfCommentsInEachArticle(BoardType: boardType, articleID: outputArticleList[indexPath.row].articleID) { (numberOfComments) in
                 print("bring success!!!!\(String(numberOfComments))")
-                cell.ContentNum.text = String(indexPath.row+1)
+//                cell.ContentNum.text = String(indexPath.row+1)
                 cell.ContentDate.text = self.outputArticleList[indexPath.row].date
                 cell.ContentTitle.text = self.outputArticleList[indexPath.row].title
                 cell.ContentContent.text = self.outputArticleList[indexPath.row].content
