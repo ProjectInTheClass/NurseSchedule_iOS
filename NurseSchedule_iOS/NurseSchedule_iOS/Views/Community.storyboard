@@ -514,7 +514,7 @@
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oZ-Ot-UdP">
                                                             <rect key="frame" x="74.666666666666671" y="0.0" width="35" height="32"/>
-                                                            <state key="normal" image="NurseEdu"/>
+                                                            <state key="normal" image="nurseassociation"/>
                                                             <connections>
                                                                 <action selector="newtLinkButtonTapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="Mbb-Sa-Yxg"/>
                                                                 <action selector="newtLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="rSc-Gm-gMV"/>
@@ -538,7 +538,7 @@
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6G-Xo-SET">
                                                             <rect key="frame" x="299.33333333333331" y="0.0" width="34.666666666666686" height="32"/>
-                                                            <state key="normal" image="Nursestory3"/>
+                                                            <state key="normal" image="NurseEdu"/>
                                                             <connections>
                                                                 <action selector="fourthLinkButtonTapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="IID-Xz-djS"/>
                                                                 <action selector="fourthLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="SGn-N6-w9S"/>
@@ -650,34 +650,34 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="75u-SV-VrE" userLabel="Name Stack View">
-                                                    <rect key="frame" x="19.333333333333343" y="259.66666666666669" width="351.66666666666663" height="30"/>
+                                                    <rect key="frame" x="6" y="259.66666666666669" width="378.33333333333331" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대한간호협회" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDU-80-Ycw">
-                                                            <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="30"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="67.666666666666671" height="30"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  널스에듀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7j-uV-ZsP">
-                                                            <rect key="frame" x="72.333333333333343" y="0.0" width="62.333333333333343" height="30"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="병원간호사회" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7j-uV-ZsP">
+                                                            <rect key="frame" x="77.666666666666657" y="0.0" width="67.666666666666657" height="30"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     널스잡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1j-n7-vCl">
-                                                            <rect key="frame" x="144.66666666666666" y="0.0" width="62.333333333333343" height="30"/>
+                                                            <rect key="frame" x="155.33333333333334" y="0.0" width="67.666666666666657" height="30"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   널스케이프" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYN-dS-gxU">
-                                                            <rect key="frame" x="217" y="0.0" width="62.333333333333314" height="30"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="널스케입" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYN-dS-gxU">
+                                                            <rect key="frame" x="232.99999999999997" y="0.0" width="67.666666666666657" height="30"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   널스스토리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jyq-d7-NMU">
-                                                            <rect key="frame" x="289.33333333333337" y="0.0" width="62.333333333333314" height="30"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="널스에듀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jyq-d7-NMU">
+                                                            <rect key="frame" x="310.66666666666669" y="0.0" width="67.666666666666686" height="30"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1463,6 +1463,7 @@
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="koreaNurse2" width="150" height="156"/>
         <image name="more2" width="374" height="378"/>
+        <image name="nurseassociation" width="132" height="126"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>
         <image name="person.2" catalog="system" width="128" height="81"/>
         <image name="person.2.fill" catalog="system" width="128" height="80"/>
