@@ -23,7 +23,7 @@
 		990AC3F9259DB3C400281E8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990AC3F7259DB3C400281E8B /* Main.storyboard */; };
 		990AC3FB259DB3CB00281E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 990AC3FA259DB3CB00281E8B /* Assets.xcassets */; };
 		990AC3FE259DB3CB00281E8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990AC3FC259DB3CB00281E8B /* LaunchScreen.storyboard */; };
-		9921CF4925C1C59700B8F177 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9921CF4825C1C59700B8F177 /* AppIcon.png */; };
+		990BA84625C1E1FE00812393 /* CommunityNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990BA84525C1E1FE00812393 /* CommunityNavigationController.swift */; };
 		992651A525A404520043A16E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 992651A425A404520043A16E /* GoogleService-Info.plist */; };
 		992651E725A470A90043A16E /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992651E625A470A80043A16E /* DBUser.swift */; };
 		9926523425A4ADB10043A16E /* CommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926523325A4ADB10043A16E /* CommunityController.swift */; };
@@ -89,7 +89,8 @@
 		990AC3FA259DB3CB00281E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		990AC3FD259DB3CB00281E8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		990AC3FF259DB3CB00281E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9921CF4825C1C59700B8F177 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon.png; path = NurseSchedule_iOS/Assets.xcassets/AppIcon.imageset/AppIcon.png; sourceTree = "<group>"; };
+		990BA83E25C1E0D100812393 /* Stupendous Jack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stupendous Jack.ttf"; sourceTree = "<group>"; };
+		990BA84525C1E1FE00812393 /* CommunityNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityNavigationController.swift; sourceTree = "<group>"; };
 		992651A425A404520043A16E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		992651E625A470A80043A16E /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
 		9926523325A4ADB10043A16E /* CommunityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityController.swift; sourceTree = "<group>"; };
@@ -178,7 +179,6 @@
 		990AC3E5259DB3C400281E8B = {
 			isa = PBXGroup;
 			children = (
-				9921CF4825C1C59700B8F177 /* AppIcon.png */,
 				990AC3F0259DB3C400281E8B /* NurseSchedule_iOS */,
 				990AC3EF259DB3C400281E8B /* Products */,
 				05E05B97F1F45BF2B6F9BA66 /* Pods */,
@@ -197,6 +197,7 @@
 		990AC3F0259DB3C400281E8B /* NurseSchedule_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				990BA83D25C1E0C000812393 /* Fonts */,
 				99ABBA2825BB2F5D00FFBE51 /* CustomLabel */,
 				7EFD380425B4A78F00FD3435 /* SlideImage */,
 				992F41ED25AF2C5300E25199 /* CustomCell */,
@@ -212,6 +213,14 @@
 			path = NurseSchedule_iOS;
 			sourceTree = "<group>";
 		};
+		990BA83D25C1E0C000812393 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				990BA83E25C1E0D100812393 /* Stupendous Jack.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		9926523125A4AC5F0043A16E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +233,7 @@
 				997059AA25A72D8A0037A342 /* TabBarController.swift */,
 				99D874B425AB452D0012D403 /* LoginController.swift */,
 				997DD05B25B69E10007C5002 /* StructDeclaration.swift */,
+				990BA84525C1E1FE00812393 /* CommunityNavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -399,7 +409,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9921CF4925C1C59700B8F177 /* AppIcon.png in Resources */,
 				99FB53B325A0C17200FBF750 /* Diary.storyboard in Resources */,
 				99FB53A925A0BE7400FBF750 /* Community.storyboard in Resources */,
 				992651A525A404520043A16E /* GoogleService-Info.plist in Resources */,
@@ -486,6 +495,7 @@
 				992F41C925AEB82D00E25199 /* SettingTableViewController.swift in Sources */,
 				7EEAAD0C25BED499003E2B9E /* MainTableViewController.swift in Sources */,
 				ECF2B59E25B562070080F9E0 /* DiaryDetailViewController.swift in Sources */,
+				990BA84625C1E1FE00812393 /* CommunityNavigationController.swift in Sources */,
 				992F41F025AF2C9100E25199 /* MedicalCell.swift in Sources */,
 				9991D6D025B9517700C3A7B1 /* ContentListController.swift in Sources */,
 				99D874B525AB452D0012D403 /* LoginController.swift in Sources */,
