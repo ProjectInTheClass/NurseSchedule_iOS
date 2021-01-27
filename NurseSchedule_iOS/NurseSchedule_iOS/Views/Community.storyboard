@@ -1025,7 +1025,7 @@
         <!--커뮤니티-->
         <scene sceneID="rlI-fg-8qN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DeA-w9-gpu" customClass="CommunityNavigationController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DeA-w9-gpu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="커뮤니티" image="person.2" catalog="system" selectedImage="person.2.fill" id="YbE-gB-1ve"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="XlO-ho-vxI">
@@ -1044,13 +1044,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <outlet property="navigationbar" destination="XlO-ho-vxI" id="jmM-p1-Amk"/>
                         <segue destination="WAB-l8-B7C" kind="relationship" relationship="rootViewController" id="cbv-V0-awv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IYZ-yY-N6h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1915" y="87"/>
+            <point key="canvasLocation" x="-1574" y="87"/>
         </scene>
         <!--게시글-->
         <scene sceneID="oh6-GB-fjO">
@@ -1447,7 +1446,7 @@
     </scenes>
     <designables>
         <designable name="4ac-we-lMY">
-            <size key="intrinsicContentSize" width="37" height="17.666666666666668"/>
+            <size key="intrinsicContentSize" width="41" height="17"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>

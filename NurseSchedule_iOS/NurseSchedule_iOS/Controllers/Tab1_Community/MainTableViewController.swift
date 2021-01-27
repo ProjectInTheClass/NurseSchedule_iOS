@@ -41,6 +41,7 @@ class MainTableViewController: UITableViewController, FSPagerViewDataSource, FSP
                 self.myPagerView.isInfinite = true
                 // 자동 스크롤
                 self.myPagerView.automaticSlidingInterval = 4.0
+                self.myPagerView.layer.borderColor = UIColor.clear.cgColor
             }
             
         }
@@ -106,9 +107,10 @@ class MainTableViewController: UITableViewController, FSPagerViewDataSource, FSP
         func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
             
             let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
-            
+            cell.contentView.layer.shadowColor = UIColor.clear.cgColor
             cell.imageView?.image = UIImage(named: self.imageNames[index])
             cell.imageView?.contentMode = .scaleAspectFit
+            
             return cell
         }
 
@@ -208,3 +210,4 @@ class MainTableViewController: UITableViewController, FSPagerViewDataSource, FSP
 
         
     }
+
