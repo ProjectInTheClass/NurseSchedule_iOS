@@ -29,6 +29,7 @@ struct Article {
     var date: String
     var content: String
     var user: String
+//    var 
 }
 
 

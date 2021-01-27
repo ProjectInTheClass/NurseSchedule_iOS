@@ -58,6 +58,9 @@
 		EC9ED33225BABEF600848426 /* DetailContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9ED33125BABEF600848426 /* DetailContentController.swift */; };
 		EC9ED33C25BD64D700848426 /* ModifyDiaryTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9ED33B25BD64D700848426 /* ModifyDiaryTableController.swift */; };
 		ECE6A7C425BED7AC00F59320 /* SerialNumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6A7C325BED7AC00F59320 /* SerialNumController.swift */; };
+		ECE6A7CD25C1285C00F59320 /* MyArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6A7CC25C1285C00F59320 /* MyArticleCell.swift */; };
+		ECE6A7D025C128C000F59320 /* MyArticleTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6A7CF25C128C000F59320 /* MyArticleTableController.swift */; };
+		ECE6A7D325C1296400F59320 /* DBSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6A7D225C1296400F59320 /* DBSetting.swift */; };
 		ECF2B54F25B420C60080F9E0 /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2B54E25B420C60080F9E0 /* DiaryCell.swift */; };
 		ECF2B55625B441BA0080F9E0 /* DiaryCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2B55525B441BA0080F9E0 /* DiaryCalendar.swift */; };
 		ECF2B59E25B562070080F9E0 /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2B59D25B562070080F9E0 /* DiaryDetailViewController.swift */; };
@@ -119,6 +122,9 @@
 		EC9ED33125BABEF600848426 /* DetailContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentController.swift; sourceTree = "<group>"; };
 		EC9ED33B25BD64D700848426 /* ModifyDiaryTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyDiaryTableController.swift; sourceTree = "<group>"; };
 		ECE6A7C325BED7AC00F59320 /* SerialNumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialNumController.swift; sourceTree = "<group>"; };
+		ECE6A7CC25C1285C00F59320 /* MyArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyArticleCell.swift; sourceTree = "<group>"; };
+		ECE6A7CF25C128C000F59320 /* MyArticleTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyArticleTableController.swift; sourceTree = "<group>"; };
+		ECE6A7D225C1296400F59320 /* DBSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSetting.swift; sourceTree = "<group>"; };
 		ECF2B54E25B420C60080F9E0 /* DiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCell.swift; sourceTree = "<group>"; };
 		ECF2B55525B441BA0080F9E0 /* DiaryCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCalendar.swift; sourceTree = "<group>"; };
 		ECF2B59D25B562070080F9E0 /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +231,7 @@
 				997DD05E25B69E8D007C5002 /* DBMemo.swift */,
 				EC9708A525B65BEC00BF2593 /* DBDiary.swift */,
 				9991D6D525B986B500C3A7B1 /* DBMedical.swift */,
+				ECE6A7D225C1296400F59320 /* DBSetting.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -238,6 +245,7 @@
 				997B460225BC089C0091ADFC /* CommentCell.swift */,
 				9973873C25BD97D7009DC92F /* boardListCell.swift */,
 				992FCF3825BE8E6000674C88 /* NoticeNCenterCell.swift */,
+				ECE6A7CC25C1285C00F59320 /* MyArticleCell.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -292,6 +300,7 @@
 			children = (
 				992F41C825AEB82D00E25199 /* SettingTableViewController.swift */,
 				ECE6A7C325BED7AC00F59320 /* SerialNumController.swift */,
+				ECE6A7CF25C128C000F59320 /* MyArticleTableController.swift */,
 			);
 			path = Tab5_Setting;
 			sourceTree = "<group>";
@@ -483,6 +492,7 @@
 				9991D6D625B986B500C3A7B1 /* DBMedical.swift in Sources */,
 				992651E725A470A90043A16E /* DBUser.swift in Sources */,
 				997DD05F25B69E8D007C5002 /* DBMemo.swift in Sources */,
+				ECE6A7D325C1296400F59320 /* DBSetting.swift in Sources */,
 				9973874125BDB74F009DC92F /* DictionaryLabel.swift in Sources */,
 				9926523825A4ADCC0043A16E /* ScheduleController.swift in Sources */,
 				992F420825AF454300E25199 /* MedicalDetailViewController.swift in Sources */,
@@ -499,12 +509,14 @@
 				9951CB0825BD6D40007DBD06 /* BoardListController.swift in Sources */,
 				9926523425A4ADB10043A16E /* CommunityController.swift in Sources */,
 				7E9F594425B95B290028D9A8 /* AddContentFormController.swift in Sources */,
+				ECE6A7CD25C1285C00F59320 /* MyArticleCell.swift in Sources */,
 				99ABBA2A25BB2F8400FFBE51 /* ArticleContentLabel.swift in Sources */,
 				EC9708A625B65BEC00BF2593 /* DBDiary.swift in Sources */,
 				992FCF3925BE8E6000674C88 /* NoticeNCenterCell.swift in Sources */,
 				997B460325BC089C0091ADFC /* CommentCell.swift in Sources */,
 				9973873D25BD97D7009DC92F /* boardListCell.swift in Sources */,
 				7E68406825BD7025001CFBAC /* CommunityContentLabel.swift in Sources */,
+				ECE6A7D025C128C000F59320 /* MyArticleTableController.swift in Sources */,
 				ECE6A7C425BED7AC00F59320 /* SerialNumController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
