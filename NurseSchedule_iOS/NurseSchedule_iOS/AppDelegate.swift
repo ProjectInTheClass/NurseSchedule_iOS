@@ -50,7 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
 
         
-        
         // 다이어리 목록을 디비에서 불러옴
 //        let dateFormatter : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 0(월단위)
 //        dateFormatter.dateFormat = "yyyy-MM"
@@ -98,10 +97,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             //...
             return
             }
-            currentUser=Auth.auth().currentUser?.uid
+            currentUser = Auth.auth().currentUser?.uid
            print("appDelegate‼️in \(currentUser)")
 //            self.window?.rootViewController!.performSegue(withIdentifier: "YOUR SEGUE IDENTIFIER", sender: nil)
-            
+            DBUser.users.setUser(userID: currentUser!)
             
             
         

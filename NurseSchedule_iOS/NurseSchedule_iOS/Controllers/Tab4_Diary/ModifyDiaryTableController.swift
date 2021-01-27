@@ -158,7 +158,7 @@ class ModifyDiaryTableController: UITableViewController {
             print("일기 수정")
             //self.dismiss(animated: true, completion: nil)
            // self.performSegue(withIdentifier: "rewindToDiaryList", sender: nil)
-            ㄴ
+            
             self.saveDB(content: "")
             
         } //모달창 내리기

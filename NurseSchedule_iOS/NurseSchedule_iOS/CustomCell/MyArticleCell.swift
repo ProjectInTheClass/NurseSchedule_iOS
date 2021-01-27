@@ -9,6 +9,10 @@ import UIKit
 
 class MyArticleCell: UITableViewCell {
 
+    @IBOutlet weak var boardType: UILabel!
+    @IBOutlet weak var articleTitle: UILabel!
+    @IBOutlet weak var articleDate: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

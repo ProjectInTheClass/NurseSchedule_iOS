@@ -104,53 +104,59 @@
         <scene sceneID="tUK-yj-ELm">
             <objects>
                 <tableViewController id="UNe-Td-o4w" customClass="MyArticleTableController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="u47-YO-iRw">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="u47-YO-iRw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <sections>
-                            <tableViewSection id="Flg-r6-HLz">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyArticleCell" rowHeight="90" id="Hw7-kZ-ZGc" customClass="MyArticleCell" customModule="NurseSchedule_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="90"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hw7-kZ-ZGc" id="p92-Qd-C5l">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="게시판이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lr5-42-Kvq">
-                                                    <rect key="frame" x="31" y="11" width="74" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="작성한 글 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRq-Q6-hdK">
-                                                    <rect key="frame" x="47" y="40" width="314" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="여기에 날짜 쓸거임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nof-Cy-OiY">
-                                                    <rect key="frame" x="267" y="11" width="127" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyArticleCell" rowHeight="90" id="Hw7-kZ-ZGc" customClass="MyArticleCell" customModule="NurseSchedule_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hw7-kZ-ZGc" id="p92-Qd-C5l">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="게시판이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lr5-42-Kvq">
+                                            <rect key="frame" x="31" y="11" width="74" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="작성한 글 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRq-Q6-hdK">
+                                            <rect key="frame" x="47" y="40" width="314" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="여기에 날짜 쓸거임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nof-Cy-OiY">
+                                            <rect key="frame" x="267" y="11" width="127" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="articleDate" destination="Nof-Cy-OiY" id="aw8-yM-ZBH"/>
+                                    <outlet property="articleTitle" destination="vRq-Q6-hdK" id="aG6-2s-M87"/>
+                                    <outlet property="boardType" destination="lr5-42-Kvq" id="Lz5-eV-VEA"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="UNe-Td-o4w" id="qNW-Ra-11N"/>
                             <outlet property="delegate" destination="UNe-Td-o4w" id="pHZ-qV-l61"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="내가 쓴 글" id="11E-mj-0kU"/>
+                    <connections>
+                        <outlet property="tableview" destination="u47-YO-iRw" id="kRj-Wh-Ku0"/>
+                        <segue destination="BFM-N3-c0S" kind="show" identifier="showMyContentDetail" id="6qV-pD-vqn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="24k-JX-aDs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -233,9 +239,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="UNe-Td-o4w" kind="show" id="v2Z-5c-DJB"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="wkK-O6-G7c" style="IBUITableViewCellStyleDefault" id="b9c-cq-myL">
                                         <rect key="frame" x="0.0" y="171" width="414" height="43.5"/>
@@ -253,9 +256,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="4Nt-0Q-BCm" kind="show" id="I9g-nf-R6Y"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -320,6 +320,8 @@
                         <outlet property="sectionTwoCellOne" destination="ihu-pC-kvV" id="mr1-9e-eil"/>
                         <outlet property="sectionTwoCellTwo" destination="b9c-cq-myL" id="VN0-pS-vsU"/>
                         <segue destination="Wwp-e9-gru" kind="presentation" identifier="serialNumCheck" id="GEp-M1-uvC"/>
+                        <segue destination="UNe-Td-o4w" kind="show" identifier="showMyContent" id="suu-jO-YA5"/>
+                        <segue destination="4Nt-0Q-BCm" kind="show" identifier="showMyComment" id="Zot-Z3-a4l"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bw-DJ-jKh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -636,13 +638,13 @@
         <!--게시글-->
         <scene sceneID="AlE-D9-Vv8">
             <objects>
-                <viewController id="BFM-N3-c0S" customClass="DetailContentController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BFM-N3-c0S" customClass="DetailContent_inSettingController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Thx-Tm-GNN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ufe-f6-IgU">
-                                <rect key="frame" x="13" y="64" width="388" height="788"/>
+                                <rect key="frame" x="13" y="108" width="388" height="735"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahC-iv-sNW">
                                         <rect key="frame" x="0.0" y="0.0" width="388" height="250"/>
@@ -713,7 +715,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yCk-l2-vQ8">
-                                        <rect key="frame" x="0.0" y="250" width="388" height="498"/>
+                                        <rect key="frame" x="0.0" y="250" width="388" height="445"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="116" id="W0h-5R-Q34" customClass="CommentCell" customModule="NurseSchedule_iOS" customModuleProvider="target">
@@ -772,31 +774,26 @@
                                                         <constraint firstItem="5Iq-fd-wgs" firstAttribute="leading" secondItem="XJd-bh-pmK" secondAttribute="leadingMargin" id="xC7-mC-jku"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
-                                                <connections>
-                                                    <outlet property="commentContent" destination="5iv-I3-HRH" id="H06-uk-mFb"/>
-                                                    <outlet property="commentDate" destination="gUQ-jW-DZs" id="kvf-6I-hzu"/>
-                                                    <outlet property="commentUser" destination="h80-pO-hIV" id="j47-Mw-1Ka"/>
-                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line Color2" translatesAutoresizingMaskIntoConstraints="NO" id="3dN-5s-XHI">
-                                        <rect key="frame" x="0.0" y="748" width="388" height="40"/>
+                                        <rect key="frame" x="0.0" y="695" width="388" height="40"/>
                                     </imageView>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyV-tN-J0H">
-                                <rect key="frame" x="5" y="314" width="404" height="2"/>
+                                <rect key="frame" x="5" y="358" width="404" height="2"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="w8K-2X-g8e"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDg-sl-sS8">
-                                <rect key="frame" x="20" y="709" width="374" height="143"/>
+                                <rect key="frame" x="20" y="753" width="374" height="90"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="u2i-Zc-oHS">
-                                        <rect key="frame" x="0.0" y="0.0" width="359.5" height="143"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359.5" height="90"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="OKJ-my-TXE"/>
@@ -806,7 +803,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyP-xy-N9O">
-                                        <rect key="frame" x="359.5" y="0.0" width="14.5" height="143"/>
+                                        <rect key="frame" x="359.5" y="0.0" width="14.5" height="90"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="tintColor" red="0.15790402910000001" green="0.35576082479999999" blue="0.22151219690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal">
@@ -815,7 +812,7 @@
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
                                         </state>
                                         <connections>
-                                            <action selector="commentUploadButtomTapped:" destination="BFM-N3-c0S" eventType="touchUpInside" id="QwA-Ai-p36"/>
+                                            <action selector="commentUploadButtomTapped:" destination="BFM-N3-c0S" eventType="touchUpInside" id="pmE-gj-RRG"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -853,27 +850,27 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="ellipsis" catalog="system" style="plain" id="nd8-vP-252">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="EditOrDeleteButtonTapped:" destination="BFM-N3-c0S" id="dv4-T7-Vz4"/>
+                                <action selector="EditOrDeleteButtonTapped:" destination="BFM-N3-c0S" id="CuP-FJ-Yxu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="articleContent" destination="ldf-9n-IZd" id="8Lz-vz-HzO"/>
-                        <outlet property="articleDate" destination="B6l-MS-gY4" id="Urg-ji-HOS"/>
-                        <outlet property="articleTitle" destination="yUS-iH-tMh" id="m1b-Ga-tDX"/>
-                        <outlet property="articleUser" destination="T7y-Lk-jpa" id="n53-0X-DxQ"/>
-                        <outlet property="commentTableView" destination="yCk-l2-vQ8" id="E22-NQ-uqU"/>
-                        <outlet property="commentTextView" destination="u2i-Zc-oHS" id="j1k-L9-OQc"/>
-                        <outlet property="commentUploadButton" destination="qyP-xy-N9O" id="rdD-Hz-h74"/>
-                        <outlet property="editOrDeleteButton" destination="nd8-vP-252" id="B7h-0s-QH7"/>
-                        <outlet property="numberOfCommentsLabel" destination="mkA-kn-Opx" id="cgY-PA-kcP"/>
+                        <outlet property="articleContent" destination="ldf-9n-IZd" id="k9n-Eo-eOI"/>
+                        <outlet property="articleDate" destination="B6l-MS-gY4" id="uWR-5s-XCl"/>
+                        <outlet property="articleTitle" destination="yUS-iH-tMh" id="tX5-IC-N9t"/>
+                        <outlet property="articleUser" destination="T7y-Lk-jpa" id="u6A-BN-NO6"/>
+                        <outlet property="commentTableView" destination="yCk-l2-vQ8" id="uIH-nG-BBO"/>
+                        <outlet property="commentTextView" destination="u2i-Zc-oHS" id="jq9-mI-Y6Z"/>
+                        <outlet property="commentUploadButton" destination="qyP-xy-N9O" id="QGK-QA-FS7"/>
+                        <outlet property="editOrDeleteButton" destination="nd8-vP-252" id="0jo-Pn-FUB"/>
+                        <outlet property="numberOfCommentsLabel" destination="mkA-kn-Opx" id="49R-bL-oeH"/>
                         <segue destination="zGa-9M-t7R" kind="unwind" identifier="unwindToContentList" unwindAction="unwindToContentListWithSegue:" id="iCr-an-vdp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5BD-kS-Mr0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="zGa-9M-t7R" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3054" y="258"/>
+            <point key="canvasLocation" x="2906" y="248"/>
         </scene>
     </scenes>
     <resources>

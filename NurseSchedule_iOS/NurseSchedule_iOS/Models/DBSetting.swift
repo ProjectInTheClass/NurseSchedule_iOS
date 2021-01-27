@@ -16,49 +16,39 @@ struct MyArticle {
 }
 
 class DBSetting {
- 
+    
     static let setting = DBSetting()
-    let ref : DatabaseReference! = Database.database().reference().child("Board/")
-  
-  
+    let ref : DatabaseReference! = Database.database().reference()
+    
+    
     //
-    func getMyArticleList(BoardType : String, userId : String, completion : @escaping (String) -> Void){
-        ref.child("Board/\(BoardType)/contentList/").observeSingleEvent(of: .value, with: { (snapshot) in
+    func getMyArticleList(completion : @escaping (myContentInfo) -> Void){
+        ref.child("Users/\(currentUser!)/writtenContent").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            print("DBSetting in‼️‼️‼️‼️‼️‼️")
             let enumerator = snapshot.children
-            while let rest = enumerator.nextObject() as?
-                    DataSnapshot {
-                var getUser : String = "getUser error"
-                if let contentResult = (rest.value as AnyObject)["user"]! as? String {
-                    getUser = contentResult
+            while let rest = enumerator.nextObject() as? DataSnapshot {
+                var myContent = myContentInfo(boardType: "", articleNum : "", title: "", date: "")
+                if let result = (rest.value as AnyObject)["boardType"]! as? String {
+                    myContent.boardType = result
                 }
-                completion(getUser)
+                if let result = (rest.value as AnyObject)["date"]! as? String {
+                    myContent.date = result
+                }
+                if let result = (rest.value as AnyObject)["title"]! as? String {
+                    myContent.title = result
+                }
+                if let result = (rest.value as AnyObject)["articleNum"]! as? String {
+                    myContent.articleNum = result
+                }
+                completion(myContent)
             }
+            
         })
     }
-
     
     
-    func getMyArticle(serialNum : String, completion : @escaping (MyArticle) -> Void){
-        ref.child(" ").observeSingleEvent(of: .value) { (snapshot) in
-            let enumerator = snapshot.children
-            while let rest = enumerator.nextObject() as?
-                    DataSnapshot {
-                var get : MyArticle = MyArticle(BoardType: "getMyArticleList", serialNum: "getMyArticleList Error", title: "getMyArticleList Error", date: "getMyArticleList Error")
-                if let contentResult = (rest.value as AnyObject)["title"] as? String {
-                    get.title = contentResult
-                }
-                if let contentResult = (rest.value as AnyObject)["date"] as? String {
-                    get.date = contentResult
-                }
-                completion(get)
-                
-            }
-            
-            
-        }
-        
-    }
-
+    
 }
 
 
