@@ -23,6 +23,7 @@
 		990AC3F9259DB3C400281E8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990AC3F7259DB3C400281E8B /* Main.storyboard */; };
 		990AC3FB259DB3CB00281E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 990AC3FA259DB3CB00281E8B /* Assets.xcassets */; };
 		990AC3FE259DB3CB00281E8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990AC3FC259DB3CB00281E8B /* LaunchScreen.storyboard */; };
+		9921CF4925C1C59700B8F177 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9921CF4825C1C59700B8F177 /* AppIcon.png */; };
 		992651A525A404520043A16E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 992651A425A404520043A16E /* GoogleService-Info.plist */; };
 		992651E725A470A90043A16E /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992651E625A470A80043A16E /* DBUser.swift */; };
 		9926523425A4ADB10043A16E /* CommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926523325A4ADB10043A16E /* CommunityController.swift */; };
@@ -88,6 +89,7 @@
 		990AC3FA259DB3CB00281E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		990AC3FD259DB3CB00281E8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		990AC3FF259DB3CB00281E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9921CF4825C1C59700B8F177 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon.png; path = NurseSchedule_iOS/Assets.xcassets/AppIcon.imageset/AppIcon.png; sourceTree = "<group>"; };
 		992651A425A404520043A16E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		992651E625A470A80043A16E /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
 		9926523325A4ADB10043A16E /* CommunityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityController.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		990AC3E5259DB3C400281E8B = {
 			isa = PBXGroup;
 			children = (
+				9921CF4825C1C59700B8F177 /* AppIcon.png */,
 				990AC3F0259DB3C400281E8B /* NurseSchedule_iOS */,
 				990AC3EF259DB3C400281E8B /* Products */,
 				05E05B97F1F45BF2B6F9BA66 /* Pods */,
@@ -396,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9921CF4925C1C59700B8F177 /* AppIcon.png in Resources */,
 				99FB53B325A0C17200FBF750 /* Diary.storyboard in Resources */,
 				99FB53A925A0BE7400FBF750 /* Community.storyboard in Resources */,
 				992651A525A404520043A16E /* GoogleService-Info.plist in Resources */,

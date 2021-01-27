@@ -730,7 +730,7 @@
                             <outlet property="delegate" destination="WAB-l8-B7C" id="syX-VR-2sv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="널'스케줄" id="TBE-XL-fBp">
+                    <navigationItem key="navigationItem" title="널'스케줄" largeTitleDisplayMode="always" id="TBE-XL-fBp">
                         <barButtonItem key="rightBarButtonItem" image="bell.fill" catalog="system" style="plain" id="Ed9-v1-g9A">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" id="jg3-W1-PRV">
                                 <rect key="frame" x="301" y="11" width="73" height="22"/>
@@ -778,14 +778,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="boardListCell" id="ee1-gE-OU6" customClass="boardListCell" customModule="NurseSchedule_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="390" height="45.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="28" width="390" height="45.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ee1-gE-OU6" id="Iyp-cP-s9c">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="45.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="45.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbT-XV-3ef">
-                                                    <rect key="frame" x="22" y="11.000000000000002" width="346" height="21.666666666666671"/>
+                                                    <rect key="frame" x="22" y="10.999999999999998" width="346" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
