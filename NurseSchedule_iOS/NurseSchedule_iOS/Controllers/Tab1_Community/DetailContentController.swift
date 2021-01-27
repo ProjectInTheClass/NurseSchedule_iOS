@@ -60,7 +60,7 @@ class DetailContentController: UIViewController {
         }
         DBBoard.board.getNumberOfCommentsInEachArticle(BoardType: boardType, articleID: articleID) { (numberOfComments) in
 
-            self.numberOfCommentsLabel.text = "💬 "+String(numberOfComments)
+            self.numberOfCommentsLabel.text = "                                                                     💬 "+String(numberOfComments)
         }
 
 
