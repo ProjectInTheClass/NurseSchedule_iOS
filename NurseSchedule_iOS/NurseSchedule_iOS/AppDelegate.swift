@@ -18,7 +18,13 @@ var bringdays : [Day] = []
 var boardList : [String] = []
 
 var getDiaryDate : String = ""
-let currentUser = Login.init().googleLogin()
+
+var currentUser = Auth.auth().currentUser?.uid {
+    didSet {
+        print("appDelegate‼️didSet❗️ \(Auth.auth().currentUser?.uid)")
+        //window?.rootViewController!.performSegue(withIdentifier: "unwindToSchedule", sender: nil)
+    }
+}
 
 var recentTitle : String = ""
 
@@ -92,7 +98,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             //...
             return
             }
+            currentUser=Auth.auth().currentUser?.uid
+           print("appDelegate‼️in \(currentUser)")
+//            self.window?.rootViewController!.performSegue(withIdentifier: "YOUR SEGUE IDENTIFIER", sender: nil)
+            
+            
+            
+        
         }
+        print("appDelegate‼️out \(currentUser)")
 //
       // ...
     }

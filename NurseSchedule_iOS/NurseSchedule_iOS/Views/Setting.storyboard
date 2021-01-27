@@ -181,7 +181,7 @@
         <!--Setting-->
         <scene sceneID="06V-R0-ZMr">
             <objects>
-                <tableViewController id="dkG-DH-eHa" sceneMemberID="viewController">
+                <tableViewController id="dkG-DH-eHa" customClass="SettingTableViewController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pcg-mb-q2P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -295,18 +295,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcW-uw-fta">
-                                                    <rect key="frame" x="20" y="6" width="374" height="33"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdV-oI-raG">
+                                                    <rect key="frame" x="5" y="5" width="404" height="34"/>
                                                     <state key="normal" title="로그아웃">
                                                         <color key="titleColor" systemColor="labelColor"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="logoutButton:" destination="dkG-DH-eHa" eventType="touchUpInside" id="yac-QG-XaV"/>
+                                                        <action selector="logoutButton:" destination="dkG-DH-eHa" eventType="touchUpInside" id="M1w-7N-9GM"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="QdV-oI-raG" secondAttribute="bottom" constant="5" id="7Jc-lm-tLU"/>
+                                                <constraint firstItem="QdV-oI-raG" firstAttribute="leading" secondItem="0ER-fG-rYK" secondAttribute="leading" constant="5" id="h4i-DU-HSF"/>
+                                                <constraint firstItem="QdV-oI-raG" firstAttribute="top" secondItem="0ER-fG-rYK" secondAttribute="top" constant="5" id="jvD-5U-Nwv"/>
+                                                <constraint firstAttribute="trailing" secondItem="QdV-oI-raG" secondAttribute="trailing" constant="5" id="one-k5-AY2"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
