@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -16,7 +17,37 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        let window = UIWindow(windowScene: windowScene)
+        
+        Auth.auth().addStateDidChangeListener { (_, user) in
+            if let user = user {
+                // 로그인 된 상태
+                print("=-=-=-=--=-=-=-=--=-")
+                if let tabBar = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "MainTab") as? TabBarController {
+                    window.rootViewController = tabBar
+                    self.window = window
+                    window.makeKeyAndVisible()
+                }
+            } else {
+                // 로그인 안된 상태
+                if let loginVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "LoginVC") as? ViewController {
+                    window.rootViewController = loginVC
+                    self.window = window
+                    window.makeKeyAndVisible()
+                }
+            }
+        }
+//        guard let tabBarController = self.window?.rootViewController?.presentedViewController as? UITabBarController else { return }
+//        guard let tabBarViewControllers = tabBarController.viewControllers else { return }
+//        guard let mainViewController = tabBarViewControllers[0] as? MainViewController else { return }
+//        tabBarController.selectedIndex = 0
+//        mainViewController(withIdentifier: "ScheduleController", sender: nil)
+//        
+//    
+    
+    
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

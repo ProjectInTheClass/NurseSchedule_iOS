@@ -72,7 +72,7 @@ class ModifyDiaryTableController: UITableViewController {
                 shortDate =  String(self.day?.date.prefix(7) ?? " ")
                 print("ShortDate in saveButton(ModifyDiaryController)--------------\(shortDate)")
                 
-                DBDiary.newDiary.addDiary(userID: currentUser, shortDate: shortDate, new: change)
+                DBDiary.newDiary.addDiary(userID: currentUser!, shortDate: shortDate, new: change)
                 
                 print("modify > saveButton click------------")
                 dismiss(animated: true, completion: nil)
@@ -97,7 +97,7 @@ class ModifyDiaryTableController: UITableViewController {
             print("showAlert seletedCondition -----\(self.selectedCondition)")
             
             self.shortDate =  String(self.day?.date.prefix(7) ?? " ")
-            DBDiary.newDiary.addDiary(userID: currentUser, shortDate: self.shortDate, new: self.change)
+            DBDiary.newDiary.addDiary(userID: currentUser!, shortDate: self.shortDate, new: self.change)
             print("일기 수정")
             self.dismiss(animated: true, completion: nil)
            // self.performSegue(withIdentifier: "rewindToDiaryList", sender: nil)
