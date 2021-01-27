@@ -231,7 +231,7 @@ extension DetailContentController : UITableViewDelegate, UITableViewDataSource {
     
     // 댓글 삭제
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        if commentsList[indexPath.row].writer == currentUser {
+        if commentsList[indexPath.row].writer == currentUser! {
             return .delete
         }
         return .none

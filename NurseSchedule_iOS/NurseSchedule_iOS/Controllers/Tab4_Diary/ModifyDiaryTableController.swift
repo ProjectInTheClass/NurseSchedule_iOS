@@ -55,7 +55,8 @@ class ModifyDiaryTableController: UITableViewController {
         super.viewDidLoad()
         
         if let dataExist = startViewNDay {
-            day = dataExist["DiaryDetailViewController"]
+            let fromViewController = Array(startViewNDay!.keys)[0]
+            day = dataExist[fromViewController]
             self.selectedCondition = self.day?.emoji ?? 0
             self.change.date = self.day?.date ?? "default"
             self.change.emoji = self.day?.emoji ?? 0
