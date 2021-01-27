@@ -501,11 +501,11 @@
                                                         <constraint firstAttribute="height" constant="20" id="asB-yS-tP3"/>
                                                     </constraints>
                                                 </view>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="QAY-Hy-1Se" userLabel="Link Stack View">
-                                                    <rect key="frame" x="25" y="235" width="340" height="32"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="QAY-Hy-1Se" userLabel="Link Stack View">
+                                                    <rect key="frame" x="28" y="235" width="334" height="32"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmR-46-G98">
-                                                            <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="34.666666666666664" height="32"/>
                                                             <state key="normal" image="koreaNurse2"/>
                                                             <connections>
                                                                 <action selector="firstLinkButtonTapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="AOg-lt-EPy"/>
@@ -513,7 +513,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oZ-Ot-UdP">
-                                                            <rect key="frame" x="77" y="0.0" width="32" height="32"/>
+                                                            <rect key="frame" x="74.666666666666671" y="0.0" width="35" height="32"/>
                                                             <state key="normal" image="NurseEdu"/>
                                                             <connections>
                                                                 <action selector="newtLinkButtonTapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="Mbb-Sa-Yxg"/>
@@ -521,7 +521,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auC-Gl-7OP">
-                                                            <rect key="frame" x="154" y="0.0" width="32" height="32"/>
+                                                            <rect key="frame" x="149.66666666666666" y="0.0" width="34.666666666666657" height="32"/>
                                                             <state key="normal" image="NurseJob2"/>
                                                             <connections>
                                                                 <action selector="secondLinkButtonTapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="LOm-LF-iul"/>
@@ -529,7 +529,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yn-ma-ELi">
-                                                            <rect key="frame" x="231" y="0.0" width="32" height="32"/>
+                                                            <rect key="frame" x="224.33333333333334" y="0.0" width="35.000000000000028" height="32"/>
                                                             <state key="normal" image="Nurscape2"/>
                                                             <connections>
                                                                 <action selector="thirdLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="cUl-ST-Jed"/>
@@ -537,7 +537,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6G-Xo-SET">
-                                                            <rect key="frame" x="308" y="0.0" width="32" height="32"/>
+                                                            <rect key="frame" x="299.33333333333331" y="0.0" width="34.666666666666686" height="32"/>
                                                             <state key="normal" image="Nursestory3"/>
                                                             <connections>
                                                                 <action selector="fourthLinkButtonTapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="IID-Xz-djS"/>
@@ -713,13 +713,13 @@
                                             <constraint firstItem="z5j-ik-hGB" firstAttribute="leading" secondItem="bbq-eQ-MXU" secondAttribute="leading" id="PA0-Fp-sbD"/>
                                             <constraint firstAttribute="bottom" secondItem="46a-3T-BqV" secondAttribute="bottom" constant="10" id="QbG-Cd-JES"/>
                                             <constraint firstItem="z5j-ik-hGB" firstAttribute="top" secondItem="bbq-eQ-MXU" secondAttribute="top" id="SjR-7a-fjb"/>
-                                            <constraint firstItem="QAY-Hy-1Se" firstAttribute="leading" secondItem="bbq-eQ-MXU" secondAttribute="leading" constant="25" id="WFu-0W-D5x"/>
+                                            <constraint firstItem="QAY-Hy-1Se" firstAttribute="leading" secondItem="bbq-eQ-MXU" secondAttribute="leading" constant="28" id="WFu-0W-D5x"/>
                                             <constraint firstItem="Lhu-6n-dEw" firstAttribute="leading" secondItem="bbq-eQ-MXU" secondAttribute="leading" constant="10" id="e1X-Zm-FZn"/>
                                             <constraint firstAttribute="trailing" secondItem="Hfb-oR-XjZ" secondAttribute="trailing" constant="10" id="erU-tm-566"/>
                                             <constraint firstItem="ZC7-BX-l5n" firstAttribute="leading" secondItem="bbq-eQ-MXU" secondAttribute="leading" constant="30" id="gxd-IE-fbk"/>
                                             <constraint firstItem="46a-3T-BqV" firstAttribute="leading" secondItem="bbq-eQ-MXU" secondAttribute="leading" constant="10" id="kEa-Gn-d57"/>
                                             <constraint firstAttribute="trailing" secondItem="cCc-W3-xRq" secondAttribute="trailing" id="oDR-XG-fTb"/>
-                                            <constraint firstAttribute="trailing" secondItem="QAY-Hy-1Se" secondAttribute="trailing" constant="25" id="vX7-W9-73b"/>
+                                            <constraint firstAttribute="trailing" secondItem="QAY-Hy-1Se" secondAttribute="trailing" constant="28" id="vX7-W9-73b"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
