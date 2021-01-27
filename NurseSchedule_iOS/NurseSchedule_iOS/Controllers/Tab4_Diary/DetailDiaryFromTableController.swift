@@ -62,7 +62,7 @@ class DetailDiaryFromTableController: UIViewController {
     @IBAction func modifyButton2(_ sender: Any) {//tableView에서 detailView 들어갔을 때 수정버튼
         performSegue(withIdentifier: "editDiary", sender: detailInfoFromDay)
         //AddDiaryTableController.addDiaryController.modifyDiary()
-        detailView.isHidden = true
+        //detailView.isHidden = true
         
     }
     

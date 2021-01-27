@@ -15,6 +15,7 @@ class ModifyDiaryTableController: UITableViewController {
     var day : Day? = nil// 기존에 저장되어있던 내용
     
     var writtencontent : String? = nil // 작성된 TextView 내용
+    
     var selectedCondition : Int = 0 // segmentedcontrol로 선택된 condition Index를 저정하기 위한 변수
     
     var shortDate : String = " "
@@ -36,14 +37,15 @@ class ModifyDiaryTableController: UITableViewController {
         case 4:
             selectedCondition = 4
         default:
-            selectedCondition = 0 //default : ?로 설정
+            selectedCondition = 0
         }
     }
     
     override func viewDidLoad() {
         
-        //segmentController을 touch하지 않을 경우를 위한 setting -> default값으로 저장
+        //segmentController을 touch하지 않을 경우를 위한 set -> default값으로 저장
         super.viewDidLoad()
+        self.selectedCondition = self.day?.emoji ?? 0
         self.change.date = self.day?.date ?? "default"
         self.change.emoji = self.day?.emoji ?? 0
         print("viewDidLoad change.emoji -------- \(self.change.emoji)")
@@ -68,6 +70,8 @@ class ModifyDiaryTableController: UITableViewController {
                 self.change.content = writtencontent
 
                 print("saveButton seletedCondition -----\(selectedCondition)")
+                
+                self.change.emoji = selectedCondition
                 
                 shortDate =  String(self.day?.date.prefix(7) ?? " ")
                 print("ShortDate in saveButton(ModifyDiaryController)--------------\(shortDate)")
@@ -101,6 +105,7 @@ class ModifyDiaryTableController: UITableViewController {
             print("일기 수정")
             self.dismiss(animated: true, completion: nil)
            // self.performSegue(withIdentifier: "rewindToDiaryList", sender: nil)
+            
             
             
         } //모달창 내리기
