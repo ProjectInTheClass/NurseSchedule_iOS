@@ -4,6 +4,9 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>HangeulNuriR.ttf</string>
+		<string>HangeulNuriB.ttf</string>
+		<string>Kyobo Handwriting 2019.otf</string>
 		<string>Stupendous Jack.ttf</string>
 	</array>
 	<key>LSApplicationCategoryType</key>

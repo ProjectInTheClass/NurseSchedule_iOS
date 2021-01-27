@@ -12,7 +12,10 @@ class CommunityNavigationController: UINavigationController {
     @IBOutlet weak var navigationbar: UINavigationBar!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //navigationbar.titleTextAttributes = "wow"
+        let font = UIFont(name: "Stupendous Jack", size: 36)
+        //navigationbar.topItem?.title = font
+        //UINavigationBar.appearance().titleTextAttributes = attributes
+        // navigationbar.topItem?.title = "wow"
         // Do any additional setup after loading the view.
     }
     

@@ -9,6 +9,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HangeulNuriR.ttf">
+            <string>HangeulNuri</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--시간표 공유-->
         <scene sceneID="EGv-QF-494">
@@ -410,7 +415,7 @@
                                         <rect key="frame" x="8" y="87" width="398" height="170"/>
                                         <color key="backgroundColor" red="0.93321973089999999" green="0.93331867459999995" blue="0.93730396029999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" systemColor="systemGray6Color"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="HangeulNuri" family="HangeulNuri" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7t-a4-KGK">
@@ -473,7 +478,7 @@
                             <constraint firstItem="DrZ-Zr-3ie" firstAttribute="bottom" secondItem="Aop-eX-Av0" secondAttribute="bottom" id="qOT-df-4eJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="calendar" image="calendar.circle" catalog="system" selectedImage="calendar.circle.fill" id="BgW-88-YqU"/>
+                    <tabBarItem key="tabBarItem" title="스케줄" image="calendar.circle" catalog="system" selectedImage="calendar.circle.fill" id="BgW-88-YqU"/>
                     <navigationItem key="navigationItem" title="캘린더" id="nSH-Yv-sk2">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="camera.viewfinder" catalog="system" id="eYC-1j-9y5">
                             <color key="tintColor" systemColor="labelColor"/>
