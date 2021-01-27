@@ -999,7 +999,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="게시글 목록" id="hH0-nR-m5J">
-                        <barButtonItem key="backBarButtonItem" title=" " id="PyN-tz-ngd"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="CLo-mL-2Jg">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -1030,7 +1029,7 @@
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.70076072219999996" green="0.89874082799999999" blue="0.62450921540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
