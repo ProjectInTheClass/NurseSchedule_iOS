@@ -54,8 +54,6 @@ class SettingTableViewController: UITableViewController {
         self.present(alert, animated: false, completion: nil)
         
         
-        
-      
     }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
