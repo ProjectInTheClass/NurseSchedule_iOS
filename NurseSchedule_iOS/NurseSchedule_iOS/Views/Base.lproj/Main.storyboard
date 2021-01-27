@@ -107,7 +107,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uSC-1t-d9Q"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.96722583829999997" green="0.99763482810000004" blue="0.78506383999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="DyD-Yb-dao" firstAttribute="centerX" secondItem="2tT-aw-18b" secondAttribute="centerX" id="9m8-yk-ycN"/>
                             <constraint firstItem="DyD-Yb-dao" firstAttribute="centerY" secondItem="2tT-aw-18b" secondAttribute="centerY" id="vJc-Tv-oXE"/>

@@ -10,17 +10,18 @@ import Firebase
 
 class DBMemo {
     let ref : DatabaseReference! = Database.database().reference()
+    let currentUser = Auth.auth().currentUser?.uid
     
     static let newMemo = DBMemo()
     
     func addDaySchedule(newDay : ForSavingDayWorkNMemo) {
-        let reference = ref.child("Schedule/\(currentUser)/\(newDay.date)/")
+        let reference = ref.child("Schedule/\(currentUser!)/\(newDay.date)/")
         let newMemo = ["date": newDay.date, "memo": newDay.memo, "workType": newDay.worktype]
         reference.setValue(newMemo)
     }
     
     func getDaySchedule(date : String, completion : @escaping (ForSavingDayWorkNMemo) -> Void ) {
-        ref.child("Schedule/\(currentUser)/\(date)").observeSingleEvent(of: .value) { (snapshot) in
+        ref.child("Schedule/\(currentUser!)/\(date)").observeSingleEvent(of: .value) { (snapshot) in
             var daySchedule : ForSavingDayWorkNMemo = ForSavingDayWorkNMemo(date: date, worktype: "", memo: "")
             if let value = snapshot.value as? NSDictionary {
                 daySchedule.date = value["date"] as? String ?? "date_error"
@@ -36,7 +37,7 @@ class DBMemo {
     }
     
     func getWorkType(completion : @escaping (ForSavingDayWorkNMemo) -> Void) {
-        ref.child("Schedule/\(currentUser)/").observeSingleEvent(of : .value, with: { (snapshot) in
+        ref.child("Schedule/\(currentUser!)/").observeSingleEvent(of : .value, with: { (snapshot) in
             let enumerator = snapshot.children
             while let rest = enumerator.nextObject() as? DataSnapshot {
                 var gettype = ForSavingDayWorkNMemo(date: "getWorkTypeDate", worktype: "", memo: "")

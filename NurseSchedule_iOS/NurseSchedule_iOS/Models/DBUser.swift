@@ -14,16 +14,16 @@ class DBUser {
     static let users = DBUser()
     
     
-    func setUser(userName : String, userEmail : String) -> String {
-        let userInfo = ["name" : userName, "email" : userEmail]
+    func setUser(userID : String) {
+        let userInfo = ["userID" : userID]
 
-        let reference  = ref.child("Users").childByAutoId()
+        let reference  = ref.child("Users/\(userID)/")
 
         reference.setValue(userInfo)
         
-        let childautoID = reference.key
-        print("childautoID: \(childautoID)")
-        return childautoID ?? "fail"
+//        let childautoID = reference.key
+//        print("childautoID: \(childautoID)")
+//        return childautoID ?? "fail"
     }
     
     func getUser(_ user_serialNum : String){

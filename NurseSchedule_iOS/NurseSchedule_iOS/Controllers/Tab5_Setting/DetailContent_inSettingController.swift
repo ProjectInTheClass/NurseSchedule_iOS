@@ -1,13 +1,14 @@
 //
-//  DetailContentController.swift
+//  DetailContent_inSettingController.swift
 //  NurseSchedule_iOS
 //
-//  Created by 강성희 on 2021/01/22.
+//  Created by 이주원 on 2021/01/27.
 //
+
 
 import UIKit
 
-class DetailContentController: UIViewController {
+class DetailContent_inSettingController: UIViewController {
 
     @IBOutlet weak var articleUser: UILabel!
     @IBOutlet weak var articleDate: UILabel!
@@ -21,7 +22,8 @@ class DetailContentController: UIViewController {
     
     @IBOutlet weak var editOrDeleteButton: UIBarButtonItem!
     
-    var articleAllInfo : ArticleAllInfo? = nil
+    var getMyContentInfo : myContentInfo? = nil
+    var articleAllInfo : Article? = nil
     
     
     var commentsList : [Comment] = []
@@ -34,37 +36,55 @@ class DetailContentController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        articleUser.text = "👤익명"
-        articleDate.text = articleAllInfo?.articleInfo.date
-        articleTitle.text = articleAllInfo?.articleInfo.title
-        articleContent.text = articleAllInfo?.articleInfo.content
-    
+        
+        guard let boardType = getMyContentInfo?.boardType else { return }
+        guard let articleNum = getMyContentInfo?.articleNum else { return }
+        
+        
+        print("✅\(boardType)")
+        print("✅\(articleNum)")
+        
+        
+        
+        DBBoard.board.getArticleInfoIn(BoardType: boardType, articleNum: articleNum) { (article) in
+            self.articleAllInfo = article
+            print("articleAllInfo‼️‼️‼️‼️‼️‼️ \(self.articleAllInfo)")
+            self.articleUser.text = "👤익명"
+            self.articleDate.text = self.articleAllInfo?.date
+            self.articleTitle.text = self.articleAllInfo?.title
+            self.articleContent.text = self.articleAllInfo?.content
+            
+            DBBoard.board.getNumberOfCommentsInEachArticle(BoardType: boardType, articleID: articleNum) { (numberOfComments) in
+
+                self.numberOfCommentsLabel.text = "💬 "+String(numberOfComments)
+            }
+            
+            //self.commentsList = self.readDB(boardType: boardType, articleNum: articleNum)
+        
+        }
+        
+        
+        
         //글 작성자와 앱사용자가 다른 경우에 수정삭제 버튼 hidden
-        guard let contentUser = articleAllInfo?.articleInfo.user else {   return  }
+        guard let contentUser = articleAllInfo?.user else {   return  }
         if currentUser != contentUser {
             self.navigationItem.setRightBarButton(nil, animated: true)
         }
         
-        commentsList.removeAll()
-        guard let boardType = articleAllInfo?.boardType else { return }
-        guard let articleID = articleAllInfo?.articleInfo.articleID else { return }
-        DBBoard.board.getCommentsList(BoardType: boardType, articleID: articleID) { (comment) in
-            self.commentsList.append(comment)
-            print("commentLists get successful")
-            self.commentTableView.reloadData()
-        }
+//        commentsList.removeAll()
+//
+//        DBBoard.board.getCommentsList(BoardType: boardType, articleID: articleNum) { (comment) in
+//            print("☀️\(boardType)")
+//            print(articleNum)
+//            self.commentsList.append(comment)
+//            print("commentLists get successful")
+//            self.commentTableView.reloadData()
+//        }
         //commentTableView.reloadData()
         
         if boardType == "공지사항" {
             numberOfCommentsLabel.isHidden = true
         }
-        DBBoard.board.getNumberOfCommentsInEachArticle(BoardType: boardType, articleID: articleID) { (numberOfComments) in
-
-            self.numberOfCommentsLabel.text = "                                                                     💬 "+String(numberOfComments)
-        }
-
-
-        
         
         commentTextView.delegate = self // txtvReview가 유저가 선언한 outlet
         commentTextViewPlaceholderSetting()
@@ -84,6 +104,22 @@ class DetailContentController: UIViewController {
         self.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
 
     }
+    
+    
+    func readDB(boardType : String, articleNum : String) -> [Comment] {
+        commentsList.removeAll()
+        
+        DBBoard.board.getCommentsList(BoardType: boardType, articleID: articleNum) { (comment) in
+            print("☀️\(boardType)")
+            print(articleNum)
+            self.commentsList.append(comment)
+            print("commentLists get successful")
+            self.commentTableView.reloadData()
+        }
+        
+        return commentsList
+    }
+    
     
     @objc func tapDone(sender: Any) {
         self.view.endEditing(true)
@@ -130,9 +166,9 @@ class DetailContentController: UIViewController {
             let alert = UIAlertController(title: "삭제하시겠습니까?", message: "되돌이킬수없어요😭", preferredStyle: UIAlertController.Style.alert)
             let cancelAction = UIAlertAction(title: "취소", style: .cancel)
             let okAction = UIAlertAction(title: "확인", style: .destructive) { _ in
-                guard let boardType = self.articleAllInfo?.boardType else { return }
-                guard let articleID = self.articleAllInfo?.articleInfo.articleID else { return }
-                DBBoard.board.deleteArticle(BoardType: boardType, articleID: articleID)
+                guard let boardType = self.getMyContentInfo?.boardType else { return }
+                guard let articleNum = self.getMyContentInfo?.articleNum else { return }
+                DBBoard.board.deleteArticle(BoardType: boardType, articleID: articleNum)
                 self.performSegue(withIdentifier: "unwindToContentList", sender: nil)
           
             }
@@ -150,10 +186,10 @@ class DetailContentController: UIViewController {
     }
     
     @IBAction func commentUploadButtomTapped(_ sender: Any) {
-        guard let boardType = articleAllInfo?.boardType else { return }
-        guard let articleID = articleAllInfo?.articleInfo.articleID else { return }
+        guard let boardType = getMyContentInfo?.boardType else { return }
+        guard let articleNum = getMyContentInfo?.articleNum else { return }
         let comment = commentTextView.text!
-        DBBoard.board.addComment(BoardType: boardType, articleID: articleID, comment: comment)
+        DBBoard.board.addComment(BoardType: boardType, articleID: articleNum, comment: comment)
         commentTextViewPlaceholderSetting()
         textViewDidBeginEditing(commentTextView)
         commentTableView.reloadData()
@@ -161,7 +197,7 @@ class DetailContentController: UIViewController {
 
 }
 
-extension DetailContentController : UITextViewDelegate {
+extension DetailContent_inSettingController : UITextViewDelegate {
     func commentTextViewPlaceholderSetting() {
         commentTextView.text = "댓글을 입력하세요"
         commentTextView.textColor = UIColor.lightGray
@@ -210,14 +246,20 @@ extension DetailContentController : UITextViewDelegate {
     
 }
 
-extension DetailContentController : UITableViewDelegate, UITableViewDataSource {
+extension DetailContent_inSettingController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        commentsList = readDB(boardType: getMyContentInfo!.boardType, articleNum: getMyContentInfo!.articleNum)
+        if commentsList != nil {
+            print("data !!!!!!!!!!!!!!!!!!!!!!!!!!")
+        } else {
+            print("no data !!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        }
         return commentsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentCell
-        
+      
         cell.commentContent.text = commentsList[indexPath.row].content
         cell.commentDate.text = commentsList[indexPath.row].date
         cell.commentUser.text = "👤익명"
@@ -240,10 +282,10 @@ extension DetailContentController : UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             let alert = UIAlertController(title: "삭제하시겠습니까?", message: "되돌이킬수없어요😭", preferredStyle: UIAlertController.Style.alert)
             let cancelAction = UIAlertAction(title: "취소", style: .cancel)
-            let okAction = UIAlertAction(title: "확인", style: .destructive) { _ in
-                guard let boardType = self.articleAllInfo?.boardType else { return }
-                guard let articleID = self.articleAllInfo?.articleInfo.articleID else { return }
-                DBBoard.board.deleteComment(BoardType:boardType , articleID: articleID, commentID: self.commentsList[indexPath.row].commentID)
+            let okAction = UIAlertAction(title: "확인", style: .destructive) { [self] _ in
+                guard let boardType = self.getMyContentInfo?.boardType else { return }
+                guard let articleNum = self.getMyContentInfo?.articleNum else { return }
+                DBBoard.board.deleteComment(BoardType:boardType , articleID: articleNum, commentID: self.commentsList[indexPath.row].commentID)
                 self.commentsList.remove(at: indexPath.row)
                 self.commentTableView.deleteRows(at: [indexPath], with: .automatic)
             }

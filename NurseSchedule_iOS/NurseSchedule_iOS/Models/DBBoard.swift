@@ -13,13 +13,15 @@ import Firebase
 class DBBoard  {
     
     static let board = DBBoard()
-    let ref : DatabaseReference! = Database.database().reference().child("Board/")
+    let ref : DatabaseReference! = Database.database().reference()
     
     var boardNum_String : String = ""
     var boardNum_Int : Int = 0
     var newBoardNum : String = "error"
 
     var countingContent : Int = 0
+    
+    let currentUser = Auth.auth().currentUser?.uid
 
     func IntToString(boardNum_Int : Int) -> String {
         return String(boardNum_Int)
@@ -35,9 +37,14 @@ class DBBoard  {
         countContent(BoardType: BoardType, DataType: DataType, new: new)
         print("addContent >>> \(newContent)")
  */
-        let reference4 = ref.child("\(BoardType)/\(DataType)/\(UUID().uuidString)")
+        let articleNum = UUID().uuidString
+        let reference = ref.child("Board/\(BoardType)/\(DataType)/\(articleNum)")
         let newContent = ["title": new.title, "content": new.content, "date": new.date, "user":new.user]
-        reference4.setValue(newContent)
+        reference.setValue(newContent)
+        
+        let reference2 = ref.child("Users/\(currentUser!)/writtenContent/").childByAutoId()
+        let myContent = ["boardType" : BoardType, "date" : new.date, "title" : new.title, "articleNum" : articleNum]
+        reference2.setValue(myContent)
         
     }
   
@@ -53,6 +60,9 @@ class DBBoard  {
             }
         })
     }
+    
+    
+    
     
     /*
     func countContent(BoardType: String, DataType: String , new: Article){
@@ -89,7 +99,7 @@ class DBBoard  {
     */
     
     func getArticleListIn(BoardType: String, completion : @escaping (Article) -> Void) {
-        ref.child("\(BoardType)/contentList").queryOrdered(byChild: "date").observeSingleEvent(of: .value) { (snapshot) in
+        ref.child("Board/\(BoardType)/contentList").queryOrdered(byChild: "date").observeSingleEvent(of: .value) { (snapshot) in
             let enumerator = snapshot.children
             while let rest = enumerator.nextObject() as? DataSnapshot {
                 var eachArticle = Article(articleID: "", title: "", date: "", content: "", user: "")
@@ -113,6 +123,27 @@ class DBBoard  {
             }
         }
     }
+    
+    
+    func getArticleInfoIn(BoardType : String, articleNum : String, completion : @escaping (Article) -> Void) {
+        ref.child("Board/\(BoardType)/contentList/\(articleNum)").observeSingleEvent(of: .value) { (snapshot) in
+            var detailArticle = Article(articleID: articleNum, title: "myDBBoard_getArticleInfo_title", date: "myDBBoard_getArticleInfo_date", content: "myDBBoard_getArticleInfo_Content", user: "myDBBoard_getArticleInfo_user")
+            if let value = snapshot.value as? NSDictionary {
+                detailArticle.content = value["content"] as! String
+                detailArticle.date = value["date"] as! String
+                detailArticle.title = value["title"] as! String
+                detailArticle.user = value["user"] as! String
+                print("myDBBoard_getArticleInfo >>>>> \(detailArticle)")
+                completion(detailArticle)
+            } else {
+                completion(detailArticle)
+            }
+            
+            }
+        }
+    
+    
+    
     
     /* before sorting
     func getArticleListIn(BoardType: String, completion : @escaping (Article) -> Void) {
@@ -143,7 +174,7 @@ class DBBoard  {
      */
     
     func getNumberOfCommentsInEachArticle(BoardType:String, articleID: String, completion : @escaping (Int)->Void){
-        ref.child("\(BoardType)/contentList/\(articleID)/commentList").observe(.value, with: { snapshot in
+        ref.child("Board/\(BoardType)/contentList/\(articleID)/commentList").observe(.value, with: { snapshot in
             let numberOfCommentsInEachArticle : Int = Int(snapshot.childrenCount)
             print("numberOfCommentsInEachArticle!!!!! \(numberOfCommentsInEachArticle)")
             completion(numberOfCommentsInEachArticle)
@@ -153,19 +184,19 @@ class DBBoard  {
     
     
     func deleteComment(BoardType: String, articleID: String, commentID: String) {
-        ref.child("\(BoardType)/contentList/\(articleID)/commentList/\(commentID)").removeValue()
+        ref.child("Board/\(BoardType)/contentList/\(articleID)/commentList/\(commentID)").removeValue()
     }
     
     func addComment(BoardType: String, articleID : String, comment: String) {
-        let reference = ref.child("\(BoardType)/contentList/\(articleID)/commentList/\(UUID().uuidString)")
+        let reference = ref.child("Board/\(BoardType)/contentList/\(articleID)/commentList/\(UUID().uuidString)")
         let dateFormatter : DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd, HH:mm:ss"
-        let newComment = ["comment": comment, "commentWriter": currentUser, "commentDate": dateFormatter.string(from: Date.init())]
+        let newComment = ["comment": comment, "commentWriter": currentUser!, "commentDate": dateFormatter.string(from: Date.init())]
         reference.setValue(newComment)
     }
     
     func getCommentsList(BoardType: String, articleID: String, completion : @escaping (Comment) -> Void) {
-        ref.child("\(BoardType)/contentList/\(articleID)/commentList").queryOrdered(byChild: "commentDate").observeSingleEvent(of: .value, with: { snapshot in
+        ref.child("Board/\(BoardType)/contentList/\(articleID)/commentList").queryOrdered(byChild: "commentDate").observeSingleEvent(of: .value, with: { snapshot in
             let enumerator = snapshot.children
             while let rest = enumerator.nextObject() as? DataSnapshot {
                 var comment = Comment(commentID: "", writer: "", date: "", content: "")
@@ -190,7 +221,7 @@ class DBBoard  {
     }
     
     func deleteArticle(BoardType: String, articleID : String) {
-        ref.child("\(BoardType)/contentList/\(articleID)").removeValue()
+        ref.child("Board/\(BoardType)/contentList/\(articleID)").removeValue()
     }
     
     func editContent(BoardType: String, update: Article, articleID : String) {

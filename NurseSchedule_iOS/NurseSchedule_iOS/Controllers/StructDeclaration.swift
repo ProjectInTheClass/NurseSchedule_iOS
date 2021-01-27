@@ -95,3 +95,11 @@ struct Day {
     var date : String
     var content : String
 }
+
+struct myContentInfo{
+    var boardType : String
+    var articleNum : String
+    var title : String
+    var date : String
+
+}

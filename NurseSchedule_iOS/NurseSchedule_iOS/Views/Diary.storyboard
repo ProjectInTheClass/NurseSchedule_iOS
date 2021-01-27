@@ -813,8 +813,8 @@
                         <outlet property="DateLabel" destination="5le-CA-vnp" id="3Ah-df-AlN"/>
                         <outlet property="ModifytextView" destination="Wyj-9I-5G2" id="cba-lM-0r4"/>
                         <outlet property="conditionSegController" destination="Idn-wz-ZWe" id="rnN-gw-bt0"/>
-                        <segue destination="Ikg-oW-2Fp" kind="unwind" unwindAction="unwindToCalendarDiary:" id="bcM-a8-0Xf"/>
-                        <segue destination="Ikg-oW-2Fp" kind="unwind" unwindAction="unwindToDiaryList:" id="0al-M5-Ke4"/>
+                        <segue destination="Ikg-oW-2Fp" kind="unwind" identifier="unwindToCalendarDiary" unwindAction="unwindToCalendarDiary:" id="bcM-a8-0Xf"/>
+                        <segue destination="Ikg-oW-2Fp" kind="unwind" identifier="unwindToDiaryList" unwindAction="unwindToDiaryList:" id="0al-M5-Ke4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EjG-DC-gkC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

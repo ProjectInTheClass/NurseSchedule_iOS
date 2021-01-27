@@ -49,7 +49,7 @@ class DBDiary {
     
     func getDayEmoji(month : String, completion : @escaping (Day) -> Void) {
         print("getDayIemoji DBDBDBDBDBDDBDBb")
-        ref.child("Diary/\(currentUser)/\(month)/").observeSingleEvent(of : .value, with: { (snapshot) in
+        ref.child("Diary/\(currentUser!)/\(month)/").observeSingleEvent(of : .value, with: { (snapshot) in
             let enumerator = snapshot.children
             while let rest = enumerator.nextObject() as? DataSnapshot {
                 var getemoji = Day(emoji: 0, date: "", content: "")

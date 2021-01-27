@@ -94,11 +94,9 @@ class SettingTableViewController: UITableViewController {
         case 1:
             switch indexPath.row {
             case 0:
-                print("n")
-//                       sectionTwoCellOne.textLabel?.text = "내가 쓴 글"
+               performSegue(withIdentifier: "showMyContent", sender: nil)
             case 1:
-                print("n")
-//                       sectionTwoCellTwo.textLabel?.text = "내가 쓴 댓글"
+                performSegue(withIdentifier: "showMyComment", sender: nil)
             default:
                 break
             }
