@@ -588,29 +588,29 @@
                                                         </button>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lhu-6n-dEw" userLabel="Board Stack View">
-                                                    <rect key="frame" x="10" y="329.66666666666669" width="370" height="240.00000000000006"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Lhu-6n-dEw" userLabel="Board Stack View">
+                                                    <rect key="frame" x="10" y="336.66666666666669" width="370" height="247.00000000000006"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zfU-Xx-HMR">
                                                             <rect key="frame" x="0.0" y="0.0" width="370" height="120"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhp-At-3RD">
                                                                     <rect key="frame" x="0.0" y="0.0" width="123.33333333333333" height="120"/>
-                                                                    <state key="normal" title="자유게시판" image="Free2"/>
+                                                                    <state key="normal" title="자유게시판" image="FREE-2"/>
                                                                     <connections>
                                                                         <action selector="board1Tapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="aQz-mz-VCf"/>
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RG0-P1-T1A">
                                                                     <rect key="frame" x="123.33333333333334" y="0.0" width="123.33333333333334" height="120"/>
-                                                                    <state key="normal" title="취업게시판" image="Job2"/>
+                                                                    <state key="normal" title="취업게시판" image="JOB-1"/>
                                                                     <connections>
                                                                         <action selector="board2Tapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="Jta-mB-SPr"/>
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPK-VA-dWj">
                                                                     <rect key="frame" x="246.66666666666671" y="0.0" width="123.33333333333334" height="120"/>
-                                                                    <state key="normal" title="간호지식" image="QnA2"/>
+                                                                    <state key="normal" title="간호지식" image="QNA-1"/>
                                                                     <connections>
                                                                         <action selector="board3Tapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="zCe-mr-yRs"/>
                                                                     </connections>
@@ -621,25 +621,25 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Emo-xk-74y">
-                                                            <rect key="frame" x="0.0" y="120" width="370" height="120"/>
+                                                            <rect key="frame" x="0.0" y="127" width="370" height="120"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daw-FF-f5U">
                                                                     <rect key="frame" x="0.0" y="0.0" width="123.33333333333333" height="120"/>
-                                                                    <state key="normal" title="정보게시판" image="Info2"/>
+                                                                    <state key="normal" title="정보게시판" image="INFO-1"/>
                                                                     <connections>
                                                                         <action selector="board4Tapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="SPS-8u-uPF"/>
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fru-LE-UXl">
                                                                     <rect key="frame" x="123.33333333333334" y="0.0" width="123.33333333333334" height="120"/>
-                                                                    <state key="normal" title="신입게시판" image="New2"/>
+                                                                    <state key="normal" title="신입게시판" image="NEW-1"/>
                                                                     <connections>
                                                                         <action selector="board5Tapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="sad-HM-8ZI"/>
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Az-zq-6J7">
                                                                     <rect key="frame" x="246.66666666666671" y="0.0" width="123.33333333333334" height="120"/>
-                                                                    <state key="normal" title="더보기" image="more2"/>
+                                                                    <state key="normal" title="더보기" image="MORE-1"/>
                                                                     <connections>
                                                                         <segue destination="JD0-c8-siV" kind="show" id="n0D-mj-0R7"/>
                                                                     </connections>
@@ -691,8 +691,8 @@
                                                     </constraints>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46a-3T-BqV">
-                                                    <rect key="frame" x="10" y="579.66666666666663" width="370" height="339.33333333333337"/>
-                                                    <color key="backgroundColor" red="0.92557317019999996" green="0.91752618549999998" blue="0.92560875419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="10" y="593.66666666666663" width="370" height="325.33333333333337"/>
+                                                    <color key="backgroundColor" red="0.96460121870000004" green="0.96476620440000005" blue="0.96459084750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -701,7 +701,7 @@
                                                 <constraint firstItem="Hfb-oR-XjZ" firstAttribute="top" secondItem="75u-SV-VrE" secondAttribute="bottom" constant="3" id="Rg6-1x-phu"/>
                                                 <constraint firstItem="75u-SV-VrE" firstAttribute="centerX" secondItem="AA2-a9-7Yi" secondAttribute="centerX" id="V5C-0a-t2a"/>
                                                 <constraint firstItem="QAY-Hy-1Se" firstAttribute="top" secondItem="z5j-ik-hGB" secondAttribute="bottom" constant="10" id="nHk-gN-zpl"/>
-                                                <constraint firstItem="Lhu-6n-dEw" firstAttribute="top" secondItem="Hfb-oR-XjZ" secondAttribute="bottom" constant="3" id="wDG-14-gpP"/>
+                                                <constraint firstItem="Lhu-6n-dEw" firstAttribute="top" secondItem="Hfb-oR-XjZ" secondAttribute="bottom" constant="10" id="wDG-14-gpP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
@@ -781,14 +781,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="boardListCell" id="ee1-gE-OU6" customClass="boardListCell" customModule="NurseSchedule_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="390" height="45.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="28" width="390" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ee1-gE-OU6" id="Iyp-cP-s9c">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="45.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbT-XV-3ef">
-                                                    <rect key="frame" x="22" y="10.999999999999998" width="346" height="21.333333333333329"/>
+                                                    <rect key="frame" x="22" y="11" width="346" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1075,13 +1075,13 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="364" height="21.666666666666668"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mf-j7-7OL">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="21.666666666666668"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="21.666666666666668"/>
                                                                         <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKN-VD-bJX">
-                                                                        <rect key="frame" x="260" y="0.0" width="104" height="21.666666666666668"/>
+                                                                        <rect key="frame" x="261.66666666666669" y="0.0" width="102.33333333333331" height="21.666666666666668"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -1454,16 +1454,22 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Add" width="74" height="48"/>
+        <image name="FREE-2" width="174" height="174"/>
         <image name="Free2" width="394" height="378"/>
+        <image name="INFO-1" width="174" height="174"/>
         <image name="Info2" width="394" height="378"/>
+        <image name="JOB-1" width="174" height="174"/>
         <image name="Job2" width="382" height="380"/>
         <image name="Line Color2" width="385" height="40"/>
+        <image name="MORE-1" width="174" height="174"/>
         <image name="Modify" width="74" height="48"/>
+        <image name="NEW-1" width="174" height="174"/>
         <image name="New2" width="382" height="380"/>
         <image name="Nurscape2" width="292" height="312"/>
         <image name="NurseEdu" width="132" height="130"/>
         <image name="NurseJob2" width="132" height="114"/>
         <image name="Nursestory3" width="498" height="492"/>
+        <image name="QNA-1" width="174" height="174"/>
         <image name="QnA2" width="374" height="378"/>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>

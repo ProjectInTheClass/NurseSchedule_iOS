@@ -15,7 +15,7 @@ class MainTableViewController: UITableViewController, FSPagerViewDataSource, FSP
    
 
     // 마일스톤
-        fileprivate let imageNames = ["간호사메인.jpeg", "간호사메인.jpeg", "간호사메인.jpeg", "간호사메인.jpeg"]
+        fileprivate let imageNames = ["Main.jpg", "Main.jpg", "Main.jpg", "Main.jpg"]
         
         @IBOutlet weak var leftBtn: UIButton!
         

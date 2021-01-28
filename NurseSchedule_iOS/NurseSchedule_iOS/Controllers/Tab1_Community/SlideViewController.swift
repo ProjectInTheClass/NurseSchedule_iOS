@@ -11,7 +11,7 @@ import FSPagerView
 
 class SlideViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate {
   
-    fileprivate let imageNames = ["imageSlide1.png", "imageSlide2.png", "imageSlide3.png", "imageSlide4.png"]
+    fileprivate let imageNames = ["Main.jpg", "Main.jpg", "imageSlide3.png", "imageSlide4.png"]
     
     
     @IBOutlet weak var leftBtn: UIButton!
