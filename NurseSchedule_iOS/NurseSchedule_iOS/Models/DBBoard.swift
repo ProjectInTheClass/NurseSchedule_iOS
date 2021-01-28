@@ -225,7 +225,7 @@ class DBBoard  {
     }
     
     func editContent(BoardType: String, update: Article, articleID : String) {
-        let reference = ref.child("\(BoardType)/contentList/\(articleID)")
+        let reference = ref.child("Board/\(BoardType)/contentList/\(articleID)")
         let newContent = ["title": update.title, "content": update.content, "date": update.date, "user":update.user]
         reference.setValue(newContent)
     }
@@ -233,14 +233,15 @@ class DBBoard  {
     
     
     func getRecentNotice(completion: @escaping (String) -> Void) {
-        
-        ref.child("공지사항/contentList").observeSingleEvent(of: .value, with: { snapshot in
+        print("DBgetRecent‼️")
+        ref.child("Board/공지사항/contentList").observeSingleEvent(of: .value, with: { snapshot in
             while let rest = snapshot.children.nextObject() as? DataSnapshot {
-                var recentArticle = Article(articleID: "", title: "", date: "", content: "", user: "")
+                var recentArticle = "no notice"
                 if let result = (rest.value as AnyObject)["title"]! as? String {
-                    recentArticle.title = result
+                    recentArticle = result
                 }
-                completion(recentArticle.title)
+                print("DBgetRecent‼️ \(recentArticle)")
+                completion(recentArticle)
                 return
             }
         })

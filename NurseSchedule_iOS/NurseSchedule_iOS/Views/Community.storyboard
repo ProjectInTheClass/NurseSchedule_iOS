@@ -10,6 +10,20 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HangeulNuriB.ttf">
+            <string>HangeulNuri-Bold</string>
+        </array>
+        <array key="HangeulNuriR.ttf">
+            <string>HangeulNuri</string>
+        </array>
+        <array key="Kyobo Handwriting 2019.otf">
+            <string>KyoboHandwriting2019</string>
+        </array>
+        <array key="Stupendous Jack.ttf">
+            <string>StupendousJackRegular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--널'스케줄-->
         <scene sceneID="tux-96-IMy">
@@ -278,7 +292,7 @@
             <objects>
                 <tableViewController id="GAI-aA-mpK" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wh8-Nl-ViH">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -312,7 +326,7 @@
                             <outlet property="delegate" destination="GAI-aA-mpK" id="tAC-kJ-GcI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="최근알림" id="3s4-yG-sYC"/>
+                    <navigationItem key="navigationItem" title="최근알림" largeTitleDisplayMode="never" id="3s4-yG-sYC"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAl-dU-UQm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -457,7 +471,7 @@
             </objects>
             <point key="canvasLocation" x="1181.5384615384614" y="-776.30331753554503"/>
         </scene>
-        <!--널'스케줄-->
+        <!--nur'schedule-->
         <scene sceneID="uc7-kN-w2I">
             <objects>
                 <tableViewController id="WAB-l8-B7C" customClass="MainTableViewController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -484,14 +498,13 @@
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfb-oR-XjZ">
-                                                    <rect key="frame" x="10" y="292.66666666666669" width="370" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                    <rect key="frame" x="10" y="292.66666666666669" width="370" height="34"/>
+                                                    <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                                     <state key="normal">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="toNoticeTapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="MA4-xu-pLq"/>
-                                                        <action selector="toNoticeTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="qwX-QX-Uwd"/>
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCc-W3-xRq" customClass="FSPageControl" customModule="FSPagerView">
@@ -509,7 +522,6 @@
                                                             <state key="normal" image="koreaNurse2"/>
                                                             <connections>
                                                                 <action selector="firstLinkButtonTapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="AOg-lt-EPy"/>
-                                                                <action selector="firstLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="Zm1-rT-aOy"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oZ-Ot-UdP">
@@ -517,7 +529,6 @@
                                                             <state key="normal" image="nurseassociation"/>
                                                             <connections>
                                                                 <action selector="newtLinkButtonTapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="Mbb-Sa-Yxg"/>
-                                                                <action selector="newtLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="rSc-Gm-gMV"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auC-Gl-7OP">
@@ -525,14 +536,12 @@
                                                             <state key="normal" image="NurseJob2"/>
                                                             <connections>
                                                                 <action selector="secondLinkButtonTapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="LOm-LF-iul"/>
-                                                                <action selector="secondLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="axQ-ZM-tw3"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yn-ma-ELi">
                                                             <rect key="frame" x="224.33333333333334" y="0.0" width="35.000000000000028" height="32"/>
                                                             <state key="normal" image="Nurscape2"/>
                                                             <connections>
-                                                                <action selector="thirdLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="cUl-ST-Jed"/>
                                                                 <action selector="thirdLinkButtonTapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="da7-MK-MIY"/>
                                                             </connections>
                                                         </button>
@@ -541,7 +550,6 @@
                                                             <state key="normal" image="NurseEdu"/>
                                                             <connections>
                                                                 <action selector="fourthLinkButtonTapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="IID-Xz-djS"/>
-                                                                <action selector="fourthLinkButtonTapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="SGn-N6-w9S"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -581,7 +589,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lhu-6n-dEw" userLabel="Board Stack View">
-                                                    <rect key="frame" x="10" y="325.66666666666669" width="370" height="240.00000000000006"/>
+                                                    <rect key="frame" x="10" y="329.66666666666669" width="370" height="240.00000000000006"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zfU-Xx-HMR">
                                                             <rect key="frame" x="0.0" y="0.0" width="370" height="120"/>
@@ -590,7 +598,6 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="123.33333333333333" height="120"/>
                                                                     <state key="normal" title="자유게시판" image="Free2"/>
                                                                     <connections>
-                                                                        <action selector="board1Tapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="HRV-Bg-ldA"/>
                                                                         <action selector="board1Tapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="aQz-mz-VCf"/>
                                                                     </connections>
                                                                 </button>
@@ -599,14 +606,12 @@
                                                                     <state key="normal" title="취업게시판" image="Job2"/>
                                                                     <connections>
                                                                         <action selector="board2Tapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="Jta-mB-SPr"/>
-                                                                        <action selector="board2Tapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="kRt-Wp-R8M"/>
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPK-VA-dWj">
                                                                     <rect key="frame" x="246.66666666666671" y="0.0" width="123.33333333333334" height="120"/>
                                                                     <state key="normal" title="간호지식" image="QnA2"/>
                                                                     <connections>
-                                                                        <action selector="board3Tapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="3vo-2U-vH3"/>
                                                                         <action selector="board3Tapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="zCe-mr-yRs"/>
                                                                     </connections>
                                                                 </button>
@@ -622,7 +627,6 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="123.33333333333333" height="120"/>
                                                                     <state key="normal" title="정보게시판" image="Info2"/>
                                                                     <connections>
-                                                                        <action selector="board4Tapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="Eu1-Cz-pHt"/>
                                                                         <action selector="board4Tapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="SPS-8u-uPF"/>
                                                                     </connections>
                                                                 </button>
@@ -630,7 +634,6 @@
                                                                     <rect key="frame" x="123.33333333333334" y="0.0" width="123.33333333333334" height="120"/>
                                                                     <state key="normal" title="신입게시판" image="New2"/>
                                                                     <connections>
-                                                                        <action selector="board5Tapped:" destination="kCU-F0-WFR" eventType="touchUpInside" id="R4Z-mL-CTv"/>
                                                                         <action selector="board5Tapped:" destination="WAB-l8-B7C" eventType="touchUpInside" id="sad-HM-8ZI"/>
                                                                     </connections>
                                                                 </button>
@@ -649,36 +652,36 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="75u-SV-VrE" userLabel="Name Stack View">
-                                                    <rect key="frame" x="6" y="259.66666666666669" width="378.33333333333331" height="30"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="75u-SV-VrE" userLabel="Name Stack View">
+                                                    <rect key="frame" x="20" y="259.66666666666669" width="350" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대한간호협회" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDU-80-Ycw">
-                                                            <rect key="frame" x="0.0" y="0.0" width="67.666666666666671" height="30"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="54" height="30"/>
+                                                            <fontDescription key="fontDescription" name="HangeulNuri-Bold" family="HangeulNuri" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="병원간호사회" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7j-uV-ZsP">
-                                                            <rect key="frame" x="77.666666666666657" y="0.0" width="67.666666666666657" height="30"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <rect key="frame" x="74" y="0.0" width="54" height="30"/>
+                                                            <fontDescription key="fontDescription" name="HangeulNuri-Bold" family="HangeulNuri" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     널스잡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1j-n7-vCl">
-                                                            <rect key="frame" x="155.33333333333334" y="0.0" width="67.666666666666657" height="30"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="널스잡" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1j-n7-vCl">
+                                                            <rect key="frame" x="148" y="0.0" width="54" height="30"/>
+                                                            <fontDescription key="fontDescription" name="HangeulNuri-Bold" family="HangeulNuri" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="너스케입" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYN-dS-gxU">
-                                                            <rect key="frame" x="232.99999999999997" y="0.0" width="67.666666666666657" height="30"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <rect key="frame" x="222" y="0.0" width="54" height="30"/>
+                                                            <fontDescription key="fontDescription" name="HangeulNuri-Bold" family="HangeulNuri" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="널스에듀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jyq-d7-NMU">
-                                                            <rect key="frame" x="310.66666666666669" y="0.0" width="67.666666666666686" height="30"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <rect key="frame" x="296" y="0.0" width="54" height="30"/>
+                                                            <fontDescription key="fontDescription" name="HangeulNuri-Bold" family="HangeulNuri" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -688,7 +691,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46a-3T-BqV">
-                                                    <rect key="frame" x="10" y="575.66666666666663" width="370" height="343.33333333333337"/>
+                                                    <rect key="frame" x="10" y="579.66666666666663" width="370" height="339.33333333333337"/>
                                                     <color key="backgroundColor" red="0.92557317019999996" green="0.91752618549999998" blue="0.92560875419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
                                             </subviews>
@@ -730,20 +733,20 @@
                             <outlet property="delegate" destination="WAB-l8-B7C" id="syX-VR-2sv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="널'스케줄" largeTitleDisplayMode="always" id="TBE-XL-fBp">
+                    <navigationItem key="navigationItem" title="nur'schedule" largeTitleDisplayMode="always" id="TBE-XL-fBp">
                         <barButtonItem key="rightBarButtonItem" image="bell.fill" catalog="system" style="plain" id="Ed9-v1-g9A">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" id="jg3-W1-PRV">
                                 <rect key="frame" x="301" y="11" width="73" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.15790402910000001" green="0.35576082479999999" blue="0.22151219690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="bell.fill" catalog="system">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="GAI-aA-mpK" kind="show" id="Zm3-j9-dgP"/>
+                                </connections>
                             </button>
-                            <color key="tintColor" red="0.15790402910000001" green="0.35576082479999999" blue="0.22151219690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <connections>
-                                <segue destination="GAI-aA-mpK" kind="presentation" id="f11-Fj-IBa"/>
-                            </connections>
+                            <color key="tintColor" systemColor="labelColor"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -778,14 +781,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="boardListCell" id="ee1-gE-OU6" customClass="boardListCell" customModule="NurseSchedule_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="390" height="44.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="28" width="390" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ee1-gE-OU6" id="Iyp-cP-s9c">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="44.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbT-XV-3ef">
-                                                    <rect key="frame" x="22" y="11.000000000000002" width="346" height="20.666666666666671"/>
+                                                    <rect key="frame" x="22" y="11" width="346" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -923,7 +926,7 @@
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVS-TR-W07">
                                                                             <rect key="frame" x="0.0" y="0.0" width="255" height="50"/>
-                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                            <fontDescription key="fontDescription" name="HangeulNuri-Bold" family="HangeulNuri" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -943,7 +946,7 @@
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ac-we-lMY" customClass="ArticleContentLabel" customModule="NurseSchedule_iOS" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="255" height="50"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                            <fontDescription key="fontDescription" name="HangeulNuri" family="HangeulNuri" pointSize="15"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                             <userDefinedRuntimeAttributes>
@@ -954,7 +957,7 @@
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMp-VH-m2R">
                                                                             <rect key="frame" x="258" y="0.0" width="102" height="50"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <fontDescription key="fontDescription" name="StupendousJackRegular" family="Stupendous Jack" pointSize="13"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -1022,7 +1025,7 @@
         <!--커뮤니티-->
         <scene sceneID="rlI-fg-8qN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DeA-w9-gpu" customClass="CommunityNavigationController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DeA-w9-gpu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="커뮤니티" image="person.2" catalog="system" selectedImage="person.2.fill" id="YbE-gB-1ve"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="XlO-ho-vxI">
@@ -1031,21 +1034,22 @@
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="StupendousJackRegular" family="Stupendous Jack" pointSize="17"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="StupendousJackRegular" family="Stupendous Jack" pointSize="35"/>
+                            <color key="textColor" red="0.1153413429" green="0.25986627140000002" blue="0.161804068" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <outlet property="navigationbar" destination="XlO-ho-vxI" id="jmM-p1-Amk"/>
                         <segue destination="WAB-l8-B7C" kind="relationship" relationship="rootViewController" id="cbv-V0-awv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IYZ-yY-N6h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1915" y="87"/>
+            <point key="canvasLocation" x="-1574" y="87"/>
         </scene>
         <!--게시글-->
         <scene sceneID="oh6-GB-fjO">
@@ -1071,13 +1075,13 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="364" height="21.666666666666668"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mf-j7-7OL">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="21.666666666666668"/>
-                                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="21.666666666666668"/>
+                                                                        <fontDescription key="fontDescription" name="KyoboHandwriting2019" family="Kyobo Handwriting 2019" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKN-VD-bJX">
-                                                                        <rect key="frame" x="265" y="0.0" width="99" height="21.666666666666668"/>
+                                                                        <rect key="frame" x="261.66666666666669" y="0.0" width="102.33333333333331" height="21.666666666666668"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -1089,7 +1093,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="crn-Sq-6ql"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                                <fontDescription key="fontDescription" name="HangeulNuri-Bold" family="HangeulNuri" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1103,13 +1107,13 @@
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pi4-cU-gk4" customClass="CommunityContentLabel" customModule="NurseSchedule_iOS" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="71.666666666666643" width="364" height="143.33333333333337"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HangeulNuri" family="HangeulNuri" pointSize="15"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                                                                      Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiA-4K-sT8">
-                                                        <rect key="frame" x="0.0" y="215" width="346" height="35"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiA-4K-sT8">
+                                                        <rect key="frame" x="0.0" y="215" width="364" height="35"/>
+                                                        <fontDescription key="fontDescription" name="StupendousJackRegular" family="Stupendous Jack" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -1117,6 +1121,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="pi4-cU-gk4" secondAttribute="trailing" id="3Js-T2-zVX"/>
                                                     <constraint firstItem="yiA-4K-sT8" firstAttribute="height" secondItem="pi4-cU-gk4" secondAttribute="height" multiplier="0.244186" id="GtR-G3-5SK"/>
+                                                    <constraint firstItem="yiA-4K-sT8" firstAttribute="width" secondItem="pi4-cU-gk4" secondAttribute="width" id="KCS-V2-uIw"/>
                                                     <constraint firstItem="pi4-cU-gk4" firstAttribute="leading" secondItem="pkB-aC-KdS" secondAttribute="leading" id="N0H-fR-Y9f"/>
                                                     <constraint firstItem="pi4-cU-gk4" firstAttribute="height" secondItem="5VR-mH-irb" secondAttribute="height" multiplier="2" id="Pet-qq-lxh"/>
                                                     <constraint firstAttribute="trailing" secondItem="5VR-mH-irb" secondAttribute="trailing" id="ddf-WH-GPD"/>
@@ -1441,7 +1446,7 @@
     </scenes>
     <designables>
         <designable name="4ac-we-lMY">
-            <size key="intrinsicContentSize" width="37.333333333333336" height="18"/>
+            <size key="intrinsicContentSize" width="41" height="17"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>

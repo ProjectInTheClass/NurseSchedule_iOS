@@ -23,7 +23,7 @@
 		990AC3F9259DB3C400281E8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990AC3F7259DB3C400281E8B /* Main.storyboard */; };
 		990AC3FB259DB3CB00281E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 990AC3FA259DB3CB00281E8B /* Assets.xcassets */; };
 		990AC3FE259DB3CB00281E8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990AC3FC259DB3CB00281E8B /* LaunchScreen.storyboard */; };
-		990BA84625C1E1FE00812393 /* CommunityNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990BA84525C1E1FE00812393 /* CommunityNavigationController.swift */; };
+		990BA84F25C1E98A00812393 /* Stupendous Jack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 990BA84E25C1E98A00812393 /* Stupendous Jack.ttf */; };
 		992651A525A404520043A16E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 992651A425A404520043A16E /* GoogleService-Info.plist */; };
 		992651E725A470A90043A16E /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992651E625A470A80043A16E /* DBUser.swift */; };
 		9926523425A4ADB10043A16E /* CommunityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926523325A4ADB10043A16E /* CommunityController.swift */; };
@@ -39,6 +39,9 @@
 		9951CB0825BD6D40007DBD06 /* BoardListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9951CB0725BD6D40007DBD06 /* BoardListController.swift */; };
 		995813AE25C162AE0013624E /* DetailContent_inSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995813AD25C162AE0013624E /* DetailContent_inSettingController.swift */; };
 		997059AB25A72D8A0037A342 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997059AA25A72D8A0037A342 /* TabBarController.swift */; };
+		997255A225C1F09600DEF52C /* Kyobo Handwriting 2019.otf in Resources */ = {isa = PBXBuildFile; fileRef = 997255A125C1F09600DEF52C /* Kyobo Handwriting 2019.otf */; };
+		997255A625C1F1D300DEF52C /* HangeulNuriB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 997255A425C1F1D200DEF52C /* HangeulNuriB.ttf */; };
+		997255A725C1F1D300DEF52C /* HangeulNuriR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 997255A525C1F1D200DEF52C /* HangeulNuriR.ttf */; };
 		9973873D25BD97D7009DC92F /* boardListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9973873C25BD97D7009DC92F /* boardListCell.swift */; };
 		9973874125BDB74F009DC92F /* DictionaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9973874025BDB74F009DC92F /* DictionaryLabel.swift */; };
 		997B460325BC089C0091ADFC /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997B460225BC089C0091ADFC /* CommentCell.swift */; };
@@ -89,8 +92,7 @@
 		990AC3FA259DB3CB00281E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		990AC3FD259DB3CB00281E8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		990AC3FF259DB3CB00281E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		990BA83E25C1E0D100812393 /* Stupendous Jack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stupendous Jack.ttf"; sourceTree = "<group>"; };
-		990BA84525C1E1FE00812393 /* CommunityNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityNavigationController.swift; sourceTree = "<group>"; };
+		990BA84E25C1E98A00812393 /* Stupendous Jack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stupendous Jack.ttf"; sourceTree = "<group>"; };
 		992651A425A404520043A16E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		992651E625A470A80043A16E /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
 		9926523325A4ADB10043A16E /* CommunityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,9 @@
 		9951CB0725BD6D40007DBD06 /* BoardListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListController.swift; sourceTree = "<group>"; };
 		995813AD25C162AE0013624E /* DetailContent_inSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContent_inSettingController.swift; sourceTree = "<group>"; };
 		997059AA25A72D8A0037A342 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		997255A125C1F09600DEF52C /* Kyobo Handwriting 2019.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kyobo Handwriting 2019.otf"; sourceTree = "<group>"; };
+		997255A425C1F1D200DEF52C /* HangeulNuriB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HangeulNuriB.ttf; sourceTree = "<group>"; };
+		997255A525C1F1D200DEF52C /* HangeulNuriR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HangeulNuriR.ttf; sourceTree = "<group>"; };
 		9973873C25BD97D7009DC92F /* boardListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boardListCell.swift; sourceTree = "<group>"; };
 		9973874025BDB74F009DC92F /* DictionaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryLabel.swift; sourceTree = "<group>"; };
 		997B460225BC089C0091ADFC /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
@@ -216,7 +221,10 @@
 		990BA83D25C1E0C000812393 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				990BA83E25C1E0D100812393 /* Stupendous Jack.ttf */,
+				997255A425C1F1D200DEF52C /* HangeulNuriB.ttf */,
+				997255A525C1F1D200DEF52C /* HangeulNuriR.ttf */,
+				990BA84E25C1E98A00812393 /* Stupendous Jack.ttf */,
+				997255A125C1F09600DEF52C /* Kyobo Handwriting 2019.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -233,7 +241,6 @@
 				997059AA25A72D8A0037A342 /* TabBarController.swift */,
 				99D874B425AB452D0012D403 /* LoginController.swift */,
 				997DD05B25B69E10007C5002 /* StructDeclaration.swift */,
-				990BA84525C1E1FE00812393 /* CommunityNavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -409,15 +416,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				997255A225C1F09600DEF52C /* Kyobo Handwriting 2019.otf in Resources */,
 				99FB53B325A0C17200FBF750 /* Diary.storyboard in Resources */,
 				99FB53A925A0BE7400FBF750 /* Community.storyboard in Resources */,
 				992651A525A404520043A16E /* GoogleService-Info.plist in Resources */,
 				7EFD380B25B4A7AE00FD3435 /* imageSlide1.png in Resources */,
 				7EFD380C25B4A7AE00FD3435 /* imageSlide4.png in Resources */,
+				997255A625C1F1D300DEF52C /* HangeulNuriB.ttf in Resources */,
 				990AC3FE259DB3CB00281E8B /* LaunchScreen.storyboard in Resources */,
 				7EFD380925B4A7AE00FD3435 /* imageSlide2.png in Resources */,
 				7E68403C25BD37AB001CFBAC /* 간호사메인.jpeg in Resources */,
+				990BA84F25C1E98A00812393 /* Stupendous Jack.ttf in Resources */,
 				7EFD380A25B4A7AE00FD3435 /* imageSlide3.png in Resources */,
+				997255A725C1F1D300DEF52C /* HangeulNuriR.ttf in Resources */,
 				990AC3FB259DB3CB00281E8B /* Assets.xcassets in Resources */,
 				99FB53AD25A0BFB100FBF750 /* MedicalBook.storyboard in Resources */,
 				990AC3F9259DB3C400281E8B /* Main.storyboard in Resources */,
@@ -495,7 +506,6 @@
 				992F41C925AEB82D00E25199 /* SettingTableViewController.swift in Sources */,
 				7EEAAD0C25BED499003E2B9E /* MainTableViewController.swift in Sources */,
 				ECF2B59E25B562070080F9E0 /* DiaryDetailViewController.swift in Sources */,
-				990BA84625C1E1FE00812393 /* CommunityNavigationController.swift in Sources */,
 				992F41F025AF2C9100E25199 /* MedicalCell.swift in Sources */,
 				9991D6D025B9517700C3A7B1 /* ContentListController.swift in Sources */,
 				99D874B525AB452D0012D403 /* LoginController.swift in Sources */,
