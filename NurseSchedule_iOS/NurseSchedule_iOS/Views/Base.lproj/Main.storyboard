@@ -93,24 +93,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="rPg-Mm-iHl">
+                                <rect key="frame" x="38" y="208" width="315" height="182"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DyD-Yb-dao" customClass="GIDSignInButton">
-                                <rect key="frame" x="80" y="398" width="230" height="48"/>
+                                <rect key="frame" x="80" y="441" width="230" height="48"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Pu1-pU-6vT"/>
                                     <constraint firstAttribute="width" constant="230" id="fzG-cY-Avz"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="rPg-Mm-iHl">
-                                <rect key="frame" x="75" y="208" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uSC-1t-d9Q"/>
-                        <color key="backgroundColor" red="0.96722583829999997" green="0.99763482810000004" blue="0.78506383999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DyD-Yb-dao" firstAttribute="centerX" secondItem="2tT-aw-18b" secondAttribute="centerX" id="9m8-yk-ycN"/>
-                            <constraint firstItem="DyD-Yb-dao" firstAttribute="centerY" secondItem="2tT-aw-18b" secondAttribute="centerY" id="vJc-Tv-oXE"/>
+                            <constraint firstItem="DyD-Yb-dao" firstAttribute="centerY" secondItem="2tT-aw-18b" secondAttribute="centerY" constant="43" id="vJc-Tv-oXE"/>
                         </constraints>
                     </view>
                     <connections>
@@ -125,7 +125,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AppIcon" width="411" height="411"/>
+        <image name="launchIcon" width="163.5" height="173.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
