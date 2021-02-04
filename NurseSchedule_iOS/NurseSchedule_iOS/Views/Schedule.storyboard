@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -499,171 +498,6 @@
             </objects>
             <point key="canvasLocation" x="1857.9710144927537" y="3016.7410714285711"/>
         </scene>
-        <!--Schedule Add View Controller-->
-        <scene sceneID="XWg-KY-wde">
-            <objects>
-                <viewController storyboardIdentifier="ScheduleAddViewController" id="upM-zm-90w" customClass="ScheduleAddViewController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ddh-qV-e0V">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 메모 추가 뷰&lt;DATE&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o62-Td-lLb">
-                                <rect key="frame" x="94" y="205" width="228" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.5665841103" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMf-4y-Q86">
-                                <rect key="frame" x="35" y="266" width="120" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                <color key="textColor" red="0.0" green="0.5665841103" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jtm-Y8-MHm">
-                                <rect key="frame" x="35" y="316" width="344" height="46"/>
-                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="lOa-b7-YBn"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="☀️" width="68"/>
-                                    <segment title="🌑"/>
-                                    <segment title="🌙"/>
-                                    <segment title="💤"/>
-                                    <segment title="🏖"/>
-                                </segments>
-                                <color key="tintColor" name="AccentColor"/>
-                                <color key="selectedSegmentTintColor" red="0.70076072219999996" green="0.89874082799999999" blue="0.62450921540000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="workTypeSeleted:" destination="upM-zm-90w" eventType="valueChanged" id="kjY-hI-Kkb"/>
-                                </connections>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="근무를 선택하세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxB-UZ-n59">
-                                <rect key="frame" x="163.5" y="279" width="105" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYh-61-rHU">
-                                <rect key="frame" x="344" y="106" width="35" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <state key="normal" title="추가">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="addButtonTapped:" destination="upM-zm-90w" eventType="touchUpInside" id="LvD-jc-00K"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kml-Sx-Clr">
-                                <rect key="frame" x="35" y="106" width="63" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <state key="normal" title="취소">
-                                    <color key="titleColor" systemColor="systemRedColor"/>
-                                </state>
-                                <connections>
-                                    <segue destination="beA-Sq-9na" kind="unwind" unwindAction="unwindFromAddMemoWithSegue:" id="NVb-7T-Gm2"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="LvO-fX-tcn">
-                                <rect key="frame" x="35" y="361" width="325.5" height="18"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     데이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pad-2K-FdH">
-                                        <rect key="frame" x="0.0" y="0.0" width="45.5" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     이브닝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWH-mK-P8W">
-                                        <rect key="frame" x="66.5" y="0.0" width="58.5" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   나이트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqu-mE-9b8">
-                                        <rect key="frame" x="146" y="0.0" width="50.5" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    오프" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwI-DD-7iw">
-                                        <rect key="frame" x="217.5" y="0.0" width="41.5" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     휴가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cS0-Sm-snE">
-                                        <rect key="frame" x="280" y="0.0" width="45.5" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEMO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csr-Vk-rmN">
-                                <rect key="frame" x="35" y="412" width="76.5" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                <color key="textColor" red="0.0" green="0.5665841103" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="간단한 메모를 남겨보세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWG-zT-tQ9">
-                                <rect key="frame" x="119.5" y="425" width="186.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="memo content" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MZq-oR-mJx">
-                                <rect key="frame" x="35" y="450" width="344" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                                <connections>
-                                    <action selector="textDidChanged:" destination="upM-zm-90w" eventType="editingChanged" id="Nx8-6y-RRB"/>
-                                    <action selector="textDidEnd:" destination="upM-zm-90w" eventType="editingDidEnd" id="DFr-p2-bSD"/>
-                                </connections>
-                            </textField>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Rgv-6H-MIG"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Rgv-6H-MIG" firstAttribute="trailing" secondItem="jtm-Y8-MHm" secondAttribute="trailing" constant="35" id="01z-B6-LQ0"/>
-                            <constraint firstItem="CxB-UZ-n59" firstAttribute="leading" secondItem="OMf-4y-Q86" secondAttribute="trailing" constant="8.5" id="7na-JF-vdL"/>
-                            <constraint firstItem="UYh-61-rHU" firstAttribute="leading" secondItem="Kml-Sx-Clr" secondAttribute="trailing" constant="246" id="BJL-Ea-Rk3"/>
-                            <constraint firstItem="o62-Td-lLb" firstAttribute="top" secondItem="Rgv-6H-MIG" secondAttribute="top" constant="161" id="BmZ-Wu-cOg"/>
-                            <constraint firstItem="OMf-4y-Q86" firstAttribute="top" secondItem="o62-Td-lLb" secondAttribute="bottom" constant="37" id="DBO-Yg-OWj"/>
-                            <constraint firstItem="Rgv-6H-MIG" firstAttribute="trailing" secondItem="AWG-zT-tQ9" secondAttribute="trailing" constant="108" id="DJF-UN-DQI"/>
-                            <constraint firstItem="MZq-oR-mJx" firstAttribute="top" secondItem="AWG-zT-tQ9" secondAttribute="bottom" constant="8" symbolic="YES" id="FfZ-9d-aiH"/>
-                            <constraint firstItem="Csr-Vk-rmN" firstAttribute="leading" secondItem="Rgv-6H-MIG" secondAttribute="leading" constant="35" id="Fmv-Ch-ItV"/>
-                            <constraint firstItem="jtm-Y8-MHm" firstAttribute="leading" secondItem="Rgv-6H-MIG" secondAttribute="leading" constant="35" id="Lyi-o0-KlL"/>
-                            <constraint firstItem="UYh-61-rHU" firstAttribute="top" secondItem="Rgv-6H-MIG" secondAttribute="top" constant="62" id="MVN-0n-yAk"/>
-                            <constraint firstItem="OMf-4y-Q86" firstAttribute="leading" secondItem="Rgv-6H-MIG" secondAttribute="leading" constant="35" id="Rhm-uy-XUb"/>
-                            <constraint firstItem="Rgv-6H-MIG" firstAttribute="trailing" secondItem="o62-Td-lLb" secondAttribute="trailing" constant="92" id="TL9-qI-5iG"/>
-                            <constraint firstItem="CxB-UZ-n59" firstAttribute="top" secondItem="o62-Td-lLb" secondAttribute="bottom" constant="50" id="Wme-q5-dYh"/>
-                            <constraint firstItem="LvO-fX-tcn" firstAttribute="leading" secondItem="Rgv-6H-MIG" secondAttribute="leading" constant="35" id="Z9w-Zb-kyZ"/>
-                            <constraint firstItem="LvO-fX-tcn" firstAttribute="top" secondItem="jtm-Y8-MHm" secondAttribute="bottom" id="bOI-vV-9me"/>
-                            <constraint firstItem="Rgv-6H-MIG" firstAttribute="trailing" secondItem="LvO-fX-tcn" secondAttribute="trailing" constant="53.5" id="efS-CW-mJS"/>
-                            <constraint firstItem="AWG-zT-tQ9" firstAttribute="leading" secondItem="Csr-Vk-rmN" secondAttribute="trailing" constant="8" id="fhY-D5-Imm"/>
-                            <constraint firstItem="Csr-Vk-rmN" firstAttribute="top" secondItem="LvO-fX-tcn" secondAttribute="bottom" constant="33" id="gYO-06-R5o"/>
-                            <constraint firstItem="Rgv-6H-MIG" firstAttribute="trailing" secondItem="MZq-oR-mJx" secondAttribute="trailing" constant="35" id="ksx-pf-pvQ"/>
-                            <constraint firstItem="AWG-zT-tQ9" firstAttribute="top" secondItem="LvO-fX-tcn" secondAttribute="bottom" constant="46" id="lJH-PI-dPP"/>
-                            <constraint firstItem="Kml-Sx-Clr" firstAttribute="top" secondItem="Rgv-6H-MIG" secondAttribute="top" constant="62" id="lU1-eE-sLK"/>
-                            <constraint firstItem="MZq-oR-mJx" firstAttribute="leading" secondItem="Rgv-6H-MIG" secondAttribute="leading" constant="35" id="myb-vn-Y8U"/>
-                            <constraint firstItem="Kml-Sx-Clr" firstAttribute="leading" secondItem="Rgv-6H-MIG" secondAttribute="leading" constant="35" id="pnv-No-5rW"/>
-                            <constraint firstItem="jtm-Y8-MHm" firstAttribute="top" secondItem="CxB-UZ-n59" secondAttribute="bottom" constant="20" id="rbQ-VM-PGa"/>
-                            <constraint firstItem="Rgv-6H-MIG" firstAttribute="trailing" secondItem="UYh-61-rHU" secondAttribute="trailing" constant="35" id="sa0-KL-nRJ"/>
-                            <constraint firstItem="o62-Td-lLb" firstAttribute="leading" secondItem="Rgv-6H-MIG" secondAttribute="leading" constant="94" id="tgj-Kt-FdL"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="yGg-vn-R1y"/>
-                    <connections>
-                        <outlet property="date" destination="o62-Td-lLb" id="FSz-Q2-6f6"/>
-                        <outlet property="memoTextField" destination="MZq-oR-mJx" id="2IL-Gh-aYG"/>
-                        <outlet property="workTypeSegmentedControl" destination="jtm-Y8-MHm" id="Jaw-sW-RId"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QIA-ui-I9d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="beA-Sq-9na" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="2705.7971014492755" y="2616.9642857142858"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="16h-Es-mDF">
             <objects>
@@ -703,9 +537,6 @@
         <image name="off" width="35" height="35"/>
         <image name="person.fill.badge.plus" catalog="system" width="128" height="124"/>
         <image name="save" width="128" height="80"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -721,14 +552,8 @@
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -7,6 +7,46 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Schedule-->
+        <scene sceneID="ewb-V5-1fs">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Schedule" id="gOD-FI-lw5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="YuL-gh-rTh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5R9-P0-CK6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-158" y="478"/>
+        </scene>
+        <!--MedicalBook-->
+        <scene sceneID="1Nd-me-ffF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MedicalBook" id="ovM-4T-GPs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="anF-ew-hnO"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zWP-6D-sOr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="408" y="477"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="Y3S-aO-GH2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Setting" id="VNv-Ms-JJ5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="BjM-GV-JLk"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vq8-Ku-gHD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="677" y="477"/>
+        </scene>
+        <!--Diary-->
+        <scene sceneID="0QU-cC-pvV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Diary" id="C2J-J6-ZuS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="2Qh-pL-Wpz"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LsV-c2-r0u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95" y="477"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jm5-2O-bF8">
             <objects>
@@ -22,55 +62,15 @@
                         <color key="selectedImageTintColor" red="0.15790402910000001" green="0.35576082479999999" blue="0.22151219690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="2jv-7H-7KF" kind="relationship" relationship="viewControllers" id="Wyw-cL-bbH"/>
-                        <segue destination="79k-Fm-cyq" kind="relationship" relationship="viewControllers" id="A32-Le-k6q"/>
-                        <segue destination="jIv-ZI-gW5" kind="relationship" relationship="viewControllers" id="loR-Uz-rr6"/>
-                        <segue destination="Xzy-B5-5K6" kind="relationship" relationship="viewControllers" id="Hrb-Ai-mXG"/>
+                        <segue destination="gOD-FI-lw5" kind="relationship" relationship="viewControllers" id="fB1-nk-yNB"/>
+                        <segue destination="C2J-J6-ZuS" kind="relationship" relationship="viewControllers" id="JN6-pW-RPs"/>
+                        <segue destination="ovM-4T-GPs" kind="relationship" relationship="viewControllers" id="mc9-P3-cPN"/>
+                        <segue destination="VNv-Ms-JJ5" kind="relationship" relationship="viewControllers" id="Z6G-Hg-5lA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQq-er-dpp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="254" y="18"/>
-        </scene>
-        <!--Setting-->
-        <scene sceneID="qZ7-oM-Vwq">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Setting" id="Xzy-B5-5K6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="j1u-gU-Ce4"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4dE-OM-vZK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="640" y="471"/>
-        </scene>
-        <!--Diary-->
-        <scene sceneID="AiN-Sa-8PG">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Diary" id="jIv-ZI-gW5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Zic-HY-IQq"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ptI-46-Y9P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="451" y="471"/>
-        </scene>
-        <!--MedicalBook-->
-        <scene sceneID="6eL-dU-Dxt">
-            <objects>
-                <viewControllerPlaceholder storyboardName="MedicalBook" id="2jv-7H-7KF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="dUq-Ry-NuV"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ybe-pb-n88" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="55" y="471"/>
-        </scene>
-        <!--Schedule-->
-        <scene sceneID="GLd-Or-dje">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Schedule" id="79k-Fm-cyq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="o67-Gp-XIF"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W3A-da-U9k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="255" y="471"/>
         </scene>
     </scenes>
 </document>
