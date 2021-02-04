@@ -204,9 +204,12 @@ class ScheduleController: UIViewController{
                 }
             }
             var savingMemo = ""
-            if let memo = self.memoTextView.text {
-                savingMemo = memo
+            if self.memoTextView.text != "✅ 메모를 입력해주세요" {
+                if let memo = self.memoTextView.text {
+                    savingMemo = memo
+                }
             }
+            
             let daySchedule = DBSchedule()
             daySchedule.date = self.dateFormatter.string(from: self.selectedDate)
             daySchedule.worktype = savingWorktype
@@ -258,9 +261,13 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
             default :
                 self.workTypeSegmentedControl.selectedSegmentIndex = 0
             }
+            if selectedSchedule[0].memo.isEmpty {
+                self.memoTextViewPlaceholderSetting()
+            } else {
+                self.memoTextView.text = selectedSchedule[0].memo
+                self.memoTextView.textColor = UIColor.black
+            }
             
-            self.memoTextView.text = selectedSchedule[0].memo
-            self.memoTextView.textColor = UIColor.black
         }
     }
     
