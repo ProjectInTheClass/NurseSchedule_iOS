@@ -10,6 +10,8 @@ pod 'Firebase/Storage'
 pod 'Firebase/Auth'
 pod 'GoogleSignIn'
 pod 'FSCalendar'
+pod 'RealmSwift'
+
   # Pods for NurseSchedule_iOS
 pod 'FSPagerView'
 end

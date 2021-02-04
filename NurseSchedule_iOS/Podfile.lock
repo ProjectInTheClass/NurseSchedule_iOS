@@ -100,6 +100,11 @@ PODS:
   - nanopb/decode (2.30906.0)
   - nanopb/encode (2.30906.0)
   - PromisesObjC (1.2.12)
+  - Realm (10.5.1):
+    - Realm/Headers (= 10.5.1)
+  - Realm/Headers (10.5.1)
+  - RealmSwift (10.5.1):
+    - Realm (= 10.5.1)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -109,6 +114,7 @@ DEPENDENCIES:
   - FSCalendar
   - FSPagerView
   - GoogleSignIn
+  - RealmSwift
 
 SPEC REPOS:
   trunk:
@@ -132,6 +138,8 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - Realm
+    - RealmSwift
 
 SPEC CHECKSUMS:
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
@@ -154,7 +162,9 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  Realm: 77fcb4e0b9f2963ea06f584749a0d7dc9cab95e1
+  RealmSwift: 6abe6aa6cd8b70cc1a87afcb9232cabea74ff1ac
 
-PODFILE CHECKSUM: df7c41f4d30f141d1150040a6886b11b5d893beb
+PODFILE CHECKSUM: 3cce0b5ca14097e4497bafc085904998c2da6589
 
 COCOAPODS: 1.10.1
