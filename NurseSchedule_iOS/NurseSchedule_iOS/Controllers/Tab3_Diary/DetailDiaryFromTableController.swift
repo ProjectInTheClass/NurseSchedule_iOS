@@ -7,6 +7,9 @@
 
 import UIKit
 import Firebase
+import RealmSwift
+
+
 
 class DetailDiaryFromTableController: UIViewController {
     
@@ -31,6 +34,7 @@ class DetailDiaryFromTableController: UIViewController {
     var editdate : String = ""
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         date.text = detailInfoFromDay?.date
         

@@ -7,7 +7,9 @@
 
 import UIKit
 import GoogleSignIn
+import RealmSwift
 
+let realm = try! Realm()
 
 class DiaryController: UIViewController {
     
@@ -22,39 +24,36 @@ class DiaryController: UIViewController {
     let img4 = UIImage(named: "0-devil.png")
     @IBOutlet weak var tableView: UITableView!
     
+    let dateFormatter : DateFormatter = DateFormatter()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
+        
+         let savedDiary = realm.objects(Diary.self)
+         dateFormatter.dateFormat = "yyyy-MM"
+         month = dateFormatter.string(from: Date.init())
+         let selectedDiary = savedDiary.contains("date == '\(month)'")
+         
+        
         // 다이어리 목록을 디비에서 불러옴
-        let dateFormatter : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 0(월단위)
-        dateFormatter.dateFormat = "yyyy-MM"
-        self.getDiaryDate = dateFormatter.string(from: Date.init())
-        self.bringdays.removeAll()
 
         
         tableView.dataSource = self
         tableView.delegate = self
-        
-        
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableView.automaticDimension
     }
     
     override func viewDidAppear(_ animated: Bool) {
-       
-        tableView.rowHeight = UITableView.automaticDimension
+
         
+        
+        tableView.rowHeight = UITableView.automaticDimension
         self.bringdays.removeAll()
-        /*
-        DBDiary.newDiary.getDiary(userID: currentUser!, shortDate: self.getDiaryDate, completion: { result in //result에 Day(emoji: "😢", date: "2021-01-03", content: "getDiary")형식으로 저장되어있음
-            self.bringdays.append(result)
-            print("app delegate \(result)")
-            self.tableView.reloadData()
-        })
- */
         tableView.reloadData()
     }
     
