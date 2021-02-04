@@ -34,7 +34,7 @@
         <!--의학백과-->
         <scene sceneID="jGm-rc-zzd">
             <objects>
-                <viewController id="4q6-sY-o3B" customClass="MedicalBookController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MedicalBookController" id="4q6-sY-o3B" customClass="MedicalBookController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vNV-DJ-vUq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
