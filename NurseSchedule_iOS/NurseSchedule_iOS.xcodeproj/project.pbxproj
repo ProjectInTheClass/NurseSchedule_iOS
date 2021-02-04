@@ -32,7 +32,6 @@
 		9926523B25A4ADDE0043A16E /* MedicalBookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926523A25A4ADDE0043A16E /* MedicalBookController.swift */; };
 		9926523E25A4ADEE0043A16E /* DiaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926523D25A4ADEE0043A16E /* DiaryController.swift */; };
 		9926527E25A4CCE80043A16E /* DBBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926527D25A4CCE80043A16E /* DBBoard.swift */; };
-		992F41C925AEB82D00E25199 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F41C825AEB82D00E25199 /* SettingTableViewController.swift */; };
 		992F41F025AF2C9100E25199 /* MedicalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F41EF25AF2C9100E25199 /* MedicalCell.swift */; };
 		992F420825AF454300E25199 /* MedicalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F420725AF454300E25199 /* MedicalDetailViewController.swift */; };
 		992FCF3925BE8E6000674C88 /* NoticeNCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992FCF3825BE8E6000674C88 /* NoticeNCenterCell.swift */; };
@@ -63,6 +62,7 @@
 		EC9708A625B65BEC00BF2593 /* DBDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9708A525B65BEC00BF2593 /* DBDiary.swift */; };
 		EC9ED33225BABEF600848426 /* DetailContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9ED33125BABEF600848426 /* DetailContentController.swift */; };
 		EC9ED33C25BD64D700848426 /* ModifyDiaryTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9ED33B25BD64D700848426 /* ModifyDiaryTableController.swift */; };
+		ECD4CDD325CBD18400D21EEE /* SettingMainTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD4CDD225CBD18400D21EEE /* SettingMainTableController.swift */; };
 		ECE6A7C425BED7AC00F59320 /* SerialNumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6A7C325BED7AC00F59320 /* SerialNumController.swift */; };
 		ECE6A7CD25C1285C00F59320 /* MyArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6A7CC25C1285C00F59320 /* MyArticleCell.swift */; };
 		ECE6A7D025C128C000F59320 /* MyArticleTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6A7CF25C128C000F59320 /* MyArticleTableController.swift */; };
@@ -102,7 +102,6 @@
 		9926523A25A4ADDE0043A16E /* MedicalBookController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalBookController.swift; sourceTree = "<group>"; };
 		9926523D25A4ADEE0043A16E /* DiaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryController.swift; sourceTree = "<group>"; };
 		9926527D25A4CCE80043A16E /* DBBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBBoard.swift; sourceTree = "<group>"; };
-		992F41C825AEB82D00E25199 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		992F41EF25AF2C9100E25199 /* MedicalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalCell.swift; sourceTree = "<group>"; };
 		992F420725AF454300E25199 /* MedicalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalDetailViewController.swift; sourceTree = "<group>"; };
 		992FCF3825BE8E6000674C88 /* NoticeNCenterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeNCenterCell.swift; sourceTree = "<group>"; };
@@ -133,6 +132,7 @@
 		EC9708A525B65BEC00BF2593 /* DBDiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBDiary.swift; sourceTree = "<group>"; };
 		EC9ED33125BABEF600848426 /* DetailContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentController.swift; sourceTree = "<group>"; };
 		EC9ED33B25BD64D700848426 /* ModifyDiaryTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyDiaryTableController.swift; sourceTree = "<group>"; };
+		ECD4CDD225CBD18400D21EEE /* SettingMainTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMainTableController.swift; sourceTree = "<group>"; };
 		ECE6A7C325BED7AC00F59320 /* SerialNumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialNumController.swift; sourceTree = "<group>"; };
 		ECE6A7CC25C1285C00F59320 /* MyArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyArticleCell.swift; sourceTree = "<group>"; };
 		ECE6A7CF25C128C000F59320 /* MyArticleTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyArticleTableController.swift; sourceTree = "<group>"; };
@@ -323,10 +323,10 @@
 		997DD05925B61956007C5002 /* Tab5_Setting */ = {
 			isa = PBXGroup;
 			children = (
-				992F41C825AEB82D00E25199 /* SettingTableViewController.swift */,
 				ECE6A7C325BED7AC00F59320 /* SerialNumController.swift */,
 				ECE6A7CF25C128C000F59320 /* MyArticleTableController.swift */,
 				995813AD25C162AE0013624E /* DetailContent_inSettingController.swift */,
+				ECD4CDD225CBD18400D21EEE /* SettingMainTableController.swift */,
 			);
 			path = Tab5_Setting;
 			sourceTree = "<group>";
@@ -507,7 +507,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				992F41C925AEB82D00E25199 /* SettingTableViewController.swift in Sources */,
 				7EEAAD0C25BED499003E2B9E /* MainTableViewController.swift in Sources */,
 				ECF2B59E25B562070080F9E0 /* DiaryDetailViewController.swift in Sources */,
 				992F41F025AF2C9100E25199 /* MedicalCell.swift in Sources */,
@@ -527,6 +526,7 @@
 				9973874125BDB74F009DC92F /* DictionaryLabel.swift in Sources */,
 				9926523825A4ADCC0043A16E /* ScheduleController.swift in Sources */,
 				992F420825AF454300E25199 /* MedicalDetailViewController.swift in Sources */,
+				ECD4CDD325CBD18400D21EEE /* SettingMainTableController.swift in Sources */,
 				995813AE25C162AE0013624E /* DetailContent_inSettingController.swift in Sources */,
 				EC83993E25B7143F00B58778 /* AddDiaryTableController.swift in Sources */,
 				990AC3F2259DB3C400281E8B /* AppDelegate.swift in Sources */,
