@@ -83,8 +83,8 @@ class DetailDiaryFromTableController: UIViewController {
       
             self.shortDate =  String(self.date.text!.prefix(7))
             
-            DBDiary.newDiary.deleteDiary(userID: self.currentUser!, shortDate: self.shortDate, date: self.date.text!)
-            
+//            DBDiary.newDiary.deleteDiary(userID: self.currentUser!, shortDate: self.shortDate, date: self.date.text!)
+//            
             
      
             

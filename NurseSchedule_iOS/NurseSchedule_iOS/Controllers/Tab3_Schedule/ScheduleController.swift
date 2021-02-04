@@ -32,13 +32,14 @@ class ScheduleController: UIViewController{
         calendar.dataSource = self
         memoTextView.delegate = self
         
+        /*
         DBMemo.newMemo.getWorkType { (dayWorkType) in
             print("getwork!!!!!!!!!!!!!!!!!!!")
             self.showDayWorkType[dayWorkType.date] = dayWorkType.worktype
             self.calendar.reloadData()
         }
         print("getWorkType didLoad >>>>> \(showDayWorkType)")
-        
+        */
         
         //keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -187,7 +188,7 @@ class ScheduleController: UIViewController{
             }
             
             let forSavingDayWorkNMemo = ForSavingDayWorkNMemo(date: savingDate, worktype: savingWorktype, memo: savingMemo)
-            DBMemo.newMemo.addDaySchedule(newDay : forSavingDayWorkNMemo)
+//            DBMemo.newMemo.addDaySchedule(newDay : forSavingDayWorkNMemo)
             
         }
         alert.addAction(cancelAction)
@@ -205,6 +206,7 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
         selectedDate = date
         
         selectedDateLabel.text = dateFormatter.string(from: selectedDate)
+        /*
         DBMemo.newMemo.getDaySchedule(date: dateFormatter.string(from: selectedDate), completion: { (dayScheduleFromDB) in
             self.showDaySchedule = dayScheduleFromDB
             switch self.showDaySchedule.worktype {
@@ -228,6 +230,7 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
                 self.memoTextView.textColor = UIColor.black
             }
         })
+ */
     }
     
     

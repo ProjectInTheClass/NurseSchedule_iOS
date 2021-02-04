@@ -108,12 +108,13 @@ class DiaryCalendar: UIViewController {
         diaryCalendar.dataSource = self
         //view.addSubview(diaryCalendar)
         
-        
+        /*
         DBDiary.newDiary.getDayEmoji(month: monthDate, completion: { (dayEmoji) in
             print("getemoji!!!!!!!!!!!!!!!!!!")
             self.showDayEmoji[dayEmoji.date] = dayEmoji.emoji
             self.diaryCalendar.reloadData()
         })
+ */
         print("getemoji didLoad >>>>> \(showDayEmoji)")
    
     }
@@ -150,6 +151,7 @@ extension DiaryCalendar : FSCalendarDelegate , FSCalendarDataSource{
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("\(date) 선택됨")
         
+        /*
         let currentUser = Auth.auth().currentUser?.uid
             DBDiary.newDiary.getDayDiary(userID: currentUser!, date: date) { (result) in
                 if result != nil {
@@ -165,6 +167,7 @@ extension DiaryCalendar : FSCalendarDelegate , FSCalendarDataSource{
                 
             }
         }
+ */
 //    // 메모 있는 날은 이벤트 dot 표시
 //    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
 //        let date = dateFormatter.string(from: date as Date)

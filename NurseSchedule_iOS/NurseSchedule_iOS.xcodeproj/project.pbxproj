@@ -22,7 +22,6 @@
 		9926523E25A4ADEE0043A16E /* DiaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926523D25A4ADEE0043A16E /* DiaryController.swift */; };
 		992F41F025AF2C9100E25199 /* MedicalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F41EF25AF2C9100E25199 /* MedicalCell.swift */; };
 		992F420825AF454300E25199 /* MedicalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F420725AF454300E25199 /* MedicalDetailViewController.swift */; };
-		995813AE25C162AE0013624E /* DetailContent_inSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995813AD25C162AE0013624E /* DetailContent_inSettingController.swift */; };
 		997059AB25A72D8A0037A342 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997059AA25A72D8A0037A342 /* TabBarController.swift */; };
 		997255A225C1F09600DEF52C /* Kyobo Handwriting 2019.otf in Resources */ = {isa = PBXBuildFile; fileRef = 997255A125C1F09600DEF52C /* Kyobo Handwriting 2019.otf */; };
 		997255A625C1F1D300DEF52C /* HangeulNuriB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 997255A425C1F1D200DEF52C /* HangeulNuriB.ttf */; };
@@ -40,8 +39,6 @@
 		EC83993E25B7143F00B58778 /* AddDiaryTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC83993D25B7143F00B58778 /* AddDiaryTableController.swift */; };
 		EC9ED33C25BD64D700848426 /* ModifyDiaryTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9ED33B25BD64D700848426 /* ModifyDiaryTableController.swift */; };
 		ECD4CDD325CBD18400D21EEE /* SettingMainTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD4CDD225CBD18400D21EEE /* SettingMainTableController.swift */; };
-		ECE6A7C425BED7AC00F59320 /* SerialNumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6A7C325BED7AC00F59320 /* SerialNumController.swift */; };
-		ECE6A7D025C128C000F59320 /* MyArticleTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE6A7CF25C128C000F59320 /* MyArticleTableController.swift */; };
 		ECF2B54F25B420C60080F9E0 /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2B54E25B420C60080F9E0 /* DiaryCell.swift */; };
 		ECF2B55625B441BA0080F9E0 /* DiaryCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2B55525B441BA0080F9E0 /* DiaryCalendar.swift */; };
 		ECF2B59E25B562070080F9E0 /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2B59D25B562070080F9E0 /* DiaryDetailViewController.swift */; };
@@ -67,7 +64,6 @@
 		9926523D25A4ADEE0043A16E /* DiaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryController.swift; sourceTree = "<group>"; };
 		992F41EF25AF2C9100E25199 /* MedicalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalCell.swift; sourceTree = "<group>"; };
 		992F420725AF454300E25199 /* MedicalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalDetailViewController.swift; sourceTree = "<group>"; };
-		995813AD25C162AE0013624E /* DetailContent_inSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContent_inSettingController.swift; sourceTree = "<group>"; };
 		997059AA25A72D8A0037A342 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		997255A125C1F09600DEF52C /* Kyobo Handwriting 2019.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kyobo Handwriting 2019.otf"; sourceTree = "<group>"; };
 		997255A425C1F1D200DEF52C /* HangeulNuriB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HangeulNuriB.ttf; sourceTree = "<group>"; };
@@ -85,8 +81,6 @@
 		EC83993D25B7143F00B58778 /* AddDiaryTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryTableController.swift; sourceTree = "<group>"; };
 		EC9ED33B25BD64D700848426 /* ModifyDiaryTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyDiaryTableController.swift; sourceTree = "<group>"; };
 		ECD4CDD225CBD18400D21EEE /* SettingMainTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMainTableController.swift; sourceTree = "<group>"; };
-		ECE6A7C325BED7AC00F59320 /* SerialNumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialNumController.swift; sourceTree = "<group>"; };
-		ECE6A7CF25C128C000F59320 /* MyArticleTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyArticleTableController.swift; sourceTree = "<group>"; };
 		ECF2B54E25B420C60080F9E0 /* DiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCell.swift; sourceTree = "<group>"; };
 		ECF2B55525B441BA0080F9E0 /* DiaryCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCalendar.swift; sourceTree = "<group>"; };
 		ECF2B59D25B562070080F9E0 /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
@@ -233,9 +227,6 @@
 		997DD05925B61956007C5002 /* Tab5_Setting */ = {
 			isa = PBXGroup;
 			children = (
-				ECE6A7C325BED7AC00F59320 /* SerialNumController.swift */,
-				ECE6A7CF25C128C000F59320 /* MyArticleTableController.swift */,
-				995813AD25C162AE0013624E /* DetailContent_inSettingController.swift */,
 				ECD4CDD225CBD18400D21EEE /* SettingMainTableController.swift */,
 			);
 			path = Tab5_Setting;
@@ -423,7 +414,6 @@
 				9926523825A4ADCC0043A16E /* ScheduleController.swift in Sources */,
 				992F420825AF454300E25199 /* MedicalDetailViewController.swift in Sources */,
 				ECD4CDD325CBD18400D21EEE /* SettingMainTableController.swift in Sources */,
-				995813AE25C162AE0013624E /* DetailContent_inSettingController.swift in Sources */,
 				EC83993E25B7143F00B58778 /* AddDiaryTableController.swift in Sources */,
 				990AC3F2259DB3C400281E8B /* AppDelegate.swift in Sources */,
 				9926523E25A4ADEE0043A16E /* DiaryController.swift in Sources */,
@@ -432,8 +422,6 @@
 				990AC3F4259DB3C400281E8B /* SceneDelegate.swift in Sources */,
 				99ABBA2A25BB2F8400FFBE51 /* ArticleContentLabel.swift in Sources */,
 				7E68406825BD7025001CFBAC /* CommunityContentLabel.swift in Sources */,
-				ECE6A7D025C128C000F59320 /* MyArticleTableController.swift in Sources */,
-				ECE6A7C425BED7AC00F59320 /* SerialNumController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
