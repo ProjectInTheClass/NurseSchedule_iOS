@@ -98,33 +98,7 @@ class ModifyDiaryTableController: UITableViewController {
         } else {
             saveDB(content: ModifytextView.text)
         }
-    /*
-        if let writtencontent = ModifytextView.text{
-            if writtencontent.isEmpty{
-                showAlert(style: .alert)
-            }else {
-                self.change.content = writtencontent
 
-                print("saveButton seletedCondition -----\(selectedCondition)")
-                
-                self.change.emoji = selectedCondition
-                
-                shortDate =  String(self.day?.date.prefix(7) ?? " ")
-                print("ShortDate in saveButton(ModifyDiaryController)--------------\(shortDate)")
-                
-                DBDiary.newDiary.addDiary(userID: currentUser!, shortDate: shortDate, new: change)
-                
-                print("modify > saveButton click------------")
-                dismiss(animated: true, completion: nil)
-            }
-
-            if Array(startViewNDay!.keys)[0] == "DiaryDetailViewController" {
-                performSegue(withIdentifier: "unwindToCalendarDiary", sender: nil)
-            } else {
-                performSegue(withIdentifier: "unwindToDiaryList", sender: nil)
-            }
-        }
- */
     }
     
     @IBAction func cancelButton(_ sender: Any) {
