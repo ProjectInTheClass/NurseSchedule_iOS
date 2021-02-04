@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             termsList.append(term)
         }
         print(">>>>>appdelegate \(termsList)")
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
         return true
         
     }

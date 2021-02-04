@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FSCalendar
+import RealmSwift
 
 
 class ScheduleController: UIViewController{
@@ -18,28 +19,51 @@ class ScheduleController: UIViewController{
     @IBOutlet weak var memoTextView: UITextView!
     
     
+    let realm = try! Realm()
+    
     let dateFormatter = DateFormatter()
     var selectedDate : Date = .init()
-    var showDaySchedule : ForSavingDayWorkNMemo = ForSavingDayWorkNMemo(date: "", worktype: "", memo: "")
-    var showDayWorkType : [String : String] = [ : ]
-    
     //FSCalendar
     //https://ahyeonlog.tistory.com/7
     
     override func viewDidLoad() {
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
         dateFormatter.dateFormat = "yyyy-MM-dd"
         calendar.delegate = self
         calendar.dataSource = self
         memoTextView.delegate = self
         
-        /*
-        DBMemo.newMemo.getWorkType { (dayWorkType) in
-            print("getwork!!!!!!!!!!!!!!!!!!!")
-            self.showDayWorkType[dayWorkType.date] = dayWorkType.worktype
-            self.calendar.reloadData()
+        
+        
+        let savedSchedule = realm.objects(DBSchedule.self)
+        let selectedSchedule = savedSchedule.filter("date == '\(dateFormatter.string(from: selectedDate))'")
+        print(selectedSchedule)
+        
+        if selectedSchedule.isEmpty {
+            self.workTypeSegmentedControl.selectedSegmentIndex = 0
+            self.memoTextViewPlaceholderSetting()
+            
+        } else {
+            switch selectedSchedule[0].worktype {
+            case "day":
+                self.workTypeSegmentedControl.selectedSegmentIndex = 0
+            case "evening":
+                self.workTypeSegmentedControl.selectedSegmentIndex = 1
+            case "night":
+                self.workTypeSegmentedControl.selectedSegmentIndex = 2
+            case "off":
+                self.workTypeSegmentedControl.selectedSegmentIndex = 3
+            case "free":
+                self.workTypeSegmentedControl.selectedSegmentIndex = 4
+            default :
+                self.workTypeSegmentedControl.selectedSegmentIndex = 0
+            }
+            
+            self.memoTextView.text = selectedSchedule[0].memo
+            self.memoTextView.textColor = UIColor.black
         }
-        print("getWorkType didLoad >>>>> \(showDayWorkType)")
-        */
         
         //keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -80,8 +104,6 @@ class ScheduleController: UIViewController{
         calendar.scrollEnabled = true
         // 스와이프 스크롤 방향 ( 버티칼로 스와이프 설정하면 좌측 우측 상단 다음달 표시 없어짐, 호리젠탈은 보임 )
         calendar.scrollDirection = .vertical
-        
-        
         
         // 타이틀 컬러
         calendar.appearance.titleSelectionColor = .white
@@ -165,7 +187,6 @@ class ScheduleController: UIViewController{
         let alert = UIAlertController(title: "저장하시겠습니까?", message: "언제든지 수정가능해요!😊", preferredStyle: UIAlertController.Style.alert)
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)
         let okAction = UIAlertAction(title: "확인", style: .default) { _ in
-            let savingDate = self.dateFormatter.string(from: self.selectedDate)
             var savingWorktype : String {
                 switch self.workTypeSegmentedControl.selectedSegmentIndex {
                 case 0:
@@ -186,9 +207,17 @@ class ScheduleController: UIViewController{
             if let memo = self.memoTextView.text {
                 savingMemo = memo
             }
+            let daySchedule = DBSchedule()
+            daySchedule.date = self.dateFormatter.string(from: self.selectedDate)
+            daySchedule.worktype = savingWorktype
+            daySchedule.memo = savingMemo
             
-            let forSavingDayWorkNMemo = ForSavingDayWorkNMemo(date: savingDate, worktype: savingWorktype, memo: savingMemo)
-//            DBMemo.newMemo.addDaySchedule(newDay : forSavingDayWorkNMemo)
+            try! self.realm.write{
+                self.realm.add(daySchedule)
+                self.calendar.reloadData()
+            }
+            
+            
             
         }
         alert.addAction(cancelAction)
@@ -204,12 +233,18 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         selectedDate = date
-        
         selectedDateLabel.text = dateFormatter.string(from: selectedDate)
-        /*
-        DBMemo.newMemo.getDaySchedule(date: dateFormatter.string(from: selectedDate), completion: { (dayScheduleFromDB) in
-            self.showDaySchedule = dayScheduleFromDB
-            switch self.showDaySchedule.worktype {
+        
+        let savedSchedule = realm.objects(DBSchedule.self)
+        let selectedSchedule = savedSchedule.filter("date == '\(dateFormatter.string(from: selectedDate))'")
+        print(selectedSchedule)
+        
+        if selectedSchedule.isEmpty {
+            self.workTypeSegmentedControl.selectedSegmentIndex = 0
+            self.memoTextViewPlaceholderSetting()
+            
+        } else {
+            switch selectedSchedule[0].worktype {
             case "day":
                 self.workTypeSegmentedControl.selectedSegmentIndex = 0
             case "evening":
@@ -223,14 +258,10 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
             default :
                 self.workTypeSegmentedControl.selectedSegmentIndex = 0
             }
-            self.memoTextView.text = self.showDaySchedule.memo
-            if self.memoTextView.text.isEmpty {
-                self.memoTextViewPlaceholderSetting()
-            } else {
-                self.memoTextView.textColor = UIColor.black
-            }
-        })
- */
+            
+            self.memoTextView.text = selectedSchedule[0].memo
+            self.memoTextView.textColor = UIColor.black
+        }
     }
     
     
@@ -242,23 +273,29 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
     
     func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
         let date = dateFormatter.string(from: date)
-        if let type = showDayWorkType[date] {
-            switch type {
-            case "day":
-                return UIImage(named: "day_1")!
-            case "evening":
-                return UIImage(named: "evening_1")!
-            case "night":
-                return UIImage(named: "night_1")!
-            case "off":
-                return UIImage(named: "whiteOff_1")!
-            case "free":
-                return UIImage(named: "free_1")!
-            default :
-                return UIImage.init()
+        
+        let savedSchedule = realm.objects(DBSchedule.self)
+        let worktypeOfMonth = savedSchedule.filter("date == '\(date)'")
+        print(worktypeOfMonth)
+        
+        if worktypeOfMonth.isEmpty{
+            return UIImage.init()
+        } else {
+            switch worktypeOfMonth[0].worktype {
+                case "day":
+                    return UIImage(named: "day_1")!
+                case "evening":
+                    return UIImage(named: "evening_1")!
+                case "night":
+                    return UIImage(named: "night_1")!
+                case "off":
+                    return UIImage(named: "whiteOff_1")!
+                case "free":
+                    return UIImage(named: "free_1")!
+                default:
+                    return UIImage.init()
             }
         }
-        return nil
     }
  
     
