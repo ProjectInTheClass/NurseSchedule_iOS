@@ -30,7 +30,6 @@
 		997DD05C25B69E10007C5002 /* StructDeclaration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DD05B25B69E10007C5002 /* StructDeclaration.swift */; };
 		9991D6D625B986B500C3A7B1 /* DBMedical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991D6D525B986B500C3A7B1 /* DBMedical.swift */; };
 		99ABBA2A25BB2F8400FFBE51 /* ArticleContentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ABBA2925BB2F8400FFBE51 /* ArticleContentLabel.swift */; };
-		99D874B525AB452D0012D403 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D874B425AB452D0012D403 /* LoginController.swift */; };
 		99FB53AD25A0BFB100FBF750 /* MedicalBook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53AC25A0BFB100FBF750 /* MedicalBook.storyboard */; };
 		99FB53B025A0C0EA00FBF750 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53AF25A0C0EA00FBF750 /* Schedule.storyboard */; };
 		99FB53B325A0C17200FBF750 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53B225A0C17200FBF750 /* Diary.storyboard */; };
@@ -72,7 +71,6 @@
 		997DD05B25B69E10007C5002 /* StructDeclaration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructDeclaration.swift; sourceTree = "<group>"; };
 		9991D6D525B986B500C3A7B1 /* DBMedical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMedical.swift; sourceTree = "<group>"; };
 		99ABBA2925BB2F8400FFBE51 /* ArticleContentLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleContentLabel.swift; sourceTree = "<group>"; };
-		99D874B425AB452D0012D403 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		99FB53AC25A0BFB100FBF750 /* MedicalBook.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MedicalBook.storyboard; sourceTree = "<group>"; };
 		99FB53AF25A0C0EA00FBF750 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		99FB53B225A0C17200FBF750 /* Diary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
@@ -165,13 +163,12 @@
 		9926523125A4AC5F0043A16E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				997DD05725B61923007C5002 /* Tab2_MedicalBook */,
-				997DD05525B618EF007C5002 /* Tab3_Schedule */,
-				997DD05825B61930007C5002 /* Tab4_Diary */,
-				997DD05925B61956007C5002 /* Tab5_Setting */,
+				997DD05725B61923007C5002 /* Tab1_MedicalBook */,
+				997DD05525B618EF007C5002 /* Tab2_Schedule */,
+				997DD05825B61930007C5002 /* Tab3_Diary */,
+				997DD05925B61956007C5002 /* Tab4_Setting */,
 				990AC3F5259DB3C400281E8B /* ViewController.swift */,
 				997059AA25A72D8A0037A342 /* TabBarController.swift */,
-				99D874B425AB452D0012D403 /* LoginController.swift */,
 				997DD05B25B69E10007C5002 /* StructDeclaration.swift */,
 			);
 			path = Controllers;
@@ -194,24 +191,24 @@
 			path = CustomCell;
 			sourceTree = "<group>";
 		};
-		997DD05525B618EF007C5002 /* Tab3_Schedule */ = {
+		997DD05525B618EF007C5002 /* Tab2_Schedule */ = {
 			isa = PBXGroup;
 			children = (
 				9926523725A4ADCC0043A16E /* ScheduleController.swift */,
 			);
-			path = Tab3_Schedule;
+			path = Tab2_Schedule;
 			sourceTree = "<group>";
 		};
-		997DD05725B61923007C5002 /* Tab2_MedicalBook */ = {
+		997DD05725B61923007C5002 /* Tab1_MedicalBook */ = {
 			isa = PBXGroup;
 			children = (
 				9926523A25A4ADDE0043A16E /* MedicalBookController.swift */,
 				992F420725AF454300E25199 /* MedicalDetailViewController.swift */,
 			);
-			path = Tab2_MedicalBook;
+			path = Tab1_MedicalBook;
 			sourceTree = "<group>";
 		};
-		997DD05825B61930007C5002 /* Tab4_Diary */ = {
+		997DD05825B61930007C5002 /* Tab3_Diary */ = {
 			isa = PBXGroup;
 			children = (
 				9926523D25A4ADEE0043A16E /* DiaryController.swift */,
@@ -221,15 +218,15 @@
 				ECF2B59D25B562070080F9E0 /* DiaryDetailViewController.swift */,
 				EC3A9EF425BE92E400509DA8 /* DetailDiaryFromTableController.swift */,
 			);
-			path = Tab4_Diary;
+			path = Tab3_Diary;
 			sourceTree = "<group>";
 		};
-		997DD05925B61956007C5002 /* Tab5_Setting */ = {
+		997DD05925B61956007C5002 /* Tab4_Setting */ = {
 			isa = PBXGroup;
 			children = (
 				ECD4CDD225CBD18400D21EEE /* SettingMainTableController.swift */,
 			);
-			path = Tab5_Setting;
+			path = Tab4_Setting;
 			sourceTree = "<group>";
 		};
 		99A731CD25A1830D00F3E867 /* Views */ = {
@@ -402,7 +399,6 @@
 			files = (
 				ECF2B59E25B562070080F9E0 /* DiaryDetailViewController.swift in Sources */,
 				992F41F025AF2C9100E25199 /* MedicalCell.swift in Sources */,
-				99D874B525AB452D0012D403 /* LoginController.swift in Sources */,
 				ECF2B55625B441BA0080F9E0 /* DiaryCalendar.swift in Sources */,
 				EC9ED33C25BD64D700848426 /* ModifyDiaryTableController.swift in Sources */,
 				9926523B25A4ADDE0043A16E /* MedicalBookController.swift in Sources */,
@@ -579,7 +575,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dongguk.nurschedule-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -599,7 +595,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dongguk.nurschedule-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

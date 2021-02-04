@@ -24,7 +24,7 @@ class DiaryDetailViewController: UIViewController {
     let img4 = UIImage(named: "0-devil.png")
     
     
-    let currentUser = Login.init().googleLogin()
+//    let currentUser = Login.init().googleLogin()
     var detailInfoFromDay : Day? = nil
     
     var shortDate : String = ""
