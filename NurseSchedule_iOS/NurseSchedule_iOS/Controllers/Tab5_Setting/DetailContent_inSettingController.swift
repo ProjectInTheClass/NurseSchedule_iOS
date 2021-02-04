@@ -27,11 +27,6 @@ class DetailContent_inSettingController: UIViewController {
     
     
     var commentsList : [Comment] = []
-    /*
-    var articleID : String? = nil
-    var boardType : String? = nil
-    var selectedArticle : Article? = nil
-    */
 
     
     override func viewDidLoad() {
@@ -71,17 +66,7 @@ class DetailContent_inSettingController: UIViewController {
             self.navigationItem.setRightBarButton(nil, animated: true)
         }
         
-//        commentsList.removeAll()
-//
-//        DBBoard.board.getCommentsList(BoardType: boardType, articleID: articleNum) { (comment) in
-//            print("☀️\(boardType)")
-//            print(articleNum)
-//            self.commentsList.append(comment)
-//            print("commentLists get successful")
-//            self.commentTableView.reloadData()
-//        }
-        //commentTableView.reloadData()
-        
+
         if boardType == "공지사항" {
             numberOfCommentsLabel.isHidden = true
         }

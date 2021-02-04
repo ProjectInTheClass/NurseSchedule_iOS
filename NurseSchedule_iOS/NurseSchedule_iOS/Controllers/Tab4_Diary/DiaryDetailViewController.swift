@@ -93,9 +93,7 @@ class DiaryDetailViewController: UIViewController {
             
             DBDiary.newDiary.deleteDiary(userID: self.currentUser!, shortDate: self.shortDate, date: self.date.text!)
             
-            
-            //--------------------------------------------------------
-            //DiaryController.diarycontroller.tableView.reloadData()
+  
             
             self.dismiss(animated: true, completion: nil)
         }
