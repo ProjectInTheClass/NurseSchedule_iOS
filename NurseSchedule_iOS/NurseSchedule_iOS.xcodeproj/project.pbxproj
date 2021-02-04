@@ -28,6 +28,7 @@
 		997255A725C1F1D300DEF52C /* HangeulNuriR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 997255A525C1F1D200DEF52C /* HangeulNuriR.ttf */; };
 		9973874125BDB74F009DC92F /* DictionaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9973874025BDB74F009DC92F /* DictionaryLabel.swift */; };
 		997DD05C25B69E10007C5002 /* StructDeclaration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DD05B25B69E10007C5002 /* StructDeclaration.swift */; };
+		99861B1925CBFB7E00AFD21B /* DBSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99861B1825CBFB7E00AFD21B /* DBSchedule.swift */; };
 		9991D6D625B986B500C3A7B1 /* DBMedical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991D6D525B986B500C3A7B1 /* DBMedical.swift */; };
 		99ABBA2A25BB2F8400FFBE51 /* ArticleContentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ABBA2925BB2F8400FFBE51 /* ArticleContentLabel.swift */; };
 		99FB53AD25A0BFB100FBF750 /* MedicalBook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53AC25A0BFB100FBF750 /* MedicalBook.storyboard */; };
@@ -69,6 +70,7 @@
 		997255A525C1F1D200DEF52C /* HangeulNuriR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HangeulNuriR.ttf; sourceTree = "<group>"; };
 		9973874025BDB74F009DC92F /* DictionaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryLabel.swift; sourceTree = "<group>"; };
 		997DD05B25B69E10007C5002 /* StructDeclaration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructDeclaration.swift; sourceTree = "<group>"; };
+		99861B1825CBFB7E00AFD21B /* DBSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSchedule.swift; sourceTree = "<group>"; };
 		9991D6D525B986B500C3A7B1 /* DBMedical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMedical.swift; sourceTree = "<group>"; };
 		99ABBA2925BB2F8400FFBE51 /* ArticleContentLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleContentLabel.swift; sourceTree = "<group>"; };
 		99FB53AC25A0BFB100FBF750 /* MedicalBook.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MedicalBook.storyboard; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				9991D6D525B986B500C3A7B1 /* DBMedical.swift */,
+				99861B1825CBFB7E00AFD21B /* DBSchedule.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				EC3A9EF525BE92E400509DA8 /* DetailDiaryFromTableController.swift in Sources */,
 				990AC3F4259DB3C400281E8B /* SceneDelegate.swift in Sources */,
 				99ABBA2A25BB2F8400FFBE51 /* ArticleContentLabel.swift in Sources */,
+				99861B1925CBFB7E00AFD21B /* DBSchedule.swift in Sources */,
 				7E68406825BD7025001CFBAC /* CommunityContentLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

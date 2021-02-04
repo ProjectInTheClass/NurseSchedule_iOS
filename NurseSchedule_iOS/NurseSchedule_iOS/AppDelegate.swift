@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import RealmSwift
 
 var termsList : [Term] = []
 
@@ -21,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             termsList.append(term)
         }
         print(">>>>>appdelegate \(termsList)")
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         return true
     }
