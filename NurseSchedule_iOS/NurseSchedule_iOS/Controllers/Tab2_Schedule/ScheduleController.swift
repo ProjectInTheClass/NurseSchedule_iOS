@@ -209,15 +209,31 @@ class ScheduleController: UIViewController{
                 }
             }
             
-            let daySchedule = Schedule()
-            daySchedule.date = self.dateFormatter.string(from: self.selectedDate)
-            daySchedule.worktype = savingWorktype
-            daySchedule.memo = savingMemo
             
-            try! self.realm.write{
-                self.realm.add(daySchedule)
-                self.calendar.reloadData()
+            let savedSchedule = self.realm.objects(Schedule.self)
+            let selectedSchedule = savedSchedule.filter("date == '\(self.dateFormatter.string(from: self.selectedDate))'")
+            // 날짜에 대한 정보 없으면 add
+            if selectedSchedule.isEmpty {
+                let daySchedule = Schedule()
+                daySchedule.date = self.dateFormatter.string(from: self.selectedDate)
+                daySchedule.worktype = savingWorktype
+                daySchedule.memo = savingMemo
+                
+                try! self.realm.write{
+                    self.realm.add(daySchedule)
+                    self.calendar.reloadData()
+                }
+                
+            } else { //날짜에 대한 정보 있으면 update
+                try! self.realm.write{
+                    selectedSchedule[0].worktype = savingWorktype
+                    selectedSchedule[0].memo = savingMemo
+                    self.calendar.reloadData()
+                }
             }
+            
+            
+            
             
             
             
