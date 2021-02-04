@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class DBSchedule: Object {
+class Schedule: Object {
     @objc dynamic var date : String = ""
     @objc dynamic var worktype : String = ""
     @objc dynamic var memo : String = ""

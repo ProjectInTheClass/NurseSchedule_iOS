@@ -35,8 +35,8 @@ class DiaryController: UIViewController {
         
          let savedDiary = realm.objects(Diary.self)
          dateFormatter.dateFormat = "yyyy-MM"
-         month = dateFormatter.string(from: Date.init())
-         let selectedDiary = savedDiary.contains("date == '\(month)'")
+//         month = dateFormatter.string(from: Date.init())
+//         let selectedDiary = savedDiary.contains("date == '\(month)'")
          
         
         // 다이어리 목록을 디비에서 불러옴

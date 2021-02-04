@@ -6,13 +6,11 @@
 //
 
 import UIKit
-import Firebase
-import GoogleSignIn
+import RealmSwift
 
 class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         self.selectedIndex = 0
 

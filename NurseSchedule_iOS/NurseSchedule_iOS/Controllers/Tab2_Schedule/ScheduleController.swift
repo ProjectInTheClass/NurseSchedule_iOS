@@ -36,8 +36,7 @@ class ScheduleController: UIViewController{
         memoTextView.delegate = self
         
         
-        
-        let savedSchedule = realm.objects(DBSchedule.self)
+        let savedSchedule = realm.objects(Schedule.self)
         let selectedSchedule = savedSchedule.filter("date == '\(dateFormatter.string(from: selectedDate))'")
         print(selectedSchedule)
         
@@ -210,7 +209,7 @@ class ScheduleController: UIViewController{
                 }
             }
             
-            let daySchedule = DBSchedule()
+            let daySchedule = Schedule()
             daySchedule.date = self.dateFormatter.string(from: self.selectedDate)
             daySchedule.worktype = savingWorktype
             daySchedule.memo = savingMemo
@@ -238,7 +237,7 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
         selectedDate = date
         selectedDateLabel.text = dateFormatter.string(from: selectedDate)
         
-        let savedSchedule = realm.objects(DBSchedule.self)
+        let savedSchedule = realm.objects(Schedule.self)
         let selectedSchedule = savedSchedule.filter("date == '\(dateFormatter.string(from: selectedDate))'")
         print(selectedSchedule)
         
@@ -281,7 +280,7 @@ extension ScheduleController : FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
         let date = dateFormatter.string(from: date)
         
-        let savedSchedule = realm.objects(DBSchedule.self)
+        let savedSchedule = realm.objects(Schedule.self)
         let worktypeOfMonth = savedSchedule.filter("date == '\(date)'")
         print(worktypeOfMonth)
         

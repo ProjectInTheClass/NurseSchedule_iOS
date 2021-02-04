@@ -7,13 +7,6 @@
 
 import Foundation
 
-struct Users {
-    //childByAutoId()
-    //let serialNum : String
-    let name : String
-    let email : String
-}
-
 
 struct Term {
     var definition : String
@@ -21,31 +14,6 @@ struct Term {
     var koreanTerm : String
 }
 
-
-
-struct Article {
-    var articleID : String
-    var title: String
-    var date: String
-    var content: String
-    var user: String
-//    var 
-}
-
-
-struct ArticleAllInfo {
-    var boardType : String
-    var articleInfo : Article
-    
-}
-
-struct Comment {
-    var commentID : String
-    var writer : String
-    var date : String
-    var content : String
-    
-}
 
 enum ActionType {
     case edit
@@ -84,11 +52,6 @@ enum Worktype {
     }
 }
 
-struct ForSavingDayWorkNMemo {
-    var date : String
-    var worktype : String
-    var memo : String
-}
 
 struct Day {
     var emoji : Int
@@ -96,10 +59,3 @@ struct Day {
     var content : String
 }
 
-struct myContentInfo{
-    var boardType : String
-    var articleNum : String
-    var title : String
-    var date : String
-
-}
