@@ -10,34 +10,17 @@ import Firebase
 import GoogleSignIn
 
 var termsList : [Term] = []
-//
-//var bringdays : [Day] = []
-//
-//var getDiaryDate : String = ""
-var bringdays : [Day] = []
-var boardList : [String] = []
 
+var bringdays : [Day] = []
 var getDiaryDate : String = ""
 
-var currentUser = Auth.auth().currentUser?.uid {
-    didSet {
-        print("appDelegate‼️didSet❗️ \(Auth.auth().currentUser?.uid)")
-        //window?.rootViewController!.performSegue(withIdentifier: "unwindToSchedule", sender: nil)
-    }
-}
-
-var recentTitle : String = ""
-
-
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self
-        
+      
         // medicalBook 데이터 가져옴
         DBMedical.medicalBookData.getMedicalBookData { (term) in
             termsList.append(term)
@@ -45,77 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         print(">>>>>appdelegate \(termsList)")
         
         
-        DBBoard.board.getRecentNotice { (recent) in
-            recentTitle = "📌 " + recent + " 📌"
-        }
-
-        
-        // 다이어리 목록을 디비에서 불러옴
-//        let dateFormatter : DateFormatter = DateFormatter() //DB에 들어갈 날짜용 0(월단위)
-//        dateFormatter.dateFormat = "yyyy-MM"
-//        getDiaryDate = dateFormatter.string(from: Date.init())
-//        DBDiary.newDiary.getDiary(userID: currentUser, shortDate: getDiaryDate, completion: { result in //result에 Day(emoji: "😢", date: "2021-01-03", content: "getDiary")형식으로 저장되어있음
-//            bringdays.append(result)
-//            print("app delegate \(result)")
-//            //print(self.bringdays)
-//        })
-//
-        
-        DBBoard.board.getBoardListIn { (list) in
-            print("AppDelegate : boardList bring success>>> \(list)")
-            boardList.append(list)
-        }
         
         Thread.sleep(forTimeInterval: 2.0)
         return true
     }
 
    
-
-    
-    @available(iOS 9.0, *)
-    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
-      -> Bool {
-      return GIDSignIn.sharedInstance().handle(url)
-    }
-
-    //After signIn
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-       // print("User email : \(user.profile.email ?? "no email")")
-      // ...
-      if let error = error {
-        // ...
-        return
-      }
-
-      guard let authentication = user.authentication else { return }
-      let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                        accessToken: authentication.accessToken)
-
-        Auth.auth().signIn(with: credential) { (user, error) in
-            if let error = error{
-            //...
-            return
-            }
-            currentUser = Auth.auth().currentUser?.uid
-           print("appDelegate‼️in \(currentUser)")
-//            self.window?.rootViewController!.performSegue(withIdentifier: "YOUR SEGUE IDENTIFIER", sender: nil)
-            DBUser.users.setUser(userID: currentUser!)
-            
-            
-        
-        }
-        print("appDelegate‼️out \(currentUser)")
-//
-      // ...
-    }
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        // Perform any operations when the user disconnects from app here.
-    }
-  
-
-    // MARK: UISceneSession Lifecycle
-
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
