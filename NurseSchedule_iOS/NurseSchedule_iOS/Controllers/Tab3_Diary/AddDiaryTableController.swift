@@ -93,6 +93,7 @@ class AddDiaryTableController: UITableViewController {
             
             try! self.realm.write {
                 self.realm.add(dayDiary)
+                dismiss(animated: true, completion: nil)
             }
         } else {
             let alert = UIAlertController(title: "이미 작성된 일기가 있습니다.", message: "덮어씌우겠습니까?", preferredStyle: UIAlertController.Style.alert)
@@ -104,7 +105,7 @@ class AddDiaryTableController: UITableViewController {
                     selectedDiary[0].emoji = self.selectedCondition
                 }
                
-               // self.dismiss(animated: true, completion: nil)
+               self.dismiss(animated: true, completion: nil)
                 print("일기 덮어 저장")
             }
             let cancel = UIAlertAction(title: "취소", style: .cancel){(action) in
@@ -116,7 +117,7 @@ class AddDiaryTableController: UITableViewController {
             
         }
         print("새 일기 작성 저장")
-        dismiss(animated: true, completion: nil)
+       
     }
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
