@@ -90,12 +90,10 @@ class DiaryDetailViewController: UIViewController {
             print("아니요")}
         let deleteButton = UIAlertAction(title: "확인", style: .destructive){(action) in
       
-            self.shortDate =  String(self.date.text!.prefix(7))
+            let savedDiary = self.realm.objects(Diary.self)
+            let deleteDiary = savedDiary.filter("date == '\(self.selectedDate!)'")
+            try! self.realm.write({ self.realm.delete(deleteDiary) })//realm에서 삭제
             
-            /*
-            DBDiary.newDiary.deleteDiary(userID: self.currentUser!, shortDate: self.shortDate, date: self.date.text!)
-            
-  */
             
             self.dismiss(animated: true, completion: nil)
         }

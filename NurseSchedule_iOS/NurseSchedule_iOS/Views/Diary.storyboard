@@ -543,7 +543,6 @@
                                                         <state key="normal" image="multiply" catalog="system"/>
                                                         <connections>
                                                             <action selector="cancelButton:" destination="1YB-Rd-rPt" eventType="touchUpInside" id="Icv-rg-gKs"/>
-                                                            <segue destination="6Fv-ja-Lzx" kind="unwind" unwindAction="unwindToCalendarDiary:" id="BSv-ar-9g6"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -624,7 +623,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLD-UO-MCJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="6Fv-ja-Lzx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3104" y="2663"/>
         </scene>

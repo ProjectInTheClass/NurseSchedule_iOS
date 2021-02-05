@@ -20,7 +20,6 @@ class DiaryController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let dateFormatter : DateFormatter = DateFormatter()
-    var arrayCount : Int = 0
     var month : String = ""
     
     override func viewDidLoad() {
@@ -28,14 +27,10 @@ class DiaryController: UIViewController {
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         let savedDiary = realm.objects(Diary.self)
-        dateFormatter.dateFormat = "yyyy-MM"
-        month = dateFormatter.string(from: Date.init())
-         //let selectedDiary = savedDiary.contains("date == '\(month)'")
+        
 
-        let selectedDiary = realm.objects(Diary.self).filter("date CONTAINS '\(month)'")
-        arrayCount = selectedDiary.count
         print("selectedDiary")
-        print(selectedDiary)
+//        print(selectedDiary)
         
  
         tableView.dataSource = self
@@ -72,14 +67,19 @@ class DiaryController: UIViewController {
 
 extension DiaryController :UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayCount
+        dateFormatter.dateFormat = "yyyy-MM"
+        month = dateFormatter.string(from: Date.init())
+         //let selectedDiary = savedDiary.contains("date == '\(month)'")
+        let selectedDiary = realm.objects(Diary.self).filter("date CONTAINS '\(month)'")
+        return selectedDiary.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryCell", for: indexPath) as! DiaryCell
         
 
-        let month = dateFormatter.string(from: Date.init())
+        dateFormatter.dateFormat = "yyyy-MM"
+        month = dateFormatter.string(from: Date.init())
         let monthlyDiary = realm.objects(Diary.self).filter("date CONTAINS '\(month)'")
     
         
@@ -112,6 +112,8 @@ extension DiaryController :UITableViewDataSource {
 extension DiaryController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
+        dateFormatter.dateFormat = "yyyy-MM"
+        month = dateFormatter.string(from: Date.init())
         let monthlyDiary = realm.objects(Diary.self).filter("date CONTAINS '\(month)'")
         performSegue(withIdentifier: "popupDiary", sender: monthlyDiary[indexPath.row].date)
        
