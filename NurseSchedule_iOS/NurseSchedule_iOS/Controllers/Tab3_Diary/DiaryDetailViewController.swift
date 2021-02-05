@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 
 
 class DiaryDetailViewController: UIViewController {
@@ -15,7 +15,6 @@ class DiaryDetailViewController: UIViewController {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var emojiImage: UIImageView!
     @IBOutlet weak var content: UITextView!
-    @IBOutlet weak var detailView: UIView!
     
     let img0 = UIImage(named: "0-love.png")
     let img1 = UIImage(named: "0-happy.png")
@@ -25,38 +24,42 @@ class DiaryDetailViewController: UIViewController {
     
     
 //    let currentUser = Login.init().googleLogin()
-    var detailInfoFromDay : Day? = nil
+    var selectedDate : String? =  ""
     
     var shortDate : String = ""
     var editdate : String = ""
+    
+    let realm = try! Realm()
 
    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        date.text = detailInfoFromDay?.date
-       
-        if let emojinum = detailInfoFromDay?.emoji{
-            switch emojinum {
-            case 0:
-                emojiImage.image = img0
-            case 1:
-                emojiImage.image = img1
-            case 2:
-                emojiImage.image = img2
-            case 3:
-                emojiImage.image = img3
-            case 4:
-                emojiImage.image = img4
-            default:
-                print("emojiImage")
-            }
-        }
         
-        content.text = detailInfoFromDay?.content
-        // Do any additional setup after loading the view.
-       
-        self.editdate = detailInfoFromDay!.date
+        print("segue에서넘어와--\(selectedDate!)")
+        
+        
+        let savedDiary = realm.objects(Diary.self)
+        let selectedDayDiary = savedDiary.filter("date == '\(selectedDate!)'")
+        if selectedDayDiary.isEmpty {
+            print(Error.self)
+        } else {
+            date.text = selectedDayDiary[0].date
+            switch selectedDayDiary[0].emoji {
+            case 0:
+                emojiImage.image = UIImage(named: "0-love")
+            case 1:
+                emojiImage.image = UIImage(named: "0-happy")
+            case 2:
+                emojiImage.image = UIImage(named: "0-surprised")
+            case 3:
+                emojiImage.image = UIImage(named: "0-crying")
+            case 4:
+                emojiImage.image = UIImage(named: "0-devil")
+            default :
+                emojiImage.image = UIImage.init()
+            }
+            content.text = selectedDayDiary[0].content
+        }
         
     }
  
@@ -70,7 +73,7 @@ class DiaryDetailViewController: UIViewController {
     }
     
     @IBAction func modifyButton(_ sender: Any) {//Calendar에서 detailView 들어갔을 때 수정버튼
-        let dayForSender = detailInfoFromDay
+        let dayForSender = selectedDate
         let startView = "DiaryDetailViewController"
         let senderData = [startView : dayForSender]
         performSegue(withIdentifier: "editDiary", sender: senderData)
@@ -78,8 +81,6 @@ class DiaryDetailViewController: UIViewController {
       
         
     }
-//
-//    override func touchesBegan(_ touches: Set, with event: UIEvent?) { super.touchesBegan(touches, with: event) if let touch = touches.first , touch.view == self.view { self.dismiss(animated: true, completion: nil) } }
 
     
     func showDeleteAlert() {
@@ -112,7 +113,7 @@ class DiaryDetailViewController: UIViewController {
         } else if segue.identifier == "editDiary"{
             print("editDiary~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             let modifyDiaryTableController = segue.destination as! ModifyDiaryTableController
-            modifyDiaryTableController.startViewNDay = sender as! [String : String]
+            modifyDiaryTableController.startViewNDay = sender as? [String : String]
             
         }
     }
