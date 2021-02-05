@@ -6,16 +6,11 @@
 //
 
 import UIKit
-import GoogleSignIn
 import RealmSwift
 
 let realm = try! Realm()
 
 class DiaryController: UIViewController {
-    
-    //let currentUser = Auth.auth().currentUser?.uid
-    var bringdays : [Day] = []
-    var getDiaryDate : String = ""
     
     let img0 = UIImage(named: "0-love.png")
     let img1 = UIImage(named: "0-happy.png")
@@ -25,23 +20,24 @@ class DiaryController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let dateFormatter : DateFormatter = DateFormatter()
-    
+    var arrayCount : Int = 0
+    var month : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
-        
-         let savedDiary = realm.objects(Diary.self)
-         dateFormatter.dateFormat = "yyyy-MM"
-//         month = dateFormatter.string(from: Date.init())
-//         let selectedDiary = savedDiary.contains("date == '\(month)'")
-         
-        
-        // 다이어리 목록을 디비에서 불러옴
+        let savedDiary = realm.objects(Diary.self)
+        dateFormatter.dateFormat = "yyyy-MM"
+        month = dateFormatter.string(from: Date.init())
+         //let selectedDiary = savedDiary.contains("date == '\(month)'")
 
+        var selectedDiary = realm.objects(Diary.self).filter("date CONTAINS '\(month)'")
+        arrayCount = selectedDiary.count
+        print("selectedDiary")
+        print(selectedDiary)
         
+ 
         tableView.dataSource = self
         tableView.delegate = self
         tableView.estimatedRowHeight = 60
@@ -49,29 +45,22 @@ class DiaryController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-
-        
-        
         tableView.rowHeight = UITableView.automaticDimension
-        self.bringdays.removeAll()
-        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.rowHeight = UITableView.automaticDimension
     }
-    
-    
+
     @IBAction func unwindToDiaryList(_ unwindSegue: UIStoryboardSegue) {
         let sourceViewController = unwindSegue.source
         // Use data from the view controller which initiated the unwind segue
     }
-    
-    
-     // MARK: - Navigation
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
+  
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "popupDiary" {
+            
+            
             let detailDiaryFromTableController = segue.destination as! DetailDiaryFromTableController
             detailDiaryFromTableController.detailInfoFromDay = sender as? Day
         }
@@ -80,16 +69,19 @@ class DiaryController: UIViewController {
 
 extension DiaryController :UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     
-        print("controller bringdays.count -> \(bringdays.count)")
-        return bringdays.count
+        return arrayCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryCell", for: indexPath) as! DiaryCell
         
-        print("bringday \(bringdays)")
-        switch bringdays[indexPath.row].emoji {
+        let savedDiary = realm.objects(Diary.self)
+        var month = dateFormatter.string(from: Date.init())
+        var monthlyDiary = realm.objects(Diary.self).filter("date CONTAINS '\(month)'")
+    
+        
+        
+        switch monthlyDiary[indexPath.row].emoji {
         case 0:
             cell.emojiImage.image = img0
         case 1:
@@ -104,8 +96,8 @@ extension DiaryController :UITableViewDataSource {
             print("emojiImage")
         }
        
-        cell.dateLabel.text = bringdays[indexPath.row].date
-        cell.contentLabel.text = bringdays[indexPath.row].content
+        cell.dateLabel.text = monthlyDiary[indexPath.row].date
+        cell.contentLabel.text = monthlyDiary[indexPath.row].content
 
         return cell
     }
@@ -113,14 +105,14 @@ extension DiaryController :UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-    
-   
 }
 
 extension DiaryController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
-        performSegue(withIdentifier: "popupDiary", sender: bringdays[indexPath.row])
+        let savedDiary = realm.objects(Diary.self)
+        var monthlyDiary = realm.objects(Diary.self).filter("date CONTAINS '\(month)'")
+        performSegue(withIdentifier: "popupDiary", sender: monthlyDiary[indexPath.row].date)
     }
     
 }
