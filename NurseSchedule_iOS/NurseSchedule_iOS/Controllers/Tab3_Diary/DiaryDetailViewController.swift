@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 
 
 class DiaryDetailViewController: UIViewController {
@@ -28,13 +28,18 @@ class DiaryDetailViewController: UIViewController {
     
     var shortDate : String = ""
     var editdate : String = ""
+    
+    let realm = try! Realm()
 
    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print("segue에서넘어와--\(selectedDate!)")
+        
+        
         let savedDiary = realm.objects(Diary.self)
-        let selectedDayDiary = savedDiary.filter("date == '\(selectedDate)'")
+        let selectedDayDiary = savedDiary.filter("date == '\(selectedDate!)'")
         if selectedDayDiary.isEmpty {
             print(Error.self)
         } else {
