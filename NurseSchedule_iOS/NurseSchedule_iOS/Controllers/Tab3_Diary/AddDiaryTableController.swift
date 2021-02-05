@@ -100,7 +100,7 @@ class AddDiaryTableController: UITableViewController {
             let save = UIAlertAction(title: "확인", style: .default){(action) in
                 
                 try! self.realm.write {
-                    //                    selectedDiary[0].date = self.selectedDate
+                    //selectedDiary[0].date = self.selectedDate
                     selectedDiary[0].content = self.contentTextView.text
                     selectedDiary[0].emoji = self.selectedCondition
                 }
