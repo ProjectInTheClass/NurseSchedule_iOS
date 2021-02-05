@@ -108,7 +108,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="calendar" catalog="system" id="CVN-wx-NsB">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="fvp-3Q-dl9" kind="show" id="l0e-CW-Ja5"/>
+                                <segue destination="fvp-3Q-dl9" kind="show" id="S1W-w6-Lct"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="Ygu-lQ-soU">
@@ -392,14 +392,7 @@
                             <constraint firstItem="Kaz-1n-hXM" firstAttribute="bottom" secondItem="pp5-GY-W90" secondAttribute="bottom" id="gmy-kE-WHO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="RTc-nv-WgP">
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="FYv-jG-z4b">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <segue destination="24Z-UK-ocX" kind="presentation" identifier="addDiary" id="KBb-6W-ZgX"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="RTc-nv-WgP"/>
                     <connections>
                         <outlet property="diaryCalendar" destination="pp5-GY-W90" id="NcS-0m-7h1"/>
                         <segue destination="1YB-Rd-rPt" kind="presentation" identifier="popCalendarDiary" id="ms1-O9-4z6"/>
@@ -836,8 +829,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GHk-wU-Sj9"/>
-        <segue reference="KBb-6W-ZgX"/>
+        <segue reference="w1D-LL-xW7"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="0-crying" width="35" height="35"/>

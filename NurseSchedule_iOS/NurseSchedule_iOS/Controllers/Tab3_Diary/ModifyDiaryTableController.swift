@@ -49,8 +49,8 @@ class ModifyDiaryTableController: UITableViewController {
         
         
         if let dataExist = startViewNDay {
-            let fromViewController = Array(startViewNDay!.keys)[0]
-            selectedDate = Array(startViewNDay!.keys)[1]
+            let fromViewController = Array(dataExist.keys)[0]
+            selectedDate = dataExist[fromViewController]!
             
             let savedDiary = realm.objects(Diary.self)
             let selectedDiary = savedDiary.filter("date == '\(self.selectedDate)'")
