@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FSCalendar
+import RealmSwift
 
 
 class DiaryCalendar: UIViewController {
@@ -16,11 +17,13 @@ class DiaryCalendar: UIViewController {
 
     
     let dateFormatter = DateFormatter()
+    
+    
+    
     var dayDiary = Day(emoji: 0, date: "DiaryCalendar_default_date", content: "DiaryCalendar_default_content")
     var showDayEmoji : [String : Int] = [ : ]
     
-    //print(month)
-    
+    let realm = try! Realm()
     
     // 달력이미지 꾸미기(캘린더와 같은 버전)
     func updateUI() {
@@ -177,12 +180,20 @@ extension DiaryCalendar : FSCalendarDelegate , FSCalendarDataSource{
 //        return 0
 //    }
 //
+    }
   
     func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
+        
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let date = dateFormatter.string(from: date)
-        if let type = showDayEmoji[date] {
-            switch type {
+        let savedDiary = realm.objects(Diary.self)
+        let emojiOfMonth = savedDiary.filter("date == '\(date)'")
+        print("emojiOfMonth!!!!!\(emojiOfMonth)")
+        
+        if emojiOfMonth.isEmpty{
+            return UIImage.init()
+        }else {
+            switch emojiOfMonth[0].emoji {
             case 0:
                 return UIImage(named: "0-love")!
             case 1:
@@ -197,8 +208,6 @@ extension DiaryCalendar : FSCalendarDelegate , FSCalendarDataSource{
                 return UIImage.init()
             }
         }
-        return nil
     }
-}
 
 }
