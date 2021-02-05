@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DBMedical.medicalBookData.getMedicalBookData { (term) in
             termsList.append(term)
         }
-        print(">>>>>appdelegate \(termsList)")
+//        print(">>>>>appdelegate \(termsList)")
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         return true

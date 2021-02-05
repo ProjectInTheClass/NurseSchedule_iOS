@@ -7,6 +7,9 @@
 
 import UIKit
 import Firebase
+import RealmSwift
+import CSV
+
 
 
 class MedicalBookController: UIViewController{
@@ -18,11 +21,17 @@ class MedicalBookController: UIViewController{
         "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"
     ]
     
+    
+    var medicalTermList : [String] = []
+    
     //searchbar에 의해 검색결과가 저장될 array
     var filteredTermsBySearchbar : [Term]!
     
     // tableview에 뿌려질 데이터를 지니는 array
     var outputDataForTableView = [Term]()
+    
+    
+ 
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +41,35 @@ class MedicalBookController: UIViewController{
         searchbar.delegate = self
         searchbar.placeholder = "용어를 검색하세요."
         tableView.reloadData()
-        print("viewdidload>>>>>\(termsList)")
-        // Do any additional setup after loading the view.
+        
+
+//        let termDataFromDB = realm.objects(MedicalBook.self)
+//        if termDataFromDB.isEmpty{
+//            let test = readFileFrom()
+//            print(test)
+//        }
+
     }
+    
+    
+//    func readFileFrom() -> [[String]] {
+//        if let csvPath = Bundle.main.path (forResource: "보건의료용어표준_v5.0_간호", ofType: "csv"){
+//        do {
+//        let content = try String (contentsOfFile: csvPath, encoding: String.Encoding.utf8)
+//        let data: [[String]] = content.components(separatedBy: "\r\n").map { $0.components(separatedBy: ",") }
+//        return data
+//      } catch {
+//        //
+//      }
+//        }
+//      return [["never be printed"]]
+//    }
+    
+    
+   
+    
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         outputDataForTableView = termsList

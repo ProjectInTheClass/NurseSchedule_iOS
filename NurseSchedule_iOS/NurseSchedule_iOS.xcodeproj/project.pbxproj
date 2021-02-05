@@ -22,6 +22,8 @@
 		9926523E25A4ADEE0043A16E /* DiaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926523D25A4ADEE0043A16E /* DiaryController.swift */; };
 		992F41F025AF2C9100E25199 /* MedicalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F41EF25AF2C9100E25199 /* MedicalCell.swift */; };
 		992F420825AF454300E25199 /* MedicalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992F420725AF454300E25199 /* MedicalDetailViewController.swift */; };
+		9960C12225CD2750007A79AD /* DBMedicalBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9960C12125CD2750007A79AD /* DBMedicalBook.swift */; };
+		9960C19E25CD5EDD007A79AD /* 보건의료용어표준_v5.0_간호.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9960C19D25CD5EDD007A79AD /* 보건의료용어표준_v5.0_간호.csv */; };
 		997059AB25A72D8A0037A342 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997059AA25A72D8A0037A342 /* TabBarController.swift */; };
 		997255A225C1F09600DEF52C /* Kyobo Handwriting 2019.otf in Resources */ = {isa = PBXBuildFile; fileRef = 997255A125C1F09600DEF52C /* Kyobo Handwriting 2019.otf */; };
 		997255A625C1F1D300DEF52C /* HangeulNuriB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 997255A425C1F1D200DEF52C /* HangeulNuriB.ttf */; };
@@ -65,6 +67,8 @@
 		9926523D25A4ADEE0043A16E /* DiaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryController.swift; sourceTree = "<group>"; };
 		992F41EF25AF2C9100E25199 /* MedicalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalCell.swift; sourceTree = "<group>"; };
 		992F420725AF454300E25199 /* MedicalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalDetailViewController.swift; sourceTree = "<group>"; };
+		9960C12125CD2750007A79AD /* DBMedicalBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMedicalBook.swift; sourceTree = "<group>"; };
+		9960C19D25CD5EDD007A79AD /* 보건의료용어표준_v5.0_간호.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "보건의료용어표준_v5.0_간호.csv"; sourceTree = "<group>"; };
 		997059AA25A72D8A0037A342 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		997255A125C1F09600DEF52C /* Kyobo Handwriting 2019.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kyobo Handwriting 2019.otf"; sourceTree = "<group>"; };
 		997255A425C1F1D200DEF52C /* HangeulNuriB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HangeulNuriB.ttf; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 				9991D6D525B986B500C3A7B1 /* DBMedical.swift */,
 				ECB24B4425CBFAD70015FF67 /* DBDiary.swift */,
 				99861B1825CBFB7E00AFD21B /* DBSchedule.swift */,
+				9960C12125CD2750007A79AD /* DBMedicalBook.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 		997DD05725B61923007C5002 /* Tab1_MedicalBook */ = {
 			isa = PBXGroup;
 			children = (
+				9960C19D25CD5EDD007A79AD /* 보건의료용어표준_v5.0_간호.csv */,
 				9926523A25A4ADDE0043A16E /* MedicalBookController.swift */,
 				992F420725AF454300E25199 /* MedicalDetailViewController.swift */,
 			);
@@ -323,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				997255A225C1F09600DEF52C /* Kyobo Handwriting 2019.otf in Resources */,
+				9960C19E25CD5EDD007A79AD /* 보건의료용어표준_v5.0_간호.csv in Resources */,
 				99FB53B325A0C17200FBF750 /* Diary.storyboard in Resources */,
 				992651A525A404520043A16E /* GoogleService-Info.plist in Resources */,
 				997255A625C1F1D300DEF52C /* HangeulNuriB.ttf in Resources */,
@@ -409,6 +416,7 @@
 				EC9ED33C25BD64D700848426 /* ModifyDiaryTableController.swift in Sources */,
 				9926523B25A4ADDE0043A16E /* MedicalBookController.swift in Sources */,
 				997059AB25A72D8A0037A342 /* TabBarController.swift in Sources */,
+				9960C12225CD2750007A79AD /* DBMedicalBook.swift in Sources */,
 				997DD05C25B69E10007C5002 /* StructDeclaration.swift in Sources */,
 				990AC3F6259DB3C400281E8B /* ViewController.swift in Sources */,
 				9991D6D625B986B500C3A7B1 /* DBMedical.swift in Sources */,
