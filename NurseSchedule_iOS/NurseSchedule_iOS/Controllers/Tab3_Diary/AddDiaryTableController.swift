@@ -115,6 +115,7 @@ class AddDiaryTableController: UITableViewController {
             
         }
         print("새 일기 작성 저장")
+        dismiss(animated: true, completion: nil)
     }
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)

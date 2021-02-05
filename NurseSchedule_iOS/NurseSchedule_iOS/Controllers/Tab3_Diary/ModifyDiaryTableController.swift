@@ -6,6 +6,7 @@
 //
 import UIKit
 import Firebase
+import RealmSwift
 
 class ModifyDiaryTableController: UITableViewController {
     
@@ -13,22 +14,14 @@ class ModifyDiaryTableController: UITableViewController {
     @IBOutlet weak var conditionSegController: UISegmentedControl!
     @IBOutlet weak var ModifytextView: UITextView!
     
-    let currentUser = Auth.auth().currentUser?.uid
+    let realm = try! Realm()
     
-    
-    var startViewNDay : [String : Day]? = nil
-    
+    var selectedDate : String = ""
+    var startViewNDay : [String : String]? = nil
     var startView : String? = nil
-    var day : Day? = nil// 기존에 저장되어있던 내용
     
     var writtencontent : String? = nil // 작성된 TextView 내용
-    
     var selectedCondition : Int = 0 // segmentedcontrol로 선택된 condition Index를 저정하기 위한 변수
-    
-    var shortDate : String = " "
-    
-    //DB로 새로 저장하기 위함
-    var change = Day(emoji: 0, date: "default", content: "default")
     
     
     @IBAction func SelectCondition(_ sender: Any) { //SegmentController를 touch하였을 경우
@@ -54,22 +47,16 @@ class ModifyDiaryTableController: UITableViewController {
         //segmentController을 touch하지 않을 경우를 위한 set -> default값으로 저장
         super.viewDidLoad()
         
+        
         if let dataExist = startViewNDay {
             let fromViewController = Array(startViewNDay!.keys)[0]
-            day = dataExist[fromViewController]
-            self.selectedCondition = self.day?.emoji ?? 0
-            self.change.date = self.day?.date ?? "default"
-            self.change.emoji = self.day?.emoji ?? 0
-            print("viewDidLoad change.emoji -------- \(self.change.emoji)")
-        
-            DateLabel.text = day?.date
+            selectedDate = Array(startViewNDay!.keys)[1]
             
-            if let storedEmoji = day?.emoji{
-                conditionSegController.selectedSegmentIndex = storedEmoji
-            }
-         
-            ModifytextView.text = day?.content
-
+            let savedDiary = realm.objects(Diary.self)
+            let selectedDiary = savedDiary.filter("date == '\(self.selectedDate)'")
+            DateLabel.text = selectedDate
+            conditionSegController.selectedSegmentIndex = selectedDiary[0].emoji
+            ModifytextView.text = selectedDiary[0].content
             
         }
         
@@ -79,13 +66,6 @@ class ModifyDiaryTableController: UITableViewController {
         
         
         self.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
-       
-        
-        //day = startViewNDay[startView]
-        
-      
-
-        
     }
     
     @objc func tapDone(sender: Any) {
@@ -93,10 +73,19 @@ class ModifyDiaryTableController: UITableViewController {
     }
     
     @IBAction func saveButton(_ sender: Any) {
-        if ModifytextView.text.isEmpty {
-            showAlert(style: .alert)
+      
+        let savedDiary = realm.objects(Diary.self)
+        let selectedDiary = savedDiary.filter("date == '\(self.selectedDate)'")
+        
+        try! self.realm.write{
+            selectedDiary[0].content = self.ModifytextView.text
+            selectedDiary[0].emoji = self.selectedCondition
+        }
+        
+        if Array(startViewNDay!.keys)[0] == "DiaryDetailViewController" {
+        performSegue(withIdentifier: "unwindToCalendarDiary", sender: nil)
         } else {
-            saveDB(content: ModifytextView.text)
+        performSegue(withIdentifier: "unwindToDiaryList", sender: nil)
         }
 
     }
@@ -104,68 +93,12 @@ class ModifyDiaryTableController: UITableViewController {
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
-    func saveDB(content : String) {
-        self.change.content = content
-
-        print("saveButton seletedCondition -----\(selectedCondition)")
-        
-        self.change.emoji = selectedCondition
-        
-        shortDate =  String(self.day?.date.prefix(7) ?? " ")
-        print("ShortDate in saveButton(ModifyDiaryController)--------------\(shortDate)")
-        
-//        DBDiary.newDiary.addDiary(userID: currentUser!, shortDate: shortDate, new: change)
-        
-        print("modify > saveButton click------------")
-   
-        if Array(startViewNDay!.keys)[0] == "DiaryDetailViewController" {
-        performSegue(withIdentifier: "unwindToCalendarDiary", sender: nil)
-        } else {
-        performSegue(withIdentifier: "unwindToDiaryList", sender: nil)
-        }
-    }
-    
-    
-    //alert 띄우기
-    func showAlert(style : UIAlertController.Style){
-        let alert = UIAlertController(title: "기록이 비었습니다", message: "그대로 저장하시겠습니까?", preferredStyle: style)
-        
-        let cancel = UIAlertAction(title: "취소", style: .cancel){(action) in
-            print("취소")}
-        
-        let save = UIAlertAction(title: "저장", style: .default){(action) in //textfield가 비었는데도 저장할 경우
-            
-            self.change.content = ""//DB에 값 저장
-            self.change.emoji = self.selectedCondition
-            print("showAlert seletedCondition -----\(self.selectedCondition)")
-            
-            self.shortDate =  String(self.day?.date.prefix(7) ?? " ")
-//            DBDiary.newDiary.addDiary(userID: self.currentUser!, shortDate: self.shortDate, new: self.change)
-            print("일기 수정")
-            //self.dismiss(animated: true, completion: nil)
-           // self.performSegue(withIdentifier: "rewindToDiaryList", sender: nil)
-            
-            self.saveDB(content: "")
-            
-        } //모달창 내리기
-  
-        
-        alert.addAction(cancel)
-        alert.addAction(save)
-        
-        self.present(alert, animated: true, completion: nil)
-    }
 }
-
-
-
 //calendar 에서 추가 버튼 누르면 datepicker가 오늘 날짜로 초기화 되어있는거 바꿔야함
 extension ModifyDiaryTableController : UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         writtencontent = ModifytextView.text
-        
-        print(writtencontent)
+        print("수정함")
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {

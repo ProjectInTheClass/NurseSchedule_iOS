@@ -112,7 +112,7 @@ class DiaryDetailViewController: UIViewController {
         } else if segue.identifier == "editDiary"{
             print("editDiary~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             let modifyDiaryTableController = segue.destination as! ModifyDiaryTableController
-            modifyDiaryTableController.startViewNDay = sender as? [String : Day]
+            modifyDiaryTableController.startViewNDay = sender as! [String : String]
             
         }
     }

@@ -28,7 +28,7 @@ class DetailDiaryFromTableController: UIViewController {
     var selectedDate : String = "" //tableView에서 받아온 날짜 저장
     
     
-    var detailInfoFromDay : Day? = nil
+    //var detailInfoFromDay : Day? = nil
     
     override func viewDidLoad() {
         
@@ -66,7 +66,7 @@ class DetailDiaryFromTableController: UIViewController {
     }
     
     @IBAction func modifyButton2(_ sender: Any) {//tableView에서 detailView 들어갔을 때 수정버튼
-        let dayForSender = detailInfoFromDay
+        let dayForSender = selectedDate
         let startView = "DetailDiaryFromTableController"
         let senderData = [startView : dayForSender]
         performSegue(withIdentifier: "editDiary", sender: senderData)
@@ -104,7 +104,7 @@ class DetailDiaryFromTableController: UIViewController {
         } else if segue.identifier == "editDiary"{
             print("editDiary~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             let modifyDiaryTableController = segue.destination as! ModifyDiaryTableController
-            modifyDiaryTableController.startViewNDay = sender as? [String : Day]
+            modifyDiaryTableController.startViewNDay = sender as! [String : String]
             
         }
     }
