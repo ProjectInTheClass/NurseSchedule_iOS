@@ -45,6 +45,7 @@ class DiaryController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
         tableView.rowHeight = UITableView.automaticDimension
     }
     
