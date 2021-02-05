@@ -103,7 +103,8 @@ class AddDiaryTableController: UITableViewController {
                     selectedDiary[0].content = self.contentTextView.text
                     selectedDiary[0].emoji = self.selectedCondition
                 }
-                self.dismiss(animated: true, completion: nil)
+               
+               // self.dismiss(animated: true, completion: nil)
                 print("일기 덮어 저장")
             }
             let cancel = UIAlertAction(title: "취소", style: .cancel){(action) in

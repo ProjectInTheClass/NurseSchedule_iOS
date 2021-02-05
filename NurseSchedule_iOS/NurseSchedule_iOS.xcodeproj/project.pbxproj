@@ -224,11 +224,11 @@
 			isa = PBXGroup;
 			children = (
 				9926523D25A4ADEE0043A16E /* DiaryController.swift */,
+				EC3A9EF425BE92E400509DA8 /* DetailDiaryFromTableController.swift */,
 				ECF2B55525B441BA0080F9E0 /* DiaryCalendar.swift */,
+				ECF2B59D25B562070080F9E0 /* DiaryDetailViewController.swift */,
 				EC83993D25B7143F00B58778 /* AddDiaryTableController.swift */,
 				EC9ED33B25BD64D700848426 /* ModifyDiaryTableController.swift */,
-				ECF2B59D25B562070080F9E0 /* DiaryDetailViewController.swift */,
-				EC3A9EF425BE92E400509DA8 /* DetailDiaryFromTableController.swift */,
 			);
 			path = Tab3_Diary;
 			sourceTree = "<group>";
