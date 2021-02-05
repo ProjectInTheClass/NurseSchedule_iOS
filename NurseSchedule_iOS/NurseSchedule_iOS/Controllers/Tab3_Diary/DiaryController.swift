@@ -59,10 +59,8 @@ class DiaryController: UIViewController {
   
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "popupDiary" {
-            
-            
             let detailDiaryFromTableController = segue.destination as! DetailDiaryFromTableController
-            detailDiaryFromTableController.detailInfoFromDay = sender as? Day
+            detailDiaryFromTableController.selectedDate = (sender as? String)!
         }
      }
 }

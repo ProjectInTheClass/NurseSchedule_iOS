@@ -9,16 +9,11 @@ import UIKit
 import Firebase
 import RealmSwift
 
-
-
 class DetailDiaryFromTableController: UIViewController {
-    
-//    static let detailDiaryFromTableController = DetailDiaryFromTableController()
     
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var emojiImage: UIImageView!
     @IBOutlet weak var content: UITextView!
-    
     @IBOutlet weak var detailView: UIView!
     
     let img0 = UIImage(named: "0-love.png")
@@ -27,19 +22,25 @@ class DetailDiaryFromTableController: UIViewController {
     let img3 = UIImage(named: "0-crying.png")
     let img4 = UIImage(named: "0-devil.png")
     
-    let currentUser = Auth.auth().currentUser?.uid
-    var detailInfoFromDay : Day? = nil
+  
+    let realm = try! Realm()
+    var month : String = ""
+    var selectedDate : String = "" //tableView에서 받아온 날짜 저장
     
-    var shortDate : String = ""
-    var editdate : String = ""
+    
+    var detailInfoFromDay : Day? = nil
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        date.text = detailInfoFromDay?.date
         
-        if let emojinum = detailInfoFromDay?.emoji{
-            switch emojinum {
+        let savedDiary = realm.objects(Diary.self)
+        let selectedDiary = savedDiary.filter("date == '\(self.selectedDate)'")
+        
+        date.text = selectedDate
+        
+     
+            switch selectedDiary[0].emoji {
             case 0:
                 emojiImage.image = img0
             case 1:
@@ -53,11 +54,11 @@ class DetailDiaryFromTableController: UIViewController {
             default:
                 print("emojiImage")
             }
-        }
-        content.text = detailInfoFromDay?.content
+        
+       
+        content.text = selectedDiary[0].content
 
         // Do any additional setup after loading the view.
-        self.editdate = detailInfoFromDay!.date
     }
     
     @IBAction func deleteButton2(_ sender: Any) {//tableView에서 detailView 들어갔을 때 삭제버튼
@@ -69,8 +70,7 @@ class DetailDiaryFromTableController: UIViewController {
         let startView = "DetailDiaryFromTableController"
         let senderData = [startView : dayForSender]
         performSegue(withIdentifier: "editDiary", sender: senderData)
-        //AddDiaryTableController.addDiaryController.modifyDiary()
-        //detailView.isHidden = true
+      
         
     }
     
@@ -78,33 +78,29 @@ class DetailDiaryFromTableController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    
+    //삭제하기 위한 Alert
     func showDeleteAlert() {
         let alert = UIAlertController(title: "삭제하시겠습니까?", message: " ", preferredStyle: UIAlertController.Style.alert)
-        
-        let cancelButton = UIAlertAction(title: "취소", style: .cancel){(action) in
-            print("아니요")}
+        let cancelButton = UIAlertAction(title: "취소", style: .cancel){(action) in print("아니요")}
         let deleteButton = UIAlertAction(title: "확인", style: .destructive){(action) in
       
-            self.shortDate =  String(self.date.text!.prefix(7))
-            
-//            DBDiary.newDiary.deleteDiary(userID: self.currentUser!, shortDate: self.shortDate, date: self.date.text!)
-//            
-            
-     
+            let savedDiary = self.realm.objects(Diary.self)
+            let deleteDiary = savedDiary.filter("date == '\(self.selectedDate)'")
+            try! self.realm.write({ self.realm.delete(deleteDiary) })//realm에서 삭제
             
             self.dismiss(animated: true, completion: nil)
         }
         
         alert.addAction(cancelButton)
         alert.addAction(deleteButton)
-        
         self.present(alert, animated: true, completion: nil)
     }
 
+    //수정할 때
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addDiary" {
             print("addDiary~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-
         } else if segue.identifier == "editDiary"{
             print("editDiary~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             let modifyDiaryTableController = segue.destination as! ModifyDiaryTableController
