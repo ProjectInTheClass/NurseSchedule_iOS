@@ -7,8 +7,9 @@
 
 import UIKit
 import Firebase
+import MessageUI
 
-class SettingMainTableController: UITableViewController {
+class SettingMainTableController: UITableViewController, MFMailComposeViewControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var sectionOneCellOne: UITableViewCell!
     @IBOutlet weak var sectionOneCellTwo: UITableViewCell!
@@ -16,7 +17,8 @@ class SettingMainTableController: UITableViewController {
     @IBOutlet weak var sectionTwoCellTwo: UITableViewCell!
     @IBOutlet weak var sectionTwoCellThree: UITableViewCell!
     
-    let numberOfsections : [Int] = [1]
+    let numberOfsections : [Int] = [2]
+    var composeVC = MFMailComposeViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +44,9 @@ class SettingMainTableController: UITableViewController {
                     sectionOneCellOne.textLabel?.text = "앱 버전"
                     sectionOneCellOne.detailTextLabel?.text = "v1.0"
                     return sectionOneCellOne
-//                case 1:
-//                    sectionOneCellTwo.textLabel?.text = " 1-2"
-//                    sectionOneCellTwo.detailTextLabel?.text = "선택한 테마"
-//                    return sectionOneCellTwo
+                case 1:
+                    sectionOneCellTwo.textLabel?.text = "의견보내기"
+                    return sectionOneCellTwo
                 default:
                     break
                 }
@@ -69,18 +70,37 @@ class SettingMainTableController: UITableViewController {
         }
         return cell
     }
-//
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        switch indexPath.section {
-//        case 0: //section1
-//            switch indexPath.row{
-//            case 0 : //글꼴 선택 table
-//                performSegue(withIdentifier: "identifier이름", sender: nil)
-//            case 1 : //테마 선택 table
-//                performSegue(withIdentifier: "identifier이름", sender: nil)
-//            default:
-//                break
-//            }
+
+    func sendEmail() {
+           composeVC.mailComposeDelegate = self
+           // Configure the fields of the interface.
+           composeVC.setToRecipients(["tjdgml_27@daum.net"])
+           composeVC.setSubject("제목")
+           composeVC.setMessageBody("의견을 작성해주세요", isHTML: false)
+           // Present the view controller modally.
+           self.present(composeVC, animated: true, completion: nil)
+       }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0: //section1
+            switch indexPath.row{
+            case 0 :
+                break
+            case 1 :
+                composeVC = MFMailComposeViewController()
+                            composeVC.delegate = self
+                            composeVC.mailComposeDelegate = self
+                            if !MFMailComposeViewController.canSendMail() {
+                                print("Mail services are not available")
+                                return
+                            }
+                            sendEmail()
+                break
+            default:
+                break
+            }
 //        case 1: //section2
 //            switch indexPath.row {
 //            case 1: // 개인정보처리방침
@@ -93,5 +113,23 @@ class SettingMainTableController: UITableViewController {
 //        default:
 //            break
 //        }
-//    }
+        default:
+            break
+        }
+    }
+
+  
+       func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+           controller.dismiss(animated: true, completion: nil)
+       }
+    override func didReceiveMemoryWarning() {
+           super.didReceiveMemoryWarning()
+           // Dispose of any resources that can be recreated.
+       }
+    
+    
+    
+
 }
+
+
