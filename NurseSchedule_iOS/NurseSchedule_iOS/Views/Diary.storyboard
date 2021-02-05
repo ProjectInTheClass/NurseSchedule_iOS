@@ -402,12 +402,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="diaryCalendar" destination="pp5-GY-W90" id="NcS-0m-7h1"/>
-                        <segue destination="1YB-Rd-rPt" kind="presentation" identifier="popCalendarDiary" id="NxD-k1-6wT"/>
+                        <segue destination="1YB-Rd-rPt" kind="presentation" identifier="popCalendarDiary" id="ms1-O9-4z6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlt-Ji-khP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2138" y="2663"/>
+            <point key="canvasLocation" x="2110" y="2650"/>
         </scene>
         <!--Detail Diary From Table Controller-->
         <scene sceneID="ABD-jS-AQT">
@@ -626,7 +626,6 @@
                     <connections>
                         <outlet property="content" destination="MV7-M5-pwi" id="Go3-CN-DDZ"/>
                         <outlet property="date" destination="o3q-0j-r1R" id="qS2-BF-xY3"/>
-                        <outlet property="detailView" destination="tYo-zG-f0U" id="e2Z-Vn-ZrQ"/>
                         <outlet property="emojiImage" destination="wWR-EY-emc" id="XIt-3H-BOp"/>
                         <segue destination="PVv-4f-Zde" kind="presentation" identifier="editDiary" id="GHk-wU-Sj9"/>
                     </connections>
@@ -837,8 +836,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="w1D-LL-xW7"/>
-        <segue reference="XPa-k4-My4"/>
+        <segue reference="GHk-wU-Sj9"/>
+        <segue reference="KBb-6W-ZgX"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="0-crying" width="35" height="35"/>

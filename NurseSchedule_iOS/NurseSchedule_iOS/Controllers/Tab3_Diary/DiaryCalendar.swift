@@ -17,22 +17,11 @@ class DiaryCalendar: UIViewController {
 
     
     let dateFormatter = DateFormatter()
-    
-    
-    
-    var dayDiary = Day(emoji: 0, date: "DiaryCalendar_default_date", content: "DiaryCalendar_default_content")
-    var showDayEmoji : [String : Int] = [ : ]
-    
     let realm = try! Realm()
+    var selectedDate = ""
     
     // 달력이미지 꾸미기(캘린더와 같은 버전)
     func updateUI() {
-        //calendar
-        
-        //memoview와 view 구분 임시..
-//        let colorLiteral = #colorLiteral(red: 0.9211722016, green: 0.967481792, blue: 0.8859727979, alpha: 1)
-//        calendar.backgroundColor = colorLiteral
-        
         
         // 날짜 여러개 선택 가능하게
         diaryCalendar.allowsMultipleSelection = false
@@ -111,14 +100,6 @@ class DiaryCalendar: UIViewController {
         diaryCalendar.dataSource = self
         //view.addSubview(diaryCalendar)
         
-        /*
-        DBDiary.newDiary.getDayEmoji(month: monthDate, completion: { (dayEmoji) in
-            print("getemoji!!!!!!!!!!!!!!!!!!")
-            self.showDayEmoji[dayEmoji.date] = dayEmoji.emoji
-            self.diaryCalendar.reloadData()
-        })
- */
-        print("getemoji didLoad >>>>> \(showDayEmoji)")
    
     }
         
@@ -131,7 +112,7 @@ class DiaryCalendar: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        if segue.identifier == "popCalendarDiary" {
            let DiaryDetailViewController = segue.destination as! DiaryDetailViewController
-           DiaryDetailViewController.detailInfoFromDay = sender as? Day
+            DiaryDetailViewController.selectedDate = sender as? String
        }
     }
     
@@ -153,6 +134,24 @@ class DiaryCalendar: UIViewController {
 extension DiaryCalendar : FSCalendarDelegate , FSCalendarDataSource{
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("\(date) 선택됨")
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        selectedDate = dateFormatter.string(from: date)
+        
+        let savedDiary = realm.objects(Diary.self)
+        let selectedDayDiary = savedDiary.filter("date == '\(selectedDate)'")
+        print(selectedDayDiary)
+        
+        if selectedDayDiary.isEmpty{
+            let alert = UIAlertController(title: "잠깐만!", message: "작성된 일기가 없어요ㅠㅠ", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "확인", style: .default) { (action) in
+            }
+            alert.addAction(okAction)
+            self.present(alert, animated: false, completion: nil)
+        
+        } else {
+            self.performSegue(withIdentifier: "popCalendarDiary", sender: selectedDate)
+        }
+        
         
         /*
         let currentUser = Auth.auth().currentUser?.uid
