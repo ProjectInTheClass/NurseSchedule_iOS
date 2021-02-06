@@ -17,6 +17,10 @@ class AddDiaryTableController: UITableViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     
     let realm = try! Realm()
+
+    
+    
+    
     
     //DateFormatter
     let dateFormatter1 : DateFormatter = DateFormatter() //DB에 들어갈 날짜용(일단위)
@@ -34,7 +38,7 @@ class AddDiaryTableController: UITableViewController {
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-        var today = Date.init()
+        let today = Date.init()
         datePicker.maximumDate = today //오늘 이후 날짜 datepicker에서 선택 하지 못하게
         self.selectedDate = dateFormatter1.string(from: today)//datepicker선택하지 않아도 오늘 날짜로 픽스
         SelectedDate.text = dateFormatter2.string(from: today)//atepicker선택하지 않아도 오늘 날짜로 label에 출력
@@ -93,6 +97,7 @@ class AddDiaryTableController: UITableViewController {
             
             try! self.realm.write {
                 self.realm.add(dayDiary)
+               
                 dismiss(animated: true, completion: nil)
             }
         } else {

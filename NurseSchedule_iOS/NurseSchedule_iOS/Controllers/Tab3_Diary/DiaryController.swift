@@ -22,12 +22,16 @@ class DiaryController: UIViewController {
     let dateFormatter : DateFormatter = DateFormatter()
     var month : String = ""
     
+    private var refreshControl = UIRefreshControl()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         let savedDiary = realm.objects(Diary.self)
-        
+       
+        initRefresh()
 
         print("selectedDiary")
 //        print(selectedDiary)
@@ -40,6 +44,30 @@ class DiaryController: UIViewController {
         tableView.reloadData()
         
     }
+    func initRefresh(){
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: #selector(updateUI(refresh:)), for: .valueChanged)
+        refresh.attributedTitle = NSAttributedString(string: "" )
+        
+        if #available(iOS 10.0, *){
+            tableView.refreshControl = refresh
+        }else {
+            tableView.addSubview(refresh)
+        }
+    }
+    
+    @objc func updateUI(refresh : UIRefreshControl){
+        refresh.endRefreshing()
+        tableView.reloadData()
+    }
+    
+    
+
+    @IBAction func addDiaryButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "addDiary", sender: nil)
+        
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         tableView.reloadData()
