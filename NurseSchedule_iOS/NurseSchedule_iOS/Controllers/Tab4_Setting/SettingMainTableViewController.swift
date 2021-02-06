@@ -1,15 +1,15 @@
 //
-//  SettingMainTableController.swift
+//  SettingMainTableViewController.swift
 //  NurseSchedule_iOS
 //
-//  Created by 강성희 on 2021/02/04.
+//  Created by 이주원 on 2021/02/06.
 //
 
 import UIKit
 import Firebase
 import MessageUI
 
-class SettingMainTableController: UITableViewController, MFMailComposeViewControllerDelegate, UINavigationControllerDelegate {
+class SettingMainTableViewController: UITableViewController {
 
     @IBOutlet weak var sectionOneCellOne: UITableViewCell!
     @IBOutlet weak var sectionOneCellTwo: UITableViewCell!
@@ -18,7 +18,6 @@ class SettingMainTableController: UITableViewController, MFMailComposeViewContro
     @IBOutlet weak var sectionTwoCellThree: UITableViewCell!
     
     let numberOfsections : [Int] = [2]
-    var composeVC = MFMailComposeViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,15 +70,7 @@ class SettingMainTableController: UITableViewController, MFMailComposeViewContro
         return cell
     }
 
-    func sendEmail() {
-           composeVC.mailComposeDelegate = self
-           // Configure the fields of the interface.
-           composeVC.setToRecipients(["tjdgml_27@daum.net"])
-           composeVC.setSubject("제목")
-           composeVC.setMessageBody("의견을 작성해주세요", isHTML: false)
-           // Present the view controller modally.
-           self.present(composeVC, animated: true, completion: nil)
-       }
+ 
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -89,39 +80,24 @@ class SettingMainTableController: UITableViewController, MFMailComposeViewContro
             case 0 :
                 break
             case 1 :
-                composeVC = MFMailComposeViewController()
-                            composeVC.delegate = self
-                            composeVC.mailComposeDelegate = self
-                            if !MFMailComposeViewController.canSendMail() {
-                                print("Mail services are not available")
-                                return
-                            }
-                            sendEmail()
+                let mailComposeViewController = configuredMailComposeViewController()
+                       if MFMailComposeViewController.canSendMail() {
+                        self.present(mailComposeViewController, animated: true, completion: nil)
+                        
+                       } else {
+                           self.showSendMailErrorAlert()
+                       }
+
+                
                 break
             default:
                 break
             }
-//        case 1: //section2
-//            switch indexPath.row {
-//            case 1: // 개인정보처리방침
-//                performSegue(withIdentifier: "identifier이름", sender: nil)
-//            case 2: // 의견보내기
-//                performSegue(withIdentifier: "identifier이름", sender: nil)
-//            default:
-//                break
-//            }
-//        default:
-//            break
-//        }
         default:
             break
         }
     }
 
-  
-       func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-           controller.dismiss(animated: true, completion: nil)
-       }
     override func didReceiveMemoryWarning() {
            super.didReceiveMemoryWarning()
            // Dispose of any resources that can be recreated.
@@ -132,4 +108,33 @@ class SettingMainTableController: UITableViewController, MFMailComposeViewContro
 
 }
 
-
+extension SettingMainTableViewController : MFMailComposeViewControllerDelegate {
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+            let mailComposerVC = MFMailComposeViewController()
+            mailComposerVC.mailComposeDelegate = self
+            mailComposerVC.setToRecipients(["leeez0128@gmail.com"])
+            mailComposerVC.setSubject("널'스케줄")
+            mailComposerVC.setMessageBody("여러분의 소중한 의견 감사드립니다. \n - 널'스케줄 개발자 -", isHTML: false)
+            return mailComposerVC
+        }
+        
+        func showSendMailErrorAlert() {
+            let alert = UIAlertController(title: "메일 전송 실패", message: "이메일 설정 확인 후 다시 시도해주세요", preferredStyle: .alert)
+            
+            // Replace UIAlertActionStyle.Default by UIAlertActionStyle.default
+            let okAction = UIAlertAction(title: "OK", style: .default) {
+                (result : UIAlertAction) -> Void in
+                print("OK")
+            }
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        // MARK: MFMailComposeViewControllerDelegate Method
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true) {
+            
+        }
+    }
+    
+}

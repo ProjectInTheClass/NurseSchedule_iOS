@@ -47,7 +47,7 @@ class DiaryController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
+        super.viewWillAppear(true)
         tableView.rowHeight = UITableView.automaticDimension
     }
 
@@ -116,6 +116,7 @@ extension DiaryController : UITableViewDelegate {
         month = dateFormatter.string(from: Date.init())
         let monthlyDiary = realm.objects(Diary.self).filter("date CONTAINS '\(month)'")
         performSegue(withIdentifier: "popupDiary", sender: monthlyDiary[indexPath.row].date)
+        tableView.reloadData()
        
     }
     

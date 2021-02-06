@@ -94,7 +94,6 @@ class DiaryDetailViewController: UIViewController {
             let deleteDiary = savedDiary.filter("date == '\(self.selectedDate!)'")
             try! self.realm.write({ self.realm.delete(deleteDiary) })//realm에서 삭제
             
-            
             self.dismiss(animated: true, completion: nil)
         }
         

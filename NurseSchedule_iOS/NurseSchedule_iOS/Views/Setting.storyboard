@@ -208,7 +208,7 @@
         <!--Setting-->
         <scene sceneID="06V-R0-ZMr">
             <objects>
-                <tableViewController id="dkG-DH-eHa" customClass="SettingMainTableController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="dkG-DH-eHa" customClass="SettingMainTableViewController" customModule="NurseSchedule_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pcg-mb-q2P">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -274,6 +274,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bw-DJ-jKh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="81.696428571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0o5-aF-Jme">
+            <objects>
+                <viewController id="YJs-NZ-QLV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aNg-yx-Ii6">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="DlR-lT-efO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gmR-JZ-GaR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1711" y="81"/>
         </scene>
         <!--알림 설정-->
         <scene sceneID="aU6-nb-wuI">
@@ -766,29 +781,6 @@
                 <exit id="zGa-9M-t7R" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4458" y="247"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="pQG-4G-OuD">
-            <objects>
-                <viewController id="0Wo-mH-RDN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="J9Z-If-mAn">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yUg-Ul-fgh">
-                                <rect key="frame" x="0.0" y="32" width="390" height="769"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="jhf-Tf-KY1"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="ol1-NF-9Mo"/>
-                            </scrollView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Fdt-Zt-iT8"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q2z-tL-Y0f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1733.8461538461538" y="80.33175355450237"/>
         </scene>
     </scenes>
     <resources>
