@@ -41,13 +41,13 @@ class DiaryController: UIViewController {
         tableView.delegate = self
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.reloadData()
+        //tableView.reloadData()
         
     }
     func initRefresh(){
         let refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(updateUI(refresh:)), for: .valueChanged)
-        refresh.attributedTitle = NSAttributedString(string: "" )
+        refresh.attributedTitle = NSAttributedString(string: "기다려주세용..." )
         
         if #available(iOS 10.0, *){
             tableView.refreshControl = refresh
@@ -70,7 +70,6 @@ class DiaryController: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
-        tableView.reloadData()
         tableView.rowHeight = UITableView.automaticDimension
     }
     
@@ -81,7 +80,7 @@ class DiaryController: UIViewController {
 
     @IBAction func unwindToDiaryList(_ unwindSegue: UIStoryboardSegue) {
         // Use data from the view controller which initiated the unwind segue
-        tableView.reloadData()
+        //tableView.reloadData()
     }
   
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -89,12 +88,12 @@ class DiaryController: UIViewController {
             let detailDiaryFromTableController = segue.destination as! DetailDiaryFromTableController
             detailDiaryFromTableController.selectedDate = (sender as? String)!
         }
-        tableView.reloadData()
      }
 }
 
 extension DiaryController :UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        initRefresh()
         dateFormatter.dateFormat = "yyyy-MM"
         month = dateFormatter.string(from: Date.init())
          //let selectedDiary = savedDiary.contains("date == '\(month)'")
@@ -103,6 +102,7 @@ extension DiaryController :UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        initRefresh()
         let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryCell", for: indexPath) as! DiaryCell
         
 
@@ -139,12 +139,12 @@ extension DiaryController :UITableViewDataSource {
 
 extension DiaryController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        initRefresh()
         print(indexPath)
         dateFormatter.dateFormat = "yyyy-MM"
         month = dateFormatter.string(from: Date.init())
         let monthlyDiary = realm.objects(Diary.self).filter("date CONTAINS '\(month)'")
         performSegue(withIdentifier: "popupDiary", sender: monthlyDiary[indexPath.row].date)
-        tableView.reloadData()
        
     }
     

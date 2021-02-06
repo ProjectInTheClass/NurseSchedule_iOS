@@ -355,18 +355,13 @@ extension ScheduleController : UITextViewDelegate {
     
     @objc
     func keyboardWillShow(_ sender: Notification) {
-        
         self.view.frame.origin.y = -200 // Move view 150 points upward
         
     }
-    
     @objc
     func keyboardWillHide(_ sender: Notification) {
         self.view.frame.origin.y = +85 // Move view to original position
     }
-    
-    
-    
     func addDoneButton(title: String, target: Any, selector: Selector) {
         
         let toolBar = UIToolbar(frame: CGRect(x: 0.0,
