@@ -1,4 +1,4 @@
-# NUR'SCHEDULE
+# 널'스케줄 (NUR'SCHEDULE)
 
 &nbsp;&nbsp;👇👇🏻👇🏼👇🏽👇🏾👇🏿<br><br>
 <a href="https://apps.apple.com/kr/app/%EB%84%90%EC%8A%A4%EC%BC%80%EC%A4%84/id1552664387">
