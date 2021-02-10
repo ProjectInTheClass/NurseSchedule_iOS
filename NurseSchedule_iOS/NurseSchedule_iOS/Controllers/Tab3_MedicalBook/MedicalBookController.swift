@@ -41,6 +41,7 @@ class MedicalBookController: UIViewController{
         searchbar.delegate = self
         searchbar.placeholder = "용어를 검색하세요."
         tableView.reloadData()
+        tableView.keyboardDismissMode = .onDrag
         
 
 //        let termDataFromDB = realm.objects(MedicalBook.self)
@@ -74,10 +75,12 @@ class MedicalBookController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         outputDataForTableView = termsList
         //filteredTermsBySearchbar = termsList
+        tableView.keyboardDismissMode = .onDrag
         self.tableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        tableView.keyboardDismissMode = .onDrag
         self.tableView.reloadData()
     }
     
@@ -92,7 +95,6 @@ class MedicalBookController: UIViewController{
         super.didReceiveMemoryWarning()
         //dispose of any resources that can be recreated
     }
-    
 }
 
 extension MedicalBookController : UITableViewDataSource {
