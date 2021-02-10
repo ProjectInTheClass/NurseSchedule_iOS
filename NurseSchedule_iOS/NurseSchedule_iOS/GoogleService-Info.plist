@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>551431709470-3mopo31ufi6f12ggca3m7uka7hqj83pm.apps.googleusercontent.com</string>
+	<string>551431709470-oc22jrsro37dvmcm3ujfhtntdnjne4bu.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.551431709470-3mopo31ufi6f12ggca3m7uka7hqj83pm</string>
+	<string>com.googleusercontent.apps.551431709470-oc22jrsro37dvmcm3ujfhtntdnjne4bu</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAXYDNGFIpOclICYSr611CuPp6WCY0Z_vg</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,22 +13,24 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.dongguk.nurschedule-iOS</string>
+	<string>com.codershigh.nurschedule</string>
 	<key>PROJECT_ID</key>
 	<string>nurseschedule-ios</string>
 	<key>STORAGE_BUCKET</key>
 	<string>nurseschedule-ios.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:551431709470:ios:9c6f97cf24c1ca14e39f0f</string>
+	<string>1:551431709470:ios:d2fc3fdb600ca18de39f0f</string>
+	<key>DATABASE_URL</key>
+	<string>https://nurseschedule-ios-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

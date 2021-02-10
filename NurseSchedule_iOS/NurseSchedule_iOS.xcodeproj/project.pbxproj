@@ -16,7 +16,6 @@
 		990AC3FB259DB3CB00281E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 990AC3FA259DB3CB00281E8B /* Assets.xcassets */; };
 		990AC3FE259DB3CB00281E8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 990AC3FC259DB3CB00281E8B /* LaunchScreen.storyboard */; };
 		990BA84F25C1E98A00812393 /* Stupendous Jack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 990BA84E25C1E98A00812393 /* Stupendous Jack.ttf */; };
-		992651A525A404520043A16E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 992651A425A404520043A16E /* GoogleService-Info.plist */; };
 		9926523825A4ADCC0043A16E /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926523725A4ADCC0043A16E /* ScheduleController.swift */; };
 		9926523B25A4ADDE0043A16E /* MedicalBookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926523A25A4ADDE0043A16E /* MedicalBookController.swift */; };
 		9926523E25A4ADEE0043A16E /* DiaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926523D25A4ADEE0043A16E /* DiaryController.swift */; };
@@ -34,6 +33,7 @@
 		9991D6D625B986B500C3A7B1 /* DBMedical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9991D6D525B986B500C3A7B1 /* DBMedical.swift */; };
 		99ABBA2A25BB2F8400FFBE51 /* ArticleContentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ABBA2925BB2F8400FFBE51 /* ArticleContentLabel.swift */; };
 		99BBB2E725CE531C0035FFF4 /* SettingMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BBB2E625CE531C0035FFF4 /* SettingMainTableViewController.swift */; };
+		99DC5C9B25D3C13E00C6F3C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DC5C9A25D3C13E00C6F3C4 /* GoogleService-Info.plist */; };
 		99FB53AD25A0BFB100FBF750 /* MedicalBook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53AC25A0BFB100FBF750 /* MedicalBook.storyboard */; };
 		99FB53B025A0C0EA00FBF750 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53AF25A0C0EA00FBF750 /* Schedule.storyboard */; };
 		99FB53B325A0C17200FBF750 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FB53B225A0C17200FBF750 /* Diary.storyboard */; };
@@ -61,7 +61,6 @@
 		990AC3FD259DB3CB00281E8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		990AC3FF259DB3CB00281E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		990BA84E25C1E98A00812393 /* Stupendous Jack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stupendous Jack.ttf"; sourceTree = "<group>"; };
-		992651A425A404520043A16E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9926523725A4ADCC0043A16E /* ScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
 		9926523A25A4ADDE0043A16E /* MedicalBookController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalBookController.swift; sourceTree = "<group>"; };
 		9926523D25A4ADEE0043A16E /* DiaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryController.swift; sourceTree = "<group>"; };
@@ -80,6 +79,7 @@
 		9991D6D525B986B500C3A7B1 /* DBMedical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMedical.swift; sourceTree = "<group>"; };
 		99ABBA2925BB2F8400FFBE51 /* ArticleContentLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleContentLabel.swift; sourceTree = "<group>"; };
 		99BBB2E625CE531C0035FFF4 /* SettingMainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMainTableViewController.swift; sourceTree = "<group>"; };
+		99DC5C9A25D3C13E00C6F3C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		99FB53AC25A0BFB100FBF750 /* MedicalBook.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MedicalBook.storyboard; sourceTree = "<group>"; };
 		99FB53AF25A0C0EA00FBF750 /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		99FB53B225A0C17200FBF750 /* Diary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
@@ -152,8 +152,8 @@
 				99A731CD25A1830D00F3E867 /* Views */,
 				990AC3F1259DB3C400281E8B /* AppDelegate.swift */,
 				990AC3F3259DB3C400281E8B /* SceneDelegate.swift */,
+				99DC5C9A25D3C13E00C6F3C4 /* GoogleService-Info.plist */,
 				990AC3FA259DB3CB00281E8B /* Assets.xcassets */,
-				992651A425A404520043A16E /* GoogleService-Info.plist */,
 				990AC3FF259DB3CB00281E8B /* Info.plist */,
 			);
 			path = NurseSchedule_iOS;
@@ -330,10 +330,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99DC5C9B25D3C13E00C6F3C4 /* GoogleService-Info.plist in Resources */,
 				997255A225C1F09600DEF52C /* Kyobo Handwriting 2019.otf in Resources */,
 				9960C19E25CD5EDD007A79AD /* 보건의료용어표준_v5.0_간호.csv in Resources */,
 				99FB53B325A0C17200FBF750 /* Diary.storyboard in Resources */,
-				992651A525A404520043A16E /* GoogleService-Info.plist in Resources */,
 				997255A625C1F1D300DEF52C /* HangeulNuriB.ttf in Resources */,
 				990AC3FE259DB3CB00281E8B /* LaunchScreen.storyboard in Resources */,
 				990BA84F25C1E98A00812393 /* Stupendous Jack.ttf in Resources */,
@@ -590,7 +590,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dongguk.nurschedule-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codershigh.nurschedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -612,7 +612,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dongguk.nurschedule-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codershigh.nurschedule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
