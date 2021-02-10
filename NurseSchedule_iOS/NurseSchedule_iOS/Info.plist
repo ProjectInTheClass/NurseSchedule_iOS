@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>스케줄 캡처화면을 앨범에 저장합니다.</string>
+	<string>스케줄 스크린샷을 앨범에 저장합니다.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>카메라 앨범에 접근합니다.</string>
+	<string>스크린샷을 저장하기 위해 카메라 앨범에 접근합니다.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
