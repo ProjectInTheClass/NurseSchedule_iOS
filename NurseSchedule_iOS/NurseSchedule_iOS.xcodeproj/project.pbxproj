@@ -173,9 +173,9 @@
 		9926523125A4AC5F0043A16E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				997DD05725B61923007C5002 /* Tab1_MedicalBook */,
-				997DD05525B618EF007C5002 /* Tab2_Schedule */,
-				997DD05825B61930007C5002 /* Tab3_Diary */,
+				997DD05525B618EF007C5002 /* Tab1_Schedule */,
+				997DD05825B61930007C5002 /* Tab2_Diary */,
+				997DD05725B61923007C5002 /* Tab3_MedicalBook */,
 				997DD05925B61956007C5002 /* Tab4_Setting */,
 				990AC3F5259DB3C400281E8B /* ViewController.swift */,
 				997059AA25A72D8A0037A342 /* TabBarController.swift */,
@@ -204,25 +204,25 @@
 			path = CustomCell;
 			sourceTree = "<group>";
 		};
-		997DD05525B618EF007C5002 /* Tab2_Schedule */ = {
+		997DD05525B618EF007C5002 /* Tab1_Schedule */ = {
 			isa = PBXGroup;
 			children = (
 				9926523725A4ADCC0043A16E /* ScheduleController.swift */,
 			);
-			path = Tab2_Schedule;
+			path = Tab1_Schedule;
 			sourceTree = "<group>";
 		};
-		997DD05725B61923007C5002 /* Tab1_MedicalBook */ = {
+		997DD05725B61923007C5002 /* Tab3_MedicalBook */ = {
 			isa = PBXGroup;
 			children = (
 				9960C19D25CD5EDD007A79AD /* 보건의료용어표준_v5.0_간호.csv */,
 				9926523A25A4ADDE0043A16E /* MedicalBookController.swift */,
 				992F420725AF454300E25199 /* MedicalDetailViewController.swift */,
 			);
-			path = Tab1_MedicalBook;
+			path = Tab3_MedicalBook;
 			sourceTree = "<group>";
 		};
-		997DD05825B61930007C5002 /* Tab3_Diary */ = {
+		997DD05825B61930007C5002 /* Tab2_Diary */ = {
 			isa = PBXGroup;
 			children = (
 				9926523D25A4ADEE0043A16E /* DiaryController.swift */,
@@ -232,7 +232,7 @@
 				EC83993D25B7143F00B58778 /* AddDiaryTableController.swift */,
 				EC9ED33B25BD64D700848426 /* ModifyDiaryTableController.swift */,
 			);
-			path = Tab3_Diary;
+			path = Tab2_Diary;
 			sourceTree = "<group>";
 		};
 		997DD05925B61956007C5002 /* Tab4_Setting */ = {
